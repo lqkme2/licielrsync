@@ -2000,6 +2000,10 @@ looks in the same directory as the destination file for either a file that
 has an identical size and modified\-time, or a similarly\-named file.  If
 found, rsync uses the fuzzy basis file to try to speed up the transfer.
 .IP 
+If the option is repeated, the fuzzy scan will also be done in any matching
+alternate destination directories that are specified via \fB\-\-compare\-dest\fP,
+\fB\-\-copy\-dest\fP, or \fB\-\-link\-dest\fP.
+.IP 
 Note that the use of the \fB\-\-delete\fP option might get rid of any potential
 fuzzy\-match files, so either use \fB\-\-delete\-after\fP or specify some
 filename exclusions if you need to prevent this.
