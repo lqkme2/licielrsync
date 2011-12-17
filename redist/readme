@@ -1,0 +1,14 @@
+0.1.9-alpha (1 Oct. 2011)
+-----------
+- add : handling of unc paths
+- add : options to show windows & to not redirect the standard and error output streams
+- add : rsync 3.0.9
+- upd : few optimizations to the standard log retransmission
+- upd : rsync-3.1.0dev to git commit fd91c3b6661dbd7453a143cad81ca08cd34b243b (23 Sept. 2011)
+- rem : rsync 3.0.8 & 3.0.9pre2
+- fix : marked 3.0.8-ntstreams unofficial (this is 3.0.8 + BackupAssist's ACL patch for Windows)
+- fix : language selection not working as intended on some non english systems
+
+0.1.8-alpha (Sept. 2011)
+-----------
+- initial share
