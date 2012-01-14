@@ -23,14 +23,17 @@ Module ModuleMain
     Private Delegate Sub DelegateInvoke(ByVal var() As Object)
 
     Public FirstLoad As Boolean = True, Progress As Boolean = False
-    Public RsyncDirectory As String = My.Application.Info.DirectoryPath & "\", RsyncPath As String = "", LastLine As String = "", CurrentFile As String = ""
     Public RsyncPaths As New Hashtable, FileSizes As New Hashtable
     Public Processus As Process
     Public ProcessusSuspended As Boolean = False
     Public GlobalSize As Long = -1, GlobalSizeSent As Long = 0, CurrentSize As Long = -1, CurrentProgress As Integer = 0
+    Public AppIcon As Icon = CType(My.Resources.ResourceManager.GetObject("LicielRsync", New CultureInfo("en")), Icon)
+    Public AppAssembly As String = My.Application.Info.AssemblyName
+    Public AppExe As String = AppAssembly & ".exe"
+    Public AppPath As String = My.Application.Info.DirectoryPath & "\"
+    Public RsyncDirectory As String = AppPath, RsyncPath As String = "", LastLine As String = "", CurrentFile As String = ""
 
-    ReadOnly Fm As FrameMain = FrameMain
-
+    Private ReadOnly Fm As FrameMain = FrameMain
     Private Const NotEmptyPattern As String = "\S+"
     Private Const ProgressPattern As String = "(\d+)\%.*(\d{2}|\d{1}):(\d{2}|\d{1}):(\d{2}|\d{1})\s*(\(.*\))*$"
     Private Const WinPathPattern As String = "^(([a-zA-Z]):\\(.*)|(\\\\))"
@@ -44,10 +47,7 @@ Module ModuleMain
     Public Sub Main()
         If Not FirstLoad Then Exit Sub
         FirstLoad = False
-        'Dim config As Configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal)
-        'MsgBox(config.FilePath)
-        'End
-        Fm.Icon = CType(My.Resources.ResourceManager.GetObject("LicielRsync", New CultureInfo("en")), Icon)
+        Fm.Icon = AppIcon
         Fm.StatusBarText.Text = String.Empty
         ''
         '' Old configs importation
@@ -76,7 +76,7 @@ Module ModuleMain
 
     Public Function GetDirectory(ByVal controlText As String)
         Dim dlgResult As DialogResult = Fm.FolderBrowserDialog.ShowDialog()
-        If dlgResult = Windows.Forms.DialogResult.OK Then Return Fm.FolderBrowserDialog.SelectedPath & "\"
+        If dlgResult = Windows.Forms.DialogResult.OK AndAlso Fm.FolderBrowserDialog.SelectedPath <> "" Then Return Fm.FolderBrowserDialog.SelectedPath & "\"
         Return controlText
     End Function
 
@@ -310,7 +310,7 @@ Module ModuleMain
     ''--------------------------------------------------------------------
     '' InitializeRsyncs
     ''
-    '' Detect rsync that are presents and very cygwin is correctly setup
+    '' Detect rsync that are presents and setup cygwin files
     ''--------------------------------------------------------------------
 
     Private Sub InitializeRsyncs()
@@ -318,8 +318,7 @@ Module ModuleMain
         Dim i As Integer = 0
         Dim rsyncName As String
         For Each dir As String In Directory.GetDirectories(RsyncDirectory)
-            If Not Regex.Match(Path.GetFileName(dir), "^rsync-\d").Success Then Continue For
-            If Not File.Exists(dir & "\bin\rsync.exe") Then Continue For
+            If Not Regex.Match(Path.GetFileName(dir), "^rsync-\d").Success Or Not File.Exists(dir & "\bin\rsync.exe") Then Continue For
             Try
                 If Not File.Exists(dir & "\etc\fstab") Then
                     Directory.CreateDirectory(dir & "\etc")
@@ -520,86 +519,61 @@ Module ModuleMain
         LoadConfig()
     End Sub
 
-    'Private Sub WriteFile(ByRef t As String, ByVal fichier As String)
-    '    Try
-    '        Dim sw As StreamWriter = File.AppendText(fichier)
-    '        sw.Write(t)
-    '        sw.Close()
-    '    Catch
-    '    End Try
-    'End Sub
+    ''--------------------------------------------------------------------
+    '' WriteFile
+    ''
+    '' Write a text file to disk
+    ''--------------------------------------------------------------------
+
+    Private Sub WriteFile(ByRef t As String, ByVal fichier As String)
+        Try
+            Dim sw As StreamWriter = File.AppendText(fichier)
+            sw.Write(ControlChars.CrLf & t)
+            sw.Close()
+        Catch
+        End Try
+    End Sub
+
+    ''--------------------------------------------------------------------
+    '' GererErreur
+    ''
+    '' Gestion centralisée des erreurs
+    ''--------------------------------------------------------------------
+
+    Public Sub HandleError(ByVal type As String, ByVal ex As String)
+        Dim errorText As String = "", errorFullLog As String = ""
+        Select Case type
+            Case "::process"
+                errorText = "Error while accessing the process (see " & AppPath & AppAssembly & "_errors.log for details)"
+        End Select
+        If errorText.Length > 0 Then TopMessageBox.Show(errorText, AppExe & " error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        errorFullLog = "[" & DateTime.Now & " --- " & type & "] " & errorText & ControlChars.CrLf & "Details : " & ex
+        WriteFile(errorFullLog, AppPath & AppAssembly & "_errors.log")
+        If Debugger.IsAttached Then TopMessageBox.Show(errorFullLog, AppExe & " error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    End Sub
 
 End Module
 
-'Private Sub ThreadReadStreams(ByVal arg As Object)
-'    Dim stdLog = arg(1)
-'    Dim line As String
-'    Try
-'        Select Case stdLog
-'            Case True
-'                Do While Not arg(0).EndOfStream
-'                    line = arg(0).ReadLine()
-'                    Dim matchProgress As Match = Regex.Match(line, ProgressPattern)
-'                    Dim matchLastProgress As Match = Regex.Match(LastLine, ProgressPattern)
-'                    If Progress AndAlso CurrentFile = "" Then
-'                        Try
-'                            If FileSizes.ContainsKey(line) Then
-'                                CurrentSize = FileSizes(line)
-'                                CurrentFile = line
-'                            End If
-'                        Catch
-'                        End Try
-'                    End If
-'                    If matchProgress.Success AndAlso matchLastProgress.Success AndAlso matchLastProgress.Groups(5).Value = "" Then
-'                        Fm.BeginInvoke(New DelegateInvoke(AddressOf InvokeChangeControl), New Object() {New Object() {Fm.TextBoxLogs.Name, line & vbCrLf, 0, LastLine}})
-'                    Else
-'                        If Regex.Match(line, NotEmptyPattern).Success Then Fm.BeginInvoke(New DelegateInvoke(AddressOf InvokeChangeControl), New Object() {New Object() {Fm.TextBoxLogs.Name, line & vbCrLf, 1}})
-'                    End If
-'                    If Progress AndAlso CurrentFile <> "" AndAlso matchProgress.Success Then
-'                        CurrentProgress = CInt(matchProgress.Groups(1).Value)
-'                        UpdateProgress(CurrentProgress >= 100)
-'                    End If
-'                    LastLine = line & vbCrLf
-'                Loop
-'            Case False
-'                Do While Not arg(0).EndOfStream
-'                    line = arg(0).ReadLine()
-'                    Fm.BeginInvoke(New DelegateInvoke(AddressOf InvokeChangeControl), New Object() {New Object() {Fm.TextBoxErrors.Name, line & vbCrLf}})
-'                Loop
-'        End Select
-'    Catch ex As Exception
-'        MsgBox(ex.ToString)
-'    End Try
-'End Sub
+Public Class TopMessageBox
+    Private Shared Sub Actualize(ByVal sender As System.Object, ByVal e As EventArgs)
+        sender.Activate()
+    End Sub
+    Public Shared Function Show(ByVal message As String, ByVal title As String, ByVal buttons As MessageBoxButtons, ByVal icons As MessageBoxIcon) As DialogResult
+        Dim topmostForm As Form = New Form()
+        topmostForm.Icon = AppIcon
+        AddHandler topmostForm.Deactivate, AddressOf Actualize
+        topmostForm.Size = New Size(1, 1)
+        topmostForm.StartPosition = FormStartPosition.CenterScreen
+        Dim rect As Rectangle = SystemInformation.VirtualScreen
+        topmostForm.Location = New Point(rect.Bottom + 10, rect.Right + 10)
+        topmostForm.Opacity = 0
+        topmostForm.Show()
+        topmostForm.Focus()
+        topmostForm.BringToFront()
+        topmostForm.TopMost = True
+        Dim result As DialogResult = MessageBox.Show(topmostForm, message, title, buttons, icons)
+        topmostForm.Dispose()
+        Return result
+    End Function
+End Class
 
-'Private Sub InvokeChangeControl(ByVal obj() As Object)
-'    Try
-'        Dim line As String = obj(1)
-'        Select Case obj(0)
-'            Case Fm.TextBoxLogs.Name
-'                Select Case obj(2)
-'                    Case 0
-'                        Fm.TextBoxLogs.SuspendLayout()
-'                        Fm.TextBoxLogs.Text = Regex.Replace(Fm.TextBoxLogs.Text, obj(3), line)
-'                        Fm.TextBoxLogs.SelectionStart = Fm.TextBoxLogs.Text.Length
-'                        Fm.TextBoxLogs.ScrollToCaret()
-'                        Fm.TextBoxLogs.ResumeLayout()
-'                    Case 1
-'                        Fm.TextBoxLogs.AppendText(line)
-'                End Select
-'            Case Fm.TextBoxErrors.Name
-'                Fm.TextBoxErrors.AppendText(line & vbCrLf)
-'            Case Fm.ButtonExec.Name
-'                Dim active As Boolean = obj(1)
-'                Fm.ButtonExec.Enabled = active
-'                Fm.ButtonTest.Enabled = active
-'                Fm.ButtonPause.Enabled = Not active
-'                Fm.ButtonStop.Enabled = Not active
-'            Case Fm.ProgressBar.Name
-'                Fm.ProgressBarText.Text = Math.Round(obj(1)) & "%"
-'                Fm.ProgressBar.Value = obj(1)
-'        End Select
-'    Catch ex As Exception
-'        MsgBox(ex.ToString)
-'    End Try
-'End Sub

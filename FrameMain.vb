@@ -39,10 +39,8 @@ Public Class FrameMain
                     End If
                 Case ButtonSrcOpen.Name
                     TextBoxSrc.Text = GetDirectory(TextBoxSrc.Text)
-                    'TextBoxSrc.Text = "C:\TEST1\"
                 Case ButtonDstOpen.Name
                     TextBoxDst.Text = GetDirectory(TextBoxDst.Text)
-                    'TextBoxDst.Text = "E:\TEST2\"
                 Case ButtonAdd.Name
                     Dim newProfile As String = ComboProfiles.Text
                     newProfile = Regex.Replace(newProfile, "^\s+", "")

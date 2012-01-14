@@ -71,6 +71,13 @@
   <PropertyGroup>
     <ApplicationIcon>Images\LicielRsync.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
@@ -133,9 +140,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="My Project\DataSources\FrameMain.datasource" />
     <None Include="My Project\DataSources\LicielRsync.My.MyApplication.datasource" />
@@ -145,6 +154,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="pub.adovi.128-Bit-DER.cer" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\LicielRsync.ico" />
@@ -170,16 +180,21 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_StartDate="2011/9/16" BuildVersion_BuildVersioningStyle="None.None.None.Increment" BuildVersion_ConfigurationName="Release" BuildVersion_UpdateAssemblyVersion="True" />
+      <UserProperties BuildVersion_UpdateAssemblyVersion="True" BuildVersion_ConfigurationName="Release" BuildVersion_BuildVersioningStyle="None.None.None.Increment" BuildVersion_StartDate="2011/9/16" />
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
     <PostBuildEvent>robocopy "$(ProjectDir)redist\rsync" "$(TargetDir)\" /E /XD .svn
 if errorlevel 4 goto error
 FOR /D /r %25%25G in (*bin) DO robocopy "$(ProjectDir)redist\cygwin" "%25%25G" /E /XD .svn
+if errorlevel 4 goto error
+if "$(ConfigurationName)" == "Debug" exit 0
+start /WAIT "LicielRsync Authenticode Signing" cmd /V:ON /K "set /P __LICIELRSYNCCERTSTORE=Please enter the store name containing the private key : &amp;&amp; "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\signtool.exe" sign /f "$(ProjectDir)pub.adovi.128-Bit-DER.cer" /csp "Microsoft Strong Cryptographic Provider" /v /kc "!__LICIELRSYNCCERTSTORE!" /t "http://timestamp.verisign.com/scripts/timstamp.dll" "$(TargetDir)LicielRsync.exe" &amp;&amp; pause &amp;&amp; exit 0"
+if errorlevel 4 goto error
 exit 0
 :error
-</PostBuildEvent>
+REM http://timestamp.comodoca.com/authenticode
+REM http://timestamp.verisign.com/scripts/timstamp.dll</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

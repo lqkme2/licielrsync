@@ -623,8 +623,7 @@ reject your attempts at fine\-grained control (if one or more flags needed
 to be send to the server and the server was too old to understand them).
 .IP 
 .IP "\fB\-\-debug=FLAGS\fP"
-This option lets you have fine\-grained control over the
-debug
+This option lets you have fine\-grained control over the debug
 output you want to see.  An individual flag name may be followed by a level
 number, with 0 meaning to silence that output, 1 being the default output
 level, and higher numbers increasing the output of that flag (for those
@@ -638,6 +637,9 @@ are added for each increase in the verbose level.  Some examples:
     rsync \-avA \-\-del \-\-debug=del2,acl src/ dest/ 
 .fi 
 
+.IP 
+Note that some debug messages will only be output when \fB\-\-msgs2stderr\fP is
+specified, especially those pertaining to I/O and buffer debugging.
 .IP 
 This option was added to 3.1.0, so an older rsync on the server side might
 reject your attempts at fine\-grained control (if one or more flags needed
@@ -1647,11 +1649,15 @@ be offset by one byte in the indicated direction.
 Examples: \-\-max\-size=1.5mb\-1 is 1499999 bytes, and \-\-max\-size=2g+1 is
 2147483649 bytes.
 .IP 
+Note that rsync versions prior to 3.1.0 did not allow \fB\-\-max\-size=0\fP.
+.IP 
 .IP "\fB\-\-min\-size=SIZE\fP"
 This tells rsync to avoid transferring any
 file that is smaller than the specified SIZE, which can help in not
 transferring small, junk files.
 See the \fB\-\-max\-size\fP option for a description of SIZE and other information.
+.IP 
+Note that rsync versions prior to 3.1.0 did not allow \fB\-\-min\-size=0\fP.
 .IP 
 .IP "\fB\-B, \-\-block\-size=BLOCKSIZE\fP"
 This forces the block size used in
