@@ -624,7 +624,6 @@ Partial Class FrameMain
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CausesValidation = False
         Me.Controls.Add(Me.GroupBox7)
         Me.Controls.Add(Me.StatusBar)
         Me.Controls.Add(Me.MenuStrip1)

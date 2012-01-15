@@ -123,6 +123,10 @@ Module ModuleMain
                     control.AppendText(obj(1))
                     control.SelectionStart = control.TextLength
                     control.ScrollToCaret()
+                    If IsWin7 Then
+                        If IsNothing(TaskBar) Then TaskBar = CType(New CTaskbarList, ITaskbarList4)
+                        TaskBar.SetProgressState(CType(Fm.Handle, Integer), Tbpflag.TbpfError)
+                    End If
                 Case Fm.ButtonExec.Name
                     Dim active As Boolean = obj(1)
                     control.Enabled = active
@@ -132,6 +136,11 @@ Module ModuleMain
                 Case Fm.ProgressBar.Name
                     Fm.ProgressBarText.Text = Math.Round(obj(1)) & "%"
                     control.Value = obj(1)
+                    If IsWin7 Then
+                        If IsNothing(TaskBar) Then TaskBar = CType(New CTaskbarList, ITaskbarList4)
+                        TaskBar.SetProgressValue(CType(Fm.Handle, Integer), CType(obj(2), Long), CType(obj(3), Long))
+                        If obj(2) >= obj(3) Then TaskBar.SetProgressState(CType(Fm.Handle, Integer), Tbpflag.TbpfNoprogress)
+                    End If
             End Select
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -198,7 +207,7 @@ Module ModuleMain
         Dim sentData As Long = CurrentSize * (CurrentProgress / 100)
         Dim percent As Long = 100 / (GlobalSize / (GlobalSizeSent + sentData))
         If percent > 100 Then percent = 100
-        Fm.BeginInvoke(New DelegateInvoke(AddressOf InvokeChangeControl), New Object() {New Object() {Fm.ProgressBar, percent}})
+        Fm.BeginInvoke(New DelegateInvoke(AddressOf InvokeChangeControl), New Object() {New Object() {Fm.ProgressBar, percent, GlobalSizeSent + sentData, GlobalSize}})
         If done Then
             GlobalSizeSent += CurrentSize
             CurrentFile = ""
@@ -541,7 +550,7 @@ Module ModuleMain
     ''--------------------------------------------------------------------
 
     Public Sub HandleError(ByVal type As String, ByVal ex As String)
-        Dim errorText As String = "", errorFullLog As String = ""
+        Dim errorText As String = "", errorFullLog As String
         Select Case type
             Case "::process"
                 errorText = "Error while accessing the process (see " & AppPath & AppAssembly & "_errors.log for details)"
@@ -576,4 +585,3 @@ Public Class TopMessageBox
         Return result
     End Function
 End Class
-

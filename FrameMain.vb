@@ -15,6 +15,8 @@ Imports System
 Imports System.IO
 Imports System.Text.RegularExpressions
 Imports System.Threading
+Imports System.Runtime.InteropServices
+Imports System.ComponentModel
 
 
 Public Class FrameMain
@@ -36,6 +38,10 @@ Public Class FrameMain
                         Dim thd As Thread = New Thread(AddressOf ThreadProcessStart)
                         thd.IsBackground = True
                         thd.Start({RsyncPath, sender.name = ButtonTest.Name})
+                        If IsWin7 Then
+                            If IsNothing(TaskBar) Then TaskBar = CType(New CTaskbarList, ITaskbarList4)
+                            TaskBar.SetProgressState(CType(Handle, Integer), Tbpflag.TbpfNormal)
+                        End If
                     End If
                 Case ButtonSrcOpen.Name
                     TextBoxSrc.Text = GetDirectory(TextBoxSrc.Text)
@@ -64,10 +70,18 @@ Public Class FrameMain
                             ResumeProcess(Processus)
                             ProcessusSuspended = False
                             ButtonPause.Text = "Pause"
+                            If IsWin7 Then
+                                If IsNothing(TaskBar) Then TaskBar = CType(New CTaskbarList, ITaskbarList4)
+                                TaskBar.SetProgressState(CType(Handle, Integer), Tbpflag.TbpfNormal)
+                            End If
                         Case False
                             SuspendProcess(Processus)
                             ProcessusSuspended = True
                             ButtonPause.Text = "Resume"
+                            If IsWin7 Then
+                                If IsNothing(TaskBar) Then TaskBar = CType(New CTaskbarList, ITaskbarList4)
+                                TaskBar.SetProgressState(CType(Handle, Integer), Tbpflag.TbpfPaused)
+                            End If
                     End Select
                 Case ButtonStop.Name
                     If ProcessusSuspended Then
@@ -76,6 +90,10 @@ Public Class FrameMain
                     End If
                     Processus.Kill()
                     Processus.Close()
+                    If IsWin7 Then
+                        If IsNothing(TaskBar) Then TaskBar = CType(New CTaskbarList, ITaskbarList4)
+                        TaskBar.SetProgressState(CType(Handle, Integer), Tbpflag.TbpfError)
+                    End If
             End Select
             UpdateStatusBarCommand(sender.name = ButtonTest.Name)
         Catch ex As Exception
