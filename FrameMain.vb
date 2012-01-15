@@ -27,7 +27,7 @@ Public Class FrameMain
     '' Stub function used to handle all button clicks
     ''--------------------------------------------------------------------
 
-    Private Sub ButtonClick(sender As System.Object, e As EventArgs) Handles ButtonExec.Click, ButtonTest.Click, ButtonAdd.Click, ButtonDel.Click, ButtonSrcOpen.Click, ButtonDstOpen.Click, ButtonPause.Click, ButtonStop.Click
+    Private Sub ButtonClick(sender As System.Object, e As EventArgs)
         Try
             Select Case sender.name
                 Case ButtonExec.Name, ButtonTest.Name
@@ -109,8 +109,8 @@ Public Class FrameMain
     ''--------------------------------------------------------------------
 
     Private Sub CheckBoxChanged(sender As Object, e As EventArgs) _
-     Handles CbProgress.CheckedChanged, CbRecurse.CheckedChanged, CbDate.CheckedChanged, _
-             CbPerm.CheckedChanged, CbVerbose.CheckedChanged, CbGroup.CheckedChanged, CbOwner.CheckedChanged, CbDelta.CheckedChanged, CbFrench.CheckedChanged, CbEnglish.CheckedChanged, CbDelete.CheckedChanged, CbExisting.CheckedChanged, CbNewer.CheckedChanged, CbSizeOnly.CheckedChanged, CbReadable.CheckedChanged, CbPermWin.CheckedChanged, CbWinCompat.CheckedChanged, CbExistingOnly.CheckedChanged, CbChecksum.CheckedChanged, CbIgnoreTimes.CheckedChanged, CbShowCmd.CheckedChanged, CbHideWindows.CheckedChanged, CbRedir.CheckedChanged
+     Handles _
+                CbFrench.CheckedChanged, CbEnglish.CheckedChanged
         Select Case sender.Name
             Case CbEnglish.Name
                 If Not sender.checked Then Exit Sub
@@ -156,7 +156,7 @@ Public Class FrameMain
     '' Stub function used to handle all listbox changes
     ''--------------------------------------------------------------------
 
-    Private Sub ComboSelectedIndexChanged(sender As System.Object, e As EventArgs) Handles ComboVerbose.SelectedIndexChanged, ComboProfiles.SelectedIndexChanged, ComboRsync.SelectedIndexChanged
+    Private Sub ComboSelectedIndexChanged(sender As System.Object, e As EventArgs)
         Select Case sender.name
             Case ComboVerbose.Name
                 My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")(sender.tag) = sender.Text
@@ -176,7 +176,7 @@ Public Class FrameMain
     '' Stub function used to handle all textbox changes
     ''--------------------------------------------------------------------
 
-    Private Sub TextBoxTextChanged(sender As System.Object, e As EventArgs) Handles TextBoxSrc.TextChanged, TextBoxDst.TextChanged, TextBoxOptions.TextChanged
+    Private Sub TextBoxTextChanged(sender As System.Object, e As EventArgs)
         Select Case sender.name
             Case TextBoxSrc.Name
                 My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("srcpath") = TextBoxSrc.Text
