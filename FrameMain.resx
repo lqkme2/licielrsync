@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="TextBoxLogs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
+    <value>6, 15</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TextBoxLogs.MaxLength" type="System.Int32, mscorlib">
@@ -139,7 +139,7 @@
     <value>Vertical</value>
   </data>
   <data name="TextBoxLogs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 256</value>
+    <value>399, 253</value>
   </data>
   <data name="TextBoxLogs.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -157,10 +157,10 @@
     <value>0</value>
   </data>
   <data name="GroupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, -7</value>
+    <value>12, 0</value>
   </data>
   <data name="GroupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 281</value>
+    <value>411, 274</value>
   </data>
   <data name="GroupBox3.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -196,10 +196,10 @@
     <value>0</value>
   </data>
   <data name="GroupBox6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, -7</value>
+    <value>4, 0</value>
   </data>
   <data name="GroupBox6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>413, 281</value>
+    <value>392, 274</value>
   </data>
   <data name="GroupBox6.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -223,7 +223,7 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="TextBoxErrors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
+    <value>6, 15</value>
   </data>
   <data name="TextBoxErrors.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -232,7 +232,7 @@
     <value>Vertical</value>
   </data>
   <data name="TextBoxErrors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>401, 256</value>
+    <value>380, 253</value>
   </data>
   <data name="TextBoxErrors.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -274,7 +274,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;StatusBar.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="StatusBarText.Size" type="System.Drawing.Size, System.Drawing">
     <value>823, 17</value>
@@ -319,7 +319,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MenuStrip1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="Menu1.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -418,7 +418,7 @@
     <value>6, 95</value>
   </data>
   <data name="CbRedir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 17</value>
+    <value>112, 17</value>
   </data>
   <data name="CbRedir.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -454,7 +454,7 @@
     <value>6, 79</value>
   </data>
   <data name="CbHideWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 17</value>
+    <value>131, 17</value>
   </data>
   <data name="CbHideWindows.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -658,7 +658,7 @@
     <value>6, 19</value>
   </data>
   <data name="CbProgress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 17</value>
+    <value>103, 17</value>
   </data>
   <data name="CbProgress.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -694,7 +694,7 @@
     <value>6, 79</value>
   </data>
   <data name="CbShowCmd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 17</value>
+    <value>130, 17</value>
   </data>
   <data name="CbShowCmd.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -730,7 +730,7 @@
     <value>6, 59</value>
   </data>
   <data name="CbReadable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 17</value>
+    <value>111, 17</value>
   </data>
   <data name="CbReadable.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -766,7 +766,7 @@
     <value>6, 39</value>
   </data>
   <data name="CbVerbose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 17</value>
+    <value>157, 17</value>
   </data>
   <data name="CbVerbose.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -799,7 +799,7 @@
     <value>180, 39</value>
   </data>
   <data name="CbChecksum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 17</value>
+    <value>118, 17</value>
   </data>
   <data name="CbChecksum.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -835,7 +835,7 @@
     <value>6, 19</value>
   </data>
   <data name="CbDelta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 17</value>
+    <value>152, 17</value>
   </data>
   <data name="CbDelta.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -871,7 +871,7 @@
     <value>180, 79</value>
   </data>
   <data name="CbExistingOnly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 17</value>
+    <value>91, 17</value>
   </data>
   <data name="CbExistingOnly.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -907,7 +907,7 @@
     <value>180, 59</value>
   </data>
   <data name="CbSizeOnly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 17</value>
+    <value>71, 17</value>
   </data>
   <data name="CbSizeOnly.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -943,7 +943,7 @@
     <value>180, 19</value>
   </data>
   <data name="CbNewer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 17</value>
+    <value>83, 17</value>
   </data>
   <data name="CbNewer.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -979,7 +979,7 @@
     <value>314, 19</value>
   </data>
   <data name="CbIgnoreTimes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 17</value>
+    <value>86, 17</value>
   </data>
   <data name="CbIgnoreTimes.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1015,7 +1015,7 @@
     <value>6, 79</value>
   </data>
   <data name="CbExisting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 17</value>
+    <value>103, 17</value>
   </data>
   <data name="CbExisting.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1051,7 +1051,7 @@
     <value>6, 59</value>
   </data>
   <data name="CbDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 17</value>
+    <value>138, 17</value>
   </data>
   <data name="CbDelete.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1087,7 +1087,7 @@
     <value>6, 39</value>
   </data>
   <data name="CbRecurse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 17</value>
+    <value>147, 17</value>
   </data>
   <data name="CbRecurse.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1123,7 +1123,7 @@
     <value>6, 79</value>
   </data>
   <data name="CbPerm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 17</value>
+    <value>132, 17</value>
   </data>
   <data name="CbPerm.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1159,7 +1159,7 @@
     <value>6, 39</value>
   </data>
   <data name="CbOwner.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 17</value>
+    <value>109, 17</value>
   </data>
   <data name="CbOwner.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1195,7 +1195,7 @@
     <value>6, 59</value>
   </data>
   <data name="CbGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 17</value>
+    <value>108, 17</value>
   </data>
   <data name="CbGroup.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1231,7 +1231,7 @@
     <value>6, 19</value>
   </data>
   <data name="CbDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 17</value>
+    <value>99, 17</value>
   </data>
   <data name="CbDate.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1258,10 +1258,10 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="TextBoxOptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>91, 69</value>
+    <value>101, 69</value>
   </data>
   <data name="TextBoxOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>613, 20</value>
+    <value>626, 22</value>
   </data>
   <data name="TextBoxOptions.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1285,10 +1285,10 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="TextBoxDst.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 43</value>
+    <value>101, 43</value>
   </data>
   <data name="TextBoxDst.Size" type="System.Drawing.Size, System.Drawing">
-    <value>622, 20</value>
+    <value>626, 22</value>
   </data>
   <data name="TextBoxDst.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1312,10 +1312,10 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="TextBoxSrc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 17</value>
+    <value>101, 17</value>
   </data>
   <data name="TextBoxSrc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>622, 20</value>
+    <value>626, 22</value>
   </data>
   <data name="TextBoxSrc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1345,7 +1345,7 @@
     <value>6, 72</value>
   </data>
   <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 13</value>
+    <value>89, 13</value>
   </data>
   <data name="Label3.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1378,7 +1378,7 @@
     <value>6, 46</value>
   </data>
   <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
+    <value>67, 13</value>
   </data>
   <data name="Label2.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1411,7 +1411,7 @@
     <value>6, 20</value>
   </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 13</value>
+    <value>42, 13</value>
   </data>
   <data name="Label1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1447,7 +1447,7 @@
     <value>6, 74</value>
   </data>
   <data name="CbFS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 17</value>
+    <value>148, 17</value>
   </data>
   <data name="CbFS.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1483,7 +1483,7 @@
     <value>6, 39</value>
   </data>
   <data name="CbWinCompat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 17</value>
+    <value>94, 17</value>
   </data>
   <data name="CbWinCompat.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1519,7 +1519,7 @@
     <value>6, 19</value>
   </data>
   <data name="CbPermWin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 17</value>
+    <value>127, 17</value>
   </data>
   <data name="CbPermWin.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1547,6 +1547,90 @@
   </metadata>
   <data name="FolderBrowserDialog.Description" xml:space="preserve">
     <value>Select the Folder</value>
+  </data>
+  <data name="&gt;&gt;GroupBox7.Name" xml:space="preserve">
+    <value>GroupBox7</value>
+  </data>
+  <data name="&gt;&gt;GroupBox7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox7.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox7.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.Name" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Name" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Name" xml:space="preserve">
+    <value>PictureBox1</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>838, 349</value>
+  </data>
+  <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;ComboRsync.Name" xml:space="preserve">
     <value>ComboRsync</value>
@@ -1582,6 +1666,30 @@
     <value>Panel1</value>
   </data>
   <data name="&gt;&gt;GroupBox7.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ComboRsync.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="ComboRsync.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 31</value>
+  </data>
+  <data name="ComboRsync.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 21</value>
+  </data>
+  <data name="ComboRsync.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ComboRsync.Name" xml:space="preserve">
+    <value>ComboRsync</value>
+  </data>
+  <data name="&gt;&gt;ComboRsync.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ComboRsync.Parent" xml:space="preserve">
+    <value>GroupBox7</value>
+  </data>
+  <data name="&gt;&gt;ComboRsync.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="GroupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -1650,6 +1758,30 @@
   <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="ComboProfiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="ComboProfiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 31</value>
+  </data>
+  <data name="ComboProfiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 21</value>
+  </data>
+  <data name="ComboProfiles.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ComboProfiles.Name" xml:space="preserve">
+    <value>ComboProfiles</value>
+  </data>
+  <data name="&gt;&gt;ComboProfiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ComboProfiles.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;ComboProfiles.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="PictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1676,6 +1808,141 @@
   </data>
   <data name="TabControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Name" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TabPage2.Name" xml:space="preserve">
+    <value>TabPage2</value>
+  </data>
+  <data name="&gt;&gt;TabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPage2.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabPage2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TabControl1.ItemSize" type="System.Drawing.Size, System.Drawing">
+    <value>245, 18</value>
+  </data>
+  <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 105</value>
+  </data>
+  <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>814, 244</value>
+  </data>
+  <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;GroupBox5.Name" xml:space="preserve">
+    <value>GroupBox5</value>
+  </data>
+  <data name="&gt;&gt;GroupBox5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox5.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;GroupBox9.Name" xml:space="preserve">
+    <value>GroupBox9</value>
+  </data>
+  <data name="&gt;&gt;GroupBox9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox9.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox9.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox4.Name" xml:space="preserve">
+    <value>GroupBox4</value>
+  </data>
+  <data name="&gt;&gt;GroupBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox4.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox4.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ButtonDstOpen.Name" xml:space="preserve">
+    <value>ButtonDstOpen</value>
+  </data>
+  <data name="&gt;&gt;ButtonDstOpen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonDstOpen.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;ButtonDstOpen.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;ButtonSrcOpen.Name" xml:space="preserve">
+    <value>ButtonSrcOpen</value>
+  </data>
+  <data name="&gt;&gt;ButtonSrcOpen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonSrcOpen.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;ButtonSrcOpen.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="TabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="TabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>806, 218</value>
+  </data>
+  <data name="TabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TabPage1.Text" xml:space="preserve">
+    <value>Base options</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Name" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;ComboVerbose.Name" xml:space="preserve">
     <value>ComboVerbose</value>
@@ -1711,6 +1978,48 @@
     <value>TabPage1</value>
   </data>
   <data name="&gt;&gt;GroupBox5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ComboVerbose.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ComboVerbose.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ComboVerbose.Items" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ComboVerbose.Items1" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ComboVerbose.Items2" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ComboVerbose.Items3" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ComboVerbose.Items4" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ComboVerbose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 36</value>
+  </data>
+  <data name="ComboVerbose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 21</value>
+  </data>
+  <data name="ComboVerbose.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ComboVerbose.Name" xml:space="preserve">
+    <value>ComboVerbose</value>
+  </data>
+  <data name="&gt;&gt;ComboVerbose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ComboVerbose.Parent" xml:space="preserve">
+    <value>GroupBox5</value>
+  </data>
+  <data name="&gt;&gt;ComboVerbose.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="GroupBox9.Location" type="System.Drawing.Point, System.Drawing">
@@ -1768,7 +2077,7 @@
     <value>NoControl</value>
   </data>
   <data name="ButtonDstOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>710, 40</value>
+    <value>733, 40</value>
   </data>
   <data name="ButtonDstOpen.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 25</value>
@@ -1798,7 +2107,7 @@
     <value>NoControl</value>
   </data>
   <data name="ButtonSrcOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>710, 14</value>
+    <value>733, 14</value>
   </data>
   <data name="ButtonSrcOpen.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 25</value>
@@ -1821,33 +2130,6 @@
   <data name="&gt;&gt;ButtonSrcOpen.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="TabPage1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="TabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="TabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>806, 212</value>
-  </data>
-  <data name="TabPage1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="TabPage1.Text" xml:space="preserve">
-    <value>Base options</value>
-  </data>
-  <data name="&gt;&gt;TabPage1.Name" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;TabPage1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabPage1.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;GroupBox8.Name" xml:space="preserve">
     <value>GroupBox8</value>
   </data>
@@ -1867,7 +2149,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 212</value>
+    <value>806, 212</value>
   </data>
   <data name="TabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1886,144 +2168,6 @@
   </data>
   <data name="&gt;&gt;TabPage2.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="TabControl1.ItemSize" type="System.Drawing.Size, System.Drawing">
-    <value>245, 18</value>
-  </data>
-  <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 105</value>
-  </data>
-  <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>814, 238</value>
-  </data>
-  <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="Panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>838, 349</value>
-  </data>
-  <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="ComboRsync.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="ComboRsync.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 31</value>
-  </data>
-  <data name="ComboRsync.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 21</value>
-  </data>
-  <data name="ComboRsync.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ComboRsync.Name" xml:space="preserve">
-    <value>ComboRsync</value>
-  </data>
-  <data name="&gt;&gt;ComboRsync.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ComboRsync.Parent" xml:space="preserve">
-    <value>GroupBox7</value>
-  </data>
-  <data name="&gt;&gt;ComboRsync.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ComboProfiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="ComboProfiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 31</value>
-  </data>
-  <data name="ComboProfiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 21</value>
-  </data>
-  <data name="ComboProfiles.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ComboProfiles.Name" xml:space="preserve">
-    <value>ComboProfiles</value>
-  </data>
-  <data name="&gt;&gt;ComboProfiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ComboProfiles.Parent" xml:space="preserve">
-    <value>GroupBox1</value>
-  </data>
-  <data name="&gt;&gt;ComboProfiles.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ComboVerbose.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ComboVerbose.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ComboVerbose.Items" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ComboVerbose.Items1" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ComboVerbose.Items2" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="ComboVerbose.Items3" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="ComboVerbose.Items4" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="ComboVerbose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 36</value>
-  </data>
-  <data name="ComboVerbose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 21</value>
-  </data>
-  <data name="ComboVerbose.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ComboVerbose.Name" xml:space="preserve">
-    <value>ComboVerbose</value>
-  </data>
-  <data name="&gt;&gt;ComboVerbose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ComboVerbose.Parent" xml:space="preserve">
-    <value>GroupBox5</value>
-  </data>
-  <data name="&gt;&gt;ComboVerbose.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="GroupBox8.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
@@ -2050,16 +2194,19 @@
     <value>1</value>
   </data>
   <data name="Splitter1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>397, 373</value>
+    <value>426, 373</value>
+  </data>
+  <data name="Splitter1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="Splitter1.MinExtra" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>0</value>
   </data>
   <data name="Splitter1.MinSize" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>0</value>
   </data>
   <data name="Splitter1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>10, 274</value>
+    <value>4, 274</value>
   </data>
   <data name="Splitter1.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -2083,7 +2230,7 @@
     <value>0, 373</value>
   </data>
   <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>397, 274</value>
+    <value>426, 274</value>
   </data>
   <data name="Panel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2104,10 +2251,10 @@
     <value>Fill</value>
   </data>
   <data name="Panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>407, 373</value>
+    <value>430, 373</value>
   </data>
   <data name="Panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>431, 274</value>
+    <value>408, 274</value>
   </data>
   <data name="Panel3.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2136,8 +2283,8 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>838, 669</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>854, 707</value>

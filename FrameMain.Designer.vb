@@ -641,6 +641,8 @@ Partial Class FrameMain
         '
         Me.Splitter1.BackColor = System.Drawing.Color.Gainsboro
         resources.ApplyResources(Me.Splitter1, "Splitter1")
+        Me.Splitter1.MaximumSize = New System.Drawing.Size(4, 0)
+        Me.Splitter1.MinimumSize = New System.Drawing.Size(4, 0)
         Me.Splitter1.Name = "Splitter1"
         Me.Splitter1.TabStop = False
         '
@@ -664,8 +666,8 @@ Partial Class FrameMain
         Me.Controls.Add(Me.Splitter1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.StatusBar)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.StatusBar)
         Me.DataBindings.Add(New System.Windows.Forms.Binding("Location", Global.LicielRsync.My.MySettings.Default, "Location_Frame", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.DataBindings.Add(New System.Windows.Forms.Binding("Size", Global.LicielRsync.My.MySettings.Default, "Size_Frame", True))
         Me.Location = Global.LicielRsync.My.MySettings.Default.Location_Frame
