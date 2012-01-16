@@ -75,7 +75,6 @@ Partial Class FrameMain
         Me.CbFS = New System.Windows.Forms.CheckBox()
         Me.CbWinCompat = New System.Windows.Forms.CheckBox()
         Me.CbPermWin = New System.Windows.Forms.CheckBox()
-        Me.FolderBrowserDialog = New System.Windows.Forms.FolderBrowserDialog()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.ComboRsync = New System.Windows.Forms.ComboBox()
@@ -96,6 +95,7 @@ Partial Class FrameMain
         Me.Splitter1 = New System.Windows.Forms.Splitter()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.FolderBrowserDialog = New System.Windows.Forms.FolderBrowserDialog()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.StatusBar.SuspendLayout()
@@ -205,7 +205,7 @@ Partial Class FrameMain
         resources.ApplyResources(Me.CbFrench, "CbFrench")
         Me.CbFrench.CheckOnClick = True
         Me.CbFrench.Name = "CbFrench"
-        Me.CbFrench.Tag = "fr-FR"
+        Me.CbFrench.Tag = "fr"
         '
         'Menu2
         '
@@ -473,10 +473,6 @@ Partial Class FrameMain
         Me.ToolTip1.SetToolTip(Me.CbPermWin, resources.GetString("CbPermWin.ToolTip"))
         Me.CbPermWin.UseVisualStyleBackColor = True
         '
-        'FolderBrowserDialog
-        '
-        resources.ApplyResources(Me.FolderBrowserDialog, "FolderBrowserDialog")
-        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.GroupBox7)
@@ -658,6 +654,10 @@ Partial Class FrameMain
         resources.ApplyResources(Me.Panel3, "Panel3")
         Me.Panel3.Name = "Panel3"
         '
+        'FolderBrowserDialog
+        '
+        resources.ApplyResources(Me.FolderBrowserDialog, "FolderBrowserDialog")
+        '
         'FrameMain
         '
         resources.ApplyResources(Me, "$this")
@@ -666,8 +666,8 @@ Partial Class FrameMain
         Me.Controls.Add(Me.Splitter1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.StatusBar)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.DataBindings.Add(New System.Windows.Forms.Binding("Location", Global.LicielRsync.My.MySettings.Default, "Location_Frame", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.DataBindings.Add(New System.Windows.Forms.Binding("Size", Global.LicielRsync.My.MySettings.Default, "Size_Frame", True))
         Me.Location = Global.LicielRsync.My.MySettings.Default.Location_Frame
@@ -684,22 +684,16 @@ Partial Class FrameMain
         Me.Panel1.ResumeLayout(False)
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
         Me.GroupBox9.ResumeLayout(False)
-        Me.GroupBox9.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
         Me.GroupBox8.ResumeLayout(False)
-        Me.GroupBox8.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)

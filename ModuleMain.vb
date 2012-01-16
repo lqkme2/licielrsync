@@ -456,40 +456,48 @@ Module ModuleMain
     End Sub
 
     ''--------------------------------------------------------------------
+    '' LocalizeControlsText
+    ''
+    '' Loop to change all controls text
+    ''--------------------------------------------------------------------
+
+    Private Sub LocalizeControlsText(ByVal ctrlCol As Control.ControlCollection, ByVal resources As ComponentResourceManager, ByVal cInfo As CultureInfo)
+        For Each c As Control In ctrlCol
+            resources.ApplyResources(c, c.Name, cInfo)
+            If resources.GetString(c.Name & ".ToolTip") <> "" Then Fm.ToolTip1.SetToolTip(c, resources.GetString(c.Name & ".ToolTip", cInfo))
+            LocalizeControlsText(c.Controls, resources, cInfo)
+        Next c
+    End Sub
+
+    ''--------------------------------------------------------------------
+    '' LocalizeToolStripsText
+    ''
+    '' Loop to change all toolstrip menu items text
+    ''--------------------------------------------------------------------
+
+    Private Sub LocalizeToolStripsText(ByVal toolStrCol As ToolStripItemCollection, ByVal resources As ComponentResourceManager, ByVal cInfo As CultureInfo)
+        For Each t As ToolStripMenuItem In toolStrCol
+            resources.ApplyResources(t, t.Name, cInfo)
+            LocalizeToolStripsText(t.DropDownItems, resources, cInfo)
+        Next t
+    End Sub
+
+    ''--------------------------------------------------------------------
     '' ChangeLanguage
     ''
-    '' Change language in real-time
+    '' Change language dynamically
     ''--------------------------------------------------------------------
 
     Public Sub ChangeLanguage(ByVal lang As String)
-        Dim cultureInfo = If(lang = "", Nothing, New CultureInfo(lang))
+        Dim cultureInfo = If(lang = "", Nothing, New CultureInfo(lang, False))
         Dim resources As ComponentResourceManager = New ComponentResourceManager(Fm.GetType)
         resources.ApplyResources(Fm, "$this", cultureInfo)
         For Each c In Fm.Controls
             resources.ApplyResources(c, c.Name, cultureInfo)
             If resources.GetString(c.Name & ".ToolTip") <> "" Then Fm.ToolTip1.SetToolTip(c, resources.GetString(c.Name & ".ToolTip", cultureInfo))
-            For Each d As Control In c.Controls
-                resources.ApplyResources(d, d.Name, cultureInfo)
-                If resources.GetString(d.Name & ".ToolTip") <> "" Then Fm.ToolTip1.SetToolTip(d, resources.GetString(d.Name & ".ToolTip", cultureInfo))
-                For Each e As Control In d.Controls
-                    resources.ApplyResources(e, e.Name, cultureInfo)
-                    If resources.GetString(e.Name & ".ToolTip") <> "" Then Fm.ToolTip1.SetToolTip(e, resources.GetString(e.Name & ".ToolTip", cultureInfo))
-                    For Each f As Control In e.Controls
-                        resources.ApplyResources(f, f.Name, cultureInfo)
-                        If resources.GetString(f.Name & ".ToolTip") <> "" Then Fm.ToolTip1.SetToolTip(f, resources.GetString(f.Name & ".ToolTip", cultureInfo))
-                    Next f
-                Next e
-            Next d
+            LocalizeControlsText(c.Controls, resources, cultureInfo)
             If TypeOf c Is MenuStrip Then
-                For Each i As ToolStripMenuItem In c.Items
-                    resources.ApplyResources(i, i.Name, cultureInfo)
-                    For Each j As ToolStripMenuItem In i.DropDownItems
-                        resources.ApplyResources(j, j.Name, cultureInfo)
-                        For Each k As ToolStripMenuItem In j.DropDownItems
-                            resources.ApplyResources(k, k.Name, cultureInfo)
-                        Next k
-                    Next j
-                Next i
+                LocalizeToolStripsText(c.Items, resources, cultureInfo)
             End If
         Next c
     End Sub

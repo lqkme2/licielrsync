@@ -15,8 +15,6 @@ Imports System
 Imports System.IO
 Imports System.Text.RegularExpressions
 Imports System.Threading
-Imports System.Runtime.InteropServices
-Imports System.ComponentModel
 
 
 Public Class FrameMain
@@ -27,7 +25,7 @@ Public Class FrameMain
     '' Stub function used to handle all button clicks
     ''--------------------------------------------------------------------
 
-    Private Sub ButtonClick(sender As System.Object, e As EventArgs)
+    Private Sub ButtonClick(sender As System.Object, e As EventArgs) Handles ButtonTest.Click, ButtonStop.Click, ButtonSrcOpen.Click, ButtonPause.Click, ButtonExec.Click, ButtonDstOpen.Click, ButtonDel.Click, ButtonAdd.Click
         Try
             Select Case sender.name
                 Case ButtonExec.Name, ButtonTest.Name
@@ -108,9 +106,7 @@ Public Class FrameMain
     '' Stub function used to handle all checkbox checks
     ''--------------------------------------------------------------------
 
-    Private Sub CheckBoxChanged(sender As Object, e As EventArgs) _
-     Handles _
-                CbFrench.CheckedChanged, CbEnglish.CheckedChanged
+    Private Sub CheckBoxChanged(sender As Object, e As EventArgs) Handles CbFrench.CheckedChanged, CbEnglish.CheckedChanged, CbVerbose.CheckedChanged, CbSizeOnly.CheckedChanged, CbShowCmd.CheckedChanged, CbRedir.CheckedChanged, CbRecurse.CheckedChanged, CbReadable.CheckedChanged, CbProgress.CheckedChanged, CbPerm.CheckedChanged, CbOwner.CheckedChanged, CbNewer.CheckedChanged, CbIgnoreTimes.CheckedChanged, CbHideWindows.CheckedChanged, CbGroup.CheckedChanged, CbExistingOnly.CheckedChanged, CbExisting.CheckedChanged, CbDelta.CheckedChanged, CbDelete.CheckedChanged, CbDate.CheckedChanged, CbChecksum.CheckedChanged, CbWinCompat.CheckedChanged, CbPermWin.CheckedChanged, CbFS.CheckedChanged
         Select Case sender.Name
             Case CbEnglish.Name
                 If Not sender.checked Then Exit Sub
@@ -156,7 +152,7 @@ Public Class FrameMain
     '' Stub function used to handle all listbox changes
     ''--------------------------------------------------------------------
 
-    Private Sub ComboSelectedIndexChanged(sender As System.Object, e As EventArgs)
+    Private Sub ComboSelectedIndexChanged(sender As System.Object, e As EventArgs) Handles ComboVerbose.SelectedIndexChanged, ComboRsync.SelectedIndexChanged, ComboProfiles.SelectedIndexChanged
         Select Case sender.name
             Case ComboVerbose.Name
                 My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")(sender.tag) = sender.Text
@@ -176,7 +172,7 @@ Public Class FrameMain
     '' Stub function used to handle all textbox changes
     ''--------------------------------------------------------------------
 
-    Private Sub TextBoxTextChanged(sender As System.Object, e As EventArgs)
+    Private Sub TextBoxTextChanged(sender As System.Object, e As EventArgs) Handles TextBoxSrc.TextChanged, TextBoxOptions.TextChanged, TextBoxDst.TextChanged
         Select Case sender.name
             Case TextBoxSrc.Name
                 My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("srcpath") = TextBoxSrc.Text
