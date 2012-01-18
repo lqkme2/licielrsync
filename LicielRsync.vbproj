@@ -93,6 +93,12 @@
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrameAboutBox.Designer.vb">
+      <DependentUpon>FrameAboutBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrameAboutBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="FrameMain.vb">
       <SubType>Form</SubType>
@@ -122,6 +128,9 @@
     <Compile Include="ModuleSettings.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrameAboutBox.resx">
+      <DependentUpon>FrameAboutBox.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrameMain.fr.resx">
       <DependentUpon>FrameMain.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -141,15 +150,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="My Project\DataSources\FrameMain.datasource" />
-    <None Include="My Project\DataSources\LicielRsync.My.MyApplication.datasource" />
-    <None Include="My Project\DataSources\LicielRsync.My.MySettings.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -181,7 +186,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_UpdateAssemblyVersion="True" BuildVersion_ConfigurationName="Release" BuildVersion_BuildVersioningStyle="None.None.None.Increment" BuildVersion_StartDate="2011/9/16" />
+      <UserProperties BuildVersion_StartDate="2011/9/16" BuildVersion_BuildVersioningStyle="None.None.None.Increment" BuildVersion_ConfigurationName="Release" BuildVersion_UpdateAssemblyVersion="True" />
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>

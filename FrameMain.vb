@@ -19,13 +19,15 @@ Imports System.Threading
 
 Public Class FrameMain
 
+    Private _fab As FrameAboutBox
+
     ''--------------------------------------------------------------------
     '' ButtonClick
     ''
     '' Stub function used to handle all button clicks
     ''--------------------------------------------------------------------
 
-    Private Sub ButtonClick(sender As System.Object, e As EventArgs) Handles ButtonTest.Click, ButtonStop.Click, ButtonSrcOpen.Click, ButtonPause.Click, ButtonExec.Click, ButtonDstOpen.Click, ButtonDel.Click, ButtonAdd.Click
+    Private Sub ButtonClick(sender As System.Object, e As EventArgs) Handles ButtonTest.Click, ButtonStop.Click, ButtonSrcOpen.Click, ButtonPause.Click, ButtonExec.Click, ButtonDstOpen.Click, ButtonDel.Click, ButtonAdd.Click, AboutToolStripMenuItem.Click
         Try
             Select Case sender.name
                 Case ButtonExec.Name, ButtonTest.Name
@@ -92,6 +94,9 @@ Public Class FrameMain
                         If IsNothing(TaskBar) Then TaskBar = CType(New CTaskbarList, ITaskbarList4)
                         TaskBar.SetProgressState(CType(Handle, Integer), Tbpflag.TbpfError)
                     End If
+                Case AboutToolStripMenuItem.Name
+                    _fab = New FrameAboutBox()
+                    _fab.Show()
             End Select
             UpdateStatusBarCommand(sender.name = ButtonTest.Name)
         Catch ex As Exception
@@ -188,18 +193,32 @@ Public Class FrameMain
     End Sub
 
     ''--------------------------------------------------------------------
-    '' Size
+    '' DataBindings.Size
     ''
-    '' To work around a minimize problem while saving the size with
-    '' OnPropertyChanged
+    '' To work around a Visual Studio problem while saving the size with
+    '' OnPropertyChanged and minimizing the frame
     ''--------------------------------------------------------------------
 
-    Private Sub FrameMainValidateSize(sender As System.Object, e As Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
-        DataBindings.Item(1).WriteValue()
+    Private Sub BetterDataBindings(sender As System.Object, e As Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
+        My.Settings.Size_Frame = Size
+        My.Settings.Location_Frame = Location
+        My.Settings.SplitterDistance_Splitter1 = SplitContainer1.SplitterDistance
     End Sub
 
-    Private Sub FrameMainResizeEnd(sender As System.Object, e As EventArgs) Handles MyBase.ResizeEnd
-        DataBindings.Item(1).WriteValue()
+    ''--------------------------------------------------------------------
+    '' StatusBar.Padding
+    ''
+    '' To work around a Visual Studio problem with the status strip bar
+    '' incorrect padding when the sizing grip is hidden
+    ''
+    '' with own databindings because visual studio sucks again
+    ''--------------------------------------------------------------------
+
+    Private Sub FrameMainLoad(sender As System.Object, e As EventArgs) Handles MyBase.Load
+        Size = My.Settings.Size_Frame
+        Location = My.Settings.Location_Frame
+        SplitContainer1.SplitterDistance = My.Settings.SplitterDistance_Splitter1
+        StatusBar.Padding = New Padding(StatusBar.Padding.Left, StatusBar.Padding.Top, StatusBar.Padding.Left, StatusBar.Padding.Bottom)
     End Sub
 
 End Class

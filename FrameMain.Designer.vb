@@ -24,6 +24,7 @@ Partial Class FrameMain
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrameMain))
+        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TextBoxLogs = New System.Windows.Forms.TextBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
@@ -92,10 +93,10 @@ Partial Class FrameMain
         Me.ButtonSrcOpen = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
-        Me.Splitter1 = New System.Windows.Forms.Splitter()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.FolderBrowserDialog = New System.Windows.Forms.FolderBrowserDialog()
+        Me.SplitContainer1.Panel1.SuspendLayout()
+        Me.SplitContainer1.Panel2.SuspendLayout()
+        Me.SplitContainer1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.StatusBar.SuspendLayout()
@@ -112,27 +113,48 @@ Partial Class FrameMain
         Me.GroupBox4.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'SplitContainer1
+        '
+        Me.SplitContainer1.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.SplitContainer1.CausesValidation = False
+        Me.SplitContainer1.Cursor = System.Windows.Forms.Cursors.SizeWE
+        resources.ApplyResources(Me.SplitContainer1, "SplitContainer1")
+        Me.SplitContainer1.Name = "SplitContainer1"
+        '
+        'SplitContainer1.Panel1
+        '
+        Me.SplitContainer1.Panel1.BackColor = System.Drawing.SystemColors.Control
+        Me.SplitContainer1.Panel1.Controls.Add(Me.GroupBox3)
+        resources.ApplyResources(Me.SplitContainer1.Panel1, "SplitContainer1.Panel1")
+        '
+        'SplitContainer1.Panel2
+        '
+        Me.SplitContainer1.Panel2.BackColor = System.Drawing.SystemColors.Control
+        Me.SplitContainer1.Panel2.Controls.Add(Me.GroupBox6)
+        resources.ApplyResources(Me.SplitContainer1.Panel2, "SplitContainer1.Panel2")
+        Me.SplitContainer1.SplitterDistance = Global.LicielRsync.My.MySettings.Default.SplitterDistance_Splitter1
         '
         'GroupBox3
         '
-        resources.ApplyResources(Me.GroupBox3, "GroupBox3")
+        Me.GroupBox3.CausesValidation = False
         Me.GroupBox3.Controls.Add(Me.TextBoxLogs)
+        resources.ApplyResources(Me.GroupBox3, "GroupBox3")
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.TabStop = False
         '
         'TextBoxLogs
         '
         Me.TextBoxLogs.AcceptsReturn = True
+        Me.TextBoxLogs.CausesValidation = False
         resources.ApplyResources(Me.TextBoxLogs, "TextBoxLogs")
         Me.TextBoxLogs.Name = "TextBoxLogs"
         '
         'GroupBox6
         '
-        resources.ApplyResources(Me.GroupBox6, "GroupBox6")
         Me.GroupBox6.Controls.Add(Me.TextBoxErrors)
+        resources.ApplyResources(Me.GroupBox6, "GroupBox6")
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.TabStop = False
         '
@@ -144,9 +166,10 @@ Partial Class FrameMain
         '
         'StatusBar
         '
-        Me.StatusBar.GripMargin = New System.Windows.Forms.Padding(0)
-        Me.StatusBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StatusBarText, Me.ProgressBarText, Me.ProgressBar})
         resources.ApplyResources(Me.StatusBar, "StatusBar")
+        Me.StatusBar.GripMargin = New System.Windows.Forms.Padding(0)
+        Me.StatusBar.ImageScalingSize = New System.Drawing.Size(0, 0)
+        Me.StatusBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StatusBarText, Me.ProgressBarText, Me.ProgressBar})
         Me.StatusBar.Name = "StatusBar"
         Me.StatusBar.SizingGrip = False
         '
@@ -633,27 +656,6 @@ Partial Class FrameMain
         Me.GroupBox8.Name = "GroupBox8"
         Me.GroupBox8.TabStop = False
         '
-        'Splitter1
-        '
-        Me.Splitter1.BackColor = System.Drawing.Color.Gainsboro
-        resources.ApplyResources(Me.Splitter1, "Splitter1")
-        Me.Splitter1.MaximumSize = New System.Drawing.Size(4, 0)
-        Me.Splitter1.MinimumSize = New System.Drawing.Size(4, 0)
-        Me.Splitter1.Name = "Splitter1"
-        Me.Splitter1.TabStop = False
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.GroupBox3)
-        resources.ApplyResources(Me.Panel2, "Panel2")
-        Me.Panel2.Name = "Panel2"
-        '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.GroupBox6)
-        resources.ApplyResources(Me.Panel3, "Panel3")
-        Me.Panel3.Name = "Panel3"
-        '
         'FolderBrowserDialog
         '
         resources.ApplyResources(Me.FolderBrowserDialog, "FolderBrowserDialog")
@@ -662,17 +664,16 @@ Partial Class FrameMain
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.Splitter1)
-        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.SplitContainer1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusBar)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.DataBindings.Add(New System.Windows.Forms.Binding("Location", Global.LicielRsync.My.MySettings.Default, "Location_Frame", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.DataBindings.Add(New System.Windows.Forms.Binding("Size", Global.LicielRsync.My.MySettings.Default, "Size_Frame", True))
         Me.Location = Global.LicielRsync.My.MySettings.Default.Location_Frame
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FrameMain"
+        Me.SplitContainer1.Panel1.ResumeLayout(False)
+        Me.SplitContainer1.Panel2.ResumeLayout(False)
+        Me.SplitContainer1.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox6.ResumeLayout(False)
@@ -694,8 +695,6 @@ Partial Class FrameMain
         Me.GroupBox4.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.GroupBox8.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -769,8 +768,6 @@ Partial Class FrameMain
     Friend WithEvents GroupBox8 As System.Windows.Forms.GroupBox
     Friend WithEvents CbWinCompat As System.Windows.Forms.CheckBox
     Friend WithEvents CbPermWin As System.Windows.Forms.CheckBox
-    Friend WithEvents Splitter1 As System.Windows.Forms.Splitter
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents Panel3 As System.Windows.Forms.Panel
+    Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
 
 End Class

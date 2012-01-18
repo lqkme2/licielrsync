@@ -22,15 +22,15 @@ Module ModuleProcess
     Private Declare Function SetLastError Lib "kernel32" (ByVal dwErrCode As Integer) As Integer
 
     Private Enum ThreadAccess As Integer
-        Terminate = &H1
+        'Terminate = &H1
         SuspendResume = &H2
-        GetContext = &H8
-        SetContext = &H10
-        SetInformation = &H20
-        QueryInformation = &H40
-        SetThreadToken = &H80
-        Impersonate = &H100
-        DirectImpersonation = &H200
+        'GetContext = &H8
+        'SetContext = &H10
+        'SetInformation = &H20
+        'QueryInformation = &H40
+        'SetThreadToken = &H80
+        'Impersonate = &H100
+        'DirectImpersonation = &H200
     End Enum
 
     Public Sub SuspendProcess(ByVal process As Process)

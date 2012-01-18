@@ -41,7 +41,7 @@ Module ModuleMain
     ''--------------------------------------------------------------------
     '' Main
     ''
-    '' Entry point
+    '' Program entry point
     ''--------------------------------------------------------------------
 
     Public Sub Main()
@@ -50,7 +50,7 @@ Module ModuleMain
         Fm.Icon = AppIcon
         Fm.StatusBarText.Text = String.Empty
         ''
-        '' Old configs importation
+        '' Old configs import
         ''
         If My.Settings.ForceUpdate Then
             My.Settings.Upgrade()
@@ -63,15 +63,15 @@ Module ModuleMain
         InitializeOptions()
         LoadConfig(True)
         ''
-        '' Detect present and usable rsync
+        '' Detect version of rsync present and ready to use
         ''
         InitializeRsyncs()
     End Sub
 
     ''--------------------------------------------------------------------
-    '' GetFileOrDirectory
+    '' GetDirectory
     ''
-    '' Path and File selection
+    '' Path selection
     ''--------------------------------------------------------------------
 
     Public Function GetDirectory(ByVal controlText As String)
@@ -552,9 +552,9 @@ Module ModuleMain
     End Sub
 
     ''--------------------------------------------------------------------
-    '' GererErreur
+    '' HandleError
     ''
-    '' Gestion centralisée des erreurs
+    '' Handle handled and unhandled errors
     ''--------------------------------------------------------------------
 
     Public Sub HandleError(ByVal type As String, ByVal ex As String)
@@ -570,6 +570,12 @@ Module ModuleMain
     End Sub
 
 End Module
+
+''--------------------------------------------------------------------
+'' TopMessageBox
+''
+'' Makes a TopMost message box
+''--------------------------------------------------------------------
 
 Public Class TopMessageBox
     Private Shared Sub Actualize(ByVal sender As System.Object, ByVal e As EventArgs)

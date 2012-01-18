@@ -11,7 +11,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("A multi-threaded interface for Rsync on Windows - rsync.samba.org")> 
 <Assembly: AssemblyCompany("Arnaud Dovi")> 
 <Assembly: AssemblyProduct("LicielRsync")> 
-<Assembly: AssemblyCopyright("Arnaud Dovi 2011")> 
+<Assembly: AssemblyCopyright("Copyright © Arnaud Dovi 2012")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>

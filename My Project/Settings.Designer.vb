@@ -111,6 +111,18 @@ Namespace My
                 Me("Size_Frame") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("490")>  _
+        Public Property SplitterDistance_Splitter1() As Integer
+            Get
+                Return CType(Me("SplitterDistance_Splitter1"),Integer)
+            End Get
+            Set
+                Me("SplitterDistance_Splitter1") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

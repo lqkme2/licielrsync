@@ -17,5 +17,8 @@
     <Setting Name="Size_Frame" GenerateDefaultValueInCode="false" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">854, 707</Value>
     </Setting>
+    <Setting Name="SplitterDistance_Splitter1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">490</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
