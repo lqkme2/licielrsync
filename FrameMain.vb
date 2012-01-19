@@ -27,7 +27,7 @@ Public Class FrameMain
     '' Stub function used to handle all button clicks
     ''--------------------------------------------------------------------
 
-    Private Sub ButtonClick(sender As System.Object, e As EventArgs) Handles ButtonTest.Click, ButtonStop.Click, ButtonSrcOpen.Click, ButtonPause.Click, ButtonExec.Click, ButtonDstOpen.Click, ButtonDel.Click, ButtonAdd.Click, AboutToolStripMenuItem.Click
+    Private Sub ButtonClick(sender As System.Object, e As EventArgs) Handles ButtonTest.Click, ButtonStop.Click, ButtonSrcOpen.Click, ButtonPause.Click, ButtonExec.Click, ButtonDstOpen.Click, ButtonDel.Click, ButtonAdd.Click, AboutToolStripMenuItem.Click, ResetToolStripMenuItem.Click
         Try
             Select Case sender.name
                 Case ButtonExec.Name, ButtonTest.Name
@@ -97,6 +97,10 @@ Public Class FrameMain
                 Case AboutToolStripMenuItem.Name
                     _fab = New FrameAboutBox()
                     _fab.Show()
+                Case ResetToolStripMenuItem.Name
+                    If TopMessageBox.Show("The settings will reset to default and LicielRsync will close, do you confirm to continue ?", "LicielRsync settings reset", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
+                    My.Settings.Reset()
+                    Environment.Exit(0)
             End Select
             UpdateStatusBarCommand(sender.name = ButtonTest.Name)
         Catch ex As Exception
@@ -219,6 +223,7 @@ Public Class FrameMain
         Location = My.Settings.Location_Frame
         SplitContainer1.SplitterDistance = My.Settings.SplitterDistance_Splitter1
         StatusBar.Padding = New Padding(StatusBar.Padding.Left, StatusBar.Padding.Top, StatusBar.Padding.Left, StatusBar.Padding.Bottom)
+        'TabControl1.BackColor = Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(231, Byte), Integer))
     End Sub
 
 End Class

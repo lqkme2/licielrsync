@@ -94,6 +94,7 @@ Partial Class FrameMain
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
         Me.FolderBrowserDialog = New System.Windows.Forms.FolderBrowserDialog()
+        Me.ResetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
@@ -167,6 +168,7 @@ Partial Class FrameMain
         'StatusBar
         '
         resources.ApplyResources(Me.StatusBar, "StatusBar")
+        Me.StatusBar.BackColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.StatusBar.GripMargin = New System.Windows.Forms.Padding(0)
         Me.StatusBar.ImageScalingSize = New System.Drawing.Size(0, 0)
         Me.StatusBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StatusBarText, Me.ProgressBarText, Me.ProgressBar})
@@ -198,15 +200,17 @@ Partial Class FrameMain
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(0)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu1, Me.Menu2})
         Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
+        Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
         '
         'Menu1
         '
-        Me.Menu1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LanguageToolStripMenuItem})
+        Me.Menu1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LanguageToolStripMenuItem, Me.ResetToolStripMenuItem})
         Me.Menu1.Name = "Menu1"
         resources.ApplyResources(Me.Menu1, "Menu1")
         '
@@ -498,6 +502,7 @@ Partial Class FrameMain
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(188, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(216, Byte), Integer))
         Me.Panel1.Controls.Add(Me.GroupBox7)
         Me.Panel1.Controls.Add(Me.GroupBox2)
         Me.Panel1.Controls.Add(Me.GroupBox1)
@@ -568,7 +573,7 @@ Partial Class FrameMain
         '
         'TabPage1
         '
-        Me.TabPage1.BackColor = System.Drawing.SystemColors.Window
+        Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.TabPage1.Controls.Add(Me.GroupBox5)
         Me.TabPage1.Controls.Add(Me.GroupBox9)
         Me.TabPage1.Controls.Add(Me.GroupBox4)
@@ -642,7 +647,7 @@ Partial Class FrameMain
         '
         'TabPage2
         '
-        Me.TabPage2.BackColor = System.Drawing.SystemColors.Window
+        Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.TabPage2.Controls.Add(Me.CbFS)
         Me.TabPage2.Controls.Add(Me.GroupBox8)
         resources.ApplyResources(Me.TabPage2, "TabPage2")
@@ -659,6 +664,11 @@ Partial Class FrameMain
         'FolderBrowserDialog
         '
         resources.ApplyResources(Me.FolderBrowserDialog, "FolderBrowserDialog")
+        '
+        'ResetToolStripMenuItem
+        '
+        Me.ResetToolStripMenuItem.Name = "ResetToolStripMenuItem"
+        resources.ApplyResources(Me.ResetToolStripMenuItem, "ResetToolStripMenuItem")
         '
         'FrameMain
         '
@@ -769,5 +779,6 @@ Partial Class FrameMain
     Friend WithEvents CbWinCompat As System.Windows.Forms.CheckBox
     Friend WithEvents CbPermWin As System.Windows.Forms.CheckBox
     Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
+    Friend WithEvents ResetToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
