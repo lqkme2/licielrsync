@@ -117,11 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="TextBoxLogs.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="GroupBox3.Text" xml:space="preserve">
     <value>Résumé</value>
   </data>
+  <data name="GroupBox3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SplitContainer1.Panel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBoxErrors.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="GroupBox6.Text" xml:space="preserve">
     <value>Erreurs</value>
+  </data>
+  <data name="GroupBox6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SplitContainer1.Panel2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SplitContainer1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StatusBar.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Menu1.Size" type="System.Drawing.Size, System.Drawing">
@@ -129,12 +153,6 @@
   </data>
   <data name="Menu1.Text" xml:space="preserve">
     <value>Outils</value>
-  </data>
-  <data name="LanguageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 22</value>
-  </data>
-  <data name="LanguageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Langage</value>
   </data>
   <data name="CbEnglish.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 22</value>
@@ -148,6 +166,9 @@
   <data name="CbFrench.Text" xml:space="preserve">
     <value>Français</value>
   </data>
+  <data name="LanguageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Langage</value>
+  </data>
   <data name="Menu2.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 20</value>
   </data>
@@ -159,6 +180,9 @@
   </data>
   <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
     <value>À propos...</value>
+  </data>
+  <data name="MenuStrip1.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="CbRedir.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 17</value>
@@ -427,28 +451,85 @@
   <data name="CbPermWin.ToolTip" xml:space="preserve">
     <value>--backup-nt-streams --restore-nt-streams : conserve les permissions acl (requiert une version de rsync modifiée par le patche de BackupAssist -ntstreams)</value>
   </data>
+  <data name="ComboRsync.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GroupBox7.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="GroupBox2.Text" xml:space="preserve">
     <value>Exécution</value>
+  </data>
+  <data name="GroupBox2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ComboProfiles.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="GroupBox1.Text" xml:space="preserve">
     <value>Profils</value>
   </data>
-  <data name="TabPage1.Text" xml:space="preserve">
-    <value>Options de bases</value>
+  <data name="GroupBox1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PictureBox1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ComboVerbose.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="GroupBox5.Text" xml:space="preserve">
     <value>Visibilité</value>
   </data>
+  <data name="GroupBox5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GroupBox9.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GroupBox4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="ButtonDstOpen.Text" xml:space="preserve">
     <value>Parcourir</value>
+  </data>
+  <data name="ButtonDstOpen.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="ButtonSrcOpen.Text" xml:space="preserve">
     <value>Parcourir</value>
   </data>
+  <data name="ButtonSrcOpen.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TabPage1.Text" xml:space="preserve">
+    <value>Options de bases</value>
+  </data>
+  <data name="TabPage1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GroupBox8.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="TabPage2.Text" xml:space="preserve">
     <value>Autres options</value>
   </data>
+  <data name="TabPage2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TabControl1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Panel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ContextMenuStrip1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>LicielRsync - Une interface multi-thread pour Rsync et Windows - rsync.samba.org</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

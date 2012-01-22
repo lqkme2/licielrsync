@@ -20,6 +20,20 @@ Imports System.Threading
 Public Class FrameMain
 
     Private _fab As FrameAboutBox
+    Private _isReset As Boolean = False
+    ''--------------------------------------------------------------------
+    '' Init Form
+    ''--------------------------------------------------------------------
+
+    Private Sub FrameMainLoad(sender As System.Object, e As EventArgs) Handles MyBase.Load
+        Size = My.Settings.Size_Frame
+        Location = My.Settings.Location_Frame
+        SplitContainer1.SplitterDistance = My.Settings.SplitterDistance_Splitter1
+        StatusBar.Padding = New Padding(StatusBar.Padding.Left, StatusBar.Padding.Top, StatusBar.Padding.Left, StatusBar.Padding.Bottom)
+        NotifyIcon1.Icon = AppIcon
+        _isReset = False
+        'Dim s = Application.
+    End Sub
 
     ''--------------------------------------------------------------------
     '' ButtonClick
@@ -27,7 +41,9 @@ Public Class FrameMain
     '' Stub function used to handle all button clicks
     ''--------------------------------------------------------------------
 
-    Private Sub ButtonClick(sender As System.Object, e As EventArgs) Handles ButtonTest.Click, ButtonStop.Click, ButtonSrcOpen.Click, ButtonPause.Click, ButtonExec.Click, ButtonDstOpen.Click, ButtonDel.Click, ButtonAdd.Click, AboutToolStripMenuItem.Click, ResetToolStripMenuItem.Click
+    Private Sub ButtonClick(sender As System.Object, e As EventArgs) Handles ButtonTest.Click, ButtonStop.Click, ButtonSrcOpen.Click, ButtonPause.Click, ButtonExec.Click, ButtonDstOpen.Click, _
+                                                                             ButtonDel.Click, ButtonAdd.Click, AboutToolStripMenuItem.Click, ResetToolStripMenuItem.Click, ToggleToolStripMenuItem.Click, _
+                                                                             ExitToolStripMenuItem1.Click, ExitToolStripMenuItem2.Click
         Try
             Select Case sender.name
                 Case ButtonExec.Name, ButtonTest.Name
@@ -98,8 +114,19 @@ Public Class FrameMain
                     _fab = New FrameAboutBox()
                     _fab.Show()
                 Case ResetToolStripMenuItem.Name
-                    If TopMessageBox.Show("The settings will reset to default and LicielRsync will close, do you confirm to continue ?", "LicielRsync settings reset", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
+                    If LicielMessage.Send("The settings will reset to default and LicielRsync will close, do you confirm to continue ?", "LicielRsync settings reset", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
                     My.Settings.Reset()
+                    My.Settings.ShouldReset = True
+                    My.Settings.Save()
+                    NotifyIcon1.Visible = False
+                    _isReset = True
+                    Application.Restart()
+                Case ToggleToolStripMenuItem.Name
+                    Visible = Not Visible
+                    If Visible AndAlso WindowState = FormWindowState.Minimized Then WindowState = FormWindowState.Normal
+                Case ExitToolStripMenuItem1.Name, ExitToolStripMenuItem2.Name
+                    SaveFormSettings()
+                    NotifyIcon1.Visible = False
                     Environment.Exit(0)
             End Select
             UpdateStatusBarCommand(sender.name = ButtonTest.Name)
@@ -115,7 +142,7 @@ Public Class FrameMain
     '' Stub function used to handle all checkbox checks
     ''--------------------------------------------------------------------
 
-    Private Sub CheckBoxChanged(sender As Object, e As EventArgs) Handles CbFrench.CheckedChanged, CbEnglish.CheckedChanged, CbVerbose.CheckedChanged, CbSizeOnly.CheckedChanged, CbShowCmd.CheckedChanged, CbRedir.CheckedChanged, CbRecurse.CheckedChanged, CbReadable.CheckedChanged, CbProgress.CheckedChanged, CbPerm.CheckedChanged, CbOwner.CheckedChanged, CbNewer.CheckedChanged, CbIgnoreTimes.CheckedChanged, CbHideWindows.CheckedChanged, CbGroup.CheckedChanged, CbExistingOnly.CheckedChanged, CbExisting.CheckedChanged, CbDelta.CheckedChanged, CbDelete.CheckedChanged, CbDate.CheckedChanged, CbChecksum.CheckedChanged, CbWinCompat.CheckedChanged, CbPermWin.CheckedChanged, CbFS.CheckedChanged
+    Private Sub CheckBoxChanged(sender As Object, e As EventArgs) Handles CbFrench.CheckedChanged, CbEnglish.CheckedChanged, CbVerbose.CheckedChanged, CbSizeOnly.CheckedChanged, CbShowCmd.CheckedChanged, CbRedir.CheckedChanged, CbRecurse.CheckedChanged, CbReadable.CheckedChanged, CbProgress.CheckedChanged, CbPerm.CheckedChanged, CbOwner.CheckedChanged, CbNewer.CheckedChanged, CbIgnoreTimes.CheckedChanged, CbHideWindows.CheckedChanged, CbGroup.CheckedChanged, CbExistingOnly.CheckedChanged, CbExisting.CheckedChanged, CbDelta.CheckedChanged, CbDelete.CheckedChanged, CbDate.CheckedChanged, CbChecksum.CheckedChanged, CbWinCompat.CheckedChanged, CbPermWin.CheckedChanged, CbFS.CheckedChanged, TrayIconEnabledToolStripMenuItem.CheckedChanged, TrayIconNoticeStartToolStripMenuItem.CheckedChanged
         Select Case sender.Name
             Case CbEnglish.Name
                 If Not sender.checked Then Exit Sub
@@ -146,6 +173,17 @@ Public Class FrameMain
                 Exit Sub
             Case CbRedir.Name
                 My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("redir") = sender.Checked
+                My.Settings.Save()
+                Exit Sub
+            Case TrayIconNoticeStartToolStripMenuItem.Name
+                My.Settings.TrayNoticeStart = sender.Checked
+                My.Settings.Save()
+                Exit Sub
+            Case TrayIconEnabledToolStripMenuItem.Name
+                My.Settings.ShowInTray = sender.Checked
+                NotifyIcon1.Visible = sender.Checked
+                TrayIconNoticeToolStripMenuItem.Enabled = sender.Checked
+                If sender.Checked AndAlso My.Settings.TrayNoticeStart Then LicielMessage.SendTray("LicielRsync started", "LicielRsync", ToolTipIcon.Info, 500)
                 My.Settings.Save()
                 Exit Sub
         End Select
@@ -197,33 +235,48 @@ Public Class FrameMain
     End Sub
 
     ''--------------------------------------------------------------------
-    '' DataBindings.Size
+    '' To work around Visual Studio problems while using DataBindings events
     ''
-    '' To work around a Visual Studio problem while saving the size with
-    '' OnPropertyChanged and minimizing the frame
+    '' The MS Team did not added the ability to databind the variable Size of a Form 
+    '' and this code demonstrate you can save the Location and Size of a form without
+    '' the need of the ugly OnPropertyChanged event
     ''--------------------------------------------------------------------
 
     Private Sub BetterDataBindings(sender As System.Object, e As Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
+        If _isReset Then Exit Sub
+        If NotifyIcon1.Visible AndAlso My.Settings.CloseToTray = -1 Then
+            My.Settings.CloseToTray = Convert.ToInt32(LicielMessage.Send("LicielRsync can minimize to the system tray. Would you like to do this ?", "LicielRsync - Did you know", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes)
+        End If
+        If Not (NotifyIcon1.Visible AndAlso My.Settings.CloseToTray) Then NotifyIcon1.Visible = False
+        SaveFormSettings()
+        If NotifyIcon1.Visible AndAlso My.Settings.CloseToTray Then
+            e.Cancel = True
+            Hide()
+        End If
+    End Sub
+
+    Private Sub OnMinimize(sender As System.Object, e As EventArgs) Handles MyBase.Resize
+        If WindowState <> FormWindowState.Minimized Then Exit Sub
+        If NotifyIcon1.Visible AndAlso My.Settings.MinimizeToTray = -1 Then
+            My.Settings.MinimizeToTray = Convert.ToInt32(LicielMessage.Send("LicielRsync can close to the system tray. Would you like to do this ?", "LicielRsync - Did you know", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes)
+            SaveFormSettings()
+        End If
+        Visible = Not (NotifyIcon1.Visible AndAlso My.Settings.MinimizeToTray = 1)
+    End Sub
+
+    Private Sub OnControlDoubleClick(sender As System.Object, e As EventArgs) Handles NotifyIcon1.DoubleClick
+        Select Case sender.Tag
+            Case NotifyIcon1.Tag
+                Visible = Not Visible
+                If Visible AndAlso WindowState = FormWindowState.Minimized Then WindowState = FormWindowState.Normal
+        End Select
+    End Sub
+
+    Private Sub SaveFormSettings()
         My.Settings.Size_Frame = Size
         My.Settings.Location_Frame = Location
         My.Settings.SplitterDistance_Splitter1 = SplitContainer1.SplitterDistance
-    End Sub
-
-    ''--------------------------------------------------------------------
-    '' StatusBar.Padding
-    ''
-    '' To work around a Visual Studio problem with the status strip bar
-    '' incorrect padding when the sizing grip is hidden
-    ''
-    '' with own databindings because visual studio sucks again
-    ''--------------------------------------------------------------------
-
-    Private Sub FrameMainLoad(sender As System.Object, e As EventArgs) Handles MyBase.Load
-        Size = My.Settings.Size_Frame
-        Location = My.Settings.Location_Frame
-        SplitContainer1.SplitterDistance = My.Settings.SplitterDistance_Splitter1
-        StatusBar.Padding = New Padding(StatusBar.Padding.Left, StatusBar.Padding.Top, StatusBar.Padding.Left, StatusBar.Padding.Bottom)
-        'TabControl1.BackColor = Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(231, Byte), Integer))
+        My.Settings.Save()
     End Sub
 
 End Class

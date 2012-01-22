@@ -117,1993 +117,2236 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="SplitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;Menu1.Name" xml:space="preserve">
+    <value>Menu1</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="SplitContainer1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 373</value>
-  </data>
-  <data name="TextBoxLogs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="TextBoxLogs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 15</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="TextBoxLogs.MaxLength" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="TextBoxLogs.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="TextBoxLogs.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="TextBoxLogs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>466, 253</value>
-  </data>
-  <data name="TextBoxLogs.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TextBoxLogs.Name" xml:space="preserve">
-    <value>TextBoxLogs</value>
-  </data>
-  <data name="&gt;&gt;TextBoxLogs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TextBoxLogs.Parent" xml:space="preserve">
-    <value>GroupBox3</value>
-  </data>
-  <data name="&gt;&gt;TextBoxLogs.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="GroupBox3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="GroupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 0</value>
-  </data>
-  <data name="GroupBox3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 0, 6, 6</value>
-  </data>
-  <data name="GroupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>478, 274</value>
-  </data>
-  <data name="GroupBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="GroupBox3.Text" xml:space="preserve">
-    <value>Log</value>
+  <data name="TabPage2.Text" xml:space="preserve">
+    <value>Other options</value>
   </data>
   <data name="&gt;&gt;GroupBox3.Name" xml:space="preserve">
     <value>GroupBox3</value>
   </data>
-  <data name="&gt;&gt;GroupBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;CbOwner.Parent" xml:space="preserve">
+    <value>GroupBox4</value>
   </data>
-  <data name="&gt;&gt;GroupBox3.Parent" xml:space="preserve">
-    <value>SplitContainer1.Panel1</value>
+  <data name="&gt;&gt;StatusBar.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="&gt;&gt;GroupBox3.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;GroupBox5.Parent" xml:space="preserve">
+    <value>TabPage1</value>
   </data>
-  <data name="SplitContainer1.Panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>12, 0, 0, 0</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TextBoxSrc.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;SplitContainer1.Panel1.Name" xml:space="preserve">
-    <value>SplitContainer1.Panel1</value>
+  <data name="&gt;&gt;ToggleToolStripMenuItem.Name" xml:space="preserve">
+    <value>ToggleToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;SplitContainer1.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ComboRsync.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SplitContainer1.Panel1.Parent" xml:space="preserve">
-    <value>SplitContainer1</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="GroupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>456, 274</value>
   </data>
-  <data name="&gt;&gt;SplitContainer1.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="CbSizeOnly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 59</value>
   </data>
-  <data name="SplitContainer1.Panel1MinSize" type="System.Int32, mscorlib">
-    <value>80</value>
+  <data name="ButtonDstOpen.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="TextBoxErrors.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;CbDelete.Name" xml:space="preserve">
+    <value>CbDelete</value>
   </data>
-  <data name="TextBoxErrors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 15</value>
+  <data name="CbRedir.ToolTip" xml:space="preserve">
+    <value>redirect the standard and error streams to the licielrsync text box (you may need to disable this to access the password prompt with authenticated transfers)</value>
   </data>
-  <data name="TextBoxErrors.MaxLength" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="ExitToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 22</value>
   </data>
-  <data name="TextBoxErrors.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;CbPerm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="TextBoxErrors.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
+  <data name="TextBoxLogs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 13</value>
   </data>
-  <data name="TextBoxErrors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>319, 253</value>
+  <data name="ComboRsync.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 31</value>
   </data>
-  <data name="TextBoxErrors.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;TabPage1.Name" xml:space="preserve">
+    <value>TabPage1</value>
   </data>
-  <data name="&gt;&gt;TextBoxErrors.Name" xml:space="preserve">
-    <value>TextBoxErrors</value>
+  <data name="&gt;&gt;CbDelete.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
-  <data name="&gt;&gt;TextBoxErrors.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ToolTip1.Name" xml:space="preserve">
+    <value>ToolTip1</value>
   </data>
-  <data name="&gt;&gt;TextBoxErrors.Parent" xml:space="preserve">
-    <value>GroupBox6</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CbFS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;TextBoxErrors.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;ButtonPause.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="GroupBox6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="CbChecksum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 17</value>
   </data>
-  <data name="GroupBox6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="TextBoxDst.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 40</value>
   </data>
-  <data name="GroupBox6.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 0, 6, 6</value>
+  <data name="&gt;&gt;ExitToolStripMenuItem2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="GroupBox6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>331, 274</value>
+  <data name="&gt;&gt;StatusBarText1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="GroupBox6.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="GroupBox6.Text" xml:space="preserve">
-    <value>Errors</value>
-  </data>
-  <data name="&gt;&gt;GroupBox6.Name" xml:space="preserve">
-    <value>GroupBox6</value>
+  <data name="&gt;&gt;CbSizeOnly.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;GroupBox6.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupBox6.Parent" xml:space="preserve">
-    <value>SplitContainer1.Panel2</value>
+  <data name="TabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
-  <data name="&gt;&gt;GroupBox6.ZOrder" xml:space="preserve">
+  <data name="NotifyIcon1.Text" xml:space="preserve">
+    <value>LicielRsync</value>
+  </data>
+  <data name="ButtonDel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>226, 25</value>
+  </data>
+  <data name="CbFS.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CbRecurse.Text" xml:space="preserve">
+    <value>Recurse into directories</value>
+  </data>
+  <data name="SplitContainer1.Panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>12, 0, 0, 0</value>
+  </data>
+  <data name="&gt;&gt;ButtonTest.Name" xml:space="preserve">
+    <value>ButtonTest</value>
+  </data>
+  <data name="&gt;&gt;CbNewer.Parent" xml:space="preserve">
+    <value>GroupBox9</value>
+  </data>
+  <data name="ComboProfiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 21</value>
+  </data>
+  <data name="ComboProfiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 31</value>
+  </data>
+  <data name="GroupBox4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;CbGroup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CbNewer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 17</value>
+  </data>
+  <data name="&gt;&gt;TextBoxOptions.Name" xml:space="preserve">
+    <value>TextBoxOptions</value>
+  </data>
+  <data name="&gt;&gt;CbOwner.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CbFS.Text" xml:space="preserve">
+    <value>Do not cross file-system</value>
+  </data>
+  <data name="GroupBox7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 80</value>
+  </data>
+  <data name="&gt;&gt;ButtonPause.Name" xml:space="preserve">
+    <value>ButtonPause</value>
+  </data>
+  <data name="CbExisting.ToolTip" xml:space="preserve">
+    <value>--ignore-existing : skip updating files that already exist on receiver</value>
+  </data>
+  <data name="ExitToolStripMenuItem2.Text" xml:space="preserve">
+    <value>E&amp;xit</value>
+  </data>
+  <data name="CbShowCmd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 17</value>
+  </data>
+  <data name="&gt;&gt;NotifyIcon1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CbChecksum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 39</value>
+  </data>
+  <data name="ComboRsync.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;ComboVerbose.Name" xml:space="preserve">
+    <value>ComboVerbose</value>
+  </data>
+  <data name="ButtonPause.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="CbShowCmd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 79</value>
+  </data>
+  <data name="StatusBar.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CbFS.ToolTip" xml:space="preserve">
+    <value>-x, --one-file-system : don't cross filesystem boundaries</value>
+  </data>
+  <data name="&gt;&gt;AboutToolStripMenuItem.Name" xml:space="preserve">
+    <value>AboutToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ComboVerbose.Parent" xml:space="preserve">
+    <value>GroupBox5</value>
+  </data>
+  <data name="ButtonTest.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="CbWinCompat.Text" xml:space="preserve">
+    <value>Compatibility</value>
+  </data>
+  <data name="TextBoxOptions.ToolTip" xml:space="preserve">
+    <value>Example : --help     -e /bin/ssh</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="&gt;&gt;TextBoxSrc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbReadable.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="CbGroup.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;CbGroup.Name" xml:space="preserve">
+    <value>CbGroup</value>
+  </data>
+  <data name="ButtonPause.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TabPage1.Text" xml:space="preserve">
+    <value>Base options</value>
+  </data>
+  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
+    <value>Label3</value>
+  </data>
+  <data name="&gt;&gt;CbChecksum.Parent" xml:space="preserve">
+    <value>GroupBox9</value>
+  </data>
+  <data name="GroupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TrayIconNoticeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="ResetToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;FolderBrowserDialog.Name" xml:space="preserve">
+    <value>FolderBrowserDialog</value>
+  </data>
+  <data name="GroupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>295, 80</value>
+  </data>
+  <data name="&gt;&gt;ButtonDstOpen.Name" xml:space="preserve">
+    <value>ButtonDstOpen</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GroupBox6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>Destination</value>
+  </data>
+  <data name="&gt;&gt;GroupBox7.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="CbNewer.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="GroupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 118</value>
+  </data>
+  <data name="CbOwner.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 39</value>
+  </data>
+  <data name="ButtonDel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;CbProgress.Parent" xml:space="preserve">
+    <value>GroupBox5</value>
+  </data>
+  <data name="&gt;&gt;ComboRsync.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="SplitContainer1.Panel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 14, 0</value>
   </data>
-  <data name="&gt;&gt;SplitContainer1.Panel2.Name" xml:space="preserve">
-    <value>SplitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;SplitContainer1.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SplitContainer1.Panel2.Parent" xml:space="preserve">
-    <value>SplitContainer1</value>
-  </data>
-  <data name="&gt;&gt;SplitContainer1.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SplitContainer1.Panel2MinSize" type="System.Int32, mscorlib">
-    <value>80</value>
-  </data>
-  <data name="SplitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>838, 274</value>
-  </data>
-  <data name="SplitContainer1.SplitterWidth" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="SplitContainer1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;SplitContainer1.Name" xml:space="preserve">
-    <value>SplitContainer1</value>
-  </data>
-  <data name="&gt;&gt;SplitContainer1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SplitContainer1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;SplitContainer1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="StatusBar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>396, 17</value>
-  </metadata>
-  <data name="StatusBar.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="StatusBarText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>823, 17</value>
-  </data>
-  <data name="StatusBarText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="ProgressBarText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
-  </data>
-  <data name="ProgressBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 16</value>
-  </data>
-  <data name="ProgressBar.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="StatusBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 647</value>
-  </data>
-  <data name="StatusBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>838, 22</value>
-  </data>
-  <data name="StatusBar.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="StatusBar.Text" xml:space="preserve">
-    <value>StatusStrip1</value>
-  </data>
-  <data name="&gt;&gt;StatusBar.Name" xml:space="preserve">
-    <value>StatusBar</value>
-  </data>
-  <data name="&gt;&gt;StatusBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StatusBar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;StatusBar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="StatusBarText1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
-  </data>
-  <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="CbEnglish.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbEnglish.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="CbEnglish.Text" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="CbFrench.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbFrench.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="CbFrench.Text" xml:space="preserve">
-    <value>French</value>
-  </data>
-  <data name="LanguageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="LanguageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Language</value>
-  </data>
-  <data name="ResetToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="ResetToolStripMenuItem.Text" xml:space="preserve">
-    <value>Reset settings</value>
-  </data>
-  <data name="Menu1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 20</value>
-  </data>
-  <data name="Menu1.Text" xml:space="preserve">
-    <value>Tools</value>
-  </data>
-  <data name="AboutToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="AboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
-    <value>About...</value>
-  </data>
-  <data name="Menu2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
-  </data>
-  <data name="Menu2.Text" xml:space="preserve">
-    <value>Help</value>
-  </data>
-  <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="MenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>838, 24</value>
-  </data>
-  <data name="MenuStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="MenuStrip1.Text" xml:space="preserve">
-    <value>MenuStrip1</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip1.Name" xml:space="preserve">
-    <value>MenuStrip1</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 17</value>
-  </metadata>
-  <data name="ButtonStop.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="ButtonStop.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ButtonStop.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ButtonStop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 51</value>
-  </data>
-  <data name="ButtonStop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 23</value>
-  </data>
-  <data name="ButtonStop.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="ButtonStop.Text" xml:space="preserve">
-    <value>Stop</value>
-  </data>
-  <data name="ButtonStop.ToolTip" xml:space="preserve">
-    <value>-n, --dry-run : start the synchronization without doing modifications</value>
-  </data>
-  <data name="&gt;&gt;ButtonStop.Name" xml:space="preserve">
-    <value>ButtonStop</value>
-  </data>
-  <data name="&gt;&gt;ButtonStop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ButtonStop.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;ButtonStop.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="CbRedir.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbRedir.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbRedir.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 95</value>
-  </data>
-  <data name="CbRedir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 17</value>
-  </data>
-  <data name="CbRedir.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="CbRedir.Text" xml:space="preserve">
-    <value>Redirect outputs</value>
-  </data>
-  <data name="CbRedir.ToolTip" xml:space="preserve">
-    <value>redirect the standard and error streams to the licielrsync text box (you may need to disable this to access the password prompt with authenticated transfers)</value>
-  </data>
-  <data name="&gt;&gt;CbRedir.Name" xml:space="preserve">
-    <value>CbRedir</value>
-  </data>
-  <data name="&gt;&gt;CbRedir.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbRedir.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;CbRedir.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="CbHideWindows.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbHideWindows.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbHideWindows.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 79</value>
-  </data>
-  <data name="CbHideWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 17</value>
-  </data>
-  <data name="CbHideWindows.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="CbHideWindows.Text" xml:space="preserve">
-    <value>Hide other windows</value>
-  </data>
-  <data name="CbHideWindows.ToolTip" xml:space="preserve">
-    <value>hide the command prompt (you may need to disable this to access the password prompt with authenticated transfers)</value>
-  </data>
-  <data name="&gt;&gt;CbHideWindows.Name" xml:space="preserve">
-    <value>CbHideWindows</value>
-  </data>
-  <data name="&gt;&gt;CbHideWindows.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbHideWindows.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;CbHideWindows.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ButtonPause.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="ButtonPause.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ButtonPause.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ButtonPause.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 51</value>
-  </data>
-  <data name="ButtonPause.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 23</value>
-  </data>
-  <data name="ButtonPause.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="ButtonPause.Text" xml:space="preserve">
-    <value>Pause</value>
-  </data>
-  <data name="ButtonPause.ToolTip" xml:space="preserve">
-    <value>-n, --dry-run : start the synchronization without doing modifications</value>
-  </data>
-  <data name="&gt;&gt;ButtonPause.Name" xml:space="preserve">
-    <value>ButtonPause</value>
-  </data>
-  <data name="&gt;&gt;ButtonPause.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ButtonPause.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;ButtonPause.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="ButtonTest.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="ButtonTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ButtonTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 15</value>
-  </data>
-  <data name="ButtonTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 30</value>
-  </data>
-  <data name="ButtonTest.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ButtonTest.Text" xml:space="preserve">
-    <value>Simulate</value>
-  </data>
-  <data name="ButtonTest.ToolTip" xml:space="preserve">
-    <value>-n, --dry-run : start the synchronization without doing modifications</value>
-  </data>
-  <data name="&gt;&gt;ButtonTest.Name" xml:space="preserve">
-    <value>ButtonTest</value>
-  </data>
-  <data name="&gt;&gt;ButtonTest.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ButtonTest.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;ButtonTest.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="ButtonExec.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="ButtonExec.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ButtonExec.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 15</value>
-  </data>
-  <data name="ButtonExec.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 30</value>
-  </data>
-  <data name="ButtonExec.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="ButtonExec.Text" xml:space="preserve">
-    <value>Execute</value>
-  </data>
-  <data name="ButtonExec.ToolTip" xml:space="preserve">
-    <value>start the synchronization</value>
-  </data>
-  <data name="&gt;&gt;ButtonExec.Name" xml:space="preserve">
-    <value>ButtonExec</value>
-  </data>
-  <data name="&gt;&gt;ButtonExec.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ButtonExec.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;ButtonExec.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="ButtonDel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="ButtonDel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ButtonDel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 25</value>
-  </data>
-  <data name="ButtonDel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 30</value>
-  </data>
-  <data name="ButtonDel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="ButtonDel.Text" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="ButtonDel.ToolTip" xml:space="preserve">
-    <value>delete from the list the profile selected in the combobox</value>
-  </data>
-  <data name="&gt;&gt;ButtonDel.Name" xml:space="preserve">
-    <value>ButtonDel</value>
-  </data>
-  <data name="&gt;&gt;ButtonDel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ButtonDel.Parent" xml:space="preserve">
-    <value>GroupBox1</value>
-  </data>
-  <data name="&gt;&gt;ButtonDel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ButtonAdd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="ButtonAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ButtonAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 25</value>
-  </data>
-  <data name="ButtonAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 30</value>
-  </data>
-  <data name="ButtonAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="ButtonAdd.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <data name="ButtonAdd.ToolTip" xml:space="preserve">
-    <value>add to the list the profile written in the combobox</value>
-  </data>
-  <data name="&gt;&gt;ButtonAdd.Name" xml:space="preserve">
-    <value>ButtonAdd</value>
-  </data>
-  <data name="&gt;&gt;ButtonAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ButtonAdd.Parent" xml:space="preserve">
-    <value>GroupBox1</value>
-  </data>
-  <data name="&gt;&gt;ButtonAdd.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="CbProgress.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbProgress.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbProgress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="CbProgress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 17</value>
-  </data>
-  <data name="CbProgress.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="CbProgress.Text" xml:space="preserve">
-    <value>Show progress</value>
-  </data>
-  <data name="CbProgress.ToolTip" xml:space="preserve">
-    <value>--progress : show progress during transfer</value>
-  </data>
-  <data name="&gt;&gt;CbProgress.Name" xml:space="preserve">
-    <value>CbProgress</value>
-  </data>
-  <data name="&gt;&gt;CbProgress.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbProgress.Parent" xml:space="preserve">
-    <value>GroupBox5</value>
-  </data>
-  <data name="&gt;&gt;CbProgress.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="CbShowCmd.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbShowCmd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbShowCmd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 79</value>
-  </data>
-  <data name="CbShowCmd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 17</value>
-  </data>
-  <data name="CbShowCmd.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="CbShowCmd.Text" xml:space="preserve">
-    <value>Show command line</value>
-  </data>
-  <data name="CbShowCmd.ToolTip" xml:space="preserve">
-    <value>show the command line on the status bar</value>
-  </data>
-  <data name="&gt;&gt;CbShowCmd.Name" xml:space="preserve">
-    <value>CbShowCmd</value>
-  </data>
-  <data name="&gt;&gt;CbShowCmd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbShowCmd.Parent" xml:space="preserve">
-    <value>GroupBox5</value>
-  </data>
-  <data name="&gt;&gt;CbShowCmd.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="CbReadable.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbReadable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbReadable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 59</value>
-  </data>
-  <data name="CbReadable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 17</value>
-  </data>
-  <data name="CbReadable.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="CbReadable.Text" xml:space="preserve">
-    <value>Human readable</value>
-  </data>
-  <data name="CbReadable.ToolTip" xml:space="preserve">
-    <value>-h, --human-readable : output numbers in a human-readable format</value>
-  </data>
-  <data name="&gt;&gt;CbReadable.Name" xml:space="preserve">
-    <value>CbReadable</value>
-  </data>
-  <data name="&gt;&gt;CbReadable.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbReadable.Parent" xml:space="preserve">
-    <value>GroupBox5</value>
-  </data>
-  <data name="&gt;&gt;CbReadable.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="CbVerbose.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbVerbose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbVerbose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 39</value>
-  </data>
-  <data name="CbVerbose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 17</value>
-  </data>
-  <data name="CbVerbose.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="CbVerbose.Text" xml:space="preserve">
-    <value>Increase verbosity per</value>
-  </data>
-  <data name="CbVerbose.ToolTip" xml:space="preserve">
-    <value>-v, --verbose : increase verbosity</value>
-  </data>
-  <data name="&gt;&gt;CbVerbose.Name" xml:space="preserve">
-    <value>CbVerbose</value>
-  </data>
-  <data name="&gt;&gt;CbVerbose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbVerbose.Parent" xml:space="preserve">
-    <value>GroupBox5</value>
-  </data>
-  <data name="&gt;&gt;CbVerbose.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="CbChecksum.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbChecksum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 39</value>
-  </data>
-  <data name="CbChecksum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 17</value>
-  </data>
-  <data name="CbChecksum.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="CbChecksum.Text" xml:space="preserve">
-    <value>Skip on checksum</value>
-  </data>
-  <data name="CbChecksum.ToolTip" xml:space="preserve">
-    <value>-c, --checksum : skip based on checksum, not mod-time &amp; size</value>
-  </data>
-  <data name="&gt;&gt;CbChecksum.Name" xml:space="preserve">
-    <value>CbChecksum</value>
-  </data>
-  <data name="&gt;&gt;CbChecksum.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbChecksum.Parent" xml:space="preserve">
-    <value>GroupBox9</value>
-  </data>
-  <data name="&gt;&gt;CbChecksum.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="CbDelta.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbDelta.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbDelta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="CbDelta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 17</value>
-  </data>
-  <data name="CbDelta.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="CbDelta.Text" xml:space="preserve">
-    <value>Force delta-transmission</value>
-  </data>
-  <data name="CbDelta.ToolTip" xml:space="preserve">
-    <value>--no-whole-file : force to don't send whole files (with delta-xfer algorithm)</value>
-  </data>
-  <data name="&gt;&gt;CbDelta.Name" xml:space="preserve">
-    <value>CbDelta</value>
-  </data>
-  <data name="&gt;&gt;CbDelta.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbDelta.Parent" xml:space="preserve">
-    <value>GroupBox9</value>
-  </data>
-  <data name="&gt;&gt;CbDelta.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="CbExistingOnly.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbExistingOnly.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbExistingOnly.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 79</value>
-  </data>
-  <data name="CbExistingOnly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 17</value>
-  </data>
-  <data name="CbExistingOnly.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="CbExistingOnly.Text" xml:space="preserve">
-    <value>Existing only</value>
-  </data>
-  <data name="CbExistingOnly.ToolTip" xml:space="preserve">
-    <value>--existing : skip creating new files on receiver</value>
-  </data>
-  <data name="&gt;&gt;CbExistingOnly.Name" xml:space="preserve">
-    <value>CbExistingOnly</value>
-  </data>
-  <data name="&gt;&gt;CbExistingOnly.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbExistingOnly.Parent" xml:space="preserve">
-    <value>GroupBox9</value>
-  </data>
-  <data name="&gt;&gt;CbExistingOnly.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="CbSizeOnly.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbSizeOnly.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbSizeOnly.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 59</value>
-  </data>
-  <data name="CbSizeOnly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 17</value>
-  </data>
-  <data name="CbSizeOnly.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="CbSizeOnly.Text" xml:space="preserve">
-    <value>Size only</value>
-  </data>
-  <data name="CbSizeOnly.ToolTip" xml:space="preserve">
-    <value>--size-only : skip files that match in size</value>
-  </data>
-  <data name="&gt;&gt;CbSizeOnly.Name" xml:space="preserve">
-    <value>CbSizeOnly</value>
-  </data>
-  <data name="&gt;&gt;CbSizeOnly.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbSizeOnly.Parent" xml:space="preserve">
-    <value>GroupBox9</value>
-  </data>
-  <data name="&gt;&gt;CbSizeOnly.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="CbNewer.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbNewer.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbNewer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 19</value>
-  </data>
-  <data name="CbNewer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 17</value>
-  </data>
-  <data name="CbNewer.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="CbNewer.Text" xml:space="preserve">
-    <value>Skip newer</value>
-  </data>
-  <data name="CbNewer.ToolTip" xml:space="preserve">
-    <value>-u, --update : skip files that are newer on the receiver</value>
-  </data>
-  <data name="&gt;&gt;CbNewer.Name" xml:space="preserve">
-    <value>CbNewer</value>
-  </data>
-  <data name="&gt;&gt;CbNewer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbNewer.Parent" xml:space="preserve">
-    <value>GroupBox9</value>
-  </data>
-  <data name="&gt;&gt;CbNewer.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="CbIgnoreTimes.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbIgnoreTimes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbIgnoreTimes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>314, 19</value>
-  </data>
-  <data name="CbIgnoreTimes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 17</value>
-  </data>
-  <data name="CbIgnoreTimes.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="CbIgnoreTimes.Text" xml:space="preserve">
-    <value>Ignore date</value>
-  </data>
-  <data name="CbIgnoreTimes.ToolTip" xml:space="preserve">
-    <value>--ignore-times : don't skip files that match in size and mod-time</value>
-  </data>
-  <data name="&gt;&gt;CbIgnoreTimes.Name" xml:space="preserve">
-    <value>CbIgnoreTimes</value>
-  </data>
-  <data name="&gt;&gt;CbIgnoreTimes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbIgnoreTimes.Parent" xml:space="preserve">
-    <value>GroupBox9</value>
-  </data>
-  <data name="&gt;&gt;CbIgnoreTimes.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="CbExisting.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbExisting.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbExisting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 79</value>
-  </data>
-  <data name="CbExisting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 17</value>
-  </data>
-  <data name="CbExisting.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="CbExisting.Text" xml:space="preserve">
-    <value>Ignore existing</value>
-  </data>
-  <data name="CbExisting.ToolTip" xml:space="preserve">
-    <value>--ignore-existing : skip updating files that already exist on receiver</value>
-  </data>
-  <data name="&gt;&gt;CbExisting.Name" xml:space="preserve">
-    <value>CbExisting</value>
-  </data>
-  <data name="&gt;&gt;CbExisting.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbExisting.Parent" xml:space="preserve">
-    <value>GroupBox9</value>
-  </data>
-  <data name="&gt;&gt;CbExisting.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="CbDelete.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbDelete.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbDelete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 59</value>
-  </data>
-  <data name="CbDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 17</value>
-  </data>
-  <data name="CbDelete.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="CbDelete.Text" xml:space="preserve">
-    <value>Delete on destination</value>
-  </data>
-  <data name="CbDelete.ToolTip" xml:space="preserve">
-    <value>--delete : delete extraneous files from destination dirs</value>
-  </data>
-  <data name="&gt;&gt;CbDelete.Name" xml:space="preserve">
-    <value>CbDelete</value>
-  </data>
-  <data name="&gt;&gt;CbDelete.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbDelete.Parent" xml:space="preserve">
-    <value>GroupBox9</value>
-  </data>
-  <data name="&gt;&gt;CbDelete.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="CbRecurse.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbRecurse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbRecurse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 39</value>
-  </data>
-  <data name="CbRecurse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 17</value>
-  </data>
-  <data name="CbRecurse.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="CbRecurse.Text" xml:space="preserve">
-    <value>Recurse into directories</value>
-  </data>
-  <data name="CbRecurse.ToolTip" xml:space="preserve">
-    <value>-r, --recursive : recurse into directories</value>
-  </data>
-  <data name="&gt;&gt;CbRecurse.Name" xml:space="preserve">
-    <value>CbRecurse</value>
-  </data>
-  <data name="&gt;&gt;CbRecurse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbRecurse.Parent" xml:space="preserve">
-    <value>GroupBox9</value>
-  </data>
-  <data name="&gt;&gt;CbRecurse.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="CbPerm.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbPerm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbPerm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 79</value>
-  </data>
-  <data name="CbPerm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 17</value>
-  </data>
-  <data name="CbPerm.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="CbPerm.Text" xml:space="preserve">
-    <value>Preserve permissions</value>
-  </data>
-  <data name="CbPerm.ToolTip" xml:space="preserve">
-    <value>-p, --perms : preserve permissions</value>
-  </data>
-  <data name="&gt;&gt;CbPerm.Name" xml:space="preserve">
-    <value>CbPerm</value>
-  </data>
-  <data name="&gt;&gt;CbPerm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbPerm.Parent" xml:space="preserve">
-    <value>GroupBox4</value>
-  </data>
-  <data name="&gt;&gt;CbPerm.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="CbOwner.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbOwner.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbOwner.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 39</value>
-  </data>
-  <data name="CbOwner.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 17</value>
-  </data>
-  <data name="CbOwner.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="CbOwner.Text" xml:space="preserve">
-    <value>Preserve owners</value>
-  </data>
-  <data name="CbOwner.ToolTip" xml:space="preserve">
-    <value>-o : preserve owner (super-user only)preserve owner (super-user only)</value>
-  </data>
-  <data name="&gt;&gt;CbOwner.Name" xml:space="preserve">
-    <value>CbOwner</value>
-  </data>
-  <data name="&gt;&gt;CbOwner.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbOwner.Parent" xml:space="preserve">
-    <value>GroupBox4</value>
-  </data>
-  <data name="&gt;&gt;CbOwner.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="CbGroup.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbGroup.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 59</value>
-  </data>
-  <data name="CbGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 17</value>
-  </data>
-  <data name="CbGroup.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="CbGroup.Text" xml:space="preserve">
-    <value>Preserve groups</value>
-  </data>
-  <data name="CbGroup.ToolTip" xml:space="preserve">
-    <value>-g, --group : preserve groups</value>
-  </data>
-  <data name="&gt;&gt;CbGroup.Name" xml:space="preserve">
-    <value>CbGroup</value>
-  </data>
-  <data name="&gt;&gt;CbGroup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbGroup.Parent" xml:space="preserve">
-    <value>GroupBox4</value>
-  </data>
-  <data name="&gt;&gt;CbGroup.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;TrayIconToolStripMenuItem.Name" xml:space="preserve">
+    <value>TrayIconToolStripMenuItem</value>
   </data>
   <data name="CbDate.AccessibleName" xml:space="preserve">
     <value />
   </data>
-  <data name="CbDate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="CbDate.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 19</value>
   </data>
-  <data name="CbDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 17</value>
+  <data name="CbDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 17</value>
   </data>
-  <data name="CbDate.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="CbDate.Text" xml:space="preserve">
-    <value>Preserve dates</value>
-  </data>
-  <data name="CbDate.ToolTip" xml:space="preserve">
-    <value>-t, --times : preserve modification times</value>
-  </data>
-  <data name="&gt;&gt;CbDate.Name" xml:space="preserve">
-    <value>CbDate</value>
-  </data>
-  <data name="&gt;&gt;CbDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbDate.Parent" xml:space="preserve">
-    <value>GroupBox4</value>
-  </data>
-  <data name="&gt;&gt;CbDate.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="TextBoxOptions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="TextBoxOptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 66</value>
-  </data>
-  <data name="TextBoxOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>660, 22</value>
-  </data>
-  <data name="TextBoxOptions.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="TextBoxOptions.ToolTip" xml:space="preserve">
-    <value>Example : --help     -e /bin/ssh</value>
-  </data>
-  <data name="&gt;&gt;TextBoxOptions.Name" xml:space="preserve">
-    <value>TextBoxOptions</value>
-  </data>
-  <data name="&gt;&gt;TextBoxOptions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TextBoxOptions.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;TextBoxOptions.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="TextBoxDst.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="TextBoxDst.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 40</value>
-  </data>
-  <data name="TextBoxDst.Size" type="System.Drawing.Size, System.Drawing">
-    <value>660, 22</value>
-  </data>
-  <data name="TextBoxDst.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="TextBoxDst.ToolTip" xml:space="preserve">
-    <value>Example :     C:\DIRECTORY\     Administrator@127.0.0.1:/tmp     Administrator@127.0.0.1::module/tmp</value>
-  </data>
-  <data name="&gt;&gt;TextBoxDst.Name" xml:space="preserve">
-    <value>TextBoxDst</value>
-  </data>
-  <data name="&gt;&gt;TextBoxDst.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TextBoxDst.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;TextBoxDst.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="ButtonAdd.ToolTip" xml:space="preserve">
+    <value>add to the list the profile written in the combobox</value>
   </data>
   <data name="TextBoxSrc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="TextBoxSrc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 14</value>
+  <data name="StatusBar.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="TextBoxSrc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>660, 22</value>
+  <data name="&gt;&gt;CbExistingOnly.Parent" xml:space="preserve">
+    <value>GroupBox9</value>
   </data>
-  <data name="TextBoxSrc.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;ToolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="TextBoxSrc.ToolTip" xml:space="preserve">
-    <value>Example :     C:\DIRECTORY\     Administrator@127.0.0.1:/tmp     Administrator@127.0.0.1::module/tmp</value>
+  <data name="ComboVerbose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 36</value>
   </data>
-  <data name="&gt;&gt;TextBoxSrc.Name" xml:space="preserve">
-    <value>TextBoxSrc</value>
-  </data>
-  <data name="&gt;&gt;TextBoxSrc.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TextBoxSrc.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;TextBoxSrc.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 69</value>
-  </data>
-  <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 13</value>
-  </data>
-  <data name="Label3.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="Label3.Text" xml:space="preserve">
-    <value>Custom options</value>
-  </data>
-  <data name="Label3.ToolTip" xml:space="preserve">
-    <value>Example : --help     -e /bin/ssh</value>
-  </data>
-  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
-    <value>Label3</value>
-  </data>
-  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 43</value>
-  </data>
-  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 13</value>
-  </data>
-  <data name="Label2.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="Label2.Text" xml:space="preserve">
-    <value>Destination</value>
-  </data>
-  <data name="Label2.ToolTip" xml:space="preserve">
-    <value>Example :     C:\DIRECTORY\     Administrator@127.0.0.1:/tmp     Administrator@127.0.0.1::module/tmp</value>
-  </data>
-  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
-    <value>Label2</value>
-  </data>
-  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 17</value>
-  </data>
-  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 13</value>
-  </data>
-  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="Label1.Text" xml:space="preserve">
-    <value>Source</value>
-  </data>
-  <data name="Label1.ToolTip" xml:space="preserve">
-    <value>Example :     C:\DIRECTORY\     Administrator@127.0.0.1:/tmp     Administrator@127.0.0.1::module/tmp</value>
-  </data>
-  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
-    <value>Label1</value>
-  </data>
-  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="CbFS.AccessibleName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CbFS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbFS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 74</value>
-  </data>
-  <data name="CbFS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 17</value>
-  </data>
-  <data name="CbFS.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="CbFS.Text" xml:space="preserve">
-    <value>Do not cross file-system</value>
-  </data>
-  <data name="CbFS.ToolTip" xml:space="preserve">
-    <value>-x, --one-file-system : don't cross filesystem boundaries</value>
-  </data>
-  <data name="&gt;&gt;CbFS.Name" xml:space="preserve">
-    <value>CbFS</value>
-  </data>
-  <data name="&gt;&gt;CbFS.Type" xml:space="preserve">
+  <data name="&gt;&gt;CbProgress.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CbFS.Parent" xml:space="preserve">
-    <value>TabPage2</value>
+  <data name="&gt;&gt;CbExisting.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="GroupBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FrameMain</value>
+  </data>
+  <data name="ButtonStop.ToolTip" xml:space="preserve">
+    <value>-n, --dry-run : start the synchronization without doing modifications</value>
+  </data>
+  <data name="ContextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 48</value>
+  </data>
+  <data name="CbDate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ButtonDel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ButtonDel.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="CbVerbose.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TextBoxOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>660, 22</value>
+  </data>
+  <data name="&gt;&gt;GroupBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GroupBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 108</value>
+  </data>
+  <data name="ButtonDel.ToolTip" xml:space="preserve">
+    <value>delete from the list the profile selected in the combobox</value>
   </data>
   <data name="&gt;&gt;CbFS.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="CbWinCompat.AccessibleName" xml:space="preserve">
-    <value />
+  <data name="ExitToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 22</value>
   </data>
-  <data name="CbWinCompat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;ExitToolStripMenuItem1.Name" xml:space="preserve">
+    <value>ExitToolStripMenuItem1</value>
   </data>
-  <data name="CbWinCompat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 39</value>
+  <data name="CbOwner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 17</value>
   </data>
-  <data name="CbWinCompat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 17</value>
+  <data name="CbDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="CbWinCompat.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;ButtonExec.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;CbDelta.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="CbWinCompat.Text" xml:space="preserve">
-    <value>Compatibility</value>
-  </data>
-  <data name="CbWinCompat.ToolTip" xml:space="preserve">
-    <value>--modify-window=2 : known to fixe problems on some old windows (FAT)</value>
-  </data>
-  <data name="&gt;&gt;CbWinCompat.Name" xml:space="preserve">
-    <value>CbWinCompat</value>
-  </data>
-  <data name="&gt;&gt;CbWinCompat.Type" xml:space="preserve">
+  <data name="&gt;&gt;CbNewer.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CbWinCompat.Parent" xml:space="preserve">
-    <value>GroupBox8</value>
+  <data name="CbChecksum.Text" xml:space="preserve">
+    <value>Skip on checksum</value>
   </data>
-  <data name="&gt;&gt;CbWinCompat.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="ButtonDstOpen.Text" xml:space="preserve">
+    <value>Browse</value>
   </data>
-  <data name="CbPermWin.AccessibleName" xml:space="preserve">
-    <value />
+  <data name="CbExistingOnly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 17</value>
   </data>
-  <data name="CbPermWin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="CbGroup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 59</value>
   </data>
-  <data name="CbPermWin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
+  <data name="GroupBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 108</value>
   </data>
-  <data name="CbPermWin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 17</value>
+  <data name="ButtonExec.Text" xml:space="preserve">
+    <value>Execute</value>
   </data>
-  <data name="CbPermWin.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="CbPermWin.Text" xml:space="preserve">
-    <value>Preserve acl security</value>
-  </data>
-  <data name="CbPermWin.ToolTip" xml:space="preserve">
-    <value>--backup-nt-streams --restore-nt-streams : preserve acl security in windows (requires a patched version of rsync -ntstreams)</value>
-  </data>
-  <data name="&gt;&gt;CbPermWin.Name" xml:space="preserve">
-    <value>CbPermWin</value>
-  </data>
-  <data name="&gt;&gt;CbPermWin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbPermWin.Parent" xml:space="preserve">
-    <value>GroupBox8</value>
-  </data>
-  <data name="&gt;&gt;CbPermWin.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ComboRsync.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="ComboRsync.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 31</value>
-  </data>
-  <data name="ComboRsync.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 21</value>
-  </data>
-  <data name="ComboRsync.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ComboRsync.Name" xml:space="preserve">
-    <value>ComboRsync</value>
-  </data>
-  <data name="&gt;&gt;ComboRsync.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;CbEnglish.Name" xml:space="preserve">
+    <value>CbEnglish</value>
   </data>
   <data name="&gt;&gt;ComboRsync.Parent" xml:space="preserve">
     <value>GroupBox7</value>
   </data>
-  <data name="&gt;&gt;ComboRsync.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;TextBoxErrors.Name" xml:space="preserve">
+    <value>TextBoxErrors</value>
   </data>
-  <data name="GroupBox7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 13</value>
+  <data name="CbChecksum.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="GroupBox7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 80</value>
+  <data name="CbExistingOnly.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="GroupBox7.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="CbNewer.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="GroupBox7.Text" xml:space="preserve">
-    <value>Rsync</value>
+  <data name="&gt;&gt;CbDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupBox7.Name" xml:space="preserve">
-    <value>GroupBox7</value>
+  <data name="ButtonAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;GroupBox7.Type" xml:space="preserve">
+  <data name="&gt;&gt;GroupBox6.Name" xml:space="preserve">
+    <value>GroupBox6</value>
+  </data>
+  <data name="CbReadable.Text" xml:space="preserve">
+    <value>Human readable</value>
+  </data>
+  <data name="GroupBox6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>353, 274</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupBox7.Parent" xml:space="preserve">
-    <value>Panel1</value>
+  <data name="GroupBox6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ButtonStop.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;CbDate.Parent" xml:space="preserve">
+    <value>GroupBox4</value>
+  </data>
+  <data name="CbPermWin.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;CbPermWin.Name" xml:space="preserve">
+    <value>CbPermWin</value>
+  </data>
+  <data name="SplitContainer1.Panel1MinSize" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, 105</value>
+  </data>
+  <data name="&gt;&gt;TabPage2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TextBoxErrors.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="CbReadable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 17</value>
+  </data>
+  <data name="CbReadable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 59</value>
+  </data>
+  <data name="Panel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;About...</value>
+  </data>
+  <data name="ButtonExec.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ButtonDel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;GroupBox7.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="GroupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="&gt;&gt;CbDate.Name" xml:space="preserve">
+    <value>CbDate</value>
   </data>
-  <data name="GroupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>682, 3</value>
+  <data name="CbVerbose.ToolTip" xml:space="preserve">
+    <value>-v, --verbose : increase verbosity</value>
   </data>
-  <data name="GroupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 118</value>
-  </data>
-  <data name="GroupBox2.TabIndex" type="System.Int32, mscorlib">
+  <data name="ComboVerbose.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="GroupBox2.Text" xml:space="preserve">
-    <value>Execution</value>
-  </data>
-  <data name="&gt;&gt;GroupBox2.Name" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;GroupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBox2.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;GroupBox2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;CbProgress.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="GroupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="CbWinCompat.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ComboVerbose.Items1" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;CbRecurse.Parent" xml:space="preserve">
+    <value>GroupBox9</value>
+  </data>
+  <data name="ButtonSrcOpen.Text" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="&gt;&gt;CbChecksum.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ButtonPause.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="ComboRsync.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;CbPerm.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="ComboProfiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="ComboProfiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 31</value>
+  <data name="CbDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 59</value>
   </data>
-  <data name="ComboProfiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 21</value>
+  <data name="CbHideWindows.AccessibleName" xml:space="preserve">
+    <value />
   </data>
-  <data name="ComboProfiles.TabIndex" type="System.Int32, mscorlib">
+  <data name="GroupBox7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 13</value>
+  </data>
+  <data name="CbDelete.Text" xml:space="preserve">
+    <value>Delete on destination</value>
+  </data>
+  <data name="StatusBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>838, 22</value>
+  </data>
+  <data name="ButtonStop.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="ButtonDel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 30</value>
+  </data>
+  <data name="&gt;&gt;CbVerbose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ButtonAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 25</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CbDate.Text" xml:space="preserve">
+    <value>Preserve dates</value>
+  </data>
+  <data name="&gt;&gt;TrayIconEnabledToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CbPermWin.ToolTip" xml:space="preserve">
+    <value>--backup-nt-streams --restore-nt-streams : preserve acl security in windows (requires a patched version of rsync -ntstreams)</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel1.Parent" xml:space="preserve">
+    <value>SplitContainer1</value>
+  </data>
+  <data name="CbExistingOnly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 79</value>
+  </data>
+  <data name="CbProgress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="ButtonAdd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="SplitContainer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 373</value>
+  </data>
+  <data name="ButtonStop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 23</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="Label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;CbFS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ButtonPause.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="TrayIconNoticeStartToolStripMenuItem.Text" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="TextBoxErrors.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CbSizeOnly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 17</value>
+  </data>
+  <data name="&gt;&gt;CbShowCmd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StatusBarText.Name" xml:space="preserve">
+    <value>StatusBarText</value>
+  </data>
+  <data name="CbPermWin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 13</value>
+  </data>
+  <data name="CbPermWin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 17</value>
+  </data>
+  <data name="ButtonDstOpen.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;CbNewer.Name" xml:space="preserve">
+    <value>CbNewer</value>
+  </data>
+  <data name="CbPermWin.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBoxLogs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>444, 255</value>
+  </data>
+  <data name="CbWinCompat.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TabPage2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="&gt;&gt;CbReadable.Parent" xml:space="preserve">
+    <value>GroupBox5</value>
+  </data>
+  <data name="CbRedir.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="GroupBox6.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;ComboProfiles.Name" xml:space="preserve">
-    <value>ComboProfiles</value>
+  <data name="&gt;&gt;StatusBar.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;ComboProfiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ButtonAdd.Name" xml:space="preserve">
+    <value>ButtonAdd</value>
   </data>
-  <data name="&gt;&gt;ComboProfiles.Parent" xml:space="preserve">
-    <value>GroupBox1</value>
+  <data name="&gt;&gt;CbGroup.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;ComboProfiles.ZOrder" xml:space="preserve">
+  <data name="PictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="ButtonTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbShowCmd.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ButtonPause.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 23</value>
+  </data>
+  <data name="CbPerm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 17</value>
+  </data>
+  <data name="ContextMenuStrip1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CbDelete.ToolTip" xml:space="preserve">
+    <value>--delete : delete extraneous files from destination dirs</value>
+  </data>
+  <data name="&gt;&gt;NotifyIcon1.Name" xml:space="preserve">
+    <value>NotifyIcon1</value>
+  </data>
+  <data name="CbVerbose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;CbSizeOnly.Parent" xml:space="preserve">
+    <value>GroupBox9</value>
+  </data>
+  <data name="ComboVerbose.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CbSizeOnly.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CbDate.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="CbOwner.Text" xml:space="preserve">
+    <value>Preserve owners</value>
+  </data>
+  <data name="CbShowCmd.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="ButtonSrcOpen.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="PictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 80</value>
+  </data>
+  <data name="ButtonStop.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ButtonPause.Text" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>LicielRsync - A multi-threaded interface for Rsync on Windows - rsync.samba.org</value>
+  </data>
+  <data name="&gt;&gt;CbExistingOnly.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Name" xml:space="preserve">
+    <value>PictureBox1</value>
+  </data>
+  <data name="TextBoxSrc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 14</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TextBoxOptions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;ButtonStop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox7.Name" xml:space="preserve">
+    <value>GroupBox7</value>
+  </data>
+  <data name="CbOwner.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;CbHideWindows.Name" xml:space="preserve">
+    <value>CbHideWindows</value>
+  </data>
+  <data name="ButtonSrcOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ResetToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 22</value>
+  </data>
+  <data name="&gt;&gt;CbDelete.Parent" xml:space="preserve">
+    <value>GroupBox9</value>
+  </data>
+  <data name="MenuStrip1.Text" xml:space="preserve">
+    <value>MenuStrip1</value>
+  </data>
+  <data name="GroupBox9.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GroupBox2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBoxLogs.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="GroupBox3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ButtonSrcOpen.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="LanguageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 22</value>
+  </data>
+  <data name="&gt;&gt;CbHideWindows.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Menu2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>834, 218</value>
+  </data>
+  <data name="CbProgress.Text" xml:space="preserve">
+    <value>Show progress</value>
+  </data>
+  <data name="GroupBox9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>426, 108</value>
+  </data>
+  <data name="&gt;&gt;ButtonDstOpen.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CbProgress.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>834, 218</value>
+  </data>
+  <data name="SplitContainer1.Panel2MinSize" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="&gt;&gt;CbReadable.Name" xml:space="preserve">
+    <value>CbReadable</value>
+  </data>
+  <data name="CbSizeOnly.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;CbPerm.Name" xml:space="preserve">
+    <value>CbPerm</value>
+  </data>
+  <data name="TextBoxErrors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="CbOwner.ToolTip" xml:space="preserve">
+    <value>-o : preserve owner (super-user only)preserve owner (super-user only)</value>
+  </data>
+  <data name="TrayIconEnabledToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 22</value>
+  </data>
+  <data name="TabControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="GroupBox7.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="GroupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>379, 13</value>
   </data>
-  <data name="GroupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 80</value>
-  </data>
-  <data name="GroupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="GroupBox1.Text" xml:space="preserve">
-    <value>Profiles</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.Name" xml:space="preserve">
-    <value>GroupBox1</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="PictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="CbWinCompat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="PictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 13</value>
-  </data>
-  <data name="PictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 80</value>
-  </data>
-  <data name="PictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;PictureBox1.Name" xml:space="preserve">
-    <value>PictureBox1</value>
-  </data>
-  <data name="&gt;&gt;PictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PictureBox1.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;PictureBox1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="TabControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="ComboVerbose.AccessibleName" xml:space="preserve">
+  <data name="SplitContainer1.Panel1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="ComboVerbose.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;CbRedir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="ComboVerbose.Items" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ComboVerbose.Items1" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ComboVerbose.Items2" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="ComboVerbose.Items3" xml:space="preserve">
+  <data name="&gt;&gt;TextBoxDst.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="ComboVerbose.Items4" xml:space="preserve">
-    <value>5</value>
+  <data name="CbGroup.ToolTip" xml:space="preserve">
+    <value>-g, --group : preserve groups</value>
   </data>
-  <data name="ComboVerbose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 36</value>
+  <data name="TextBoxDst.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
-  <data name="ComboVerbose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 21</value>
-  </data>
-  <data name="ComboVerbose.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ComboVerbose.Name" xml:space="preserve">
-    <value>ComboVerbose</value>
-  </data>
-  <data name="&gt;&gt;ComboVerbose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ComboVerbose.Parent" xml:space="preserve">
-    <value>GroupBox5</value>
-  </data>
-  <data name="&gt;&gt;ComboVerbose.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="GroupBox5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>602, 101</value>
+  <data name="&gt;&gt;ButtonTest.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
   </data>
-  <data name="GroupBox5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 108</value>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>Custom options</value>
   </data>
-  <data name="GroupBox5.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="&gt;&gt;ButtonAdd.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
   </data>
-  <data name="GroupBox5.Text" xml:space="preserve">
-    <value>Visibility</value>
+  <data name="&gt;&gt;ButtonSrcOpen.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
-  <data name="&gt;&gt;GroupBox5.Name" xml:space="preserve">
+  <data name="&gt;&gt;SplitContainer1.Panel1.Name" xml:space="preserve">
+    <value>SplitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Name" xml:space="preserve">
+    <value>SplitContainer1</value>
+  </data>
+  <data name="CbIgnoreTimes.Text" xml:space="preserve">
+    <value>Ignore date</value>
+  </data>
+  <data name="GroupBox8.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ButtonSrcOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 25</value>
+  </data>
+  <data name="&gt;&gt;CbVerbose.Parent" xml:space="preserve">
     <value>GroupBox5</value>
   </data>
-  <data name="&gt;&gt;GroupBox5.Type" xml:space="preserve">
+  <data name="ButtonStop.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="&gt;&gt;ToolTip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TextBoxSrc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>660, 22</value>
+  </data>
+  <data name="&gt;&gt;GroupBox8.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupBox5.Parent" xml:space="preserve">
-    <value>TabPage1</value>
+  <data name="CbRedir.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;GroupBox5.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;CbWinCompat.Name" xml:space="preserve">
+    <value>CbWinCompat</value>
+  </data>
+  <data name="CbExistingOnly.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBoxLogs.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;TextBoxLogs.Parent" xml:space="preserve">
+    <value>GroupBox3</value>
+  </data>
+  <data name="&gt;&gt;ExitToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TextBoxErrors.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="GroupBox9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 101</value>
+  <data name="Menu3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
   </data>
-  <data name="GroupBox9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>426, 108</value>
+  <data name="&gt;&gt;GroupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="GroupBox9.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="TrayIconToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
   </data>
-  <data name="GroupBox9.Text" xml:space="preserve">
-    <value>Modes</value>
+  <data name="CbHideWindows.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 17</value>
   </data>
-  <data name="&gt;&gt;GroupBox9.Name" xml:space="preserve">
-    <value>GroupBox9</value>
+  <data name="Menu1.Text" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="&gt;&gt;CbRedir.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="CbSizeOnly.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbShowCmd.ToolTip" xml:space="preserve">
+    <value>show the command line on the status bar</value>
+  </data>
+  <data name="&gt;&gt;CbProgress.Name" xml:space="preserve">
+    <value>CbProgress</value>
+  </data>
+  <data name="StatusBarText1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <data name="&gt;&gt;CbShowCmd.Parent" xml:space="preserve">
+    <value>GroupBox5</value>
+  </data>
+  <data name="ProgressBar.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;ToolStripSeparator2.Name" xml:space="preserve">
+    <value>ToolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;CbDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuStrip1.Name" xml:space="preserve">
+    <value>ContextMenuStrip1</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>838, 669</value>
+  </data>
+  <data name="&gt;&gt;ButtonSrcOpen.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="Menu2.Text" xml:space="preserve">
+    <value>&amp;Tools</value>
+  </data>
+  <data name="&gt;&gt;StatusBarText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CbPerm.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;ToolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CbRecurse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 39</value>
+  </data>
+  <data name="GroupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="ButtonStop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 51</value>
+  </data>
+  <data name="CbPermWin.Text" xml:space="preserve">
+    <value>Preserve acl security</value>
+  </data>
+  <data name="&gt;&gt;TextBoxSrc.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="ButtonExec.ToolTip" xml:space="preserve">
+    <value>start the synchronization</value>
   </data>
   <data name="&gt;&gt;GroupBox9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBox9.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;GroupBox9.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="GroupBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 101</value>
-  </data>
-  <data name="GroupBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 108</value>
-  </data>
-  <data name="GroupBox4.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="GroupBox4.Text" xml:space="preserve">
-    <value>Attributs</value>
-  </data>
-  <data name="&gt;&gt;GroupBox4.Name" xml:space="preserve">
-    <value>GroupBox4</value>
-  </data>
-  <data name="&gt;&gt;GroupBox4.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupBox4.Parent" xml:space="preserve">
     <value>TabPage1</value>
   </data>
-  <data name="&gt;&gt;GroupBox4.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>838, 349</value>
   </data>
-  <data name="ButtonDstOpen.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="&gt;&gt;CbFrench.Name" xml:space="preserve">
+    <value>CbFrench</value>
   </data>
-  <data name="ButtonDstOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;SplitContainer1.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="ButtonDstOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>764, 37</value>
+  <data name="&gt;&gt;CbExisting.Parent" xml:space="preserve">
+    <value>GroupBox9</value>
   </data>
-  <data name="ButtonDstOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 25</value>
+  <data name="ButtonPause.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="ButtonDstOpen.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="StatusBarText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
-  <data name="ButtonDstOpen.Text" xml:space="preserve">
-    <value>Browse</value>
+  <data name="TextBoxLogs.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;ButtonDstOpen.Name" xml:space="preserve">
-    <value>ButtonDstOpen</value>
+  <data name="CbReadable.ToolTip" xml:space="preserve">
+    <value>-h, --human-readable : output numbers in a human-readable format</value>
   </data>
-  <data name="&gt;&gt;ButtonDstOpen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;SplitContainer1.Panel2.Parent" xml:space="preserve">
+    <value>SplitContainer1</value>
   </data>
-  <data name="&gt;&gt;ButtonDstOpen.Parent" xml:space="preserve">
-    <value>TabPage1</value>
+  <data name="ButtonPause.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 51</value>
   </data>
-  <data name="&gt;&gt;ButtonDstOpen.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;CbEnglish.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="ButtonSrcOpen.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="CbFrench.Text" xml:space="preserve">
+    <value>&amp;French</value>
   </data>
-  <data name="ButtonSrcOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ButtonSrcOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>764, 11</value>
-  </data>
-  <data name="ButtonSrcOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 25</value>
-  </data>
-  <data name="ButtonSrcOpen.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="ButtonSrcOpen.Text" xml:space="preserve">
-    <value>Browse</value>
-  </data>
-  <data name="&gt;&gt;ButtonSrcOpen.Name" xml:space="preserve">
-    <value>ButtonSrcOpen</value>
-  </data>
-  <data name="&gt;&gt;ButtonSrcOpen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ButtonSrcOpen.Parent" xml:space="preserve">
-    <value>TabPage1</value>
-  </data>
-  <data name="&gt;&gt;ButtonSrcOpen.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="TabPage1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="TabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>834, 218</value>
-  </data>
-  <data name="TabPage1.TabIndex" type="System.Int32, mscorlib">
+  <data name="CbDelta.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="TabPage1.Text" xml:space="preserve">
-    <value>Base options</value>
+  <data name="GroupBox7.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;TabPage1.Name" xml:space="preserve">
-    <value>TabPage1</value>
+  <data name="&gt;&gt;ContextMenuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TabPage1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;TextBoxErrors.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TabPage1.Parent" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="GroupBox8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="GroupBox8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 62</value>
-  </data>
-  <data name="GroupBox8.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="GroupBox8.Text" xml:space="preserve">
-    <value>Windows</value>
-  </data>
-  <data name="&gt;&gt;GroupBox8.Name" xml:space="preserve">
-    <value>GroupBox8</value>
-  </data>
-  <data name="&gt;&gt;GroupBox8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBox8.Parent" xml:space="preserve">
-    <value>TabPage2</value>
-  </data>
-  <data name="&gt;&gt;GroupBox8.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="TabPage2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="TabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="TabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>834, 218</value>
-  </data>
-  <data name="TabPage2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="TabPage2.Text" xml:space="preserve">
-    <value>Other options</value>
-  </data>
-  <data name="&gt;&gt;TabPage2.Name" xml:space="preserve">
-    <value>TabPage2</value>
+  <data name="&gt;&gt;CbChecksum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TabPage2.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TabPage2.Parent" xml:space="preserve">
-    <value>TabControl1</value>
+  <data name="ButtonSrcOpen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>764, 11</value>
   </data>
-  <data name="&gt;&gt;TabPage2.ZOrder" xml:space="preserve">
+  <data name="CbGroup.Text" xml:space="preserve">
+    <value>Preserve groups</value>
+  </data>
+  <data name="&gt;&gt;GroupBox6.Parent" xml:space="preserve">
+    <value>SplitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;ButtonSrcOpen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CbEnglish.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AboutToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;TrayIconNoticeToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbRecurse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Parent" xml:space="preserve">
+    <value>SplitContainer1.Panel1</value>
+  </data>
+  <data name="GroupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="CbNewer.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ComboVerbose.Items3" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;GroupBox5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
+  </data>
+  <data name="Label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="GroupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TrayIconEnabledToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Enabled</value>
+  </data>
+  <data name="ButtonExec.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="Menu1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="CbDelta.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="&gt;&gt;FolderBrowserDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StatusBar.Name" xml:space="preserve">
+    <value>StatusBar</value>
+  </data>
+  <data name="CbIgnoreTimes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>314, 19</value>
+  </data>
+  <data name="CbHideWindows.Text" xml:space="preserve">
+    <value>Hide other windows</value>
+  </data>
+  <data name="SplitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="CbVerbose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 17</value>
+  </data>
+  <data name="CbVerbose.Text" xml:space="preserve">
+    <value>Increase verbosity per</value>
+  </data>
+  <data name="SplitContainer1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SplitContainer1.Panel2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBoxLogs.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.Name" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="ButtonTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 15</value>
+  </data>
+  <data name="TextBoxErrors.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="Menu2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 20</value>
+  </data>
+  <data name="&gt;&gt;ToolStripSeparator1.Name" xml:space="preserve">
+    <value>ToolStripSeparator1</value>
+  </data>
+  <data name="ComboProfiles.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ProgressBar.Name" xml:space="preserve">
+    <value>ProgressBar</value>
+  </data>
+  <data name="&gt;&gt;GroupBox9.Name" xml:space="preserve">
+    <value>GroupBox9</value>
+  </data>
+  <data name="ButtonExec.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="CbShowCmd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbOwner.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="LanguageToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;GroupBox4.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ToggleToolStripMenuItem.Text" xml:space="preserve">
+    <value>LicielRsync</value>
+  </data>
+  <data name="CbRedir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 17</value>
+  </data>
+  <data name="CbProgress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 17</value>
+  </data>
+  <data name="&gt;&gt;TextBoxErrors.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CbGroup.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;CbWinCompat.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;GroupBox8.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CbDelta.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 17</value>
+  </data>
+  <data name="CbPerm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="CbRecurse.ToolTip" xml:space="preserve">
+    <value>-r, --recursive : recurse into directories</value>
+  </data>
+  <data name="ButtonStop.Text" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="&gt;&gt;GroupBox6.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ComboVerbose.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="StatusBar.Text" xml:space="preserve">
+    <value>StatusStrip1</value>
+  </data>
+  <data name="ButtonTest.ToolTip" xml:space="preserve">
+    <value>-n, --dry-run : start the synchronization without doing modifications</value>
+  </data>
+  <data name="&gt;&gt;CbIgnoreTimes.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="TextBoxOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 66</value>
+  </data>
+  <data name="&gt;&gt;CbSizeOnly.Name" xml:space="preserve">
+    <value>CbSizeOnly</value>
+  </data>
+  <data name="CbDelta.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ButtonDel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="ComboVerbose.Items" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CbGroup.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="CbExistingOnly.ToolTip" xml:space="preserve">
+    <value>--existing : skip creating new files on receiver</value>
+  </data>
+  <data name="&gt;&gt;TextBoxLogs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CbWinCompat.ToolTip" xml:space="preserve">
+    <value>--modify-window=2 : known to fixe problems on some old windows (FAT)</value>
+  </data>
+  <data name="CbChecksum.ToolTip" xml:space="preserve">
+    <value>-c, --checksum : skip based on checksum, not mod-time &amp; size</value>
+  </data>
+  <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="GroupBox8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="&gt;&gt;CbSizeOnly.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbFrench.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CbNewer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 19</value>
+  </data>
+  <data name="AboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="MenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>838, 24</value>
+  </data>
+  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
+    <value>Label2</value>
+  </data>
+  <data name="CbDelta.Text" xml:space="preserve">
+    <value>Force delta-transmission</value>
+  </data>
+  <data name="CbRecurse.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;CbFS.Parent" xml:space="preserve">
+    <value>TabPage2</value>
+  </data>
+  <data name="&gt;&gt;ButtonExec.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GroupBox9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 101</value>
+  </data>
+  <data name="CbExisting.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="Label2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="GroupBox3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 6</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TrayIconNoticeStartToolStripMenuItem.Name" xml:space="preserve">
+    <value>TrayIconNoticeStartToolStripMenuItem</value>
+  </data>
+  <data name="GroupBox1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;ComboVerbose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CbDate.ToolTip" xml:space="preserve">
+    <value>-t, --times : preserve modification times</value>
+  </data>
+  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 17</value>
+  </data>
+  <data name="GroupBox3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="StatusBar.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;LanguageToolStripMenuItem.Name" xml:space="preserve">
+    <value>LanguageToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;TrayIconNoticeToolStripMenuItem.Name" xml:space="preserve">
+    <value>TrayIconNoticeToolStripMenuItem</value>
+  </data>
+  <data name="Panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="&gt;&gt;CbPermWin.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="TabControl1.ItemSize" type="System.Drawing.Size, System.Drawing">
     <value>245, 18</value>
   </data>
-  <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-1, 105</value>
+  <data name="&gt;&gt;CbIgnoreTimes.Parent" xml:space="preserve">
+    <value>GroupBox9</value>
   </data>
-  <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>842, 244</value>
+  <data name="SplitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>838, 274</value>
   </data>
-  <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
-    <value>TabControl1</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="Panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>838, 349</value>
-  </data>
-  <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="FolderBrowserDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>231, 17</value>
-  </metadata>
-  <data name="FolderBrowserDialog.Description" xml:space="preserve">
-    <value>Select the Folder</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>61</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>838, 669</value>
-  </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>854, 707</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>LicielRsync - A multi-threaded interface for Rsync on Windows - rsync.samba.org</value>
-  </data>
-  <data name="&gt;&gt;StatusBarText.Name" xml:space="preserve">
-    <value>StatusBarText</value>
-  </data>
-  <data name="&gt;&gt;StatusBarText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ProgressBarText.Name" xml:space="preserve">
-    <value>ProgressBarText</value>
-  </data>
-  <data name="&gt;&gt;ProgressBarText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ProgressBar.Name" xml:space="preserve">
-    <value>ProgressBar</value>
-  </data>
-  <data name="&gt;&gt;ProgressBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripProgressBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StatusBarText1.Name" xml:space="preserve">
-    <value>StatusBarText1</value>
-  </data>
-  <data name="&gt;&gt;StatusBarText1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Menu1.Name" xml:space="preserve">
-    <value>Menu1</value>
-  </data>
-  <data name="&gt;&gt;Menu1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LanguageToolStripMenuItem.Name" xml:space="preserve">
-    <value>LanguageToolStripMenuItem</value>
+  <data name="&gt;&gt;GroupBox5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LanguageToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CbEnglish.Name" xml:space="preserve">
-    <value>CbEnglish</value>
+  <data name="CbShowCmd.Text" xml:space="preserve">
+    <value>Show command line</value>
   </data>
-  <data name="&gt;&gt;CbEnglish.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;CbFrench.Name" xml:space="preserve">
-    <value>CbFrench</value>
+  <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 43</value>
   </data>
-  <data name="&gt;&gt;CbFrench.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 69</value>
   </data>
-  <data name="&gt;&gt;Menu2.Name" xml:space="preserve">
-    <value>Menu2</value>
+  <data name="TextBoxErrors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>355, 255</value>
   </data>
-  <data name="&gt;&gt;Menu2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="TextBoxLogs.MaxLength" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;AboutToolStripMenuItem.Name" xml:space="preserve">
-    <value>AboutToolStripMenuItem</value>
+  <data name="SplitContainer1.SplitterWidth" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="GroupBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>602, 101</value>
+  </data>
+  <data name="CbIgnoreTimes.ToolTip" xml:space="preserve">
+    <value>--ignore-times : don't skip files that match in size and mod-time</value>
+  </data>
+  <data name="&gt;&gt;ExitToolStripMenuItem2.Name" xml:space="preserve">
+    <value>ExitToolStripMenuItem2</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;StatusBarText1.Name" xml:space="preserve">
+    <value>StatusBarText1</value>
+  </data>
+  <data name="&gt;&gt;CbShowCmd.Name" xml:space="preserve">
+    <value>CbShowCmd</value>
+  </data>
+  <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ProgressBarText.Name" xml:space="preserve">
+    <value>ProgressBarText</value>
+  </data>
+  <data name="&gt;&gt;CbDelta.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TabPage2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CbChecksum.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="TabPage2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="CbEnglish.Text" xml:space="preserve">
+    <value>&amp;English</value>
+  </data>
+  <data name="&gt;&gt;ButtonSrcOpen.Name" xml:space="preserve">
+    <value>ButtonSrcOpen</value>
+  </data>
+  <data name="&gt;&gt;ComboProfiles.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="PictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TextBoxOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GroupBox8.Text" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="CbProgress.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbExistingOnly.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="ButtonDstOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 25</value>
   </data>
   <data name="&gt;&gt;AboutToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ToolTip1.Name" xml:space="preserve">
-    <value>ToolTip1</value>
+  <data name="TrayIconNoticeToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Hide and show various notifications</value>
   </data>
-  <data name="&gt;&gt;ToolTip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;CbVerbose.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;FolderBrowserDialog.Name" xml:space="preserve">
-    <value>FolderBrowserDialog</value>
+  <data name="CbDelta.ToolTip" xml:space="preserve">
+    <value>--no-whole-file : force to don't send whole files (with delta-xfer algorithm)</value>
   </data>
-  <data name="&gt;&gt;FolderBrowserDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;ResetToolStripMenuItem.Name" xml:space="preserve">
-    <value>ResetToolStripMenuItem</value>
+  <data name="&gt;&gt;GroupBox8.Parent" xml:space="preserve">
+    <value>TabPage2</value>
+  </data>
+  <data name="&gt;&gt;ButtonPause.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Label2.ToolTip" xml:space="preserve">
+    <value>Example :     C:\DIRECTORY\     Administrator@127.0.0.1:/tmp     Administrator@127.0.0.1::module/tmp</value>
+  </data>
+  <data name="CbHideWindows.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="TextBoxErrors.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;TextBoxDst.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.Name" xml:space="preserve">
+    <value>MenuStrip1</value>
+  </data>
+  <data name="&gt;&gt;CbExisting.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FolderBrowserDialog.Description" xml:space="preserve">
+    <value>Select the Folder</value>
+  </data>
+  <data name="CbIgnoreTimes.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;ComboVerbose.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;CbExisting.Name" xml:space="preserve">
+    <value>CbExisting</value>
+  </data>
+  <data name="CbRecurse.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="CbExisting.Text" xml:space="preserve">
+    <value>Ignore existing</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;CbDelta.Parent" xml:space="preserve">
+    <value>GroupBox9</value>
+  </data>
+  <data name="TabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="GroupBox6.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 6</value>
+  </data>
+  <data name="ButtonExec.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 30</value>
+  </data>
+  <data name="CbFS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 17</value>
+  </data>
+  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
+  <data name="CbFS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 74</value>
+  </data>
+  <data name="CbWinCompat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 39</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="ButtonDstOpen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>764, 37</value>
+  </data>
+  <data name="&gt;&gt;ProgressBarText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GroupBox8.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox4.Name" xml:space="preserve">
+    <value>GroupBox4</value>
+  </data>
+  <data name="GroupBox3.Text" xml:space="preserve">
+    <value>Log</value>
+  </data>
+  <data name="ToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 6</value>
+  </data>
+  <data name="TrayIconNoticeStartToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 22</value>
+  </data>
+  <data name="&gt;&gt;CbWinCompat.Parent" xml:space="preserve">
+    <value>GroupBox8</value>
+  </data>
+  <data name="ResetToolStripMenuItem.Text" xml:space="preserve">
+    <value>R&amp;eset settings</value>
+  </data>
+  <data name="ButtonPause.ToolTip" xml:space="preserve">
+    <value>-n, --dry-run : start the synchronization without doing modifications</value>
+  </data>
+  <data name="&gt;&gt;CbChecksum.Name" xml:space="preserve">
+    <value>CbChecksum</value>
+  </data>
+  <data name="&gt;&gt;CbDelta.Name" xml:space="preserve">
+    <value>CbDelta</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="CbEnglish.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 22</value>
+  </data>
+  <data name="ComboVerbose.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;CbGroup.Parent" xml:space="preserve">
+    <value>GroupBox4</value>
+  </data>
+  <data name="&gt;&gt;TextBoxLogs.Name" xml:space="preserve">
+    <value>TextBoxLogs</value>
+  </data>
+  <data name="CbEnglish.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="MenuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="CbIgnoreTimes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 17</value>
+  </data>
+  <data name="CbFrench.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;CbShowCmd.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ButtonAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="Label3.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;CbRecurse.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="SplitContainer1.SplitterDistance" type="System.Int32, mscorlib">
+    <value>468</value>
+  </data>
+  <data name="&gt;&gt;CbIgnoreTimes.Name" xml:space="preserve">
+    <value>CbIgnoreTimes</value>
+  </data>
+  <data name="StatusBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 647</value>
+  </data>
+  <data name="CbFrench.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;TrayIconNoticeStartToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TrayIconNoticeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 22</value>
+  </data>
+  <data name="CbIgnoreTimes.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;CbExistingOnly.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbVerbose.Name" xml:space="preserve">
+    <value>CbVerbose</value>
+  </data>
+  <data name="&gt;&gt;TextBoxErrors.Parent" xml:space="preserve">
+    <value>GroupBox6</value>
+  </data>
+  <data name="&gt;&gt;ButtonDstOpen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TabControl1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;CbHideWindows.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="CbExisting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 17</value>
+  </data>
+  <data name="GroupBox5.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="GroupBox9.Text" xml:space="preserve">
+    <value>Modes</value>
+  </data>
+  <data name="Menu3.Text" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="CbExisting.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;Menu3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="ButtonTest.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TextBoxDst.Name" xml:space="preserve">
+    <value>TextBoxDst</value>
+  </data>
+  <data name="&gt;&gt;Menu3.Name" xml:space="preserve">
+    <value>Menu3</value>
+  </data>
+  <data name="ProgressBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>350, 16</value>
+  </data>
+  <data name="&gt;&gt;CbReadable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GroupBox7.Text" xml:space="preserve">
+    <value>Rsync</value>
+  </data>
+  <data name="StatusBarText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>823, 17</value>
+  </data>
+  <data name="&gt;&gt;CbPermWin.Parent" xml:space="preserve">
+    <value>GroupBox8</value>
+  </data>
+  <data name="&gt;&gt;StatusBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextBoxOptions.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;TextBoxOptions.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="CbHideWindows.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 79</value>
+  </data>
+  <data name="&gt;&gt;CbRedir.Name" xml:space="preserve">
+    <value>CbRedir</value>
+  </data>
+  <data name="ComboVerbose.Items2" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="LanguageToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Language</value>
+  </data>
+  <data name="GroupBox6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;CbNewer.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="PictureBox1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbDelta.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label3.ToolTip" xml:space="preserve">
+    <value>Example : --help     -e /bin/ssh</value>
+  </data>
+  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CbDelete.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CbRecurse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbHideWindows.ToolTip" xml:space="preserve">
+    <value>hide the command prompt (you may need to disable this to access the password prompt with authenticated transfers)</value>
+  </data>
+  <data name="CbFS.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="CbPermWin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="&gt;&gt;ButtonAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CbDelete.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;ButtonStop.Name" xml:space="preserve">
+    <value>ButtonStop</value>
+  </data>
+  <data name="CbOwner.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbFrench.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 22</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;CbIgnoreTimes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="TabPage1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ComboProfiles.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;ButtonDstOpen.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="GroupBox2.Text" xml:space="preserve">
+    <value>Execution</value>
+  </data>
+  <data name="&gt;&gt;TextBoxSrc.Name" xml:space="preserve">
+    <value>TextBoxSrc</value>
+  </data>
+  <data name="CbDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 17</value>
+  </data>
+  <data name="CbVerbose.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbOwner.Name" xml:space="preserve">
+    <value>CbOwner</value>
+  </data>
+  <data name="&gt;&gt;CbWinCompat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CbNewer.ToolTip" xml:space="preserve">
+    <value>-u, --update : skip files that are newer on the receiver</value>
+  </data>
+  <data name="ButtonDstOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;Menu1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbHideWindows.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="CbPerm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 79</value>
+  </data>
+  <data name="CbGroup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 17</value>
+  </data>
+  <data name="CbSizeOnly.Text" xml:space="preserve">
+    <value>Size only</value>
+  </data>
+  <data name="CbReadable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbReadable.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="GroupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;GroupBox9.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;ToggleToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ProgressBarText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <data name="&gt;&gt;ButtonStop.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ComboProfiles.Name" xml:space="preserve">
+    <value>ComboProfiles</value>
+  </data>
+  <data name="TextBoxDst.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;GroupBox7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextBoxLogs.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CbWinCompat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 17</value>
+  </data>
+  <data name="&gt;&gt;TabPage2.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="TextBoxOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;ButtonTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TextBoxErrors.MaxLength" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="GroupBox5.Text" xml:space="preserve">
+    <value>Visibility</value>
+  </data>
+  <data name="&gt;&gt;ButtonExec.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;ButtonExec.Name" xml:space="preserve">
+    <value>ButtonExec</value>
+  </data>
+  <data name="ButtonAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 30</value>
+  </data>
+  <data name="ButtonAdd.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;TextBoxSrc.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;TabPage2.Name" xml:space="preserve">
+    <value>TabPage2</value>
+  </data>
+  <data name="CbProgress.ToolTip" xml:space="preserve">
+    <value>--progress : show progress during transfer</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Menu2.Name" xml:space="preserve">
+    <value>Menu2</value>
+  </data>
+  <data name="GroupBox6.Text" xml:space="preserve">
+    <value>Errors</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="&gt;&gt;GroupBox5.Name" xml:space="preserve">
+    <value>GroupBox5</value>
+  </data>
+  <data name="&gt;&gt;ComboProfiles.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CbExistingOnly.Text" xml:space="preserve">
+    <value>Existing only</value>
+  </data>
+  <data name="TrayIconToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 22</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>854, 707</value>
+  </data>
+  <data name="CbPerm.Text" xml:space="preserve">
+    <value>Preserve permissions</value>
+  </data>
+  <data name="GroupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>682, 3</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Name" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;TrayIconToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CbRedir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 95</value>
+  </data>
+  <data name="GroupBox5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ComboRsync.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 21</value>
+  </data>
+  <data name="&gt;&gt;ProgressBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripProgressBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ResetToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FrameMain</value>
+  <data name="&gt;&gt;TextBoxDst.Parent" xml:space="preserve">
+    <value>TabPage1</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;CbExistingOnly.Name" xml:space="preserve">
+    <value>CbExistingOnly</value>
   </data>
+  <data name="&gt;&gt;CbRecurse.Name" xml:space="preserve">
+    <value>CbRecurse</value>
+  </data>
+  <data name="Label1.ToolTip" xml:space="preserve">
+    <value>Example :     C:\DIRECTORY\     Administrator@127.0.0.1:/tmp     Administrator@127.0.0.1::module/tmp</value>
+  </data>
+  <data name="CbVerbose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 39</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="CbReadable.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;GroupBox9.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ButtonSrcOpen.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBoxDst.Size" type="System.Drawing.Size, System.Drawing">
+    <value>660, 22</value>
+  </data>
+  <data name="&gt;&gt;ComboProfiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CbPerm.ToolTip" xml:space="preserve">
+    <value>-p, --perms : preserve permissions</value>
+  </data>
+  <data name="GroupBox4.Text" xml:space="preserve">
+    <value>Attributs</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CbSizeOnly.ToolTip" xml:space="preserve">
+    <value>--size-only : skip files that match in size</value>
+  </data>
+  <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="&gt;&gt;GroupBox8.Name" xml:space="preserve">
+    <value>GroupBox8</value>
+  </data>
+  <data name="&gt;&gt;CbPerm.Parent" xml:space="preserve">
+    <value>GroupBox4</value>
+  </data>
+  <data name="ButtonTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 30</value>
+  </data>
+  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="ToggleToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 22</value>
+  </data>
+  <data name="ButtonTest.Text" xml:space="preserve">
+    <value>Simulate</value>
+  </data>
+  <data name="ButtonDel.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="SplitContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="CbIgnoreTimes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;CbPermWin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CbRecurse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 17</value>
+  </data>
+  <data name="&gt;&gt;ButtonDel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel2.Name" xml:space="preserve">
+    <value>SplitContainer1.Panel2</value>
+  </data>
+  <data name="MenuStrip1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CbRedir.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CbExisting.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 79</value>
+  </data>
+  <data name="GroupBox8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 62</value>
+  </data>
+  <data name="&gt;&gt;ButtonTest.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;ComboRsync.Name" xml:space="preserve">
+    <value>ComboRsync</value>
+  </data>
+  <data name="GroupBox1.Text" xml:space="preserve">
+    <value>Profiles</value>
+  </data>
+  <data name="TrayIconToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Tray Icon</value>
+  </data>
+  <data name="&gt;&gt;CbFS.Name" xml:space="preserve">
+    <value>CbFS</value>
+  </data>
+  <data name="CbExisting.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;TrayIconEnabledToolStripMenuItem.Name" xml:space="preserve">
+    <value>TrayIconEnabledToolStripMenuItem</value>
+  </data>
+  <data name="ExitToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="CbNewer.Text" xml:space="preserve">
+    <value>Skip newer</value>
+  </data>
+  <data name="&gt;&gt;ButtonAdd.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="GroupBox9.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="GroupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 0</value>
+  </data>
+  <data name="CbProgress.AccessibleName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ButtonDstOpen.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="ComboVerbose.Items4" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ButtonExec.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 15</value>
+  </data>
+  <data name="&gt;&gt;ButtonDel.Name" xml:space="preserve">
+    <value>ButtonDel</value>
+  </data>
+  <data name="&gt;&gt;ButtonStop.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;CbOwner.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;CbDate.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ComboVerbose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 21</value>
+  </data>
+  <data name="GroupBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 101</value>
+  </data>
+  <data name="&gt;&gt;CbRedir.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CbHideWindows.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="TabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="ToolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 6</value>
+  </data>
+  <data name="CbRedir.Text" xml:space="preserve">
+    <value>Redirect outputs</value>
+  </data>
+  <data name="TextBoxLogs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="ComboRsync.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="CbPerm.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>842, 244</value>
+  </data>
+  <data name="TextBoxDst.ToolTip" xml:space="preserve">
+    <value>Example :     C:\DIRECTORY\     Administrator@127.0.0.1:/tmp     Administrator@127.0.0.1::module/tmp</value>
+  </data>
+  <data name="&gt;&gt;ResetToolStripMenuItem.Name" xml:space="preserve">
+    <value>ResetToolStripMenuItem</value>
+  </data>
+  <data name="TextBoxSrc.ToolTip" xml:space="preserve">
+    <value>Example :     C:\DIRECTORY\     Administrator@127.0.0.1:/tmp     Administrator@127.0.0.1::module/tmp</value>
+  </data>
+  <metadata name="StatusBar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>396, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>132, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>61</value>
+  </metadata>
+  <metadata name="NotifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>499, 17</value>
+  </metadata>
+  <metadata name="FolderBrowserDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>231, 17</value>
+  </metadata>
+  <metadata name="ContextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>614, 17</value>
+  </metadata>
+  <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

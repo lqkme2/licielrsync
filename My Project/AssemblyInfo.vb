@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("A multi-threaded interface for Rsync on Windows - rsync.samba.org")> 
 <Assembly: AssemblyDescription("A multi-threaded interface for Rsync on Windows - rsync.samba.org")> 
-<Assembly: AssemblyCompany("Arnaud Dovi")> 
+<Assembly: AssemblyCompany("Arnaud_Dovi")> 
 <Assembly: AssemblyProduct("LicielRsync")> 
 <Assembly: AssemblyCopyright("Copyright © Arnaud Dovi 2012")> 
 <Assembly: AssemblyTrademark("")> 
@@ -30,5 +30,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("0.0.2.0")> 
+<Assembly: AssemblyVersion("0.0.2.1")> 
 '<Assembly: AssemblyFileVersion("1.0.0.0")> 

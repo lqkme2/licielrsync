@@ -31,7 +31,7 @@ Module ModuleMain
     Public AppAssembly As String = My.Application.Info.AssemblyName
     Public AppExe As String = AppAssembly & ".exe"
     Public AppPath As String = My.Application.Info.DirectoryPath & "\"
-    Public RsyncDirectory As String = AppPath, RsyncPath As String = "", LastLine As String = "", CurrentFile As String = ""
+    Public RsyncDirectory As String = AppPath & "rsync", RsyncPath As String = "", LastLine As String = "", CurrentFile As String = ""
 
     Private ReadOnly Fm As FrameMain = FrameMain
     Private Const NotEmptyPattern As String = "\S+"
@@ -52,8 +52,13 @@ Module ModuleMain
         ''
         '' Old configs import
         ''
-        If My.Settings.ForceUpdate Then
+        If My.Settings.ForceUpdate And Not My.Settings.ShouldReset Then
             My.Settings.Upgrade()
+            My.Settings.ForceUpdate = False
+            My.Settings.Save()
+        End If
+        If My.Settings.ShouldReset Then
+            My.Settings.ShouldReset = False
             My.Settings.ForceUpdate = False
             My.Settings.Save()
         End If
@@ -66,6 +71,8 @@ Module ModuleMain
         '' Detect version of rsync present and ready to use
         ''
         InitializeRsyncs()
+        Dim fullPath = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceNames()
+
     End Sub
 
     ''--------------------------------------------------------------------
@@ -450,6 +457,9 @@ Module ModuleMain
             Fm.CbShowCmd.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("showcmd")
             Fm.CbHideWindows.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("hidewnd")
             Fm.CbRedir.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("redir")
+            Fm.TrayIconNoticeToolStripMenuItem.Enabled = My.Settings.ShowInTray
+            Fm.TrayIconEnabledToolStripMenuItem.Checked = My.Settings.ShowInTray
+            Fm.TrayIconNoticeStartToolStripMenuItem.Checked = My.Settings.TrayNoticeStart
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
@@ -476,7 +486,8 @@ Module ModuleMain
     ''--------------------------------------------------------------------
 
     Private Sub LocalizeToolStripsText(ByVal toolStrCol As ToolStripItemCollection, ByVal resources As ComponentResourceManager, ByVal cInfo As CultureInfo)
-        For Each t As ToolStripMenuItem In toolStrCol
+        For Each t In toolStrCol
+            If TypeOf t Is ToolStripSeparator Then Continue For
             resources.ApplyResources(t, t.Name, cInfo)
             LocalizeToolStripsText(t.DropDownItems, resources, cInfo)
         Next t
@@ -563,10 +574,10 @@ Module ModuleMain
             Case "::process"
                 errorText = "Error while accessing the process (see " & AppPath & AppAssembly & "_errors.log for details)"
         End Select
-        If errorText.Length > 0 Then TopMessageBox.Show(errorText, AppExe & " error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        If errorText.Length > 0 Then LicielMessage.Send(errorText, AppExe & " error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         errorFullLog = "[" & DateTime.Now & " --- " & type & "] " & errorText & ControlChars.CrLf & "Details : " & ex
         WriteFile(errorFullLog, AppPath & AppAssembly & "_errors.log")
-        If Debugger.IsAttached Then TopMessageBox.Show(errorFullLog, AppExe & " error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        If Debugger.IsAttached Then LicielMessage.Send(errorFullLog, AppExe & " error", MessageBoxButtons.OK, MessageBoxIcon.Error)
     End Sub
 
 End Module
@@ -577,11 +588,11 @@ End Module
 '' Makes a TopMost message box
 ''--------------------------------------------------------------------
 
-Public Class TopMessageBox
+Public Class LicielMessage
     Private Shared Sub Actualize(ByVal sender As System.Object, ByVal e As EventArgs)
         sender.Activate()
     End Sub
-    Public Shared Function Show(ByVal message As String, ByVal title As String, ByVal buttons As MessageBoxButtons, ByVal icons As MessageBoxIcon) As DialogResult
+    Public Shared Function Send(ByVal message As String, ByVal title As String, ByVal buttons As MessageBoxButtons, ByVal icons As MessageBoxIcon) As DialogResult
         Dim topmostForm As Form = New Form()
         topmostForm.Icon = AppIcon
         AddHandler topmostForm.Deactivate, AddressOf Actualize
@@ -598,4 +609,8 @@ Public Class TopMessageBox
         topmostForm.Dispose()
         Return result
     End Function
+    Public Shared Sub SendTray(ByVal message As String, ByVal title As String, ByVal t As ToolTipIcon, ByVal time As Long)
+        FrameMain.NotifyIcon1.Icon = AppIcon
+        FrameMain.NotifyIcon1.ShowBalloonTip(time, title, message, t)
+    End Sub
 End Class

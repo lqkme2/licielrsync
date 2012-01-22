@@ -123,6 +123,66 @@ Namespace My
                 Me("SplitterDistance_Splitter1") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property ShowInTray() As Boolean
+            Get
+                Return CType(Me("ShowInTray"),Boolean)
+            End Get
+            Set
+                Me("ShowInTray") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TrayNoticeStart() As Boolean
+            Get
+                Return CType(Me("TrayNoticeStart"),Boolean)
+            End Get
+            Set
+                Me("TrayNoticeStart") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property ShouldReset() As Boolean
+            Get
+                Return CType(Me("ShouldReset"),Boolean)
+            End Get
+            Set
+                Me("ShouldReset") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("-1")>  _
+        Public Property CloseToTray() As Integer
+            Get
+                Return CType(Me("CloseToTray"),Integer)
+            End Get
+            Set
+                Me("CloseToTray") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("-1")>  _
+        Public Property MinimizeToTray() As Integer
+            Get
+                Return CType(Me("MinimizeToTray"),Integer)
+            End Get
+            Set
+                Me("MinimizeToTray") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

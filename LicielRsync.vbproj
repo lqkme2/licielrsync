@@ -55,6 +55,9 @@
     </DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <UseVSHostingProcess>false</UseVSHostingProcess>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <DebugSymbols>false</DebugSymbols>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -80,10 +83,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Import Include="LicielRsync.My.Resources" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
     <Import Include="System.Collections" />
@@ -126,6 +132,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ModuleSettings.vb" />
+    <Compile Include="CustomSettingsProvider.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FrameAboutBox.resx">
@@ -163,7 +170,13 @@
     <None Include="pub.adovi.128-Bit-DER.cer" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\blue_gradient.png" />
+    <None Include="Images\famfamfam_silk_icons_v013\application_form.png" />
+    <None Include="Images\famfamfam_silk_icons_v013\delete.png" />
+    <None Include="Images\famfamfam_silk_icons_v013\information.png" />
+    <None Include="Images\famfamfam_flag_icons\png\us.png" />
+    <None Include="Images\famfamfam_flag_icons\png\fr.png" />
+    <None Include="Images\famfamfam_silk_icons_v013\application_put.png" />
+    <None Include="Images\famfamfam_silk_icons_v013\door_in.png" />
     <Content Include="Images\LicielRsync.ico" />
     <None Include="Images\newrsynclogo.png" />
   </ItemGroup>
@@ -187,7 +200,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_UpdateAssemblyVersion="True" BuildVersion_ConfigurationName="Release" BuildVersion_BuildVersioningStyle="None.None.None.Increment" BuildVersion_StartDate="2011/9/16" />
+      <UserProperties BuildVersion_StartDate="2011/9/16" BuildVersion_BuildVersioningStyle="None.None.None.Increment" BuildVersion_ConfigurationName="Release" BuildVersion_UpdateAssemblyVersion="True" />
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>

@@ -60,6 +60,41 @@ Namespace My.Resources
             End Set
         End Property
         
+        Friend ReadOnly Property application_form() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("application_form", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property application_put() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("application_put", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property delete() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("delete", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property fr() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("fr", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property information() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("information", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property LicielRsync() As System.Drawing.Icon
             Get
                 Dim obj As Object = ResourceManager.GetObject("LicielRsync", resourceCulture)
@@ -70,6 +105,13 @@ Namespace My.Resources
         Friend ReadOnly Property newrsynclogo() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("newrsynclogo", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property us() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("us", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
