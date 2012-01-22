@@ -2,37 +2,37 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
   <Profiles />
   <Settings>
-    <Setting Name="ForceUpdate" Type="System.Boolean" Scope="User">
+    <Setting Name="ForceUpdate" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="CurrentProfile" Type="System.String" Scope="User">
+    <Setting Name="CurrentProfile" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)">Default</Value>
     </Setting>
-    <Setting Name="Locales" Type="System.String" Scope="User">
+    <Setting Name="Locales" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)">English</Value>
     </Setting>
-    <Setting Name="Location_Frame" GenerateDefaultValueInCode="false" Type="System.Drawing.Point" Scope="User">
+    <Setting Name="Location_Frame" Roaming="true" GenerateDefaultValueInCode="false" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
     </Setting>
-    <Setting Name="Size_Frame" GenerateDefaultValueInCode="false" Type="System.Drawing.Size" Scope="User">
+    <Setting Name="Size_Frame" Roaming="true" GenerateDefaultValueInCode="false" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">854, 707</Value>
     </Setting>
-    <Setting Name="SplitterDistance_Splitter1" Type="System.Int32" Scope="User">
+    <Setting Name="SplitterDistance_Splitter1" Roaming="true" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">490</Value>
     </Setting>
-    <Setting Name="ShowInTray" Type="System.Boolean" Scope="User">
+    <Setting Name="ShowInTray" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="TrayNoticeStart" Type="System.Boolean" Scope="User">
+    <Setting Name="TrayNoticeStart" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="ShouldReset" Type="System.Boolean" Scope="User">
+    <Setting Name="ShouldReset" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="CloseToTray" Type="System.Int32" Scope="User">
+    <Setting Name="CloseToTray" Roaming="true" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">-1</Value>
     </Setting>
-    <Setting Name="MinimizeToTray" Type="System.Int32" Scope="User">
+    <Setting Name="MinimizeToTray" Roaming="true" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">-1</Value>
     </Setting>
   </Settings>

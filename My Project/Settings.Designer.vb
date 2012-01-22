@@ -56,7 +56,8 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True"),  _
+         Global.System.Configuration.SettingsManageabilityAttribute(Global.System.Configuration.SettingsManageability.Roaming)>  _
         Public Property ForceUpdate() As Boolean
             Get
                 Return CType(Me("ForceUpdate"),Boolean)
@@ -68,7 +69,8 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Default")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Default"),  _
+         Global.System.Configuration.SettingsManageabilityAttribute(Global.System.Configuration.SettingsManageability.Roaming)>  _
         Public Property CurrentProfile() As String
             Get
                 Return CType(Me("CurrentProfile"),String)
@@ -80,7 +82,8 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("English")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("English"),  _
+         Global.System.Configuration.SettingsManageabilityAttribute(Global.System.Configuration.SettingsManageability.Roaming)>  _
         Public Property Locales() As String
             Get
                 Return CType(Me("Locales"),String)
@@ -91,7 +94,8 @@ Namespace My
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SettingsManageabilityAttribute(Global.System.Configuration.SettingsManageability.Roaming)>  _
         Public Property Location_Frame() As Global.System.Drawing.Point
             Get
                 Return CType(Me("Location_Frame"),Global.System.Drawing.Point)
@@ -102,7 +106,8 @@ Namespace My
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SettingsManageabilityAttribute(Global.System.Configuration.SettingsManageability.Roaming)>  _
         Public Property Size_Frame() As Global.System.Drawing.Size
             Get
                 Return CType(Me("Size_Frame"),Global.System.Drawing.Size)
@@ -114,7 +119,8 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("490")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("490"),  _
+         Global.System.Configuration.SettingsManageabilityAttribute(Global.System.Configuration.SettingsManageability.Roaming)>  _
         Public Property SplitterDistance_Splitter1() As Integer
             Get
                 Return CType(Me("SplitterDistance_Splitter1"),Integer)
@@ -126,7 +132,8 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True"),  _
+         Global.System.Configuration.SettingsManageabilityAttribute(Global.System.Configuration.SettingsManageability.Roaming)>  _
         Public Property ShowInTray() As Boolean
             Get
                 Return CType(Me("ShowInTray"),Boolean)
@@ -138,7 +145,8 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False"),  _
+         Global.System.Configuration.SettingsManageabilityAttribute(Global.System.Configuration.SettingsManageability.Roaming)>  _
         Public Property TrayNoticeStart() As Boolean
             Get
                 Return CType(Me("TrayNoticeStart"),Boolean)
@@ -150,7 +158,8 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False"),  _
+         Global.System.Configuration.SettingsManageabilityAttribute(Global.System.Configuration.SettingsManageability.Roaming)>  _
         Public Property ShouldReset() As Boolean
             Get
                 Return CType(Me("ShouldReset"),Boolean)
@@ -162,7 +171,8 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("-1")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("-1"),  _
+         Global.System.Configuration.SettingsManageabilityAttribute(Global.System.Configuration.SettingsManageability.Roaming)>  _
         Public Property CloseToTray() As Integer
             Get
                 Return CType(Me("CloseToTray"),Integer)
@@ -174,7 +184,8 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("-1")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("-1"),  _
+         Global.System.Configuration.SettingsManageabilityAttribute(Global.System.Configuration.SettingsManageability.Roaming)>  _
         Public Property MinimizeToTray() As Integer
             Get
                 Return CType(Me("MinimizeToTray"),Integer)

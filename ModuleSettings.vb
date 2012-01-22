@@ -16,7 +16,8 @@ Namespace My
     Partial Friend NotInheritable Class MySettings
         <Configuration.UserScopedSettingAttribute(), _
          DebuggerNonUserCodeAttribute(), _
-         Configuration.SettingsSerializeAs(Configuration.SettingsSerializeAs.Binary)> _
+         Configuration.SettingsSerializeAs(Configuration.SettingsSerializeAs.Binary), _
+         Configuration.SettingsManageabilityAttribute(Configuration.SettingsManageability.Roaming)> _
         Public Property P() As Hashtable
             Get
                 Return CType(Me("P"), Hashtable)
@@ -28,7 +29,8 @@ Namespace My
 
         <Configuration.UserScopedSettingAttribute(), _
          DebuggerNonUserCodeAttribute(), _
-         Configuration.SettingsSerializeAs(Configuration.SettingsSerializeAs.Binary)> _
+         Configuration.SettingsSerializeAs(Configuration.SettingsSerializeAs.Binary), _
+         Configuration.SettingsManageabilityAttribute(Configuration.SettingsManageability.Roaming)> _
         Public Property ProfilesList() As List(Of String)
             Get
                 Return CType(Me("ProfilesList"), List(Of String))

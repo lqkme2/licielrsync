@@ -148,38 +148,83 @@
     <value />
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ExitToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 22</value>
+  </data>
+  <data name="ExitToolStripMenuItem2.Text" xml:space="preserve">
+    <value>Quitt&amp;er</value>
+  </data>
   <data name="Menu1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
+    <value>54, 20</value>
   </data>
   <data name="Menu1.Text" xml:space="preserve">
-    <value>Outils</value>
-  </data>
-  <data name="CbEnglish.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 22</value>
+    <value>&amp;Fichier</value>
   </data>
   <data name="CbEnglish.Text" xml:space="preserve">
-    <value>Anglais</value>
-  </data>
-  <data name="CbFrench.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 22</value>
+    <value>&amp;Anglais</value>
   </data>
   <data name="CbFrench.Text" xml:space="preserve">
-    <value>Français</value>
+    <value>&amp;Français</value>
+  </data>
+  <data name="LanguageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 22</value>
   </data>
   <data name="LanguageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Langage</value>
+    <value>&amp;Langage</value>
+  </data>
+  <data name="TrayIconEnabledToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="TrayIconEnabledToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Activé</value>
+  </data>
+  <data name="ToolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 6</value>
+  </data>
+  <data name="TrayIconNoticeStartToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 22</value>
+  </data>
+  <data name="TrayIconNoticeStartToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Démarrage</value>
+  </data>
+  <data name="TrayIconNoticeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="TrayIconNoticeToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Notifications</value>
+  </data>
+  <data name="TrayIconToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 22</value>
+  </data>
+  <data name="TrayIconToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Zone notification</value>
+  </data>
+  <data name="ToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 6</value>
+  </data>
+  <data name="ResetToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 22</value>
+  </data>
+  <data name="ResetToolStripMenuItem.Text" xml:space="preserve">
+    <value>E&amp;ffacer configurations</value>
   </data>
   <data name="Menu2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 20</value>
+    <value>50, 20</value>
   </data>
   <data name="Menu2.Text" xml:space="preserve">
-    <value>Aide</value>
+    <value>&amp;Outils</value>
   </data>
   <data name="AboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 22</value>
   </data>
   <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
     <value>À propos...</value>
+  </data>
+  <data name="Menu3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 20</value>
+  </data>
+  <data name="Menu3.Text" xml:space="preserve">
+    <value>&amp;Aide</value>
   </data>
   <data name="MenuStrip1.ToolTip" xml:space="preserve">
     <value />

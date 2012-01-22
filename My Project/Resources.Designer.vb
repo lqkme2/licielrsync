@@ -81,6 +81,13 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property folder_go() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("folder_go", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property fr() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("fr", resourceCulture)
@@ -99,6 +106,60 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("LicielRsync", resourceCulture)
                 Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to The settings will reset to default and LicielRsync will restart. Do you confirm to continue ?.
+        '''</summary>
+        Friend ReadOnly Property msg1() As String
+            Get
+                Return ResourceManager.GetString("msg1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to LicielRsync settings reset.
+        '''</summary>
+        Friend ReadOnly Property msg2() As String
+            Get
+                Return ResourceManager.GetString("msg2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to LicielRsync started.
+        '''</summary>
+        Friend ReadOnly Property msg3() As String
+            Get
+                Return ResourceManager.GetString("msg3", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to LicielRsync will close to the system tray. Do you confirm to always do this ?.
+        '''</summary>
+        Friend ReadOnly Property msg4() As String
+            Get
+                Return ResourceManager.GetString("msg4", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to LicielRsync will minimize to the system tray. Do you confirm to always do this ?.
+        '''</summary>
+        Friend ReadOnly Property msg5() As String
+            Get
+                Return ResourceManager.GetString("msg5", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to LicielRsync - Did you know ?.
+        '''</summary>
+        Friend ReadOnly Property msg6() As String
+            Get
+                Return ResourceManager.GetString("msg6", resourceCulture)
             End Get
         End Property
         

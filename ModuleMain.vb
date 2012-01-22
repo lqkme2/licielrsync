@@ -20,6 +20,8 @@ Imports System.Text
 
 Module ModuleMain
 
+    Public CurrentCultureInfo As CultureInfo
+
     Private Delegate Sub DelegateInvoke(ByVal var() As Object)
 
     Public FirstLoad As Boolean = True, Progress As Boolean = False
@@ -27,7 +29,7 @@ Module ModuleMain
     Public Processus As Process
     Public ProcessusSuspended As Boolean = False
     Public GlobalSize As Long = -1, GlobalSizeSent As Long = 0, CurrentSize As Long = -1, CurrentProgress As Integer = 0
-    Public AppIcon As Icon = CType(My.Resources.ResourceManager.GetObject("LicielRsync", New CultureInfo("en")), Icon)
+    Public AppIcon As Icon = CType(My.Resources.ResourceManager.GetObject("LicielRsync"), Icon)
     Public AppAssembly As String = My.Application.Info.AssemblyName
     Public AppExe As String = AppAssembly & ".exe"
     Public AppPath As String = My.Application.Info.DirectoryPath & "\"
@@ -37,6 +39,15 @@ Module ModuleMain
     Private Const NotEmptyPattern As String = "\S+"
     Private Const ProgressPattern As String = "(\d+)\%.*(\d{2}|\d{1}):(\d{2}|\d{1}):(\d{2}|\d{1})\s*(\(.*\))*$"
     Private Const WinPathPattern As String = "^(([a-zA-Z]):\\(.*)|(\\\\))"
+
+    Private Declare Function SendMessage Lib "kernel32.dll" (ByVal hWnd As Integer, ByVal Msg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
+    Public Const WmGeticon As UInteger = &H7F
+
+    Public Function GetWindowIcon(ByVal windowHandle As IntPtr) As Image
+        Dim iconHandle As Integer = SendMessage(windowHandle, WmGeticon, 0, 0)
+        If iconHandle <> 0 Then Return Icon.FromHandle(iconHandle).ToBitmap()
+        Return Nothing
+    End Function
 
     ''--------------------------------------------------------------------
     '' Main
@@ -71,8 +82,6 @@ Module ModuleMain
         '' Detect version of rsync present and ready to use
         ''
         InitializeRsyncs()
-        Dim fullPath = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceNames()
-
     End Sub
 
     ''--------------------------------------------------------------------
@@ -501,6 +510,7 @@ Module ModuleMain
 
     Public Sub ChangeLanguage(ByVal lang As String)
         Dim cultureInfo = If(lang = "", Nothing, New CultureInfo(lang, False))
+        CurrentCultureInfo = cultureInfo
         Dim resources As ComponentResourceManager = New ComponentResourceManager(Fm.GetType)
         resources.ApplyResources(Fm, "$this", cultureInfo)
         For Each c In Fm.Controls

@@ -19,8 +19,14 @@ Imports System.Threading
 
 Public Class FrameMain
 
-    Private _fab As FrameAboutBox
-    Private _isReset As Boolean = False
+    Dim _fab As FrameAboutBox
+    Dim _isReset As Boolean = False
+    Dim _isFrameLoaded As Boolean = False
+
+    Private Function L(ByVal resStr As String)
+        Return My.Resources.ResourceManager.GetString(resStr, CurrentCultureInfo)
+    End Function
+
     ''--------------------------------------------------------------------
     '' Init Form
     ''--------------------------------------------------------------------
@@ -32,7 +38,30 @@ Public Class FrameMain
         StatusBar.Padding = New Padding(StatusBar.Padding.Left, StatusBar.Padding.Top, StatusBar.Padding.Left, StatusBar.Padding.Bottom)
         NotifyIcon1.Icon = AppIcon
         _isReset = False
-        'Dim s = Application.
+        _isFrameLoaded = True
+    End Sub
+
+    Private Sub FrameMainUnload(Optional ByVal reset As Boolean = False)
+        If reset Then
+            My.Settings.Reset()
+            My.Settings.ShouldReset = True
+            My.Settings.Save()
+            NotifyIcon1.Visible = False
+            _isReset = True
+            Application.Restart()
+            Exit Sub
+        End If
+        FrameMainSaveSettings()
+        NotifyIcon1.Visible = False
+        Environment.Exit(0)
+    End Sub
+
+    Private Sub FrameMainSaveSettings(Optional ByVal reset As Boolean = False)
+        If Location.X < 0 Or Location.Y < 0 Then Exit Sub
+        My.Settings.Size_Frame = Size
+        My.Settings.Location_Frame = Location
+        My.Settings.SplitterDistance_Splitter1 = SplitContainer1.SplitterDistance
+        My.Settings.Save()
     End Sub
 
     ''--------------------------------------------------------------------
@@ -43,7 +72,8 @@ Public Class FrameMain
 
     Private Sub ButtonClick(sender As System.Object, e As EventArgs) Handles ButtonTest.Click, ButtonStop.Click, ButtonSrcOpen.Click, ButtonPause.Click, ButtonExec.Click, ButtonDstOpen.Click, _
                                                                              ButtonDel.Click, ButtonAdd.Click, AboutToolStripMenuItem.Click, ResetToolStripMenuItem.Click, ToggleToolStripMenuItem.Click, _
-                                                                             ExitToolStripMenuItem1.Click, ExitToolStripMenuItem2.Click
+                                                                             ExitToolStripMenuItem1.Click, ExitToolStripMenuItem2.Click, OpenSettingsFolderToolStripMenuItem.Click
+        If Not _isFrameLoaded Then Exit Sub
         Try
             Select Case sender.name
                 Case ButtonExec.Name, ButtonTest.Name
@@ -114,20 +144,15 @@ Public Class FrameMain
                     _fab = New FrameAboutBox()
                     _fab.Show()
                 Case ResetToolStripMenuItem.Name
-                    If LicielMessage.Send("The settings will reset to default and LicielRsync will close, do you confirm to continue ?", "LicielRsync settings reset", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
-                    My.Settings.Reset()
-                    My.Settings.ShouldReset = True
-                    My.Settings.Save()
-                    NotifyIcon1.Visible = False
-                    _isReset = True
-                    Application.Restart()
+                    If LicielMessage.Send(L("msg1"), L("msg2"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
+                    FrameMainUnload(True)
                 Case ToggleToolStripMenuItem.Name
                     Visible = Not Visible
                     If Visible AndAlso WindowState = FormWindowState.Minimized Then WindowState = FormWindowState.Normal
                 Case ExitToolStripMenuItem1.Name, ExitToolStripMenuItem2.Name
-                    SaveFormSettings()
-                    NotifyIcon1.Visible = False
-                    Environment.Exit(0)
+                    FrameMainUnload()
+                Case OpenSettingsFolderToolStripMenuItem.Name
+                    Process.Start("explorer.exe", """" & Regex.Match(Configuration.ConfigurationManager.OpenExeConfiguration(Configuration.ConfigurationUserLevel.PerUserRoaming).FilePath, "(.*\\)[^\\]+$").Groups(1).Value & """")
             End Select
             UpdateStatusBarCommand(sender.name = ButtonTest.Name)
         Catch ex As Exception
@@ -135,6 +160,14 @@ Public Class FrameMain
         End Try
     End Sub
 
+    Private Sub OnControlDoubleClick(sender As System.Object, e As EventArgs) Handles NotifyIcon1.DoubleClick
+        If Not _isFrameLoaded Then Exit Sub
+        Select Case sender.Tag
+            Case NotifyIcon1.Tag
+                Visible = Not Visible
+                If Visible AndAlso WindowState = FormWindowState.Minimized Then WindowState = FormWindowState.Normal
+        End Select
+    End Sub
 
     ''--------------------------------------------------------------------
     '' CheckBoxChanged
@@ -183,7 +216,7 @@ Public Class FrameMain
                 My.Settings.ShowInTray = sender.Checked
                 NotifyIcon1.Visible = sender.Checked
                 TrayIconNoticeToolStripMenuItem.Enabled = sender.Checked
-                If sender.Checked AndAlso My.Settings.TrayNoticeStart Then LicielMessage.SendTray("LicielRsync started", "LicielRsync", ToolTipIcon.Info, 500)
+                If sender.Checked AndAlso My.Settings.TrayNoticeStart Then LicielMessage.SendTray(L("msg3"), "LicielRsync", ToolTipIcon.Info, 500)
                 My.Settings.Save()
                 Exit Sub
         End Select
@@ -234,49 +267,37 @@ Public Class FrameMain
         End Select
     End Sub
 
-    ''--------------------------------------------------------------------
-    '' To work around Visual Studio problems while using DataBindings events
-    ''
-    '' The MS Team did not added the ability to databind the variable Size of a Form 
-    '' and this code demonstrate you can save the Location and Size of a form without
-    '' the need of the ugly OnPropertyChanged event
-    ''--------------------------------------------------------------------
-
     Private Sub BetterDataBindings(sender As System.Object, e As Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
-        If _isReset Then Exit Sub
+        If _isReset Or Not _isFrameLoaded Then Exit Sub
         If NotifyIcon1.Visible AndAlso My.Settings.CloseToTray = -1 Then
-            My.Settings.CloseToTray = Convert.ToInt32(LicielMessage.Send("LicielRsync can minimize to the system tray. Would you like to do this ?", "LicielRsync - Did you know", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes)
+            My.Settings.CloseToTray = Convert.ToInt32(LicielMessage.Send(L("msg4"), L("msg6"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes)
         End If
-        If Not (NotifyIcon1.Visible AndAlso My.Settings.CloseToTray) Then NotifyIcon1.Visible = False
-        SaveFormSettings()
+        FrameMainSaveSettings()
         If NotifyIcon1.Visible AndAlso My.Settings.CloseToTray Then
             e.Cancel = True
             Hide()
+            Exit Sub
         End If
+        NotifyIcon1.Visible = False
     End Sub
 
     Private Sub OnMinimize(sender As System.Object, e As EventArgs) Handles MyBase.Resize
-        If WindowState <> FormWindowState.Minimized Then Exit Sub
+        If Not _isFrameLoaded Or WindowState <> FormWindowState.Minimized Then Exit Sub
         If NotifyIcon1.Visible AndAlso My.Settings.MinimizeToTray = -1 Then
-            My.Settings.MinimizeToTray = Convert.ToInt32(LicielMessage.Send("LicielRsync can close to the system tray. Would you like to do this ?", "LicielRsync - Did you know", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes)
-            SaveFormSettings()
+            My.Settings.MinimizeToTray = Convert.ToInt32(LicielMessage.Send(L("msg5"), L("msg6"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes)
+            My.Settings.Save()
         End If
         Visible = Not (NotifyIcon1.Visible AndAlso My.Settings.MinimizeToTray = 1)
     End Sub
 
-    Private Sub OnControlDoubleClick(sender As System.Object, e As EventArgs) Handles NotifyIcon1.DoubleClick
-        Select Case sender.Tag
-            Case NotifyIcon1.Tag
-                Visible = Not Visible
-                If Visible AndAlso WindowState = FormWindowState.Minimized Then WindowState = FormWindowState.Normal
-        End Select
-    End Sub
-
-    Private Sub SaveFormSettings()
-        My.Settings.Size_Frame = Size
-        My.Settings.Location_Frame = Location
+    Private Sub SplitContainer1SplitterMoved(sender As System.Object, e As Windows.Forms.SplitterEventArgs) Handles SplitContainer1.SplitterMoved
+        If Not _isFrameLoaded Then Exit Sub
         My.Settings.SplitterDistance_Splitter1 = SplitContainer1.SplitterDistance
         My.Settings.Save()
     End Sub
 
+    Private Sub FrameMainResizeEnd(sender As System.Object, e As EventArgs) Handles MyBase.ResizeEnd
+        If Not _isFrameLoaded Then Exit Sub
+        FrameMainSaveSettings()
+    End Sub
 End Class

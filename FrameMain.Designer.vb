@@ -47,6 +47,7 @@ Partial Class FrameMain
         Me.TrayIconNoticeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TrayIconNoticeStartToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.OpenSettingsFolderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ResetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -102,11 +103,11 @@ Partial Class FrameMain
         Me.ButtonSrcOpen = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
-        Me.FolderBrowserDialog = New System.Windows.Forms.FolderBrowserDialog()
-        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToggleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FolderBrowserDialog = New System.Windows.Forms.FolderBrowserDialog()
+        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
@@ -131,57 +132,50 @@ Partial Class FrameMain
         '
         'SplitContainer1
         '
-        resources.ApplyResources(Me.SplitContainer1, "SplitContainer1")
         Me.SplitContainer1.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.SplitContainer1.Cursor = System.Windows.Forms.Cursors.Hand
+        resources.ApplyResources(Me.SplitContainer1, "SplitContainer1")
         Me.SplitContainer1.Name = "SplitContainer1"
         '
         'SplitContainer1.Panel1
         '
-        resources.ApplyResources(Me.SplitContainer1.Panel1, "SplitContainer1.Panel1")
         Me.SplitContainer1.Panel1.BackColor = System.Drawing.SystemColors.Control
         Me.SplitContainer1.Panel1.Controls.Add(Me.GroupBox3)
-        Me.ToolTip1.SetToolTip(Me.SplitContainer1.Panel1, resources.GetString("SplitContainer1.Panel1.ToolTip"))
+        resources.ApplyResources(Me.SplitContainer1.Panel1, "SplitContainer1.Panel1")
         '
         'SplitContainer1.Panel2
         '
-        resources.ApplyResources(Me.SplitContainer1.Panel2, "SplitContainer1.Panel2")
         Me.SplitContainer1.Panel2.BackColor = System.Drawing.SystemColors.Control
         Me.SplitContainer1.Panel2.Controls.Add(Me.GroupBox6)
-        Me.ToolTip1.SetToolTip(Me.SplitContainer1.Panel2, resources.GetString("SplitContainer1.Panel2.ToolTip"))
-        Me.ToolTip1.SetToolTip(Me.SplitContainer1, resources.GetString("SplitContainer1.ToolTip"))
+        resources.ApplyResources(Me.SplitContainer1.Panel2, "SplitContainer1.Panel2")
         '
         'GroupBox3
         '
-        resources.ApplyResources(Me.GroupBox3, "GroupBox3")
         Me.GroupBox3.CausesValidation = False
         Me.GroupBox3.Controls.Add(Me.TextBoxLogs)
+        resources.ApplyResources(Me.GroupBox3, "GroupBox3")
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.GroupBox3, resources.GetString("GroupBox3.ToolTip"))
         '
         'TextBoxLogs
         '
         Me.TextBoxLogs.AcceptsReturn = True
-        resources.ApplyResources(Me.TextBoxLogs, "TextBoxLogs")
         Me.TextBoxLogs.CausesValidation = False
+        resources.ApplyResources(Me.TextBoxLogs, "TextBoxLogs")
         Me.TextBoxLogs.Name = "TextBoxLogs"
-        Me.ToolTip1.SetToolTip(Me.TextBoxLogs, resources.GetString("TextBoxLogs.ToolTip"))
         '
         'GroupBox6
         '
-        resources.ApplyResources(Me.GroupBox6, "GroupBox6")
         Me.GroupBox6.Controls.Add(Me.TextBoxErrors)
+        resources.ApplyResources(Me.GroupBox6, "GroupBox6")
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.GroupBox6, resources.GetString("GroupBox6.ToolTip"))
         '
         'TextBoxErrors
         '
         Me.TextBoxErrors.AcceptsReturn = True
         resources.ApplyResources(Me.TextBoxErrors, "TextBoxErrors")
         Me.TextBoxErrors.Name = "TextBoxErrors"
-        Me.ToolTip1.SetToolTip(Me.TextBoxErrors, resources.GetString("TextBoxErrors.ToolTip"))
         '
         'StatusBar
         '
@@ -192,64 +186,62 @@ Partial Class FrameMain
         Me.StatusBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StatusBarText, Me.ProgressBarText, Me.ProgressBar})
         Me.StatusBar.Name = "StatusBar"
         Me.StatusBar.SizingGrip = False
-        Me.ToolTip1.SetToolTip(Me.StatusBar, resources.GetString("StatusBar.ToolTip"))
         '
         'StatusBarText
         '
-        resources.ApplyResources(Me.StatusBarText, "StatusBarText")
         Me.StatusBarText.Name = "StatusBarText"
+        resources.ApplyResources(Me.StatusBarText, "StatusBarText")
         Me.StatusBarText.Spring = True
         '
         'ProgressBarText
         '
-        resources.ApplyResources(Me.ProgressBarText, "ProgressBarText")
         Me.ProgressBarText.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.ProgressBarText.Name = "ProgressBarText"
+        resources.ApplyResources(Me.ProgressBarText, "ProgressBarText")
         '
         'ProgressBar
         '
-        resources.ApplyResources(Me.ProgressBar, "ProgressBar")
         Me.ProgressBar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         Me.ProgressBar.Name = "ProgressBar"
+        resources.ApplyResources(Me.ProgressBar, "ProgressBar")
         '
         'StatusBarText1
         '
-        resources.ApplyResources(Me.StatusBarText1, "StatusBarText1")
         Me.StatusBarText1.Name = "StatusBarText1"
+        resources.ApplyResources(Me.StatusBarText1, "StatusBarText1")
         '
         'MenuStrip1
         '
-        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(0)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu1, Me.Menu2, Me.Menu3})
         Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
+        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.ToolTip1.SetToolTip(Me.MenuStrip1, resources.GetString("MenuStrip1.ToolTip"))
         '
         'Menu1
         '
-        resources.ApplyResources(Me.Menu1, "Menu1")
         Me.Menu1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem2})
         Me.Menu1.Name = "Menu1"
+        resources.ApplyResources(Me.Menu1, "Menu1")
         '
         'ExitToolStripMenuItem2
         '
-        resources.ApplyResources(Me.ExitToolStripMenuItem2, "ExitToolStripMenuItem2")
         Me.ExitToolStripMenuItem2.Name = "ExitToolStripMenuItem2"
+        resources.ApplyResources(Me.ExitToolStripMenuItem2, "ExitToolStripMenuItem2")
         '
         'Menu2
         '
-        resources.ApplyResources(Me.Menu2, "Menu2")
-        Me.Menu2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LanguageToolStripMenuItem, Me.TrayIconToolStripMenuItem, Me.ToolStripSeparator1, Me.ResetToolStripMenuItem})
+        Me.Menu2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LanguageToolStripMenuItem, Me.TrayIconToolStripMenuItem, Me.ToolStripSeparator1, Me.OpenSettingsFolderToolStripMenuItem, Me.ResetToolStripMenuItem})
         Me.Menu2.Name = "Menu2"
+        resources.ApplyResources(Me.Menu2, "Menu2")
         '
         'LanguageToolStripMenuItem
         '
-        resources.ApplyResources(Me.LanguageToolStripMenuItem, "LanguageToolStripMenuItem")
         Me.LanguageToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CbEnglish, Me.CbFrench})
         Me.LanguageToolStripMenuItem.Image = Global.LicielRsync.My.Resources.Resources.application_form
+        resources.ApplyResources(Me.LanguageToolStripMenuItem, "LanguageToolStripMenuItem")
         Me.LanguageToolStripMenuItem.Name = "LanguageToolStripMenuItem"
         '
         'CbEnglish
@@ -258,7 +250,7 @@ Partial Class FrameMain
         Me.CbEnglish.CheckOnClick = True
         Me.CbEnglish.Image = Global.LicielRsync.My.Resources.Resources.us
         Me.CbEnglish.Name = "CbEnglish"
-        Me.CbEnglish.Tag = "en-US"
+        Me.CbEnglish.Tag = "en"
         '
         'CbFrench
         '
@@ -270,50 +262,56 @@ Partial Class FrameMain
         '
         'TrayIconToolStripMenuItem
         '
-        resources.ApplyResources(Me.TrayIconToolStripMenuItem, "TrayIconToolStripMenuItem")
         Me.TrayIconToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TrayIconEnabledToolStripMenuItem, Me.ToolStripSeparator2, Me.TrayIconNoticeToolStripMenuItem})
         Me.TrayIconToolStripMenuItem.Image = Global.LicielRsync.My.Resources.Resources.application_put
+        resources.ApplyResources(Me.TrayIconToolStripMenuItem, "TrayIconToolStripMenuItem")
         Me.TrayIconToolStripMenuItem.Name = "TrayIconToolStripMenuItem"
         '
         'TrayIconEnabledToolStripMenuItem
         '
-        resources.ApplyResources(Me.TrayIconEnabledToolStripMenuItem, "TrayIconEnabledToolStripMenuItem")
         Me.TrayIconEnabledToolStripMenuItem.CheckOnClick = True
         Me.TrayIconEnabledToolStripMenuItem.Name = "TrayIconEnabledToolStripMenuItem"
+        resources.ApplyResources(Me.TrayIconEnabledToolStripMenuItem, "TrayIconEnabledToolStripMenuItem")
         '
         'ToolStripSeparator2
         '
-        resources.ApplyResources(Me.ToolStripSeparator2, "ToolStripSeparator2")
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        resources.ApplyResources(Me.ToolStripSeparator2, "ToolStripSeparator2")
         '
         'TrayIconNoticeToolStripMenuItem
         '
-        resources.ApplyResources(Me.TrayIconNoticeToolStripMenuItem, "TrayIconNoticeToolStripMenuItem")
         Me.TrayIconNoticeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TrayIconNoticeStartToolStripMenuItem})
         Me.TrayIconNoticeToolStripMenuItem.Name = "TrayIconNoticeToolStripMenuItem"
+        resources.ApplyResources(Me.TrayIconNoticeToolStripMenuItem, "TrayIconNoticeToolStripMenuItem")
         '
         'TrayIconNoticeStartToolStripMenuItem
         '
-        resources.ApplyResources(Me.TrayIconNoticeStartToolStripMenuItem, "TrayIconNoticeStartToolStripMenuItem")
         Me.TrayIconNoticeStartToolStripMenuItem.CheckOnClick = True
         Me.TrayIconNoticeStartToolStripMenuItem.Name = "TrayIconNoticeStartToolStripMenuItem"
+        resources.ApplyResources(Me.TrayIconNoticeStartToolStripMenuItem, "TrayIconNoticeStartToolStripMenuItem")
         '
         'ToolStripSeparator1
         '
-        resources.ApplyResources(Me.ToolStripSeparator1, "ToolStripSeparator1")
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        resources.ApplyResources(Me.ToolStripSeparator1, "ToolStripSeparator1")
+        '
+        'OpenSettingsFolderToolStripMenuItem
+        '
+        Me.OpenSettingsFolderToolStripMenuItem.Image = Global.LicielRsync.My.Resources.Resources.folder_go
+        Me.OpenSettingsFolderToolStripMenuItem.Name = "OpenSettingsFolderToolStripMenuItem"
+        resources.ApplyResources(Me.OpenSettingsFolderToolStripMenuItem, "OpenSettingsFolderToolStripMenuItem")
         '
         'ResetToolStripMenuItem
         '
-        resources.ApplyResources(Me.ResetToolStripMenuItem, "ResetToolStripMenuItem")
         Me.ResetToolStripMenuItem.Image = Global.LicielRsync.My.Resources.Resources.delete
+        resources.ApplyResources(Me.ResetToolStripMenuItem, "ResetToolStripMenuItem")
         Me.ResetToolStripMenuItem.Name = "ResetToolStripMenuItem"
         '
         'Menu3
         '
-        resources.ApplyResources(Me.Menu3, "Menu3")
         Me.Menu3.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem})
         Me.Menu3.Name = "Menu3"
+        resources.ApplyResources(Me.Menu3, "Menu3")
         '
         'AboutToolStripMenuItem
         '
@@ -577,23 +575,21 @@ Partial Class FrameMain
         '
         'Panel1
         '
-        resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(188, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(216, Byte), Integer))
         Me.Panel1.Controls.Add(Me.GroupBox7)
         Me.Panel1.Controls.Add(Me.GroupBox2)
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.TabControl1)
+        resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.Name = "Panel1"
-        Me.ToolTip1.SetToolTip(Me.Panel1, resources.GetString("Panel1.ToolTip"))
         '
         'GroupBox7
         '
-        resources.ApplyResources(Me.GroupBox7, "GroupBox7")
         Me.GroupBox7.Controls.Add(Me.ComboRsync)
+        resources.ApplyResources(Me.GroupBox7, "GroupBox7")
         Me.GroupBox7.Name = "GroupBox7"
         Me.GroupBox7.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.GroupBox7, resources.GetString("GroupBox7.ToolTip"))
         '
         'ComboRsync
         '
@@ -602,7 +598,6 @@ Partial Class FrameMain
         Me.ComboRsync.FormattingEnabled = True
         Me.ComboRsync.MinimumSize = New System.Drawing.Size(70, 0)
         Me.ComboRsync.Name = "ComboRsync"
-        Me.ToolTip1.SetToolTip(Me.ComboRsync, resources.GetString("ComboRsync.ToolTip"))
         '
         'GroupBox2
         '
@@ -615,7 +610,6 @@ Partial Class FrameMain
         Me.GroupBox2.Controls.Add(Me.ButtonExec)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.GroupBox2, resources.GetString("GroupBox2.ToolTip"))
         '
         'GroupBox1
         '
@@ -625,7 +619,6 @@ Partial Class FrameMain
         Me.GroupBox1.Controls.Add(Me.ButtonAdd)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.GroupBox1, resources.GetString("GroupBox1.ToolTip"))
         '
         'ComboProfiles
         '
@@ -633,16 +626,14 @@ Partial Class FrameMain
         Me.ComboProfiles.FormattingEnabled = True
         Me.ComboProfiles.MinimumSize = New System.Drawing.Size(50, 0)
         Me.ComboProfiles.Name = "ComboProfiles"
-        Me.ToolTip1.SetToolTip(Me.ComboProfiles, resources.GetString("ComboProfiles.ToolTip"))
         '
         'PictureBox1
         '
-        resources.ApplyResources(Me.PictureBox1, "PictureBox1")
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PictureBox1.Image = Global.LicielRsync.My.Resources.Resources.newrsynclogo
+        resources.ApplyResources(Me.PictureBox1, "PictureBox1")
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox1, resources.GetString("PictureBox1.ToolTip"))
         '
         'TabControl1
         '
@@ -652,11 +643,9 @@ Partial Class FrameMain
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
-        Me.ToolTip1.SetToolTip(Me.TabControl1, resources.GetString("TabControl1.ToolTip"))
         '
         'TabPage1
         '
-        resources.ApplyResources(Me.TabPage1, "TabPage1")
         Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.TabPage1.Controls.Add(Me.GroupBox5)
         Me.TabPage1.Controls.Add(Me.GroupBox9)
@@ -669,20 +658,19 @@ Partial Class FrameMain
         Me.TabPage1.Controls.Add(Me.Label3)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Label1)
+        resources.ApplyResources(Me.TabPage1, "TabPage1")
         Me.TabPage1.Name = "TabPage1"
-        Me.ToolTip1.SetToolTip(Me.TabPage1, resources.GetString("TabPage1.ToolTip"))
         '
         'GroupBox5
         '
-        resources.ApplyResources(Me.GroupBox5, "GroupBox5")
         Me.GroupBox5.Controls.Add(Me.ComboVerbose)
         Me.GroupBox5.Controls.Add(Me.CbProgress)
         Me.GroupBox5.Controls.Add(Me.CbShowCmd)
         Me.GroupBox5.Controls.Add(Me.CbReadable)
         Me.GroupBox5.Controls.Add(Me.CbVerbose)
+        resources.ApplyResources(Me.GroupBox5, "GroupBox5")
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.GroupBox5, resources.GetString("GroupBox5.ToolTip"))
         '
         'ComboVerbose
         '
@@ -692,11 +680,9 @@ Partial Class FrameMain
         Me.ComboVerbose.Items.AddRange(New Object() {resources.GetString("ComboVerbose.Items"), resources.GetString("ComboVerbose.Items1"), resources.GetString("ComboVerbose.Items2"), resources.GetString("ComboVerbose.Items3"), resources.GetString("ComboVerbose.Items4")})
         Me.ComboVerbose.Name = "ComboVerbose"
         Me.ComboVerbose.Tag = "-v"
-        Me.ToolTip1.SetToolTip(Me.ComboVerbose, resources.GetString("ComboVerbose.ToolTip"))
         '
         'GroupBox9
         '
-        resources.ApplyResources(Me.GroupBox9, "GroupBox9")
         Me.GroupBox9.Controls.Add(Me.CbChecksum)
         Me.GroupBox9.Controls.Add(Me.CbDelta)
         Me.GroupBox9.Controls.Add(Me.CbExistingOnly)
@@ -706,52 +692,63 @@ Partial Class FrameMain
         Me.GroupBox9.Controls.Add(Me.CbExisting)
         Me.GroupBox9.Controls.Add(Me.CbDelete)
         Me.GroupBox9.Controls.Add(Me.CbRecurse)
+        resources.ApplyResources(Me.GroupBox9, "GroupBox9")
         Me.GroupBox9.Name = "GroupBox9"
         Me.GroupBox9.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.GroupBox9, resources.GetString("GroupBox9.ToolTip"))
         '
         'GroupBox4
         '
-        resources.ApplyResources(Me.GroupBox4, "GroupBox4")
         Me.GroupBox4.Controls.Add(Me.CbPerm)
         Me.GroupBox4.Controls.Add(Me.CbOwner)
         Me.GroupBox4.Controls.Add(Me.CbGroup)
         Me.GroupBox4.Controls.Add(Me.CbDate)
+        resources.ApplyResources(Me.GroupBox4, "GroupBox4")
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.GroupBox4, resources.GetString("GroupBox4.ToolTip"))
         '
         'ButtonDstOpen
         '
         resources.ApplyResources(Me.ButtonDstOpen, "ButtonDstOpen")
         Me.ButtonDstOpen.Name = "ButtonDstOpen"
-        Me.ToolTip1.SetToolTip(Me.ButtonDstOpen, resources.GetString("ButtonDstOpen.ToolTip"))
         Me.ButtonDstOpen.UseVisualStyleBackColor = True
         '
         'ButtonSrcOpen
         '
         resources.ApplyResources(Me.ButtonSrcOpen, "ButtonSrcOpen")
         Me.ButtonSrcOpen.Name = "ButtonSrcOpen"
-        Me.ToolTip1.SetToolTip(Me.ButtonSrcOpen, resources.GetString("ButtonSrcOpen.ToolTip"))
         Me.ButtonSrcOpen.UseVisualStyleBackColor = True
         '
         'TabPage2
         '
-        resources.ApplyResources(Me.TabPage2, "TabPage2")
         Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.TabPage2.Controls.Add(Me.CbFS)
         Me.TabPage2.Controls.Add(Me.GroupBox8)
+        resources.ApplyResources(Me.TabPage2, "TabPage2")
         Me.TabPage2.Name = "TabPage2"
-        Me.ToolTip1.SetToolTip(Me.TabPage2, resources.GetString("TabPage2.ToolTip"))
         '
         'GroupBox8
         '
-        resources.ApplyResources(Me.GroupBox8, "GroupBox8")
         Me.GroupBox8.Controls.Add(Me.CbWinCompat)
         Me.GroupBox8.Controls.Add(Me.CbPermWin)
+        resources.ApplyResources(Me.GroupBox8, "GroupBox8")
         Me.GroupBox8.Name = "GroupBox8"
         Me.GroupBox8.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.GroupBox8, resources.GetString("GroupBox8.ToolTip"))
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToggleToolStripMenuItem, Me.ExitToolStripMenuItem1})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        resources.ApplyResources(Me.ContextMenuStrip1, "ContextMenuStrip1")
+        '
+        'ToggleToolStripMenuItem
+        '
+        Me.ToggleToolStripMenuItem.Name = "ToggleToolStripMenuItem"
+        resources.ApplyResources(Me.ToggleToolStripMenuItem, "ToggleToolStripMenuItem")
+        '
+        'ExitToolStripMenuItem1
+        '
+        Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
+        resources.ApplyResources(Me.ExitToolStripMenuItem1, "ExitToolStripMenuItem1")
         '
         'FolderBrowserDialog
         '
@@ -759,26 +756,9 @@ Partial Class FrameMain
         '
         'NotifyIcon1
         '
-        resources.ApplyResources(Me.NotifyIcon1, "NotifyIcon1")
         Me.NotifyIcon1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.NotifyIcon1.Tag = "NotifyIcon1"
-        '
-        'ContextMenuStrip1
-        '
-        resources.ApplyResources(Me.ContextMenuStrip1, "ContextMenuStrip1")
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToggleToolStripMenuItem, Me.ExitToolStripMenuItem1})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ToolTip1.SetToolTip(Me.ContextMenuStrip1, resources.GetString("ContextMenuStrip1.ToolTip"))
-        '
-        'ToggleToolStripMenuItem
-        '
-        resources.ApplyResources(Me.ToggleToolStripMenuItem, "ToggleToolStripMenuItem")
-        Me.ToggleToolStripMenuItem.Name = "ToggleToolStripMenuItem"
-        '
-        'ExitToolStripMenuItem1
-        '
-        resources.ApplyResources(Me.ExitToolStripMenuItem1, "ExitToolStripMenuItem1")
-        Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
+        resources.ApplyResources(Me.NotifyIcon1, "NotifyIcon1")
         '
         'FrameMain
         '
@@ -790,7 +770,6 @@ Partial Class FrameMain
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FrameMain"
-        Me.ToolTip1.SetToolTip(Me, resources.GetString("$this.ToolTip"))
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         Me.SplitContainer1.ResumeLayout(False)
@@ -903,5 +882,6 @@ Partial Class FrameMain
     Friend WithEvents ExitToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Menu1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents OpenSettingsFolderToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
