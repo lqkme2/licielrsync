@@ -71,7 +71,6 @@ Partial Class FrameAboutBox
         '
         'LogoPictureBox
         '
-        Me.LogoPictureBox.Image = Global.LicielRsync.My.Resources.Resources.newrsynclogo
         Me.LogoPictureBox.Location = New System.Drawing.Point(3, 3)
         Me.LogoPictureBox.Name = "LogoPictureBox"
         Me.TableLayoutPanel.SetRowSpan(Me.LogoPictureBox, 6)

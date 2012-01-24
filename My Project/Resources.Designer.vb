@@ -102,10 +102,17 @@ Namespace My.Resources
             End Get
         End Property
         
-        Friend ReadOnly Property LicielRsync() As System.Drawing.Icon
+        Friend ReadOnly Property LicielRsync_32px() As System.Drawing.Icon
             Get
-                Dim obj As Object = ResourceManager.GetObject("LicielRsync", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("LicielRsync_32px", resourceCulture)
                 Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property LicielRsync_80px() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("LicielRsync_80px", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
@@ -128,7 +135,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to LicielRsync started.
+        '''  Looks up a localized string similar to LicielRsync is started.
         '''</summary>
         Friend ReadOnly Property msg3() As String
             Get
@@ -160,13 +167,6 @@ Namespace My.Resources
         Friend ReadOnly Property msg6() As String
             Get
                 Return ResourceManager.GetString("msg6", resourceCulture)
-            End Get
-        End Property
-        
-        Friend ReadOnly Property newrsynclogo() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("newrsynclogo", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         

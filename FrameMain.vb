@@ -106,7 +106,7 @@ Public Class FrameMain
                     Dim todeleteProfile As String = ComboProfiles.Text
                     If todeleteProfile = "" Or todeleteProfile = My.Settings.Properties.Item("CurrentProfile").DefaultValue Or Not My.Settings.ProfilesList.Contains(todeleteProfile) Or Regex.Match(todeleteProfile, "^\s+$").Success Then Exit Sub
                     My.Settings.ProfilesList.Remove(todeleteProfile)
-                    My.Settings.P(todeleteProfile) = Nothing
+                    My.Settings.Profiles(todeleteProfile) = Nothing
                     My.Settings.Save()
                     ComboProfiles.Items.Remove(todeleteProfile)
                     ComboProfiles.SelectedIndex = 0
@@ -175,7 +175,7 @@ Public Class FrameMain
     '' Stub function used to handle all checkbox checks
     ''--------------------------------------------------------------------
 
-    Private Sub CheckBoxChanged(sender As Object, e As EventArgs) Handles CbFrench.CheckedChanged, CbEnglish.CheckedChanged, CbVerbose.CheckedChanged, CbSizeOnly.CheckedChanged, CbShowCmd.CheckedChanged, CbRedir.CheckedChanged, CbRecurse.CheckedChanged, CbReadable.CheckedChanged, CbProgress.CheckedChanged, CbPerm.CheckedChanged, CbOwner.CheckedChanged, CbNewer.CheckedChanged, CbIgnoreTimes.CheckedChanged, CbHideWindows.CheckedChanged, CbGroup.CheckedChanged, CbExistingOnly.CheckedChanged, CbExisting.CheckedChanged, CbDelta.CheckedChanged, CbDelete.CheckedChanged, CbDate.CheckedChanged, CbChecksum.CheckedChanged, CbWinCompat.CheckedChanged, CbPermWin.CheckedChanged, CbFS.CheckedChanged, TrayIconEnabledToolStripMenuItem.CheckedChanged, TrayIconNoticeStartToolStripMenuItem.CheckedChanged
+    Private Sub CheckBoxChanged(sender As Object, e As EventArgs) Handles CbFrench.CheckedChanged, CbEnglish.CheckedChanged, CbVerbose.CheckedChanged, CbSizeOnly.CheckedChanged, CbShowCmd.CheckedChanged, CbRedir.CheckedChanged, CbRecurse.CheckedChanged, CbReadable.CheckedChanged, CbProgress.CheckedChanged, CbPerm.CheckedChanged, CbOwner.CheckedChanged, CbNewer.CheckedChanged, CbIgnoreTimes.CheckedChanged, CbHideWindows.CheckedChanged, CbGroup.CheckedChanged, CbExistingOnly.CheckedChanged, CbExisting.CheckedChanged, CbDelta.CheckedChanged, CbDelete.CheckedChanged, CbDate.CheckedChanged, CbChecksum.CheckedChanged, CbWinCompat.CheckedChanged, CbPermWin.CheckedChanged, CbFS.CheckedChanged, TrayIconEnabledToolStripMenuItem.CheckedChanged, TrayIconNoticeStartToolStripMenuItem.CheckedChanged, TrayIconMinimizeToolStripMenuItem.CheckedChanged, TrayIconCloseToolStripMenuItem.CheckedChanged
         Select Case sender.Name
             Case CbEnglish.Name
                 If Not sender.checked Then Exit Sub
@@ -196,16 +196,16 @@ Public Class FrameMain
                 CbEnglish.Checked = Not sender.Checked
                 Exit Sub
             Case CbShowCmd.Name
-                My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("showcmd") = sender.Checked
+                My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("showcmd") = sender.Checked
                 My.Settings.Save()
                 UpdateStatusBarCommand(False)
                 Exit Sub
             Case CbHideWindows.Name
-                My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("hidewnd") = sender.Checked
+                My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("hidewnd") = sender.Checked
                 My.Settings.Save()
                 Exit Sub
             Case CbRedir.Name
-                My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("redir") = sender.Checked
+                My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("redir") = sender.Checked
                 My.Settings.Save()
                 Exit Sub
             Case TrayIconNoticeStartToolStripMenuItem.Name
@@ -219,8 +219,16 @@ Public Class FrameMain
                 If sender.Checked AndAlso My.Settings.TrayNoticeStart Then LicielMessage.SendTray(L("msg3"), "LicielRsync", ToolTipIcon.Info, 500)
                 My.Settings.Save()
                 Exit Sub
+            Case TrayIconCloseToolStripMenuItem.Name, TrayIconMinimizeToolStripMenuItem.Name
+                If sender.Name = TrayIconCloseToolStripMenuItem.Name Then
+                    My.Settings.CloseToTray = If(sender.Checked, 1, 0)
+                Else
+                    My.Settings.MinimizeToTray = If(sender.Checked, 1, 0)
+                End If
+                My.Settings.Save()
+                Exit Sub
         End Select
-        My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")(sender.Tag) = sender.Checked
+        My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")(sender.Tag) = sender.Checked
         My.Settings.Save()
         If sender.Name = CbVerbose.Name Then ComboVerbose.Enabled = CbVerbose.Checked
         UpdateStatusBarCommand(False)
@@ -235,7 +243,7 @@ Public Class FrameMain
     Private Sub ComboSelectedIndexChanged(sender As System.Object, e As EventArgs) Handles ComboVerbose.SelectedIndexChanged, ComboRsync.SelectedIndexChanged, ComboProfiles.SelectedIndexChanged
         Select Case sender.name
             Case ComboVerbose.Name
-                My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")(sender.tag) = sender.Text
+                My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")(sender.tag) = sender.Text
                 My.Settings.Save()
             Case ComboProfiles.Name
                 Dim selectedProfile = ComboProfiles.Items(ComboProfiles.SelectedIndex)
@@ -255,13 +263,13 @@ Public Class FrameMain
     Private Sub TextBoxTextChanged(sender As System.Object, e As EventArgs) Handles TextBoxSrc.TextChanged, TextBoxOptions.TextChanged, TextBoxDst.TextChanged
         Select Case sender.name
             Case TextBoxSrc.Name
-                My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("srcpath") = TextBoxSrc.Text
+                My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("srcpath") = TextBoxSrc.Text
                 My.Settings.Save()
             Case TextBoxDst.Name
-                My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("dstpath") = TextBoxDst.Text
+                My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("dstpath") = TextBoxDst.Text
                 My.Settings.Save()
             Case TextBoxOptions.Name
-                My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("customoptions") = TextBoxOptions.Text
+                My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("customoptions") = TextBoxOptions.Text
                 My.Settings.Save()
                 UpdateStatusBarCommand(False)
         End Select
@@ -271,9 +279,10 @@ Public Class FrameMain
         If _isReset Or Not _isFrameLoaded Then Exit Sub
         If NotifyIcon1.Visible AndAlso My.Settings.CloseToTray = -1 Then
             My.Settings.CloseToTray = Convert.ToInt32(LicielMessage.Send(L("msg4"), L("msg6"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes)
+            TrayIconCloseToolStripMenuItem.Checked = My.Settings.CloseToTray = 1
         End If
         FrameMainSaveSettings()
-        If NotifyIcon1.Visible AndAlso My.Settings.CloseToTray Then
+        If NotifyIcon1.Visible AndAlso My.Settings.CloseToTray = 1 Then
             e.Cancel = True
             Hide()
             Exit Sub
@@ -285,6 +294,7 @@ Public Class FrameMain
         If Not _isFrameLoaded Or WindowState <> FormWindowState.Minimized Then Exit Sub
         If NotifyIcon1.Visible AndAlso My.Settings.MinimizeToTray = -1 Then
             My.Settings.MinimizeToTray = Convert.ToInt32(LicielMessage.Send(L("msg5"), L("msg6"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes)
+            TrayIconMinimizeToolStripMenuItem.Checked = My.Settings.MinimizeToTray = 1
             My.Settings.Save()
         End If
         Visible = Not (NotifyIcon1.Visible AndAlso My.Settings.MinimizeToTray = 1)

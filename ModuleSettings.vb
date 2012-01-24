@@ -8,6 +8,8 @@
 ''
 '' Work around a Visual Studio 2010 limitation with the use of
 '' Hashtables in My Project > Settings
+''
+'' Configuration.SettingsSerializeAs.Binary translates the hashtable element to a base64 string
 ''----------------------------------------------------------------------------------------------
 Option Explicit On
 
@@ -18,12 +20,12 @@ Namespace My
          DebuggerNonUserCodeAttribute(), _
          Configuration.SettingsSerializeAs(Configuration.SettingsSerializeAs.Binary), _
          Configuration.SettingsManageabilityAttribute(Configuration.SettingsManageability.Roaming)> _
-        Public Property P() As Hashtable
+        Public Property Profiles() As Hashtable
             Get
-                Return CType(Me("P"), Hashtable)
+                Return CType(Me("Profiles"), Hashtable)
             End Get
             Set(value As Hashtable)
-                Me("P") = value
+                Me("Profiles") = value
             End Set
         End Property
 

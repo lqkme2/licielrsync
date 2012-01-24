@@ -81,6 +81,7 @@
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -172,6 +173,10 @@
     <None Include="pub.adovi.128-Bit-DER.cer" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Images\src\LicielRsync_80px.png" />
+    <None Include="Images\src\LicielRsync_128px.png" />
+    <None Include="Images\src\LicielRsync_32px.ico" />
+    <None Include="Images\src\LicielRsync_32px.png" />
     <None Include="Images\famfamfam_silk_icons_v013\application_form.png" />
     <None Include="Images\famfamfam_silk_icons_v013\delete.png" />
     <None Include="Images\famfamfam_silk_icons_v013\information.png" />

@@ -44,6 +44,9 @@ Partial Class FrameMain
         Me.TrayIconToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TrayIconEnabledToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.TrayIconCloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TrayIconMinimizeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.TrayIconNoticeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TrayIconNoticeStartToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
@@ -133,7 +136,6 @@ Partial Class FrameMain
         'SplitContainer1
         '
         Me.SplitContainer1.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.SplitContainer1.Cursor = System.Windows.Forms.Cursors.Hand
         resources.ApplyResources(Me.SplitContainer1, "SplitContainer1")
         Me.SplitContainer1.Name = "SplitContainer1"
         '
@@ -262,7 +264,7 @@ Partial Class FrameMain
         '
         'TrayIconToolStripMenuItem
         '
-        Me.TrayIconToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TrayIconEnabledToolStripMenuItem, Me.ToolStripSeparator2, Me.TrayIconNoticeToolStripMenuItem})
+        Me.TrayIconToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TrayIconEnabledToolStripMenuItem, Me.ToolStripSeparator2, Me.TrayIconCloseToolStripMenuItem, Me.TrayIconMinimizeToolStripMenuItem, Me.ToolStripSeparator3, Me.TrayIconNoticeToolStripMenuItem})
         Me.TrayIconToolStripMenuItem.Image = Global.LicielRsync.My.Resources.Resources.application_put
         resources.ApplyResources(Me.TrayIconToolStripMenuItem, "TrayIconToolStripMenuItem")
         Me.TrayIconToolStripMenuItem.Name = "TrayIconToolStripMenuItem"
@@ -277,6 +279,23 @@ Partial Class FrameMain
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         resources.ApplyResources(Me.ToolStripSeparator2, "ToolStripSeparator2")
+        '
+        'TrayIconCloseToolStripMenuItem
+        '
+        Me.TrayIconCloseToolStripMenuItem.CheckOnClick = True
+        Me.TrayIconCloseToolStripMenuItem.Name = "TrayIconCloseToolStripMenuItem"
+        resources.ApplyResources(Me.TrayIconCloseToolStripMenuItem, "TrayIconCloseToolStripMenuItem")
+        '
+        'TrayIconMinimizeToolStripMenuItem
+        '
+        Me.TrayIconMinimizeToolStripMenuItem.CheckOnClick = True
+        Me.TrayIconMinimizeToolStripMenuItem.Name = "TrayIconMinimizeToolStripMenuItem"
+        resources.ApplyResources(Me.TrayIconMinimizeToolStripMenuItem, "TrayIconMinimizeToolStripMenuItem")
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        resources.ApplyResources(Me.ToolStripSeparator3, "ToolStripSeparator3")
         '
         'TrayIconNoticeToolStripMenuItem
         '
@@ -629,8 +648,8 @@ Partial Class FrameMain
         '
         'PictureBox1
         '
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Image = Global.LicielRsync.My.Resources.Resources.newrsynclogo
         resources.ApplyResources(Me.PictureBox1, "PictureBox1")
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.TabStop = False
@@ -883,5 +902,8 @@ Partial Class FrameMain
     Friend WithEvents Menu1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OpenSettingsFolderToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TrayIconCloseToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TrayIconMinimizeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
 
 End Class

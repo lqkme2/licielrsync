@@ -29,7 +29,7 @@ Module ModuleMain
     Public Processus As Process
     Public ProcessusSuspended As Boolean = False
     Public GlobalSize As Long = -1, GlobalSizeSent As Long = 0, CurrentSize As Long = -1, CurrentProgress As Integer = 0
-    Public AppIcon As Icon = CType(My.Resources.ResourceManager.GetObject("LicielRsync"), Icon)
+    Public AppIcon As Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath)
     Public AppAssembly As String = My.Application.Info.AssemblyName
     Public AppExe As String = AppAssembly & ".exe"
     Public AppPath As String = My.Application.Info.DirectoryPath & "\"
@@ -239,7 +239,7 @@ Module ModuleMain
     ''--------------------------------------------------------------------
 
     Private Sub CacheSizes()
-        Dim dir As String = My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("srcpath")
+        Dim dir As String = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("srcpath")
         If Not Regex.Match(dir, WinPathPattern).Success Then Exit Sub
         Dim length As Long
         For Each file In Directory.GetFiles(dir, "*.*", SearchOption.AllDirectories)
@@ -258,9 +258,9 @@ Module ModuleMain
     Public Sub ThreadProcessStart(ByVal obj As Object)
         Try
             Dim arg As String = BuildArgument(obj(1))
-            Dim settingsHideWnd As Boolean = My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("hidewnd")
-            Dim settingsRedir As Boolean = My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("redir")
-            Progress = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--progress")
+            Dim settingsHideWnd As Boolean = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("hidewnd")
+            Dim settingsRedir As Boolean = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("redir")
+            Progress = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress")
             Processus = New Process()
             Processus.StartInfo.FileName = obj(0)
             Processus.EnableRaisingEvents = False
@@ -305,17 +305,17 @@ Module ModuleMain
         Try
             Dim str As String = ""
             If dryrun Then str = "--dry-run "
-            For Each opt As Object In My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")
+            For Each opt As Object In My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")
                 Dim key = opt.Key
                 If opt.Value Then
                     Select Case key
                         Case "-v"
-                            key = "-" & New String("v"c, CInt(My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("-v")))
+                            key = "-" & New String("v"c, CInt(My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("-v")))
                     End Select
                     str = str & key & " "
                 End If
             Next
-            If Regex.Match(My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("customoptions"), "\S+").Success Then str = String.Concat(str, My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("customoptions") & " ")
+            If Regex.Match(My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("customoptions"), "\S+").Success Then str = String.Concat(str, My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("customoptions") & " ")
             Return str
         Catch ex As Exception
             Return MsgBox(ex.ToString)
@@ -329,7 +329,7 @@ Module ModuleMain
     ''--------------------------------------------------------------------
 
     Public Sub UpdateStatusBarCommand(ByVal dryrun As Boolean)
-        Fm.StatusBarText.Text = If(Not My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("showcmd"), "", BuildOptions(dryrun))
+        Fm.StatusBarText.Text = If(Not My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("showcmd"), "", BuildOptions(dryrun))
     End Sub
 
     ''--------------------------------------------------------------------
@@ -385,36 +385,36 @@ Module ModuleMain
                 My.Settings.ProfilesList = New List(Of String)
                 My.Settings.ProfilesList.Add(My.Settings.CurrentProfile)
             End If
-            If My.Settings.P Is Nothing Then My.Settings.P = New Hashtable()
-            If My.Settings.P(My.Settings.CurrentProfile) Is Nothing Then My.Settings.P(My.Settings.CurrentProfile) = New Hashtable()
-            If My.Settings.P(My.Settings.CurrentProfile)("OptionsVar") Is Nothing Then My.Settings.P(My.Settings.CurrentProfile)("OptionsVar") = New Hashtable()
-            If My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch") Is Nothing Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch") = New Hashtable()
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--progress") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--progress") = True
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-r") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-r") = True
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-t") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-t") = True
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("-v") Is String Then My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("-v") = "1"
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-v") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-v") = False
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--backup-nt-streams --restore-nt-streams") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--backup-nt-streams --restore-nt-streams") = False
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("srcpath") Is String Then My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("srcpath") = ""
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("dstpath") Is String Then My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("dstpath") = ""
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("showcmd") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("showcmd") = False
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("hidewnd") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("hidewnd") = True
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("redir") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("redir") = True
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("customoptions") Is String Then My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("customoptions") = ""
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-p") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-p") = False
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-o") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-o") = False
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-g") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-g") = False
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--no-whole-file") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--no-whole-file") = True
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--modify-window=2") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--modify-window=2") = False
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--delete") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--delete") = False
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--ignore-existing") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--ignore-existing") = False
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-u") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-u") = False
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--size-only") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--size-only") = False
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-x") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-x") = False
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-h") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-h") = False
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-c") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-c") = False
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--existing") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--existing") = False
-            If Not TypeOf My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--ignore-times") Is Boolean Then My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--ignore-times") = False
+            If My.Settings.Profiles Is Nothing Then My.Settings.Profiles = New Hashtable()
+            If My.Settings.Profiles(My.Settings.CurrentProfile) Is Nothing Then My.Settings.Profiles(My.Settings.CurrentProfile) = New Hashtable()
+            If My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar") Is Nothing Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar") = New Hashtable()
+            If My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch") Is Nothing Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch") = New Hashtable()
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress") = True
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-r") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-r") = True
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-t") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-t") = True
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("-v") Is String Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("-v") = "1"
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-v") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-v") = False
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--backup-nt-streams --restore-nt-streams") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--backup-nt-streams --restore-nt-streams") = False
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("srcpath") Is String Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("srcpath") = ""
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("dstpath") Is String Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("dstpath") = ""
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("showcmd") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("showcmd") = False
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("hidewnd") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("hidewnd") = True
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("redir") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("redir") = True
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("customoptions") Is String Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("customoptions") = ""
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-p") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-p") = False
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-o") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-o") = False
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-g") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-g") = False
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--no-whole-file") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--no-whole-file") = True
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--modify-window=2") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--modify-window=2") = False
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--delete") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--delete") = False
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--ignore-existing") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--ignore-existing") = False
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-u") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-u") = False
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--size-only") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--size-only") = False
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-x") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-x") = False
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-h") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-h") = False
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-c") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-c") = False
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--existing") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--existing") = False
+            If Not TypeOf My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--ignore-times") Is Boolean Then My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--ignore-times") = False
             My.Settings.Save()
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -435,40 +435,42 @@ Module ModuleMain
                 Next
                 Fm.ComboProfiles.SelectedIndex = Fm.ComboProfiles.FindStringExact(My.Settings.CurrentProfile)
             End If
-            Fm.CbDate.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-t")
-            Fm.CbRecurse.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-r")
-            Fm.CbVerbose.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-v")
-            Fm.CbProgress.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--progress")
-            Fm.CbPerm.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-p")
-            Fm.CbOwner.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-o")
-            Fm.CbGroup.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-g")
-            Fm.CbDelta.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--no-whole-file")
-            Fm.CbWinCompat.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--modify-window=2")
-            Fm.CbDelete.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--delete")
-            Fm.CbExisting.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--ignore-existing")
-            Fm.CbNewer.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-u")
-            Fm.CbSizeOnly.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--size-only")
-            Fm.CbFS.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-x")
-            Fm.CbReadable.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-h")
-            Fm.CbChecksum.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("-c")
-            Fm.CbExistingOnly.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--existing")
-            Fm.CbIgnoreTimes.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--ignore-times")
-            Fm.CbPermWin.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--backup-nt-streams --restore-nt-streams")
+            Fm.CbDate.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-t")
+            Fm.CbRecurse.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-r")
+            Fm.CbVerbose.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-v")
+            Fm.CbProgress.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress")
+            Fm.CbPerm.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-p")
+            Fm.CbOwner.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-o")
+            Fm.CbGroup.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-g")
+            Fm.CbDelta.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--no-whole-file")
+            Fm.CbWinCompat.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--modify-window=2")
+            Fm.CbDelete.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--delete")
+            Fm.CbExisting.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--ignore-existing")
+            Fm.CbNewer.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-u")
+            Fm.CbSizeOnly.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--size-only")
+            Fm.CbFS.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-x")
+            Fm.CbReadable.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-h")
+            Fm.CbChecksum.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("-c")
+            Fm.CbExistingOnly.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--existing")
+            Fm.CbIgnoreTimes.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--ignore-times")
+            Fm.CbPermWin.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--backup-nt-streams --restore-nt-streams")
             Fm.CbEnglish.Checked = My.Settings.Locales = "English"
             Fm.CbFrench.Checked = My.Settings.Locales = "French"
             Fm.CbEnglish.CheckOnClick = Not Fm.CbEnglish.Checked
             Fm.CbFrench.CheckOnClick = Not Fm.CbFrench.Checked
             Fm.ComboVerbose.Enabled = Fm.CbVerbose.Checked
-            Fm.ComboVerbose.Text = My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("-v")
-            Fm.TextBoxSrc.Text = My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("srcpath")
-            Fm.TextBoxDst.Text = My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("dstpath")
-            Fm.TextBoxOptions.Text = My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("customoptions")
-            Fm.CbShowCmd.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("showcmd")
-            Fm.CbHideWindows.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("hidewnd")
-            Fm.CbRedir.Checked = My.Settings.P(My.Settings.CurrentProfile)("OptionsVar")("redir")
+            Fm.ComboVerbose.Text = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("-v")
+            Fm.TextBoxSrc.Text = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("srcpath")
+            Fm.TextBoxDst.Text = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("dstpath")
+            Fm.TextBoxOptions.Text = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("customoptions")
+            Fm.CbShowCmd.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("showcmd")
+            Fm.CbHideWindows.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("hidewnd")
+            Fm.CbRedir.Checked = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("redir")
             Fm.TrayIconNoticeToolStripMenuItem.Enabled = My.Settings.ShowInTray
             Fm.TrayIconEnabledToolStripMenuItem.Checked = My.Settings.ShowInTray
             Fm.TrayIconNoticeStartToolStripMenuItem.Checked = My.Settings.TrayNoticeStart
+            If My.Settings.CloseToTray <> -1 Then Fm.TrayIconCloseToolStripMenuItem.Checked = My.Settings.CloseToTray = 1
+            If My.Settings.MinimizeToTray <> -1 Then Fm.TrayIconMinimizeToolStripMenuItem.Checked = My.Settings.MinimizeToTray = 1
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
@@ -530,9 +532,9 @@ Module ModuleMain
     ''--------------------------------------------------------------------
 
     Public Sub ResetProgress()
-        Fm.ProgressBar.Visible = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--progress")
-        Fm.ProgressBarText.Visible = My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--progress")
-        If Not My.Settings.P(My.Settings.CurrentProfile)("OptionsSwitch")("--progress") Then Exit Sub
+        Fm.ProgressBar.Visible = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress")
+        Fm.ProgressBarText.Visible = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress")
+        If Not My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress") Then Exit Sub
         Fm.ProgressBar.Value = 0
         Fm.ProgressBarText.Text = "0%"
         GlobalSize = -1
