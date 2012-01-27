@@ -342,6 +342,10 @@ Module ModuleMain
         Dim items(100) As String
         Dim i As Integer = 0
         Dim rsyncName As String
+        If Not Directory.Exists(RsyncDirectory) Then
+            LicielMessage.Send(FrameMain.L("msg7"), FrameMain.L("msg8"), MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
         For Each dir As String In Directory.GetDirectories(RsyncDirectory)
             If Not Regex.Match(Path.GetFileName(dir), "^rsync-\d").Success Or Not File.Exists(dir & "\bin\rsync.exe") Then Continue For
             Try

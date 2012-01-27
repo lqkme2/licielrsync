@@ -23,7 +23,7 @@ Public Class FrameMain
     Dim _isReset As Boolean = False
     Dim _isFrameLoaded As Boolean = False
 
-    Private Function L(ByVal resStr As String)
+    Public Function L(ByVal resStr As String)
         Return My.Resources.ResourceManager.GetString(resStr, CurrentCultureInfo)
     End Function
 

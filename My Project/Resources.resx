@@ -402,4 +402,10 @@
         e7APfPX48AL8gV34v7gR9FP//PFv0FiTkn1L4aUAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="msg7" xml:space="preserve">
+    <value>No rsync found. You can add your own rsync compilations if you keep the directories structure of LicielRsync as seen in the official 7-Zip release.</value>
+  </data>
+  <data name="msg8" xml:space="preserve">
+    <value>LicielRsync - Error !</value>
+  </data>
 </root>

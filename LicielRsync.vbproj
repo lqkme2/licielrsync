@@ -215,7 +215,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_StartDate="2011/9/16" BuildVersion_BuildVersioningStyle="None.None.None.Increment" BuildVersion_ConfigurationName="Release" BuildVersion_UpdateAssemblyVersion="True" />
+      <UserProperties BuildVersion_UpdateAssemblyVersion="True" BuildVersion_ConfigurationName="Release" BuildVersion_BuildVersioningStyle="None.None.None.Increment" BuildVersion_StartDate="2011/9/16" />
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
@@ -227,14 +227,16 @@
     <Exec Command="robocopy %22$(ProjectDir)redist\rsync%22 %22$(TargetDir)\%22 /E /XD .svn" ContinueOnError="True" IgnoreExitCode="True">
       <Output TaskParameter="ExitCode" PropertyName="ExitCode" />
     </Exec>
-    <Error Text="Error while copying rsync from the original folder to the distribution folder (robocopy)" Condition="'$(ExitCode)' != '2' And '$(ExitCode)' != '3'" />
+    <Error Text="Robocopy not found. On Windows XP/2003 install this package http://www.microsoft.com/download/en/details.aspx?id=17657" Condition="'$(ExitCode)' == '9009'" />
+    <Error Text="Error while copying rsync from the original folder to the distribution folder (robocopy)." Condition="'$(ExitCode)' != '2' And '$(ExitCode)' != '3'" />
     <Message Text="==============================================================================[POSTBUILD - CYGWIN]==" />
     <Message Text="                 Copying cygwin from the original folder to the distribution folder" />
     <Message Text="====================================================================================================" />
     <Exec Command="FOR /F %22tokens=*%22 %25%25G in ('dir /ad /s /b %22$(TargetDir)*bin*%22') DO robocopy %22$(ProjectDir)redist\cygwin%22 %22%25%25G%22 /E /XD .svn" ContinueOnError="True" IgnoreExitCode="True">
       <Output TaskParameter="ExitCode" PropertyName="ExitCode" />
     </Exec>
-    <Error Text="Error while copying cygwin from the original folder to the distribution folder (robocopy)" Condition="'$(ExitCode)' != '2' And '$(ExitCode)' != '3'" />
+    <Error Text="Robocopy not found. On Windows XP/2003 install this package http://www.microsoft.com/download/en/details.aspx?id=17657" Condition="'$(ExitCode)' == '9009'" />
+    <Error Text="Error while copying cygwin from the original folder to the distribution folder (robocopy)." Condition="'$(ExitCode)' != '2' And '$(ExitCode)' != '3'" />
     <CallTarget Targets="PackageRelease" Condition="'$(Configuration)' == 'Release'" />
   </Target>
   <Target Name="PackageRelease" Condition="'$(Configuration)' == 'Release'">
@@ -247,9 +249,9 @@
     <Exec Command="start /WAIT %22LicielRsync Code Signing%22 cmd /V:ON /K %22set /P __LICIELRSYNCCERTSTORE=Please enter the store name containing the private key : &amp;&amp; %22C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\signtool.exe%22 sign /f %22$(ProjectDir)pub.adovi.128-Bit-DER.cer%22 /csp %22Microsoft Strong Cryptographic Provider%22 /v /kc %22!__LICIELRSYNCCERTSTORE!%22 /t %22http://timestamp.verisign.com/scripts/timstamp.dll%22 %22$(TargetDir)LicielRsync.exe%22 &amp;&amp; pause &amp;&amp; exit 0%22" ContinueOnError="True" IgnoreExitCode="True">
       <Output TaskParameter="ExitCode" PropertyName="ExitCode" />
     </Exec>
-    <Error Text="Error while signing the executable (this procedure is reserved to Arnaud Dovi)" Condition="'$(ExitCode)' != '0'" />
+    <Error Text="Error while signing the executable with a digital authenticode certificate (this procedure is reserved to Arnaud Dovi). Change the project to the Debug configuration and rebuild the project." Condition="'$(ExitCode)' != '0'" />
     <Message Text="========================================================================[POSTBUILD - CODE SIGNING]==" />
-    <Message Text="                                Publish release with 7-Zip" />
+    <Message Text="                               Publishing release with 7-Zip" />
     <Message Text="====================================================================================================" />
     <ItemGroup>
       <MySourceFiles Include="$(TargetDir)**\*.*" />
@@ -258,15 +260,16 @@
     <Exec Command="%22$(ProjectDir)redist\7z.exe%22 a -t7z -r -mx9 -mmt -ms=on %22$(ProjectDir)redist\LicielRsync-%(CurrentAssembly.Version).7z%22 %22$(ProjectDir)bin\Temp\LicielRsync%22" ContinueOnError="True" IgnoreExitCode="True">
       <Output TaskParameter="ExitCode" PropertyName="ExitCode" />
     </Exec>
-    <Error Text="Error with 7-Zip while publishing the release" Condition="'$(ExitCode)' != '0'" />
+    <Error Text="7z.exe not found." Condition="'$(ExitCode)' == '9009'" />
+    <Error Text="Error with 7-Zip while publishing the release." Condition="'$(ExitCode)' != '0'" />
     <RemoveDir Directories="$(ProjectDir)bin\Temp" />
     <Message Text="====================================================================================================" />
     <Message Text="                                        BUILD SUCCESS !" />
     <Message Text="====================================================================================================" />
   </Target>
-	<Target Name="AfterClean">
-		<RemoveDir Directories="$(TargetDir)fr;$(TargetDir)rsync;$(ProjectDir)obj" />
-	</Target>
+  <Target Name="AfterClean">
+    <RemoveDir Directories="$(TargetDir)fr;$(TargetDir)rsync;$(ProjectDir)obj" />
+  </Target>
 </Project>
 <!-- <PostBuildEvent>
 robocopy "$(ProjectDir)redist\rsync" "$(TargetDir)\" /E /XD .svn

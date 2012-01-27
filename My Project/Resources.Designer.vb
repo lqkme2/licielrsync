@@ -170,6 +170,24 @@ Namespace My.Resources
             End Get
         End Property
         
+        '''<summary>
+        '''  Looks up a localized string similar to No rsync found. You can add your own rsync compilations if you keep the directories structure of LicielRsync as seen in the official 7-Zip release..
+        '''</summary>
+        Friend ReadOnly Property msg7() As String
+            Get
+                Return ResourceManager.GetString("msg7", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to LicielRsync - Error !.
+        '''</summary>
+        Friend ReadOnly Property msg8() As String
+            Get
+                Return ResourceManager.GetString("msg8", resourceCulture)
+            End Get
+        End Property
+        
         Friend ReadOnly Property us() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("us", resourceCulture)

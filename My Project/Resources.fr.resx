@@ -135,4 +135,10 @@
   <data name="msg6" xml:space="preserve">
     <value>LicielRsync - Le saviez-vous ?</value>
   </data>
+  <data name="msg7" xml:space="preserve">
+    <value>Pas de logiciel rsync détecté. Vous pouvez ajouter votre propre compilation de rsync à LicielRsync à condition de respecter la hiérarchie des répertoires comme dans l'archive officielle au format 7-Zip.</value>
+  </data>
+  <data name="msg8" xml:space="preserve">
+    <value>LicielRsync - Erreur !</value>
+  </data>
 </root>
