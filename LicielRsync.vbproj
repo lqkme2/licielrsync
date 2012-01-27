@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
+    <LicielRsyncVersion>%(CurrentAssembly.Version)</LicielRsyncVersion>
     <ProjectGuid>{6066CDA1-BDDB-43B7-BE5B-9281DAFFC5B3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <StartupObject>LicielRsync.My.MyApplication</StartupObject>
@@ -28,8 +29,9 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -82,12 +84,17 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="LicielRsync.My.Resources" />
@@ -212,7 +219,57 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>robocopy "$(ProjectDir)redist\rsync" "$(TargetDir)\" /E /XD .svn
+  </PropertyGroup>
+  <Target Name="AfterBuild">
+    <Message Text="===============================================================================[POSTBUILD - RSYNC]==" />
+    <Message Text="                 Copying rsync from the original folder to the distribution folder" />
+    <Message Text="====================================================================================================" />
+    <Exec Command="robocopy %22$(ProjectDir)redist\rsync%22 %22$(TargetDir)\%22 /E /XD .svn" ContinueOnError="True" IgnoreExitCode="True">
+      <Output TaskParameter="ExitCode" PropertyName="ExitCode" />
+    </Exec>
+    <Error Text="Error while copying rsync from the original folder to the distribution folder (robocopy)" Condition="'$(ExitCode)' != '2' And '$(ExitCode)' != '3'" />
+    <Message Text="==============================================================================[POSTBUILD - CYGWIN]==" />
+    <Message Text="                 Copying cygwin from the original folder to the distribution folder" />
+    <Message Text="====================================================================================================" />
+    <Exec Command="FOR /F %22tokens=*%22 %25%25G in ('dir /ad /s /b %22$(TargetDir)*bin*%22') DO robocopy %22$(ProjectDir)redist\cygwin%22 %22%25%25G%22 /E /XD .svn" ContinueOnError="True" IgnoreExitCode="True">
+      <Output TaskParameter="ExitCode" PropertyName="ExitCode" />
+    </Exec>
+    <Error Text="Error while copying cygwin from the original folder to the distribution folder (robocopy)" Condition="'$(ExitCode)' != '2' And '$(ExitCode)' != '3'" />
+    <CallTarget Targets="PackageRelease" Condition="'$(Configuration)' == 'Release'" />
+  </Target>
+  <Target Name="PackageRelease" Condition="'$(Configuration)' == 'Release'">
+    <GetAssemblyIdentity AssemblyFiles="$(TargetPath)">
+      <Output TaskParameter="Assemblies" ItemName="CurrentAssembly" />
+    </GetAssemblyIdentity>
+    <Message Text="========================================================================[POSTBUILD - CODE SIGNING]==" />
+    <Message Text="                    Signing the executable (reserved to Arnaud Dovi only)" />
+    <Message Text="====================================================================================================" />
+    <Exec Command="start /WAIT %22LicielRsync Code Signing%22 cmd /V:ON /K %22set /P __LICIELRSYNCCERTSTORE=Please enter the store name containing the private key : &amp;&amp; %22C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\signtool.exe%22 sign /f %22$(ProjectDir)pub.adovi.128-Bit-DER.cer%22 /csp %22Microsoft Strong Cryptographic Provider%22 /v /kc %22!__LICIELRSYNCCERTSTORE!%22 /t %22http://timestamp.verisign.com/scripts/timstamp.dll%22 %22$(TargetDir)LicielRsync.exe%22 &amp;&amp; pause &amp;&amp; exit 0%22" ContinueOnError="True" IgnoreExitCode="True">
+      <Output TaskParameter="ExitCode" PropertyName="ExitCode" />
+    </Exec>
+    <Error Text="Error while signing the executable (this procedure is reserved to Arnaud Dovi)" Condition="'$(ExitCode)' != '0'" />
+    <Message Text="========================================================================[POSTBUILD - CODE SIGNING]==" />
+    <Message Text="                                Publish release with 7-Zip" />
+    <Message Text="====================================================================================================" />
+    <ItemGroup>
+      <MySourceFiles Include="$(TargetDir)**\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(MySourceFiles)" DestinationFiles="@(MySourceFiles->'$(ProjectDir)bin\Temp\LicielRsync\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Exec Command="%22$(ProjectDir)redist\7z.exe%22 a -t7z -r -mx9 -mmt -ms=on %22$(ProjectDir)redist\LicielRsync-%(CurrentAssembly.Version).7z%22 %22$(ProjectDir)bin\Temp\LicielRsync%22" ContinueOnError="True" IgnoreExitCode="True">
+      <Output TaskParameter="ExitCode" PropertyName="ExitCode" />
+    </Exec>
+    <Error Text="Error with 7-Zip while publishing the release" Condition="'$(ExitCode)' != '0'" />
+    <RemoveDir Directories="$(ProjectDir)bin\Temp" />
+    <Message Text="====================================================================================================" />
+    <Message Text="                                        BUILD SUCCESS !" />
+    <Message Text="====================================================================================================" />
+  </Target>
+	<Target Name="AfterClean">
+		<RemoveDir Directories="$(TargetDir)fr;$(TargetDir)rsync;$(ProjectDir)obj" />
+	</Target>
+</Project>
+<!-- <PostBuildEvent>
+robocopy "$(ProjectDir)redist\rsync" "$(TargetDir)\" /E /XD .svn
 if errorlevel 4 goto error
 FOR /D /r %25%25G in (*bin) DO robocopy "$(ProjectDir)redist\cygwin" "%25%25G" /E /XD .svn
 if errorlevel 4 goto error
@@ -222,13 +279,4 @@ if errorlevel 4 goto error
 exit 0
 :error
 REM http://timestamp.comodoca.com/authenticode
-REM http://timestamp.verisign.com/scripts/timstamp.dll</PostBuildEvent>
-  </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
-</Project>
+REM http://timestamp.verisign.com/scripts/timstamp.dll</PostBuildEvent>-->
