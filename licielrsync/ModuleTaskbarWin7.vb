@@ -14,8 +14,9 @@
 Imports System.Runtime.InteropServices
 
 Module ModuleTaskbarWin7
-    Public IsWin7 = Environment.OSVersion.Version.Major > 6 OrElse (Environment.OSVersion.Version.Major = 6 AndAlso Environment.OSVersion.Version.Minor >= 1)
-    Public Enum Tbpflag As Integer
+    Friend IsWin7 = Environment.OSVersion.Version.Major > 6 OrElse (Environment.OSVersion.Version.Major = 6 AndAlso Environment.OSVersion.Version.Minor >= 1)
+
+    Friend Enum Tbpflag As Integer
         TbpfNoprogress = 0
         TbpfIndeterminate = &H1
         TbpfNormal = &H2
@@ -23,8 +24,8 @@ Module ModuleTaskbarWin7
         TbpfPaused = &H8
     End Enum
 
-    <ComImport(), InterfaceType(ComInterfaceType.InterfaceIsIUnknown), Guid("C43DC798-95D1-4BEA-9030-BB99E2983A1A")> _
-    Public Interface ITaskbarList4
+    <ComImport(), InterfaceType(ComInterfaceType.InterfaceIsIUnknown), Guid("C43DC798-95D1-4BEA-9030-BB99E2983A1A")>
+    Friend Interface ITaskbarList4
         ''
         '' ITaskbarList
         ''
@@ -45,9 +46,9 @@ Module ModuleTaskbarWin7
     End Interface
 
     <ComImport(), ClassInterfaceAttribute(ClassInterfaceType.None), Guid("56FDF344-FD6D-11d0-958A-006097C9A090")>
-    Public Class CTaskbarList
+    Friend Class CTaskbarList
     End Class
 
-    Public TaskBar As ITaskbarList4 = Nothing
+    Friend TaskBar As ITaskbarList4 = Nothing
 
 End Module

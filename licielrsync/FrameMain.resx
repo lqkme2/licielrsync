@@ -129,7 +129,7 @@
     <value>Fill</value>
   </data>
   <data name="TextBoxLogs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 13</value>
+    <value>6, 15</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TextBoxLogs.MaxLength" type="System.Int32, mscorlib">
@@ -142,7 +142,7 @@
     <value>Vertical</value>
   </data>
   <data name="TextBoxLogs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>450, 255</value>
+    <value>450, 253</value>
   </data>
   <data name="TextBoxLogs.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -211,7 +211,7 @@
     <value>Fill</value>
   </data>
   <data name="TextBoxErrors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 13</value>
+    <value>6, 15</value>
   </data>
   <data name="TextBoxErrors.MaxLength" type="System.Int32, mscorlib">
     <value>0</value>
@@ -223,7 +223,7 @@
     <value>Vertical</value>
   </data>
   <data name="TextBoxErrors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>355, 255</value>
+    <value>348, 253</value>
   </data>
   <data name="TextBoxErrors.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

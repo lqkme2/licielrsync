@@ -1,6 +1,6 @@
-﻿Public NotInheritable Class FrameAboutBox
+﻿Friend NotInheritable Class FrameAboutBox
 
-    Private Sub AboutBox1Load(ByVal sender As System.Object, ByVal e As EventArgs) Handles MyBase.Load
+    Private Sub OnLoadAboutBox1(ByVal sender As System.Object, ByVal e As EventArgs) Handles MyBase.Load
         ' Set the title of the form.
         Dim applicationTitle As String
         If My.Application.Info.Title <> "" Then
@@ -19,11 +19,8 @@
         TextBoxDescription.Text = My.Application.Info.Description
     End Sub
 
-    Private Sub OkButtonClick(ByVal sender As System.Object, ByVal e As EventArgs) Handles OKButton.Click
+    Private Sub OnClickOkButton(ByVal sender As System.Object, ByVal e As EventArgs) Handles OKButton.Click
         Close()
     End Sub
 
-    Private Shared Sub TableLayoutPanelPaint(sender As System.Object, e As Windows.Forms.PaintEventArgs) Handles TableLayoutPanel.Paint
-
-    End Sub
 End Class

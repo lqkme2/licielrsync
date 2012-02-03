@@ -1,50 +1,57 @@
 ﻿''----------------------------------------------------------------------------------------------
 ''
-'' LicielRsync -  A multi-threaded interface for Rsync on Windows
-'' By Arnaud Dovi - ad@heapoverflow.com
-'' Rsync - http://rsync.samba.org
+'' licielrsync -  a multi-threaded interface for rsync on windows
+'' by Arnaud Dovi - ad@heapoverflow.com
+'' licielrsync - http://licielrsync.googlecode.com
 ''
-'' ModuleMain
+'' rsync is maintained by Wayne Davison
+'' at - http://rsync.samba.org
 ''
-'' Primary functions
+'' modulemain
+''
+'' primary module
 ''----------------------------------------------------------------------------------------------
 Option Explicit On
 
 
-Imports System.Globalization
-Imports System.Text.RegularExpressions
 Imports System.IO
-Imports System.ComponentModel
-Imports System.Text
 Imports System.Net
-Imports System.Runtime.InteropServices
+Imports System.Text
+Imports System.Globalization
+Imports System.ComponentModel
+Imports System.Text.RegularExpressions
 
 Module ModuleMain
-
-    Public CurrentCultureInfo As CultureInfo
-    Public FirstLoad As Boolean = True, Progress As Boolean = False
-    Public RsyncPaths As New Hashtable, FileSizes As New Hashtable
-    Public Processus As Process = Nothing
-    Public ProcessusSuspended As Boolean = False
-    Public GlobalSize As Long = -1, GlobalSizeSent As Long = 0, CurrentSize As Long = -1, CurrentProgress As Integer = 0
-    Public AppAssembly As String = My.Application.Info.AssemblyName
-    Public AppExe As String = AppAssembly & ".exe"
-    Public AppPath As String = My.Application.Info.DirectoryPath & "\"
-    Public AppPathUpdate As String = AppPath & "update\"
-    Public AppIcon As Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath)
-    Public RsyncDirectory As String = AppPath & "rsync", RsyncPath As String = "", LastLine As String = "", CurrentFile As String = ""
+    Friend CurrentCultureInfo As CultureInfo
+    Friend FirstLoad As Boolean = True, Progress As Boolean = False
+    Friend RsyncPaths As New Hashtable, FileSizes As New Hashtable
+    Friend Processus As Process = Nothing
+    Friend ProcessusSuspended As Boolean = False
+    Friend GlobalSize As Long = -1, GlobalSizeSent As Long = 0, CurrentSize As Long = -1, CurrentProgress As Integer = 0
+    Friend AppAssembly As String = My.Application.Info.AssemblyName
+    Friend AppExe As String = AppAssembly & ".exe"
+    Friend AppPath As String = My.Application.Info.DirectoryPath & "\"
+    Friend AppPathUpdate As String = AppPath & "update\"
+    Friend AppIcon As Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath)
+    Friend RsyncDirectory As String = AppPath & "rsync", RsyncPath As String = "", LastLine As String = "", CurrentFile As String = ""
 
     Private Const AppProjectHome As String = "http://ad-test-proj.googlecode.com/svn/"
-    Public AppVersionCheckUrl As String = AppProjectHome & AppAssembly & "/My%20Project/AssemblyInfo.vb"
-    Public AppVersionCheckUrlUpdater As String = AppProjectHome & AppAssembly & "-updater/My%20Project/AssemblyInfo.vb"
+    Friend AppVersionCheckUrl As String = AppProjectHome & AppAssembly & "/My%20Project/AssemblyInfo.vb"
+    Friend AppVersionCheckUrlUpdater As String = AppProjectHome & AppAssembly & "-updater/My%20Project/AssemblyInfo.vb"
     Private ReadOnly AppExeUpdater As String = AppAssembly & "-updater.exe"
     Private Const AppExe7Z As String = "7z.exe"
     Private Const AppExe7ZDll As String = "7z.dll"
+    Private Const AppExeSha17Z As String = "20FEA1314DBED552D5FEDEE096E2050369172EE1"
+    Private Const AppExeSha17ZDll As String = "344FAF61C3EB76F4A2FB6452E83ED16C9CCE73E0"
+
     Private ReadOnly AppDownloadUrl As String = AppProjectHome & AppAssembly & "/redist/" & AppAssembly & "-{0}.7z"
     Private ReadOnly AppDownloadUrlUpdater As String = AppProjectHome & AppAssembly & "-updater/bin/Release/" & AppExeUpdater
     Private ReadOnly AppDownloadUrlUpdater7Z920 As String = AppProjectHome & AppAssembly & "/redist/" & AppExe7Z
     Private ReadOnly AppDownloadUrlUpdater7Z920Dll As String = AppProjectHome & AppAssembly & "/redist/" & AppExe7ZDll
-    Private Delegate Sub DelegateInvoke(ByVal var() As Object)
+
+    Friend Delegate Sub DelegateInvoke(ByVal var() As Object)
+    'parent.Invoke(New MethodInvoker(Sub() parent.Controls.Add(topmostForm)))
+
     Private _fm As FrameMain = Nothing
     Private Const NotEmptyPattern As String = "\S+"
     Private Const ProgressPattern As String = "(\d+)\%.*(\d{2}|\d{1}):(\d{2}|\d{1}):(\d{2}|\d{1})\s*(\(.*\))*$"
@@ -56,8 +63,7 @@ Module ModuleMain
     '' Program entry point
     ''--------------------------------------------------------------------
 
-
-    Public Sub Main(ByVal frame As Form)
+    Friend Sub Main(ByVal frame As Form)
         _fm = frame
         '
         ' Old configs import
@@ -84,12 +90,22 @@ Module ModuleMain
     End Sub
 
     ''--------------------------------------------------------------------
+    '' L
+    ''
+    '' Localizations
+    ''--------------------------------------------------------------------
+
+    Friend Function L(ByVal resStr As String)
+        Return My.Resources.ResourceManager.GetString(resStr, CurrentCultureInfo)
+    End Function
+
+    ''--------------------------------------------------------------------
     '' GetDirectory
     ''
     '' Path selection
     ''--------------------------------------------------------------------
 
-    Public Function GetDirectory(ByVal controlText As String)
+    Friend Function GetDirectory(ByVal controlText As String)
         Dim dlgResult As DialogResult = _fm.FolderBrowserDialog.ShowDialog()
         If dlgResult = Windows.Forms.DialogResult.OK AndAlso _fm.FolderBrowserDialog.SelectedPath <> "" Then Return _fm.FolderBrowserDialog.SelectedPath & "\"
         Return controlText
@@ -101,11 +117,9 @@ Module ModuleMain
     '' Launch the update procedures
     ''--------------------------------------------------------------------
 
-    Public Sub LoadUpdates(ByVal threadObject As Object)
+    Friend Sub LoadUpdates(ByVal threadObject As Object)
         Dim frame As Form = threadObject(0)
-        Dim updateUrl As String = threadObject(1)
-        Dim curVersion As Version = threadObject(2)
-        Dim updateObject As Object = CheckForUpdates(frame, updateUrl, curVersion)
+        Dim updateObject As Object = CheckVersion(AppVersionCheckUrl, Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString)
         Dim ret As Integer = updateObject(0)
         Dim offVersionStr As String = updateObject(1)
         If ret = -1 Then
@@ -113,13 +127,13 @@ Module ModuleMain
             Exit Sub
         End If
         If ret = 0 Then
-            SendMessage(String.Format(_fm.L("msg11"), offVersionStr), _fm.L("msg10"), _fm, ToolTipIcon.Info, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            SendMessage(String.Format(L("msg11"), offVersionStr), L("msg10"), _fm, ToolTipIcon.Info, MessageBoxButtons.OK, MessageBoxIcon.Information)
             Exit Sub
         End If
-        If ret = 1 AndAlso LicielMessage.Send(String.Format(_fm.L("msg12"), offVersionStr), _fm.L("msg10"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
-        Dim updaterVersion As Version = Nothing
+        If ret = 1 AndAlso LicielMessage.Send(String.Format(L("msg12"), offVersionStr), L("msg10"), MessageBoxButtons.YesNo, MessageBoxIcon.Question, threadObject(0)) = DialogResult.No Then Exit Sub
+        Dim updaterVersion As String = Nothing
         Try
-            updaterVersion = Reflection.AssemblyName.GetAssemblyName(AppPathUpdate & AppExeUpdater).Version
+            updaterVersion = Reflection.AssemblyName.GetAssemblyName(AppPathUpdate & AppExeUpdater).Version.ToString
         Catch
         End Try
         Try
@@ -128,19 +142,40 @@ Module ModuleMain
             HandleError("::directory", ex.ToString)
             Exit Sub
         End Try
-        If Not File.Exists(AppPathUpdate & AppExeUpdater) OrElse updaterVersion = Nothing OrElse CheckForUpdates(frame, AppVersionCheckUrlUpdater, updaterVersion)(0) = 1 Then _
+        If Not File.Exists(AppPathUpdate & AppExeUpdater) OrElse updaterVersion = Nothing OrElse CheckVersion(AppVersionCheckUrlUpdater, updaterVersion)(0) = 1 Then _
             Download(AppDownloadUrlUpdater, AppPathUpdate & AppExeUpdater)
-        If Not File.Exists(AppPathUpdate & AppExe7Z) Then Download(AppDownloadUrlUpdater7z920, AppPathUpdate & AppExe7Z)
-        If Not File.Exists(AppPathUpdate & AppExe7ZDll) Then Download(AppDownloadUrlUpdater7z920Dll, AppPathUpdate & AppExe7ZDll)
+        If EncryptFSha1(AppPathUpdate & AppExe7Z) <> AppExeSha17Z Then Download(AppDownloadUrlUpdater7Z920, AppPathUpdate & AppExe7Z)
+        If EncryptFSha1(AppPathUpdate & AppExe7ZDll) <> AppExeSha17ZDll Then Download(AppDownloadUrlUpdater7Z920Dll, AppPathUpdate & AppExe7ZDll)
         Dim packageUrl As String = String.Format(AppDownloadUrl, offVersionStr)
         Dim packageName As String = Regex.Match(packageUrl, "^http:.*/([^/]+)$").Groups(1).Value
         If packageName = "" Then HandleError("::update", "packageName is empty")
         Download(packageUrl, AppPathUpdate & packageName)
-        ret = SimpleProcessStart(AppPathUpdate & AppExe7Z, "x -y """ & AppPathUpdate & packageName & """ -o" & AppPathUpdate, True, True)
-        If ret <> 0 Then HandleError("::7zip", "Error in command line : 7z.exe x -y """ & AppPathUpdate & packageName & """ -o" & AppPathUpdate)
+        ret = SimpleProcessStart(AppPathUpdate & AppExe7Z, "x -y """ & AppPathUpdate & packageName & """ -o""" & AppPathUpdate & """", True, True)
+        If ret <> 0 Then HandleError("::7zip", "Error in command line : 7z.exe x -y """ & AppPathUpdate & packageName & """ -o""" & AppPathUpdate & """")
         SimpleProcessStart(AppPathUpdate & AppExeUpdater, "--update", True, False)
         Environment.Exit(0)
     End Sub
+
+    ''--------------------------------------------------------------------
+    '' EncryptFSha1
+    ''
+    '' get sha1 identity of a file
+    ''--------------------------------------------------------------------
+
+    Private Function EncryptFSha1(ByVal filepath As String) As String
+        Try
+            If Not File.Exists(filepath) Then Return ""
+            Using reader As New FileStream(filepath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite)
+                Using md5 As New System.Security.Cryptography.SHA1CryptoServiceProvider
+                    Dim hash() As Byte = md5.ComputeHash(reader)
+                    Return Replace(BitConverter.ToString(hash), "-", "").ToUpper
+                End Using
+            End Using
+        Catch ex As Exception
+            HandleError("::directory", ex.ToString)
+        End Try
+        Return ""
+    End Function
 
     ''--------------------------------------------------------------------
     '' CheckForUpdates
@@ -148,9 +183,8 @@ Module ModuleMain
     '' Retrieve and compare the assembly version from the googlecode svn
     ''--------------------------------------------------------------------
 
-    Public Function CheckForUpdates(ByVal frame As Form, ByVal url As String, ByVal curVersion As Version) As Object
+    Private Function CheckVersion(ByVal url As String, ByVal curVersion As String) As Object
         Dim response As String = Download(url)
-        'If response = "" Or Not Regex.Match(AppUpdateUrl, Application.ProductName).Success Then
         If response = "" Then Return New Object() {-1, ""}
         ''
         '' Googlecode raw  release version number = \<Assembly\:\sAssemblyVersion\(""(\d+\.\d+\.\d+\.\d+)""\)
@@ -158,11 +192,14 @@ Module ModuleMain
         ''
         Dim offVersionStr As String = Regex.Match(response, "\<Assembly\:\sAssemblyVersion\(""(\d+\.\d+\.\d+\.\d+)""\)").Groups(1).Value
         If offVersionStr = "" Then Return New Object() {-1, ""}
-        Dim offVersionInt As Integer = CType(Regex.Replace(offVersionStr, "\.", ""), Integer)
-        Dim curVersionInt As Integer = CType(Regex.Replace(String.Format("{0}{1}{2}{3}", curVersion.Major, curVersion.Minor, curVersion.Build, curVersion.Revision), "\.", ""), Integer)
-        If offVersionInt < 0 Or curVersionInt < 0 Then Return New Object() {-1, ""}
-        If curVersionInt < offVersionInt Then Return New Object() {1, offVersionStr}
+        Dim curVersionStr As String = curVersion
+        If curVersionStr = "" Then Return New Object() {-1, ""}
+        If offVersionStr <> curVersionStr Then Return New Object() {1, offVersionStr}
         Return New Object() {0, offVersionStr}
+        'If response = "" Or Not Regex.Match(AppUpdateUrl, Application.ProductName).Success Then
+        'Dim offVersionInt As Integer = CType(Regex.Replace(offVersionStr, "\.", ""), Integer)
+        'Dim curVersionInt As Integer = CType(Regex.Replace(String.Format("{0}{1}{2}{3}", curVersion.Major, curVersion.Minor, curVersion.Build, curVersion.Revision), "\.", ""), Integer)
+        'If offVersionStr = "" Or curVersionInt < 0 Then Return New Object() {-1, ""}
     End Function
 
     ''--------------------------------------------------------------------
@@ -218,6 +255,10 @@ Module ModuleMain
                     _fm.ButtonTest.Enabled = active
                     _fm.ButtonPause.Enabled = Not active
                     _fm.ButtonStop.Enabled = Not active
+                    If Not active Then
+                        _fm.ButtonPause.BackColor = SystemColors.Control
+                        _fm.ButtonStop.BackColor = SystemColors.Control
+                    End If
                 Case _fm.ProgressBar.Name
                     _fm.ProgressBarText.Text = Math.Round(obj(1)) & "%"
                     control.Value = obj(1)
@@ -226,6 +267,9 @@ Module ModuleMain
                         TaskBar.SetProgressValue(CType(_fm.Handle, Integer), CType(obj(2), Long), CType(obj(3), Long))
                         If obj(2) >= obj(3) Then TaskBar.SetProgressState(CType(_fm.Handle, Integer), Tbpflag.TbpfNoprogress)
                     End If
+                Case "topmostForm"
+                    _fm.Controls.Add(obj(0))
+                    'obj(0).Parent = _fm
             End Select
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -324,7 +368,7 @@ Module ModuleMain
     '' Start process and read output streams with new threads
     ''--------------------------------------------------------------------
 
-    Public Sub ThreadProcessStart(ByVal obj As Object)
+    Friend Sub ThreadProcessStart(ByVal obj As Object)
         Dim srStd As StreamReader = Nothing
         Dim srErr As StreamReader = Nothing
         Dim thdStd As Threading.Thread = Nothing
@@ -381,8 +425,8 @@ Module ModuleMain
 
     Private Function SimpleProcessStart(ByVal f As String, Optional ByVal arg As String = "", Optional ByVal hideWnd As Boolean = False, Optional ByVal wait As Boolean = False) As Integer
         Dim ret As Integer = 101
-        Try
-            Using objProcess As New Process()
+        Using objProcess As New Process()
+            Try
                 objProcess.StartInfo.FileName = f
                 objProcess.StartInfo.UseShellExecute = True
                 objProcess.StartInfo.CreateNoWindow = hideWnd
@@ -393,10 +437,10 @@ Module ModuleMain
                     objProcess.WaitForExit()
                     ret = objProcess.ExitCode()
                 End If
-            End Using
-        Catch ex As Exception
-            HandleError("::process", ex.ToString)
-        End Try
+            Catch ex As Exception
+                HandleError("::process", ex.ToString)
+            End Try
+        End Using
         Return ret
     End Function
 
@@ -433,7 +477,7 @@ Module ModuleMain
     '' Update the command line shown on status bar
     ''--------------------------------------------------------------------
 
-    Public Sub UpdateStatusBarCommand(ByVal dryrun As Boolean)
+    Friend Sub UpdateStatusBarCommand(ByVal dryrun As Boolean)
         _fm.StatusBarText.Text = If(Not My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("showcmd"), "", BuildOptions(dryrun))
     End Sub
 
@@ -447,9 +491,8 @@ Module ModuleMain
         Dim items(100) As String
         Dim i As Integer = 0
         Dim rsyncName As String
-        Dim sw As StreamWriter = Nothing
         If Not Directory.Exists(RsyncDirectory) Then
-            SendMessage(_fm.L("msg7"), _fm.L("msg8"), _fm, ToolTipIcon.Error, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            SendMessage(L("msg7"), L("msg8"), _fm, ToolTipIcon.Error, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
         For Each dir As String In Directory.GetDirectories(RsyncDirectory)
@@ -457,8 +500,9 @@ Module ModuleMain
             Try
                 If Not File.Exists(dir & "\etc\fstab") Then
                     Directory.CreateDirectory(dir & "\etc")
-                    sw = File.AppendText(dir & "\etc\fstab")
-                    sw.Write("none /cygdrive cygdrive binary,posix=0,user,noacl 0 0")
+                    Using sw As StreamWriter = File.AppendText(dir & "\etc\fstab")
+                        sw.Write("none /cygdrive cygdrive binary,posix=0,user,noacl 0 0")
+                    End Using
                 End If
                 If Not Directory.Exists(dir & "\tmp") Then Directory.CreateDirectory(dir & "\tmp")
             Catch
@@ -480,7 +524,6 @@ Module ModuleMain
         Array.Resize(items, i)
         _fm.ComboRsync.Items.AddRange(items)
         _fm.ComboRsync.SelectedIndex = 0
-        If Not sw Is Nothing Then sw.Close()
     End Sub
 
     ''--------------------------------------------------------------------
@@ -620,7 +663,7 @@ Module ModuleMain
     '' Change language dynamically
     ''--------------------------------------------------------------------
 
-    Public Sub ChangeLanguage(ByVal lang As String)
+    Friend Sub ChangeLanguage(ByVal lang As String)
         Dim cultureInfo = If(lang = "", Nothing, New CultureInfo(lang, False))
         CurrentCultureInfo = cultureInfo
         Dim resources As ComponentResourceManager = New ComponentResourceManager(_fm.GetType)
@@ -641,7 +684,7 @@ Module ModuleMain
     '' Reset progress bar datas
     ''--------------------------------------------------------------------
 
-    Public Sub ResetProgress()
+    Friend Sub ResetProgress()
         _fm.ProgressBar.Visible = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress")
         _fm.ProgressBarText.Visible = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress")
         If Not My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress") Then Exit Sub
@@ -661,7 +704,7 @@ Module ModuleMain
     '' Profiles load
     ''--------------------------------------------------------------------
 
-    Public Sub LoadProfile(ByVal profileName As String)
+    Friend Sub LoadProfile(ByVal profileName As String)
         If profileName = My.Settings.CurrentProfile Then Exit Sub
         My.Settings.CurrentProfile = profileName
         My.Settings.Save()
@@ -751,78 +794,24 @@ Module ModuleMain
     '' Handle handled and unhandled errors
     ''--------------------------------------------------------------------
 
-    Public Sub HandleError(ByVal type As String, ByVal ex As String)
+    Friend Sub HandleError(ByVal type As String, ByVal ex As String)
         Dim errorText As String = "", errorFullLog As String
         Select Case type
             Case "::process"
-                errorText = String.Format(_fm.L("msg15"), AppPath & AppAssembly)
+                errorText = String.Format(L("msg15"), AppPath & AppAssembly)
             Case "::download"
-                errorText = String.Format(_fm.L("msg14"), AppPath & AppAssembly)
+                errorText = String.Format(L("msg14"), AppPath & AppAssembly)
             Case "::update"
-                errorText = _fm.L("msg9")
+                errorText = L("msg9")
             Case "::directory"
-                errorText = String.Format(_fm.L("msg13"), AppPath & AppAssembly)
+                errorText = String.Format(L("msg13"), AppPath & AppAssembly)
             Case "::7zip"
-                errorText = _fm.L("msg16")
+                errorText = L("msg16")
         End Select
-        If errorText.Length > 0 Then SendMessage(errorText, _fm.L("msg8"), _fm, ToolTipIcon.Error, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        If errorText.Length > 0 Then SendMessage(errorText, L("msg8"), _fm, ToolTipIcon.Error, MessageBoxButtons.OK, MessageBoxIcon.Error)
         errorFullLog = "[" & DateTime.Now & " --- " & type & "] " & errorText & ControlChars.CrLf & "Details : " & ex
         WriteFile(errorFullLog, AppPath & AppAssembly & "_errors.log")
         If Debugger.IsAttached Then LicielMessage.Send(errorFullLog, AppExe & " error", MessageBoxButtons.OK, MessageBoxIcon.Error)
     End Sub
 
 End Module
-
-''--------------------------------------------------------------------
-'' TopMessageBox
-''
-'' Makes a TopMost message box
-''--------------------------------------------------------------------
-
-Friend NotInheritable Class LicielMessage
-    Private Shared Sub Actualize(ByVal sender As System.Object, ByVal e As EventArgs)
-        sender.Activate()
-    End Sub
-    Public Shared Function Send(ByVal message As String, ByVal title As String, ByVal buttons As MessageBoxButtons, ByVal icons As MessageBoxIcon) As DialogResult
-        Dim topmostForm As Form = Nothing
-        Dim result As DialogResult
-        Try
-            topmostForm = New Form()
-            topmostForm.Icon = AppIcon
-            AddHandler topmostForm.Deactivate, AddressOf Actualize
-            topmostForm.Size = New Size(1, 1)
-            topmostForm.StartPosition = FormStartPosition.CenterScreen
-            Dim rect As Rectangle = SystemInformation.VirtualScreen
-            topmostForm.Location = New Point(rect.Bottom + 10, rect.Right + 10)
-            topmostForm.Opacity = 0
-            topmostForm.Show()
-            topmostForm.Focus()
-            topmostForm.BringToFront()
-            topmostForm.TopMost = True
-            result = MessageBox.Show(topmostForm, message, title, buttons, icons)
-        Catch
-        Finally
-            If Not topmostForm Is Nothing Then topmostForm.Close()
-        End Try
-        Return result
-    End Function
-    Public Shared Sub SendTray(ByVal fm As FrameMain, ByVal message As String, ByVal title As String, ByVal t As ToolTipIcon, ByVal time As Long)
-        fm.NotifyIcon1.Icon = AppIcon
-        fm.NotifyIcon1.ShowBalloonTip(time, title, message, t)
-    End Sub
-End Class
-
-Friend NotInheritable Class SafeNativeMethods
-    Public Declare Function SendMessage Lib "user32.dll" (ByVal hWnd As IntPtr, ByVal msg As Integer, ByVal wParam As IntPtr, ByVal lParam As IntPtr) As IntPtr
-    Public Declare Function OpenThread Lib "kernel32.dll" (ByVal dwDesiredAccess As Integer, ByVal bInheritHandle As Boolean, ByVal dwThreadId As Integer) As IntPtr
-    Public Declare Function SuspendThread Lib "kernel32.dll" (ByVal hThread As IntPtr) As Integer
-    Public Declare Function ResumeThread Lib "kernel32.dll" (ByVal hThread As IntPtr) As Integer
-    Public Declare Function CloseHandle Lib "kernel32.dll" (ByVal hHandle As IntPtr) As Integer
-    Public Declare Function SetLastError Lib "kernel32.dll" (ByVal dwErrCode As Integer) As Integer
-    Public Declare Function ReplaceFile Lib "kernel32.dll" Alias "ReplaceFileA" (ByVal lpReplacedFileName As String, ByVal lpReplacementFileName As String, ByVal lpBackupFileName As Object, ByVal dwReplaceFlags As Integer, ByVal lpExclude As IntPtr, ByVal lpReserved As IntPtr) As Integer
-
-    '<DllImport("kernel32.dll", SetLastError:=True, CharSet:=CharSet.Auto)>
-    'Public Shared Function ReplaceFile(<[In]()> ByVal lpReplacedFileName As String, <[In]()> ByVal lpReplacementFileName As String, <[In](), [Optional]()> ByVal lpBackupFileName As String, ByVal dwReplaceFlags As Integer, ByVal lpExclude As IntPtr, ByVal lpReserved As IntPtr) As Integer
-    'End Function
-
-End Class

@@ -27,7 +27,7 @@ Module ModuleProcess
         'DirectImpersonation = &H200
     End Enum
 
-    Public Sub SuspendProcess(ByVal process As Process)
+    Friend Sub SuspendProcess(ByVal process As Process)
         Dim th As IntPtr, ret As Integer, errcode As Integer
         For Each t As ProcessThread In process.Threads
             th = SafeNativeMethods.OpenThread(ThreadAccess.SuspendResume, False, t.Id)
@@ -51,7 +51,7 @@ Module ModuleProcess
         Next
     End Sub
 
-    Public Sub ResumeProcess(ByVal process As Process)
+    Friend Sub ResumeProcess(ByVal process As Process)
         Dim th As IntPtr, ret As Integer, errcode As Integer
         For Each t As ProcessThread In process.Threads
             th = SafeNativeMethods.OpenThread(ThreadAccess.SuspendResume, False, t.Id)

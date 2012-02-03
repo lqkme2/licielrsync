@@ -106,6 +106,8 @@
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassMessages.vb" />
+    <Compile Include="ClassWindowsApi.vb" />
     <Compile Include="FrameAboutBox.Designer.vb">
       <DependentUpon>FrameAboutBox.vb</DependentUpon>
     </Compile>
@@ -179,6 +181,7 @@
     <None Include="pub.adovi.128-Bit-DER.cer" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\licielrsync.ico" />
     <None Include="images\src\licielrsync_80px.png" />
     <None Include="images\src\licielrsync_128px.png" />
     <None Include="images\src\licielrsync_32px.ico" />
@@ -192,7 +195,6 @@
     <None Include="images\famfamfam_silk_icons_v013\door_in.png" />
     <None Include="images\famfamfam_silk_icons_v013\folder_go.png" />
     <None Include="images\famfamfam_silk_icons_v013\connect.png" />
-    <Content Include="images\licielrsync.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -215,7 +217,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_UpdateAssemblyVersion="True" BuildVersion_ConfigurationName="Release" BuildVersion_BuildVersioningStyle="None.None.None.Increment" BuildVersion_StartDate="2011/9/16" />
+      <UserProperties BuildVersion_StartDate="2011/9/16" BuildVersion_BuildVersioningStyle="None.None.None.Increment" BuildVersion_ConfigurationName="Release" BuildVersion_UpdateAssemblyVersion="True" />
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>

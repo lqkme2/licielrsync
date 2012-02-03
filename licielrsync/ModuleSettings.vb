@@ -19,7 +19,7 @@ Namespace My
         <Configuration.UserScopedSettingAttribute(), _
          DebuggerNonUserCodeAttribute(), _
          Configuration.SettingsSerializeAs(Configuration.SettingsSerializeAs.Binary), _
-         Configuration.SettingsManageabilityAttribute(Configuration.SettingsManageability.Roaming)> _
+         Configuration.SettingsManageabilityAttribute(Configuration.SettingsManageability.Roaming)>
         Public Property Profiles() As Hashtable
             Get
                 Return CType(Me("Profiles"), Hashtable)
@@ -32,7 +32,7 @@ Namespace My
         <Configuration.UserScopedSettingAttribute(), _
          DebuggerNonUserCodeAttribute(), _
          Configuration.SettingsSerializeAs(Configuration.SettingsSerializeAs.Binary), _
-         Configuration.SettingsManageabilityAttribute(Configuration.SettingsManageability.Roaming)> _
+         Configuration.SettingsManageabilityAttribute(Configuration.SettingsManageability.Roaming)>
         Public Property ProfilesList() As List(Of String)
             Get
                 Return CType(Me("ProfilesList"), List(Of String))

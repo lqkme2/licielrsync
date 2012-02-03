@@ -23,15 +23,11 @@ Public Class FrameMain
     Dim _isReset As Boolean = False
     Dim _isFrameLoaded As Boolean = False
 
-    Public Function L(ByVal resStr As String)
-        Return My.Resources.ResourceManager.GetString(resStr, CurrentCultureInfo)
-    End Function
-
     ''--------------------------------------------------------------------
     '' Init Form
     ''--------------------------------------------------------------------
 
-    Private Sub FrameMainLoad(sender As System.Object, e As EventArgs) Handles MyBase.Load
+    Private Sub OnLoadFrameMain(sender As System.Object, e As EventArgs) Handles MyBase.Load
         If Not FirstLoad Then Exit Sub
         FirstLoad = False
         Icon = AppIcon
@@ -42,11 +38,13 @@ Public Class FrameMain
         SplitContainer1.SplitterDistance = My.Settings.SplitterDistance_Splitter1
         StatusBar.Padding = New Padding(StatusBar.Padding.Left, StatusBar.Padding.Top, StatusBar.Padding.Left, StatusBar.Padding.Bottom)
         NotifyIcon1.Icon = AppIcon
+        ButtonPause.BackColor = SystemColors.Control
+        ButtonStop.BackColor = SystemColors.Control
         _isReset = False
         _isFrameLoaded = True
     End Sub
 
-    Private Sub FrameMainUnload(Optional ByVal reset As Boolean = False)
+    Private Sub OnUnloadFrameMain(Optional ByVal reset As Boolean = False)
         If reset Then
             My.Settings.Reset()
             My.Settings.ShouldReset = True
@@ -56,12 +54,12 @@ Public Class FrameMain
             Application.Restart()
             Exit Sub
         End If
-        FrameMainSaveSettings()
+        OnSaveSettingsFrameMain()
         NotifyIcon1.Visible = False
         Environment.Exit(0)
     End Sub
 
-    Private Sub FrameMainSaveSettings()
+    Private Sub OnSaveSettingsFrameMain()
         If Location.X < 0 Or Location.Y < 0 Then Exit Sub
         My.Settings.Size_Frame = Size
         My.Settings.Location_Frame = Location
@@ -75,7 +73,7 @@ Public Class FrameMain
     '' Stub function used to handle all button clicks
     ''--------------------------------------------------------------------
 
-    Private Sub ButtonClick(sender As System.Object, e As EventArgs) Handles ButtonTest.Click, ButtonStop.Click, ButtonSrcOpen.Click, ButtonPause.Click, ButtonExec.Click, ButtonDstOpen.Click, _
+    Private Sub OnClickButton(sender As System.Object, e As EventArgs) Handles ButtonTest.Click, ButtonStop.Click, ButtonSrcOpen.Click, ButtonPause.Click, ButtonExec.Click, ButtonDstOpen.Click, _
                                                                              ButtonDel.Click, ButtonAdd.Click, AboutToolStripMenuItem.Click, ResetToolStripMenuItem.Click, ToggleToolStripMenuItem.Click, _
                                                                              ExitToolStripMenuItem1.Click, ExitToolStripMenuItem2.Click, OpenSettingsFolderToolStripMenuItem.Click, UpdateCheckToolStripMenuItem.Click
         If Not _isFrameLoaded Then Exit Sub
@@ -150,18 +148,18 @@ Public Class FrameMain
                     _fab.Show()
                 Case ResetToolStripMenuItem.Name
                     If LicielMessage.Send(L("msg1"), L("msg2"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
-                    FrameMainUnload(True)
+                    OnUnloadFrameMain(True)
                 Case ToggleToolStripMenuItem.Name
                     Visible = Not Visible
                     If Visible AndAlso WindowState = FormWindowState.Minimized Then WindowState = FormWindowState.Normal
                 Case ExitToolStripMenuItem1.Name, ExitToolStripMenuItem2.Name
-                    FrameMainUnload()
+                    OnUnloadFrameMain()
                 Case OpenSettingsFolderToolStripMenuItem.Name
                     Process.Start("explorer.exe", """" & Regex.Match(Configuration.ConfigurationManager.OpenExeConfiguration(Configuration.ConfigurationUserLevel.PerUserRoaming).FilePath, "(.*\\)[^\\]+$").Groups(1).Value & """")
                 Case UpdateCheckToolStripMenuItem.Name
                     Dim newThread As Thread = New Thread(AddressOf LoadUpdates)
                     newThread.IsBackground = True
-                    newThread.Start(New Object() {Me, AppVersionCheckUrl, Reflection.Assembly.GetExecutingAssembly().GetName().Version})
+                    newThread.Start(New Object() {Me, Handle})
             End Select
             UpdateStatusBarCommand(sender.name = ButtonTest.Name)
         Catch ex As Exception
@@ -169,7 +167,7 @@ Public Class FrameMain
         End Try
     End Sub
 
-    Private Sub OnControlDoubleClick(sender As System.Object, e As EventArgs) Handles NotifyIcon1.DoubleClick
+    Private Sub OnDoubleClickControl(sender As System.Object, e As EventArgs) Handles NotifyIcon1.DoubleClick
         If Not _isFrameLoaded Then Exit Sub
         Select Case sender.Tag
             Case NotifyIcon1.Tag
@@ -184,7 +182,7 @@ Public Class FrameMain
     '' Stub function used to handle all checkbox checks
     ''--------------------------------------------------------------------
 
-    Private Sub CheckBoxChanged(sender As Object, e As EventArgs) Handles CbFrench.CheckedChanged, CbEnglish.CheckedChanged, CbVerbose.CheckedChanged, CbSizeOnly.CheckedChanged, CbShowCmd.CheckedChanged, CbRedir.CheckedChanged, CbRecurse.CheckedChanged, CbReadable.CheckedChanged, CbProgress.CheckedChanged, CbPerm.CheckedChanged, CbOwner.CheckedChanged, CbNewer.CheckedChanged, CbIgnoreTimes.CheckedChanged, CbHideWindows.CheckedChanged, CbGroup.CheckedChanged, CbExistingOnly.CheckedChanged, CbExisting.CheckedChanged, CbDelta.CheckedChanged, CbDelete.CheckedChanged, CbDate.CheckedChanged, CbChecksum.CheckedChanged, CbWinCompat.CheckedChanged, CbPermWin.CheckedChanged, CbFS.CheckedChanged, TrayIconEnabledToolStripMenuItem.CheckedChanged, TrayIconNoticeStartToolStripMenuItem.CheckedChanged, TrayIconMinimizeToolStripMenuItem.CheckedChanged, TrayIconCloseToolStripMenuItem.CheckedChanged
+    Private Sub OnChangedCheckBox(sender As Object, e As EventArgs) Handles CbFrench.CheckedChanged, CbEnglish.CheckedChanged, CbVerbose.CheckedChanged, CbSizeOnly.CheckedChanged, CbShowCmd.CheckedChanged, CbRedir.CheckedChanged, CbRecurse.CheckedChanged, CbReadable.CheckedChanged, CbProgress.CheckedChanged, CbPerm.CheckedChanged, CbOwner.CheckedChanged, CbNewer.CheckedChanged, CbIgnoreTimes.CheckedChanged, CbHideWindows.CheckedChanged, CbGroup.CheckedChanged, CbExistingOnly.CheckedChanged, CbExisting.CheckedChanged, CbDelta.CheckedChanged, CbDelete.CheckedChanged, CbDate.CheckedChanged, CbChecksum.CheckedChanged, CbWinCompat.CheckedChanged, CbPermWin.CheckedChanged, CbFS.CheckedChanged, TrayIconEnabledToolStripMenuItem.CheckedChanged, TrayIconNoticeStartToolStripMenuItem.CheckedChanged, TrayIconMinimizeToolStripMenuItem.CheckedChanged, TrayIconCloseToolStripMenuItem.CheckedChanged
         Select Case sender.Name
             Case CbEnglish.Name
                 If Not sender.checked Then Exit Sub
@@ -249,7 +247,7 @@ Public Class FrameMain
     '' Stub function used to handle all listbox changes
     ''--------------------------------------------------------------------
 
-    Private Sub ComboSelectedIndexChanged(sender As System.Object, e As EventArgs) Handles ComboVerbose.SelectedIndexChanged, ComboRsync.SelectedIndexChanged, ComboProfiles.SelectedIndexChanged
+    Private Sub OnChangedComboSelectedIndex(sender As System.Object, e As EventArgs) Handles ComboVerbose.SelectedIndexChanged, ComboRsync.SelectedIndexChanged, ComboProfiles.SelectedIndexChanged
         Select Case sender.name
             Case ComboVerbose.Name
                 My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")(sender.tag) = sender.Text
@@ -269,7 +267,7 @@ Public Class FrameMain
     '' Stub function used to handle all textbox changes
     ''--------------------------------------------------------------------
 
-    Private Sub TextBoxTextChanged(sender As System.Object, e As EventArgs) Handles TextBoxSrc.TextChanged, TextBoxOptions.TextChanged, TextBoxDst.TextChanged
+    Private Sub OnChangedTextBox(sender As System.Object, e As EventArgs) Handles TextBoxSrc.TextChanged, TextBoxOptions.TextChanged, TextBoxDst.TextChanged
         Select Case sender.name
             Case TextBoxSrc.Name
                 My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("srcpath") = TextBoxSrc.Text
@@ -284,13 +282,13 @@ Public Class FrameMain
         End Select
     End Sub
 
-    Private Sub BetterDataBindings(sender As System.Object, e As Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
+    Private Sub OnClosingFrame(sender As System.Object, e As Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
         If _isReset Or Not _isFrameLoaded Then Exit Sub
         If NotifyIcon1.Visible AndAlso My.Settings.CloseToTray = -1 Then
             My.Settings.CloseToTray = Convert.ToInt32(LicielMessage.Send(L("msg4"), L("msg6"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes)
             TrayIconCloseToolStripMenuItem.Checked = My.Settings.CloseToTray = 1
         End If
-        FrameMainSaveSettings()
+        OnSaveSettingsFrameMain()
         If NotifyIcon1.Visible AndAlso My.Settings.CloseToTray = 1 Then
             e.Cancel = True
             Hide()
@@ -309,14 +307,15 @@ Public Class FrameMain
         Visible = Not (NotifyIcon1.Visible AndAlso My.Settings.MinimizeToTray = 1)
     End Sub
 
-    Private Sub SplitContainer1SplitterMoved(sender As System.Object, e As Windows.Forms.SplitterEventArgs) Handles SplitContainer1.SplitterMoved
+    Private Sub OnMovedSplitter(sender As System.Object, e As Windows.Forms.SplitterEventArgs) Handles SplitContainer1.SplitterMoved
         If Not _isFrameLoaded Then Exit Sub
         My.Settings.SplitterDistance_Splitter1 = SplitContainer1.SplitterDistance
         My.Settings.Save()
     End Sub
 
-    Private Sub FrameMainResizeEnd(sender As System.Object, e As EventArgs) Handles MyBase.ResizeEnd
+    Private Sub OnResizeEndFrame(sender As System.Object, e As EventArgs) Handles MyBase.ResizeEnd
         If Not _isFrameLoaded Then Exit Sub
-        FrameMainSaveSettings()
+        OnSaveSettingsFrameMain()
     End Sub
+
 End Class

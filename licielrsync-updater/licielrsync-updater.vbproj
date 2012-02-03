@@ -9,7 +9,7 @@
     </SchemaVersion>
     <ProjectGuid>{1E0EA96E-27E8-4525-8598-84A71EA6188E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>licielrsync_updater.ModuleMain</StartupObject>
+    <StartupObject>Sub Main</StartupObject>
     <RootNamespace>licielrsync_updater</RootNamespace>
     <AssemblyName>licielrsync-updater</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -70,7 +70,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>images\licielrsync.ico</ApplicationIcon>
+    <ApplicationIcon>images\licielrsync-updater.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -106,7 +106,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="images\licielrsync.ico" />
+    <Content Include="images\licielrsync-updater.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -140,5 +140,8 @@
     <Message Text="====================================================================================================" />
     <Message Text="                                        BUILD SUCCESS !" />
     <Message Text="====================================================================================================" />
+  </Target>
+  <Target Name="AfterClean">
+    <RemoveDir Directories="$(TargetDir);$(ProjectDir)obj;" />
   </Target>
 </Project>

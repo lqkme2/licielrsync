@@ -1,5 +1,4 @@
-﻿Imports System
-Imports System.Reflection
+﻿Imports System.Reflection
 Imports System.Runtime.InteropServices
 
 ' General Information about an assembly is controlled through the following 
@@ -8,17 +7,17 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("licielrsync-updater")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyTitle("The licielrsync updater used to unpack updates compressed with 7-Zip")> 
+<Assembly: AssemblyDescription("The licielrsync updater used to unpack updates compressed with 7-Zip")> 
+<Assembly: AssemblyCompany("Arnaud_Dovi")> 
 <Assembly: AssemblyProduct("licielrsync-updater")> 
-<Assembly: AssemblyCopyright("Copyright ©  2012")> 
+<Assembly: AssemblyCopyright("Copyright © Arnaud_Dovi 2012")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("ecea500b-b455-43a6-8ba3-ff94000539f8")> 
+<Assembly: Guid("ECEA500B-B455-43A6-8BA3-FF94000539F8")> 
 
 ' Version information for an assembly consists of the following four values:
 '
