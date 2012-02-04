@@ -1,26 +1,35 @@
-﻿Friend NotInheritable Class FrameAboutBox
+﻿''----------------------------------------------------------------------------------------------
+'' licielrsync - a multi-threaded interface for rsync on windows
+'' by Arnaud Dovi - ad@heapoverflow.com
+'' homepage - licielrsync.googlecode.com
+''
+'' rsync is maintained by Wayne Davison
+'' homepage - rsync.samba.org
+''
+'' frameaboutbox
+''
+'' about frame
+''----------------------------------------------------------------------------------------------
+
+
+
+Friend NotInheritable Class FrameAboutBox
 
     Private Sub OnLoadAboutBox1(ByVal sender As System.Object, ByVal e As EventArgs) Handles MyBase.Load
-        ' Set the title of the form.
-        Dim applicationTitle As String
-        If My.Application.Info.Title <> "" Then
-            applicationTitle = My.Application.Info.Title
-        Else
-            applicationTitle = IO.Path.GetFileNameWithoutExtension(My.Application.Info.AssemblyName)
-        End If
-        Text = String.Format("About {0}", applicationTitle)
-        ' Initialize all of the text displayed on the About Box.
-        ' TODO: Customize the application's assembly information in the "Application" pane of the project 
-        '    properties dialog (under the "Project" menu).
+        Text = String.Format("About {0}", AppAssembly)
         LabelProductName.Text = My.Application.Info.ProductName
         LabelVersion.Text = String.Format("Version {0}", My.Application.Info.Version.ToString)
         LabelCopyright.Text = My.Application.Info.Copyright
-        LabelCompanyName.Text = My.Application.Info.CompanyName
-        TextBoxDescription.Text = My.Application.Info.Description
+        Label1.Text = "licielrsync.googlecode.com"
+        TextBoxDescription.Text = L("about")
     End Sub
 
     Private Sub OnClickOkButton(ByVal sender As System.Object, ByVal e As EventArgs) Handles OKButton.Click
         Close()
+    End Sub
+
+    Private Sub OnClickWebButton(sender As System.Object, e As EventArgs) Handles WebButton.Click
+        Process.Start("explorer.exe", """http://licielrsync.googlecode.com""")
     End Sub
 
 End Class

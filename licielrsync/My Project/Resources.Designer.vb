@@ -60,6 +60,19 @@ Namespace My.Resources
             End Set
         End Property
         
+        '''<summary>
+        '''  Looks up a localized string similar to Special thanks to :
+        '''rsync - synchronization tool - rsync.samba.org
+        '''famfamfam - free icons - www.famfamfam.com
+        '''cygwin - a linux api layer providing substantial linux api functionality to windows - www.cygwin.com
+        '''    .
+        '''</summary>
+        Friend ReadOnly Property about() As String
+            Get
+                Return ResourceManager.GetString("about", resourceCulture)
+            End Get
+        End Property
+        
         Friend ReadOnly Property application_form() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("application_form", resourceCulture)

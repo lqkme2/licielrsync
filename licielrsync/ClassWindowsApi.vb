@@ -1,4 +1,19 @@
-﻿Friend NotInheritable Class SafeNativeMethods
+﻿''----------------------------------------------------------------------------------------------
+'' licielrsync - a multi-threaded interface for rsync on windows
+'' by Arnaud Dovi - ad@heapoverflow.com
+'' homepage - licielrsync.googlecode.com
+''
+'' rsync is maintained by Wayne Davison
+'' homepage - rsync.samba.org
+''
+'' classwindowsapi
+''
+'' functions built in windows dll libraries
+''----------------------------------------------------------------------------------------------
+
+
+
+Friend NotInheritable Class SafeNativeMethods
     Friend Declare Function SendMessage Lib "user32.dll" (ByVal hWnd As IntPtr, ByVal msg As Integer, ByVal wParam As IntPtr, ByVal lParam As IntPtr) As IntPtr
     Friend Declare Function OpenThread Lib "kernel32.dll" (ByVal dwDesiredAccess As Integer, ByVal bInheritHandle As Boolean, ByVal dwThreadId As Integer) As IntPtr
     Friend Declare Function SuspendThread Lib "kernel32.dll" (ByVal hThread As IntPtr) As Integer

@@ -1,14 +1,16 @@
 ﻿''----------------------------------------------------------------------------------------------
+'' licielrsync - a multi-threaded interface for rsync on windows
+'' by Arnaud Dovi - ad@heapoverflow.com
+'' homepage - licielrsync.googlecode.com
 ''
-'' LicielRsync -  A multi-threaded interface for Rsync on Windows
-'' By Arnaud Dovi - ad@heapoverflow.com
-'' Rsync - http://rsync.samba.org
+'' rsync is maintained by Wayne Davison
+'' homepage - rsync.samba.org
 ''
-'' FrameMain
+'' framemain
 ''
-'' Primary interface
+'' primary frame
 ''----------------------------------------------------------------------------------------------
-Option Explicit On
+
 
 
 Imports System
@@ -19,9 +21,9 @@ Imports System.Threading
 
 Public Class FrameMain
 
-    Dim _fab As FrameAboutBox
-    Dim _isReset As Boolean = False
-    Dim _isFrameLoaded As Boolean = False
+    Private _fab As FrameAboutBox
+    Private _isReset As Boolean = False
+    Private _isFrameLoaded As Boolean = False
 
     ''--------------------------------------------------------------------
     '' Init Form
@@ -147,7 +149,7 @@ Public Class FrameMain
                     _fab = New FrameAboutBox()
                     _fab.Show()
                 Case ResetToolStripMenuItem.Name
-                    If LicielMessage.Send(L("msg1"), L("msg2"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
+                    If LicielMessage.Send(L("msg1"), L("msg2"), MessageBoxButtons.YesNo, MessageBoxIcon.Question, Me) = DialogResult.No Then Exit Sub
                     OnUnloadFrameMain(True)
                 Case ToggleToolStripMenuItem.Name
                     Visible = Not Visible

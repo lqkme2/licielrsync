@@ -1,17 +1,16 @@
 ﻿''----------------------------------------------------------------------------------------------
-''
-'' licielrsync -  a multi-threaded interface for rsync on windows
+'' licielrsync - a multi-threaded interface for rsync on windows
 '' by Arnaud Dovi - ad@heapoverflow.com
-'' licielrsync - http://licielrsync.googlecode.com
+'' homepage - licielrsync.googlecode.com
 ''
 '' rsync is maintained by Wayne Davison
-'' at - http://rsync.samba.org
+'' homepage - rsync.samba.org
 ''
 '' modulemain
 ''
 '' primary module
 ''----------------------------------------------------------------------------------------------
-Option Explicit On
+
 
 
 Imports System.IO
@@ -22,6 +21,11 @@ Imports System.ComponentModel
 Imports System.Text.RegularExpressions
 
 Module ModuleMain
+
+    ''--------------------------------------------------------------------
+    ''                        G L O B A L E S
+    ''--------------------------------------------------------------------
+
     Friend CurrentCultureInfo As CultureInfo
     Friend FirstLoad As Boolean = True, Progress As Boolean = False
     Friend RsyncPaths As New Hashtable, FileSizes As New Hashtable
@@ -34,6 +38,11 @@ Module ModuleMain
     Friend AppPathUpdate As String = AppPath & "update\"
     Friend AppIcon As Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath)
     Friend RsyncDirectory As String = AppPath & "rsync", RsyncPath As String = "", LastLine As String = "", CurrentFile As String = ""
+    Friend Delegate Sub CustomMethodInvoker(ByVal var() As Object)
+
+    ''--------------------------------------------------------------------
+    ''                        L O C A L E S
+    ''--------------------------------------------------------------------
 
     Private Const AppProjectHome As String = "http://ad-test-proj.googlecode.com/svn/"
     Friend AppVersionCheckUrl As String = AppProjectHome & AppAssembly & "/My%20Project/AssemblyInfo.vb"
@@ -43,15 +52,10 @@ Module ModuleMain
     Private Const AppExe7ZDll As String = "7z.dll"
     Private Const AppExeSha17Z As String = "20FEA1314DBED552D5FEDEE096E2050369172EE1"
     Private Const AppExeSha17ZDll As String = "344FAF61C3EB76F4A2FB6452E83ED16C9CCE73E0"
-
     Private ReadOnly AppDownloadUrl As String = AppProjectHome & AppAssembly & "/redist/" & AppAssembly & "-{0}.7z"
     Private ReadOnly AppDownloadUrlUpdater As String = AppProjectHome & AppAssembly & "-updater/bin/Release/" & AppExeUpdater
     Private ReadOnly AppDownloadUrlUpdater7Z920 As String = AppProjectHome & AppAssembly & "/redist/" & AppExe7Z
     Private ReadOnly AppDownloadUrlUpdater7Z920Dll As String = AppProjectHome & AppAssembly & "/redist/" & AppExe7ZDll
-
-    Friend Delegate Sub DelegateInvoke(ByVal var() As Object)
-    'parent.Invoke(New MethodInvoker(Sub() parent.Controls.Add(topmostForm)))
-
     Private _fm As FrameMain = Nothing
     Private Const NotEmptyPattern As String = "\S+"
     Private Const ProgressPattern As String = "(\d+)\%.*(\d{2}|\d{1}):(\d{2}|\d{1}):(\d{2}|\d{1})\s*(\(.*\))*$"
@@ -65,9 +69,9 @@ Module ModuleMain
 
     Friend Sub Main(ByVal frame As Form)
         _fm = frame
-        '
-        ' Old configs import
-        '
+        ''
+        '' Old configs import
+        ''
         If My.Settings.ForceUpdate And Not My.Settings.ShouldReset Then
             My.Settings.Upgrade()
             My.Settings.ForceUpdate = False
@@ -118,7 +122,7 @@ Module ModuleMain
     ''--------------------------------------------------------------------
 
     Friend Sub LoadUpdates(ByVal threadObject As Object)
-        Dim frame As Form = threadObject(0)
+        Dim frame As FrameMain = threadObject(0)
         Dim updateObject As Object = CheckVersion(AppVersionCheckUrl, Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString)
         Dim ret As Integer = updateObject(0)
         Dim offVersionStr As String = updateObject(1)
@@ -130,7 +134,7 @@ Module ModuleMain
             SendMessage(String.Format(L("msg11"), offVersionStr), L("msg10"), _fm, ToolTipIcon.Info, MessageBoxButtons.OK, MessageBoxIcon.Information)
             Exit Sub
         End If
-        If ret = 1 AndAlso LicielMessage.Send(String.Format(L("msg12"), offVersionStr), L("msg10"), MessageBoxButtons.YesNo, MessageBoxIcon.Question, threadObject(0)) = DialogResult.No Then Exit Sub
+        If ret = 1 AndAlso LicielMessage.Send(String.Format(L("msg12"), offVersionStr), L("msg10"), MessageBoxButtons.YesNo, MessageBoxIcon.Question, frame) = DialogResult.No Then Exit Sub
         Dim updaterVersion As String = Nothing
         Try
             updaterVersion = Reflection.AssemblyName.GetAssemblyName(AppPathUpdate & AppExeUpdater).Version.ToString
@@ -178,7 +182,7 @@ Module ModuleMain
     End Function
 
     ''--------------------------------------------------------------------
-    '' CheckForUpdates
+    '' CheckVersion
     ''
     '' Retrieve and compare the assembly version from the googlecode svn
     ''--------------------------------------------------------------------
@@ -308,7 +312,7 @@ Module ModuleMain
                         End If
                         progressMatch = Regex.Match(line, ProgressPattern)
                         carriageReturn = progressMatch.Success AndAlso progressMatch.Groups(5).Value = "" 'progressMatch.Success
-                        _fm.BeginInvoke(New DelegateInvoke(AddressOf InvokeChangeControl), New Object() {New Object() {_fm.TextBoxLogs, textBoxLogsLines}})
+                        _fm.BeginInvoke(New CustomMethodInvoker(AddressOf InvokeChangeControl), New Object() {New Object() {_fm.TextBoxLogs, textBoxLogsLines}})
                         If Progress AndAlso CurrentFile <> "" AndAlso progressMatch.Success Then
                             CurrentProgress = CInt(progressMatch.Groups(1).Value)
                             UpdateProgress(CurrentProgress >= 100)
@@ -318,7 +322,7 @@ Module ModuleMain
                     Do While Not arg(0).EndOfStream
                         line = arg(0).ReadLine()
                         If Not Regex.Match(line, NotEmptyPattern).Success Then Continue Do
-                        _fm.BeginInvoke(New DelegateInvoke(AddressOf InvokeChangeControl), New Object() {New Object() {_fm.TextBoxErrors, line & vbCrLf}})
+                        _fm.BeginInvoke(New CustomMethodInvoker(AddressOf InvokeChangeControl), New Object() {New Object() {_fm.TextBoxErrors, line & vbCrLf}})
                     Loop
             End Select
         Catch ex As Exception
@@ -336,7 +340,7 @@ Module ModuleMain
         Dim sentData As Long = CurrentSize * (CurrentProgress / 100)
         Dim percent As Long = 100 / (GlobalSize / (GlobalSizeSent + sentData))
         If percent > 100 Then percent = 100
-        _fm.BeginInvoke(New DelegateInvoke(AddressOf InvokeChangeControl), New Object() {New Object() {_fm.ProgressBar, percent, GlobalSizeSent + sentData, GlobalSize}})
+        _fm.BeginInvoke(New CustomMethodInvoker(AddressOf InvokeChangeControl), New Object() {New Object() {_fm.ProgressBar, percent, GlobalSizeSent + sentData, GlobalSize}})
         If done Then
             GlobalSizeSent += CurrentSize
             CurrentFile = ""
@@ -392,7 +396,7 @@ Module ModuleMain
             Processus.StartInfo.WindowStyle = If(settingsHideWnd, ProcessWindowStyle.Hidden, ProcessWindowStyle.Normal)
             If arg <> "" Then Processus.StartInfo.Arguments = arg
             CacheSizes()
-            _fm.BeginInvoke(New DelegateInvoke(AddressOf InvokeChangeControl), New Object() {New Object() {_fm.ButtonExec, False}})
+            _fm.BeginInvoke(New CustomMethodInvoker(AddressOf InvokeChangeControl), New Object() {New Object() {_fm.ButtonExec, False}})
             Processus.Start()
             If settingsRedir Then
                 srStd = Processus.StandardOutput
@@ -405,7 +409,11 @@ Module ModuleMain
                 thdErr.Start({srErr, False})
             End If
             Processus.WaitForExit()
-            _fm.BeginInvoke(New DelegateInvoke(AddressOf InvokeChangeControl), New Object() {New Object() {_fm.ButtonExec, True}})
+            If Not thdStd Is Nothing Then
+                While thdErr.IsAlive Or thdStd.IsAlive
+                    Application.DoEvents()
+                End While
+            End If
         Catch ex As Exception
             MsgBox(ex.ToString)
         Finally
@@ -414,6 +422,7 @@ Module ModuleMain
             If Not srErr Is Nothing Then srErr.Close()
             If Not srStd Is Nothing Then srStd.Close()
             If Not Processus Is Nothing Then Processus.Close()
+            _fm.BeginInvoke(New CustomMethodInvoker(AddressOf InvokeChangeControl), New Object() {New Object() {_fm.ButtonExec, True}})
         End Try
     End Sub
 
@@ -507,7 +516,7 @@ Module ModuleMain
                 If Not Directory.Exists(dir & "\tmp") Then Directory.CreateDirectory(dir & "\tmp")
             Catch
             End Try
-            rsyncName = Regex.Replace(Path.GetFileName(dir), "(?<first>\-\d{2}\-\d{2}\-\d{4})(?<last>\-\w+)", "${first}")
+            rsyncName = Regex.Replace(Path.GetFileName(dir), "\-(?<date>(\d{4}\-\d{2}\-\d{2}|\d{2}\-\d{2}\-\d{4}))(?<hash>\-\w+)", " (${date})")
             If rsyncName = "rsync-3.0.8-ntstreams" Then
                 RsyncPaths(rsyncName & " (unofficial)") = dir
                 Continue For
@@ -784,14 +793,14 @@ Module ModuleMain
         If My.Settings.ShowInTray AndAlso Not frame Is Nothing Then
             LicielMessage.SendTray(frame, text, title, tipIcon, 2000)
         Else
-            LicielMessage.Send(text, title, buttons, icon)
+            LicielMessage.Send(text, title, buttons, icon, frame)
         End If
     End Sub
 
     ''--------------------------------------------------------------------
     '' HandleError
     ''
-    '' Handle handled and unhandled errors
+    '' Manage handled and unhandled errors
     ''--------------------------------------------------------------------
 
     Friend Sub HandleError(ByVal type As String, ByVal ex As String)
@@ -811,7 +820,7 @@ Module ModuleMain
         If errorText.Length > 0 Then SendMessage(errorText, L("msg8"), _fm, ToolTipIcon.Error, MessageBoxButtons.OK, MessageBoxIcon.Error)
         errorFullLog = "[" & DateTime.Now & " --- " & type & "] " & errorText & ControlChars.CrLf & "Details : " & ex
         WriteFile(errorFullLog, AppPath & AppAssembly & "_errors.log")
-        If Debugger.IsAttached Then LicielMessage.Send(errorFullLog, AppExe & " error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        If Debugger.IsAttached Then LicielMessage.Send(errorFullLog, AppExe & " error", MessageBoxButtons.OK, MessageBoxIcon.Error, _fm)
     End Sub
 
 End Module

@@ -11,10 +11,10 @@
     <Setting Name="Locales" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)">English</Value>
     </Setting>
-    <Setting Name="Location_Frame" Roaming="true" GenerateDefaultValueInCode="false" Type="System.Drawing.Point" Scope="User">
+    <Setting Name="Location_Frame" Roaming="true" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
     </Setting>
-    <Setting Name="Size_Frame" Roaming="true" GenerateDefaultValueInCode="false" Type="System.Drawing.Size" Scope="User">
+    <Setting Name="Size_Frame" Roaming="true" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">854, 707</Value>
     </Setting>
     <Setting Name="SplitterDistance_Splitter1" Roaming="true" Type="System.Int32" Scope="User">

@@ -436,4 +436,11 @@
   <data name="msg16" xml:space="preserve">
     <value>7-Zip returned an error while unpacking the update</value>
   </data>
+  <data name="about" xml:space="preserve">
+    <value>Special thanks to :
+rsync - synchronization tool - rsync.samba.org
+famfamfam - free icons - www.famfamfam.com
+cygwin - a linux api layer providing substantial linux api functionality to windows - www.cygwin.com
+    </value>
+  </data>
 </root>

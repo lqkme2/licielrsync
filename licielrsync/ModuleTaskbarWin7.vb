@@ -1,12 +1,14 @@
 ﻿''----------------------------------------------------------------------------------------------
+'' licielrsync - a multi-threaded interface for rsync on windows
+'' by Arnaud Dovi - ad@heapoverflow.com
+'' homepage - licielrsync.googlecode.com
 ''
-'' LicielRsync -  A multi-threaded interface for Rsync on Windows
-'' By Arnaud Dovi - ad@heapoverflow.com
-'' Rsync - http://rsync.samba.org
+'' rsync is maintained by Wayne Davison
+'' homepage - rsync.samba.org
 ''
-'' ModuleTaskbarWin7
+'' moduletaskbarwin7.vb
 ''
-'' Used to display the work progress on the Windows 7 taskbar icon
+'' display the work progress on the taskbar icon (Windows 7 only)
 ''----------------------------------------------------------------------------------------------
 
 

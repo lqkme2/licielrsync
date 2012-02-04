@@ -16,7 +16,6 @@
 
 Friend Module ModuleMain
 
-
     ''--------------------------------------------------------------------
     ''                        L O C A L E S
     ''--------------------------------------------------------------------
@@ -50,8 +49,8 @@ Friend Module ModuleMain
         '' Copy with timeout
         ''
         _retryTimer = New Diagnostics.Stopwatch()
-        Dim copied As Boolean = False
-        While Not copied
+        Dim over As Boolean = False
+        While Not over
             Try
                 For Each dirPath In IO.Directory.GetDirectories(LicielRsyncPathPacked, "*", IO.SearchOption.AllDirectories)
                     IO.Directory.CreateDirectory(dirPath.Replace(LicielRsyncPathPacked, LicielRsyncPath))
@@ -60,7 +59,7 @@ Friend Module ModuleMain
                 For Each newPath In IO.Directory.GetFiles(LicielRsyncPathPacked, "*.*", IO.SearchOption.AllDirectories)
                     IO.File.Copy(newPath, newPath.Replace(LicielRsyncPathPacked, LicielRsyncPath), True)
                 Next
-                copied = True
+                over = True
             Catch ex As Exception
                 If Not Sleep(True) Then End
             End Try
@@ -68,12 +67,12 @@ Friend Module ModuleMain
         ''
         '' Execute with timeout
         ''
+        over = False
         _retryTimer.Reset()
-        Dim started As Boolean = False
-        While Not started
+        While Not over
             Try
                 Diagnostics.Process.Start(LicielRsyncPath & "licielrsync.exe")
-                started = True
+                over = True
             Catch ex As Exception
                 If Not Sleep() Then End
             End Try
@@ -94,7 +93,7 @@ Friend Module ModuleMain
         If Not _retryTimer.IsRunning Then _retryTimer.Start()
         Threading.Thread.Sleep(500)
         If _retryTimer.ElapsedMilliseconds > 15000 Then
-            SafeNativeMethods.MessageBox(IntPtr.Zero, If(copy, "The updater has failed after attempting 15 sec. to replace files. One of them is probably in use.", "The updater installed the files successfully but it has failed to restart licielrsync"), "licielrsync-updater error", &H10)
+            SafeNativeMethods.MessageBox(IntPtr.Zero, If(copy, "The updater has failed after attempting 15 sec. to replace files. One of them is probably in use", "The updater completed successfully but has failed to restart licielrsync after attempting for 15 sec."), "licielrsync-updater error", &H10)
             Return False
         End If
         Return True

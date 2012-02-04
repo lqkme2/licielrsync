@@ -510,6 +510,7 @@ to the detailed description below for a complete description.
      \-\-port=PORT             specify double\-colon alternate port number
      \-\-sockopts=OPTIONS      specify custom TCP options
      \-\-blocking\-io           use blocking I/O for the remote shell
+     \-\-outbuf=N|L|B          set out buffering to None, Line, or Block
      \-\-stats                 give some file\-transfer stats
  \-8, \-\-8\-bit\-output          leave high\-bit chars unescaped in output
  \-h, \-\-human\-readable        output numbers in a human\-readable format
@@ -655,6 +656,9 @@ Keep in mind that a daemon connection does not have a stderr channel to send
 messages back to the client side, so if you are doing any daemon\-transfer
 debugging using this option, you should start up a daemon using \fB\-\-no\-detach\fP
 so that you can see the stderr output on the daemon side.
+.IP 
+This option has the side\-effect of making stderr output get line\-buffered so
+that the merging of the output of 3 programs happens in a more readable manner.
 .IP 
 .IP "\fB\-q, \-\-quiet\fP"
 This option decreases the amount of information you
@@ -2287,6 +2291,14 @@ a remote shell transport.  If the remote shell is either rsh or remsh,
 rsync defaults to using
 blocking I/O, otherwise it defaults to using non\-blocking I/O.  (Note that
 ssh prefers non\-blocking I/O.)
+.IP 
+.IP "\fB\-\-outbuf=MODE\fP"
+This sets the output buffering mode.  The mode can be
+None (aka Unbuffered), Line, or Block (aka Full).  You may specify as little
+as a single letter for the mode, and use upper or lower case.
+.IP 
+The main use of this option is to change Full buffering to Line buffering
+when rsync\(cq\&s output is going to a file or pipe.
 .IP 
 .IP "\fB\-i, \-\-itemize\-changes\fP"
 Requests a simple itemized list of the

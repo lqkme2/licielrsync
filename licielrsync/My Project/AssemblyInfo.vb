@@ -11,7 +11,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("A multi-threaded interface for rsync on windows - licielrsync.googlecode.com")> 
 <Assembly: AssemblyCompany("Arnaud_Dovi")> 
 <Assembly: AssemblyProduct("licielrsync")> 
-<Assembly: AssemblyCopyright("Copyright © Arnaud_Dovi 2012")> 
+<Assembly: AssemblyCopyright("Copyright © Arnaud Dovi 2012")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)> 

@@ -1,17 +1,17 @@
 ﻿''----------------------------------------------------------------------------------------------
+'' licielrsync - a multi-threaded interface for rsync on windows
+'' by Arnaud Dovi - ad@heapoverflow.com
+'' homepage - licielrsync.googlecode.com
 ''
-'' LicielRsync -  A multi-threaded interface for Rsync on Windows
-'' By Arnaud Dovi - ad@heapoverflow.com
-'' Rsync - http://rsync.samba.org
+'' rsync is maintained by Wayne Davison
+'' homepage - rsync.samba.org
 ''
-'' ModuleSettings
+'' modulesettings
 ''
-'' Work around a Visual Studio 2010 limitation with the use of
-'' Hashtables in My Project > Settings
-''
-'' Configuration.SettingsSerializeAs.Binary translates the hashtable element to a base64 string
+'' work around a limitation in visual Studio 2010 with the use of
+'' hashtables in my project > settings
 ''----------------------------------------------------------------------------------------------
-Option Explicit On
+
 
 
 Namespace My
