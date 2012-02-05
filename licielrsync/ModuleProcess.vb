@@ -37,21 +37,21 @@ Module ModuleProcess
             th = SafeNativeMethods.OpenThread(ThreadAccess.SuspendResume, False, t.Id)
             ret = Marshal.GetLastWin32Error()
             If th = IntPtr.Zero AndAlso ret <> 0 Then
-                HandleError("::process", "Error with Kernel32!OpenThread() : " & New Win32Exception(errcode).ToString())
+                HandleError("::process", String.Format("Error with Kernel32!OpenThread() : {0}", New Win32Exception(errcode).ToString()))
                 Exit Sub
             End If
             SafeNativeMethods.SetLastError(0)
             ret = SafeNativeMethods.SuspendThread(th)
             errcode = Marshal.GetLastWin32Error()
             If ret <= 0 AndAlso errcode <> 0 Then
-                HandleError("::process", "Error with Kernel32!SuspendThread() : " & New Win32Exception(errcode).ToString())
+                HandleError("::process", String.Format("Error with Kernel32!SuspendThread() : {0}", New Win32Exception(errcode).ToString()))
                 Exit Sub
             End If
             SafeNativeMethods.SetLastError(0)
             ret = SafeNativeMethods.CloseHandle(th)
             errcode = Marshal.GetLastWin32Error()
             If ret <= 0 AndAlso errcode <> 0 Then
-                HandleError("::process", "Error with Kernel32!CloseHandle() : " & New Win32Exception(errcode).ToString())
+                HandleError("::process", String.Format("Error with Kernel32!CloseHandle() : {0}", New Win32Exception(errcode).ToString()))
                 Exit Sub
             End If
         Next
@@ -64,21 +64,21 @@ Module ModuleProcess
             th = SafeNativeMethods.OpenThread(ThreadAccess.SuspendResume, False, t.Id)
             errcode = Marshal.GetLastWin32Error()
             If th = IntPtr.Zero AndAlso errcode <> 0 Then
-                HandleError("::process", "Error with Kernel32!OpenThread() : " & New Win32Exception(errcode).ToString())
+                HandleError("::process", String.Format("Error with Kernel32!OpenThread() : {0}", New Win32Exception(errcode).ToString()))
                 Exit Sub
             End If
             SafeNativeMethods.SetLastError(0)
             ret = SafeNativeMethods.ResumeThread(th)
             errcode = Marshal.GetLastWin32Error()
             If ret <= 0 AndAlso errcode <> 0 Then
-                HandleError("::process", "Error with Kernel32!ResumeThread() : " & New Win32Exception(errcode).ToString())
+                HandleError("::process", String.Format("Error with Kernel32!ResumeThread() : {0}", New Win32Exception(errcode).ToString()))
                 Exit Sub
             End If
             SafeNativeMethods.SetLastError(0)
             ret = SafeNativeMethods.CloseHandle(th)
             errcode = Marshal.GetLastWin32Error()
             If ret <= 0 AndAlso errcode <> 0 Then
-                HandleError("::process", "Error with Kernel32!CloseHandle() : " & New Win32Exception(errcode).ToString())
+                HandleError("::process", String.Format("Error with Kernel32!CloseHandle() : {0}", New Win32Exception(errcode).ToString()))
                 Exit Sub
             End If
         Next

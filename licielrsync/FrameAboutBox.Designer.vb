@@ -62,8 +62,8 @@ Partial Friend Class FrameAboutBox
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.0422!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.0422!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.0422!))
-        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.0422!))
-        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.83121!))
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.92357!))
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.7707!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel.Size = New System.Drawing.Size(488, 186)
@@ -140,13 +140,13 @@ Partial Friend Class FrameAboutBox
         '
         Me.TableLayoutPanel.SetColumnSpan(Me.TextBoxDescription, 2)
         Me.TextBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBoxDescription.Location = New System.Drawing.Point(140, 79)
+        Me.TextBoxDescription.Location = New System.Drawing.Point(140, 85)
         Me.TextBoxDescription.Margin = New System.Windows.Forms.Padding(6, 3, 3, 3)
         Me.TextBoxDescription.Multiline = True
         Me.TextBoxDescription.Name = "TextBoxDescription"
         Me.TextBoxDescription.ReadOnly = True
         Me.TextBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.TextBoxDescription.Size = New System.Drawing.Size(345, 75)
+        Me.TextBoxDescription.Size = New System.Drawing.Size(345, 70)
         Me.TextBoxDescription.TabIndex = 0
         Me.TextBoxDescription.TabStop = False
         Me.TextBoxDescription.Text = "Credits"
@@ -154,9 +154,9 @@ Partial Friend Class FrameAboutBox
         'WebButton
         '
         Me.WebButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.WebButton.Location = New System.Drawing.Point(246, 160)
+        Me.WebButton.Location = New System.Drawing.Point(283, 161)
         Me.WebButton.Name = "WebButton"
-        Me.WebButton.Size = New System.Drawing.Size(158, 22)
+        Me.WebButton.Size = New System.Drawing.Size(158, 21)
         Me.WebButton.TabIndex = 2
         Me.WebButton.Text = "licielrsync.googlecode.&com"
         '
@@ -164,9 +164,9 @@ Partial Friend Class FrameAboutBox
         '
         Me.OKButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.OKButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.OKButton.Location = New System.Drawing.Point(410, 160)
+        Me.OKButton.Location = New System.Drawing.Point(447, 161)
         Me.OKButton.Name = "OKButton"
-        Me.OKButton.Size = New System.Drawing.Size(75, 22)
+        Me.OKButton.Size = New System.Drawing.Size(38, 21)
         Me.OKButton.TabIndex = 0
         Me.OKButton.Text = "&OK"
         '

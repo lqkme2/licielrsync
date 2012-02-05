@@ -231,6 +231,7 @@ Partial Class FrameMain
         '
         'ExitToolStripMenuItem2
         '
+        Me.ExitToolStripMenuItem2.Image = Global.licielrsync.My.Resources.Resources.door_in
         Me.ExitToolStripMenuItem2.Name = "ExitToolStripMenuItem2"
         resources.ApplyResources(Me.ExitToolStripMenuItem2, "ExitToolStripMenuItem2")
         '
@@ -341,8 +342,8 @@ Partial Class FrameMain
         '
         'AboutToolStripMenuItem
         '
-        resources.ApplyResources(Me.AboutToolStripMenuItem, "AboutToolStripMenuItem")
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        resources.ApplyResources(Me.AboutToolStripMenuItem, "AboutToolStripMenuItem")
         '
         'ButtonStop
         '

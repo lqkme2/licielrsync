@@ -81,8 +81,7 @@ Friend NotInheritable Class LicielMessage
         Catch ex As ApplicationException
             result = MessageBox.Show(topmostForm, message, title, buttons, icons)
         Catch ex As Exception
-            MsgBox(ex.ToString)
-            End
+            HandleError("", ex.ToString)
         Finally
             If isParentValid AndAlso Not topmostForm Is Nothing AndAlso Not topmostForm.IsDisposed Then
                 parent.Invoke(New MethodInvoker(Sub() topmostForm.Close()))

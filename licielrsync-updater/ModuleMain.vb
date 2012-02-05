@@ -20,9 +20,9 @@ Friend Module ModuleMain
     ''                        L O C A L E S
     ''--------------------------------------------------------------------
 
-    Private ReadOnly AppPath As String = My.Application.Info.DirectoryPath & "\"
-    Private ReadOnly LicielRsyncPathPacked As String = AppPath & "licielrsync"
-    Private ReadOnly LicielRsyncPath As String = AppPath & "..\"
+    Private ReadOnly AppPath As String = String.Format("{0}\", My.Application.Info.DirectoryPath)
+    Private ReadOnly LicielRsyncPathPacked As String = String.Format("{0}licielrsync", AppPath)
+    Private ReadOnly LicielRsyncPath As String = String.Format("{0}..\", AppPath)
     Private _retryTimer As Diagnostics.Stopwatch = Nothing
 
     ''--------------------------------------------------------------------
@@ -71,7 +71,7 @@ Friend Module ModuleMain
         _retryTimer.Reset()
         While Not over
             Try
-                Diagnostics.Process.Start(LicielRsyncPath & "licielrsync.exe")
+                Diagnostics.Process.Start(String.Format("{0}licielrsync.exe", LicielRsyncPath))
                 over = True
             Catch ex As Exception
                 If Not Sleep() Then End

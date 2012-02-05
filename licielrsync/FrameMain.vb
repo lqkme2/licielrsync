@@ -18,7 +18,6 @@ Imports System.IO
 Imports System.Text.RegularExpressions
 Imports System.Threading
 
-
 Public Class FrameMain
 
     Private _fab As FrameAboutBox
@@ -33,6 +32,8 @@ Public Class FrameMain
         If Not FirstLoad Then Exit Sub
         FirstLoad = False
         Icon = AppIcon
+        ToggleToolStripMenuItem.Image = AppIcon.ToBitmap()
+        ExitToolStripMenuItem1.Image = My.Resources.ResourceManager.GetObject("door_in")
         Main(Me)
         StatusBarText.Text = String.Empty
         Size = My.Settings.Size_Frame
@@ -94,6 +95,7 @@ Public Class FrameMain
                             TaskBar.SetProgressState(CType(Handle, Integer), Tbpflag.TbpfNormal)
                         End If
                     End If
+                    UpdateStatusBarCommand(sender.name = ButtonTest.Name)
                 Case ButtonSrcOpen.Name
                     TextBoxSrc.Text = GetDirectory(TextBoxSrc.Text)
                 Case ButtonDstOpen.Name
@@ -107,6 +109,7 @@ Public Class FrameMain
                     My.Settings.Save()
                     ComboProfiles.Items.AddRange(New Object() {newProfile})
                     LoadProfile(newProfile)
+                    UpdateStatusBarCommand(sender.name = ButtonTest.Name)
                 Case ButtonDel.Name
                     Dim todeleteProfile As String = ComboProfiles.Text
                     If todeleteProfile = "" Or todeleteProfile = My.Settings.Properties.Item("CurrentProfile").DefaultValue Or Not My.Settings.ProfilesList.Contains(todeleteProfile) Or Regex.Match(todeleteProfile, "^\s+$").Success Then Exit Sub
@@ -115,6 +118,7 @@ Public Class FrameMain
                     My.Settings.Save()
                     ComboProfiles.Items.Remove(todeleteProfile)
                     ComboProfiles.SelectedIndex = 0
+                    UpdateStatusBarCommand(sender.name = ButtonTest.Name)
                 Case ButtonPause.Name
                     Select Case ProcessusSuspended
                         Case True
@@ -157,15 +161,14 @@ Public Class FrameMain
                 Case ExitToolStripMenuItem1.Name, ExitToolStripMenuItem2.Name
                     OnUnloadFrameMain()
                 Case OpenSettingsFolderToolStripMenuItem.Name
-                    Process.Start("explorer.exe", """" & Regex.Match(Configuration.ConfigurationManager.OpenExeConfiguration(Configuration.ConfigurationUserLevel.PerUserRoaming).FilePath, "(.*\\)[^\\]+$").Groups(1).Value & """")
+                    Process.Start("explorer.exe", String.Format("""{0}""", Regex.Match(Configuration.ConfigurationManager.OpenExeConfiguration(Configuration.ConfigurationUserLevel.PerUserRoaming).FilePath, "(.*\\)[^\\]+$").Groups(1).Value))
                 Case UpdateCheckToolStripMenuItem.Name
                     Dim newThread As Thread = New Thread(AddressOf LoadUpdates)
                     newThread.IsBackground = True
                     newThread.Start(New Object() {Me, Handle})
             End Select
-            UpdateStatusBarCommand(sender.name = ButtonTest.Name)
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            HandleError("", ex.ToString)
         End Try
     End Sub
 
@@ -258,7 +261,7 @@ Public Class FrameMain
                 Dim selectedProfile = ComboProfiles.Items(ComboProfiles.SelectedIndex)
                 LoadProfile(selectedProfile)
             Case ComboRsync.Name
-                RsyncPath = RsyncPaths(ComboRsync.Items(ComboRsync.SelectedIndex)) & "\bin\rsync.exe"
+                RsyncPath = String.Format("{0}\bin\rsync.exe", RsyncPaths(ComboRsync.Items(ComboRsync.SelectedIndex)))
         End Select
         UpdateStatusBarCommand(False)
     End Sub

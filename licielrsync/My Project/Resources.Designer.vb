@@ -101,6 +101,13 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property door_in() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("door_in", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property folder_go() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("folder_go", resourceCulture)
@@ -173,7 +180,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Can&apos;t create the update directory (see {0}_errors.log for details).
+        '''  Looks up a localized string similar to Can&apos;t create the update directory (see {0}{1}_errors.log for details).
         '''</summary>
         Friend ReadOnly Property msg13() As String
             Get
@@ -182,7 +189,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Error while downloading the updates (see {0}_errors.log for details).
+        '''  Looks up a localized string similar to Error while downloading the updates (see {0}{1}_errors.log for details).
         '''</summary>
         Friend ReadOnly Property msg14() As String
             Get
@@ -191,7 +198,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Error while starting the process (see {0}_errors.log for details).
+        '''  Looks up a localized string similar to Error while starting the process (see {0}{1}_errors.log for details).
         '''</summary>
         Friend ReadOnly Property msg15() As String
             Get

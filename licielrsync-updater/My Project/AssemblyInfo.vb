@@ -11,7 +11,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("The licielrsync updater used to unpack updates compressed with 7-Zip")> 
 <Assembly: AssemblyCompany("Arnaud_Dovi")> 
 <Assembly: AssemblyProduct("licielrsync-updater")> 
-<Assembly: AssemblyCopyright("Copyright © Arnaud_Dovi 2012")> 
+<Assembly: AssemblyCopyright("Copyright © Arnaud Dovi 2012")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>

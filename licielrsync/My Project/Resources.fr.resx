@@ -130,13 +130,13 @@
     <value>Une nouvelle version est disponible ({0}), souhaitez-vous la déployer ?</value>
   </data>
   <data name="msg13" xml:space="preserve">
-    <value>Erreur à la création du répertoire des mises à jour (voir {0} pour plus de détails)</value>
+    <value>Erreur à la création du répertoire des mises à jour (voir {0}{1}_errors.log pour plus de détails)</value>
   </data>
   <data name="msg14" xml:space="preserve">
-    <value>Erreur lors du téléchargement des mises à jour (voir {0} pour plus de détails)</value>
+    <value>Erreur lors du téléchargement des mises à jour (voir {0}{1}_errors.log pour plus de détails)</value>
   </data>
   <data name="msg15" xml:space="preserve">
-    <value>Erreur au lancement du processus des mises à jour (voir {0} pour plus de détails)</value>
+    <value>Erreur au lancement du processus des mises à jour (voir {0}{1}_errors.log pour plus de détails)</value>
   </data>
   <data name="msg16" xml:space="preserve">
     <value>7-Zip a retourné une erreur lors de la décompression de la mises à jour</value>
