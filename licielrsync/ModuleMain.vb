@@ -44,7 +44,7 @@ Module ModuleMain
     ''                        L O C A L E S
     ''--------------------------------------------------------------------
 
-    Private Const AppProjectHome As String = "http://ad-test-proj.googlecode.com/svn/"
+    Private Const AppProjectHome As String = "http://licielrsync.googlecode.com/svn/trunk/"
     Friend AppVersionCheckUrl As String = String.Format("{0}{1}/My%20Project/AssemblyInfo.vb", AppProjectHome, AppAssembly)
     Friend AppVersionCheckUrlUpdater As String = String.Format("{0}{1}-updater/My%20Project/AssemblyInfo.vb", AppProjectHome, AppAssembly)
     Private ReadOnly AppExeUpdater As String = String.Format("{0}-updater.exe", AppAssembly)
@@ -148,7 +148,7 @@ Module ModuleMain
         If Not File.Exists(String.Format("{0}{1}", AppPathUpdate, AppExeUpdater)) OrElse updaterVersion = Nothing OrElse CheckVersion(AppVersionCheckUrlUpdater, updaterVersion)(0) = 1 Then _
             Download(AppDownloadUrlUpdater, String.Format("{0}{1}", AppPathUpdate, AppExeUpdater))
         If EncryptFSha1(String.Format("{0}{1}", AppPathUpdate, AppExe7Z)) <> AppExeSha17Z Then Download(AppDownloadUrlUpdater7Z920, String.Format("{0}{1}", AppPathUpdate, AppExe7Z))
-        If EncryptFSha1(String.Format("{0}{1}", AppPathUpdate, AppExeSha17ZDll)) <> AppExeSha17ZDll Then Download(AppDownloadUrlUpdater7Z920Dll, String.Format("{0}{1}", AppPathUpdate, AppExeSha17ZDll))
+        If EncryptFSha1(String.Format("{0}{1}", AppPathUpdate, AppExe7ZDll)) <> AppExeSha17ZDll Then Download(AppDownloadUrlUpdater7Z920Dll, String.Format("{0}{1}", AppPathUpdate, AppExe7ZDll))
         Dim packageUrl As String = String.Format(AppDownloadUrl, offVersionStr)
         Dim packageName As String = Regex.Match(packageUrl, "^http:.*/([^/]+)$").Groups(1).Value
         If packageName = "" Then HandleError("::update", "packageName is empty")
