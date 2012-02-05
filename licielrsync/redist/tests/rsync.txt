@@ -1,0 +1,14 @@
+---------------CONF---------------
+pid file = /tmp/rsync.pid
+lock file = /tmp/rsync.lock
+log file = /tmp/rsync.log
+
+[module]
+comment = Random things available for download
+path = /tmp
+read only = no
+uid = Administrator
+gid = Administrator
+----------------------------------
+TEST1:
+rsync -r --no-whole-file -h --progress -v -t "/cygdrive/C/TEST1/" "Administrator@127.0.0.1::module/tmp/"

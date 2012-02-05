@@ -1,0 +1,2 @@
+This folder is used to store one copy of all versions of rsync and one copy of cygwin's files
+Visual studio is then responsible for dispatching them in the Debug/Release folders
