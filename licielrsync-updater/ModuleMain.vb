@@ -21,8 +21,8 @@ Friend Module ModuleMain
     ''--------------------------------------------------------------------
 
     Private ReadOnly AppPath As String = String.Format("{0}\", My.Application.Info.DirectoryPath)
-    Private ReadOnly LicielRsyncPathPacked As String = String.Format("{0}licielrsync", AppPath)
-    Private ReadOnly LicielRsyncPath As String = String.Format("{0}..\", AppPath)
+    Private ReadOnly LicielrsyncPathPacked As String = String.Format("{0}licielrsync", AppPath)
+    Private ReadOnly LicielrsyncPath As String = String.Format("{0}..\", AppPath)
     Private _retryTimer As Diagnostics.Stopwatch = Nothing
 
     ''--------------------------------------------------------------------
@@ -52,12 +52,12 @@ Friend Module ModuleMain
         Dim over As Boolean = False
         While Not over
             Try
-                For Each dirPath In IO.Directory.GetDirectories(LicielRsyncPathPacked, "*", IO.SearchOption.AllDirectories)
-                    IO.Directory.CreateDirectory(dirPath.Replace(LicielRsyncPathPacked, LicielRsyncPath))
+                For Each dirPath In IO.Directory.GetDirectories(LicielrsyncPathPacked, "*", IO.SearchOption.AllDirectories)
+                    IO.Directory.CreateDirectory(dirPath.Replace(LicielrsyncPathPacked, LicielrsyncPath))
                 Next
 
-                For Each newPath In IO.Directory.GetFiles(LicielRsyncPathPacked, "*.*", IO.SearchOption.AllDirectories)
-                    IO.File.Copy(newPath, newPath.Replace(LicielRsyncPathPacked, LicielRsyncPath), True)
+                For Each newPath In IO.Directory.GetFiles(LicielrsyncPathPacked, "*.*", IO.SearchOption.AllDirectories)
+                    IO.File.Copy(newPath, newPath.Replace(LicielrsyncPathPacked, LicielrsyncPath), True)
                 Next
                 over = True
             Catch ex As Exception
@@ -71,7 +71,7 @@ Friend Module ModuleMain
         _retryTimer.Reset()
         While Not over
             Try
-                Diagnostics.Process.Start(String.Format("{0}licielrsync.exe", LicielRsyncPath))
+                Diagnostics.Process.Start(String.Format("{0}licielrsync.exe", LicielrsyncPath))
                 over = True
             Catch ex As Exception
                 If Not Sleep() Then End
@@ -81,7 +81,7 @@ Friend Module ModuleMain
         '' Delete to the blind
         ''
         Try
-            IO.Directory.Delete(LicielRsyncPathPacked, True)
+            IO.Directory.Delete(LicielrsyncPathPacked, True)
         Catch
         End Try
     End Sub

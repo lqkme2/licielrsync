@@ -268,7 +268,7 @@ if errorlevel 4 goto error
 FOR /D /r %25%25G in (*bin) DO robocopy "$(ProjectDir)redist\cygwin" "%25%25G" /E /XD .svn
 if errorlevel 4 goto error
 if "$(ConfigurationName)" == "Debug" exit 0
-start /WAIT "licielrsync code signing" cmd /V:ON /K "set /P __LICIELRSYNCCERTSTORE=Please enter the store name containing the private key : &amp;&amp; "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\signtool.exe" sign /f "$(ProjectDir)pub.adovi.128-Bit-DER.cer" /csp "Microsoft Strong Cryptographic Provider" /v /kc "!__LICIELRSYNCCERTSTORE!" /t "http://timestamp.verisign.com/scripts/timstamp.dll" "$(TargetDir)LicielRsync.exe" &amp;&amp; pause &amp;&amp; exit 0"
+start /WAIT "licielrsync code signing" cmd /V:ON /K "set /P __LICIELRSYNCCERTSTORE=Please enter the store name containing the private key : &amp;&amp; "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\signtool.exe" sign /f "$(ProjectDir)pub.adovi.128-Bit-DER.cer" /csp "Microsoft Strong Cryptographic Provider" /v /kc "!__LICIELRSYNCCERTSTORE!" /t "http://timestamp.verisign.com/scripts/timstamp.dll" "$(TargetDir)licielrsync.exe" &amp;&amp; pause &amp;&amp; exit 0"
 if errorlevel 4 goto error
 exit 0
 :error

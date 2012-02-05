@@ -85,7 +85,7 @@ Partial Friend Class FrameAboutBox
         'LogoPictureBox
         '
         Me.LogoPictureBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.LogoPictureBox.BackgroundImage = Global.licielrsync.My.Resources.Resources.LicielRsync_80px
+        Me.LogoPictureBox.BackgroundImage = Global.licielrsync.My.Resources.Resources.licielrsync_80px
         Me.LogoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.LogoPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.LogoPictureBox.ErrorImage = Nothing

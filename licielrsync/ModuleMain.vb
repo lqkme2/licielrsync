@@ -566,7 +566,7 @@ Module ModuleMain
         Try
             httpRequest = WebRequest.Create(url)
             httpRequest.Method = "GET"
-            httpRequest.UserAgent = String.Format("LicielRsync/{0} (licielrsync.googlecode.com)", Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString())
+            httpRequest.UserAgent = String.Format("licielrsync/{0} (licielrsync.googlecode.com)", Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString())
             httpRequest.Accept = "*/*"
             httpRequest.Timeout = 20000
             httpRequest.ReadWriteTimeout = 20000

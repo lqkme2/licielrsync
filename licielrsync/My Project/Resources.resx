@@ -185,7 +185,7 @@
   <data name="msg6" xml:space="preserve">
     <value>licielrsync - did you know ?</value>
   </data>
-  <data name="LicielRsync_32px" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="licielrsync_32px" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAAAAAABMLAAATCwAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAGsHaUlqCW7/aQpt/2oJbf9rDGz/awxt/2gKav9oCmj/bgxv/3AM
@@ -320,7 +320,7 @@
         nnTEDuLQzRrsOLM9+3f9pout4p3+qkyVZ9vYxs3+ABMQPTK9DoYyAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="LicielRsync_80px" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="licielrsync_80px" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC5zwKfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAMAUExURYGYfDhUKbjEu83E1XEKbSdJFXl6hGkJZdjc4WwUaYZIh2EHXn46fZlpnCNaDJddmXYM

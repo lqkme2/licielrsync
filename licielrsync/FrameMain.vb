@@ -228,7 +228,7 @@ Public Class FrameMain
                 My.Settings.ShowInTray = sender.Checked
                 NotifyIcon1.Visible = sender.Checked
                 TrayIconNoticeToolStripMenuItem.Enabled = sender.Checked
-                If sender.Checked AndAlso My.Settings.TrayNoticeStart Then LicielMessage.SendTray(Me, L("msg3"), "LicielRsync", ToolTipIcon.Info, 500)
+                If sender.Checked AndAlso My.Settings.TrayNoticeStart Then LicielMessage.SendTray(Me, L("msg3"), AppAssembly, ToolTipIcon.Info, 500)
                 My.Settings.Save()
                 Exit Sub
             Case TrayIconCloseToolStripMenuItem.Name, TrayIconMinimizeToolStripMenuItem.Name

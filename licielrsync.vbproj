@@ -6,12 +6,11 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <LicielRsyncVersion>%(CurrentAssembly.Version)</LicielRsyncVersion>
     <ProjectGuid>{6066CDA1-BDDB-43B7-BE5B-9281DAFFC5B3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>LicielRsync.My.MyApplication</StartupObject>
-    <RootNamespace>LicielRsync</RootNamespace>
-    <AssemblyName>LicielRsync</AssemblyName>
+    <StartupObject>licielrsync.My.MyApplication</StartupObject>
+    <RootNamespace>licielrsync</RootNamespace>
+    <AssemblyName>licielrsync</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
@@ -74,7 +73,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Images\LicielRsync.ico</ApplicationIcon>
+    <ApplicationIcon>Images\licielrsync.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -97,7 +96,7 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Import Include="LicielRsync.My.Resources" />
+    <Import Include="licielrsync.My.Resources" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
     <Import Include="System.Collections" />
@@ -180,10 +179,10 @@
     <None Include="pub.adovi.128-Bit-DER.cer" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\src\LicielRsync_80px.png" />
-    <None Include="Images\src\LicielRsync_128px.png" />
-    <None Include="Images\src\LicielRsync_32px.ico" />
-    <None Include="Images\src\LicielRsync_32px.png" />
+    <None Include="Images\src\licielrsync_80px.png" />
+    <None Include="Images\src\licielrsync_128px.png" />
+    <None Include="Images\src\licielrsync_32px.ico" />
+    <None Include="Images\src\licielrsync_32px.png" />
     <None Include="Images\famfamfam_silk_icons_v013\application_form.png" />
     <None Include="Images\famfamfam_silk_icons_v013\delete.png" />
     <None Include="Images\famfamfam_silk_icons_v013\information.png" />
@@ -192,7 +191,7 @@
     <None Include="Images\famfamfam_silk_icons_v013\application_put.png" />
     <None Include="Images\famfamfam_silk_icons_v013\door_in.png" />
     <None Include="Images\famfamfam_silk_icons_v013\folder_go.png" />
-    <Content Include="Images\LicielRsync.ico" />
+    <Content Include="Images\licielrsync.ico" />
     <None Include="Images\newrsynclogo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -246,7 +245,7 @@
     <Message Text="========================================================================[POSTBUILD - CODE SIGNING]==" />
     <Message Text="                    Signing the executable (reserved to Arnaud Dovi only)" />
     <Message Text="====================================================================================================" />
-    <Exec Command="start /WAIT %22LicielRsync Code Signing%22 cmd /V:ON /K %22set /P __LICIELRSYNCCERTSTORE=Please enter the store name containing the private key : &amp;&amp; %22C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\signtool.exe%22 sign /f %22$(ProjectDir)pub.adovi.128-Bit-DER.cer%22 /csp %22Microsoft Strong Cryptographic Provider%22 /v /kc %22!__LICIELRSYNCCERTSTORE!%22 /t %22http://timestamp.verisign.com/scripts/timstamp.dll%22 %22$(TargetDir)LicielRsync.exe%22 &amp;&amp; pause &amp;&amp; exit 0%22" ContinueOnError="True" IgnoreExitCode="True">
+    <Exec Command="start /WAIT %22licielrsync code signing%22 cmd /V:ON /K %22set /P __LICIELRSYNCCERTSTORE=Please enter the store name containing the private key : &amp;&amp; %22C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\signtool.exe%22 sign /f %22$(ProjectDir)pub.adovi.128-Bit-DER.cer%22 /csp %22Microsoft Strong Cryptographic Provider%22 /v /kc %22!__LICIELRSYNCCERTSTORE!%22 /t %22http://timestamp.verisign.com/scripts/timstamp.dll%22 %22$(TargetDir)licielrsync.exe%22 &amp;&amp; pause &amp;&amp; exit 0%22" ContinueOnError="True" IgnoreExitCode="True">
       <Output TaskParameter="ExitCode" PropertyName="ExitCode" />
     </Exec>
     <Error Text="Error while signing the executable with a digital authenticode certificate (this procedure is reserved to Arnaud Dovi). Change the project to the Debug configuration and rebuild the project." Condition="'$(ExitCode)' != '0'" />
@@ -256,8 +255,8 @@
     <ItemGroup>
       <MySourceFiles Include="$(TargetDir)**\*.*" />
     </ItemGroup>
-    <Copy SourceFiles="@(MySourceFiles)" DestinationFiles="@(MySourceFiles->'$(ProjectDir)bin\Temp\LicielRsync\%(RecursiveDir)%(Filename)%(Extension)')" />
-    <Exec Command="%22$(ProjectDir)redist\7z.exe%22 a -t7z -r -mx9 -mmt -ms=on %22$(ProjectDir)redist\LicielRsync-%(CurrentAssembly.Version).7z%22 %22$(ProjectDir)bin\Temp\LicielRsync%22" ContinueOnError="True" IgnoreExitCode="True">
+    <Copy SourceFiles="@(MySourceFiles)" DestinationFiles="@(MySourceFiles->'$(ProjectDir)bin\Temp\licielrsync\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Exec Command="%22$(ProjectDir)redist\7z.exe%22 a -t7z -r -mx9 -mmt -ms=on %22$(ProjectDir)redist\licielrsync-%(CurrentAssembly.Version).7z%22 %22$(ProjectDir)bin\Temp\licielrsync%22" ContinueOnError="True" IgnoreExitCode="True">
       <Output TaskParameter="ExitCode" PropertyName="ExitCode" />
     </Exec>
     <Error Text="7z.exe not found." Condition="'$(ExitCode)' == '9009'" />
@@ -271,15 +270,3 @@
     <RemoveDir Directories="$(TargetDir)fr;$(TargetDir)rsync;$(ProjectDir)obj" />
   </Target>
 </Project>
-<!-- <PostBuildEvent>
-robocopy "$(ProjectDir)redist\rsync" "$(TargetDir)\" /E /XD .svn
-if errorlevel 4 goto error
-FOR /D /r %25%25G in (*bin) DO robocopy "$(ProjectDir)redist\cygwin" "%25%25G" /E /XD .svn
-if errorlevel 4 goto error
-if "$(ConfigurationName)" == "Debug" exit 0
-start /WAIT "LicielRsync Authenticode Signing" cmd /V:ON /K "set /P __LICIELRSYNCCERTSTORE=Please enter the store name containing the private key : &amp;&amp; "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\signtool.exe" sign /f "$(ProjectDir)pub.adovi.128-Bit-DER.cer" /csp "Microsoft Strong Cryptographic Provider" /v /kc "!__LICIELRSYNCCERTSTORE!" /t "http://timestamp.verisign.com/scripts/timstamp.dll" "$(TargetDir)LicielRsync.exe" &amp;&amp; pause &amp;&amp; exit 0"
-if errorlevel 4 goto error
-exit 0
-:error
-REM http://timestamp.comodoca.com/authenticode
-REM http://timestamp.verisign.com/scripts/timstamp.dll</PostBuildEvent>-->
