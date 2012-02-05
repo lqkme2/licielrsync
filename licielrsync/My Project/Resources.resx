@@ -408,9 +408,23 @@
   <data name="msg8" xml:space="preserve">
     <value>licielrsync - error !</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="connect" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\famfamfam_silk_icons_v013\connect.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="connect" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKgSURBVDhPlZPdT5JhGMY58MS/oDMO+zDXsuWSrVSm
+        K3WLrIOYbs5lztTFEDN0ipEmJMJ4FSHfXhUUSJyggMo08QPzIz8IdX6jZZnYah27JbarF1oumrZ58Jw9
+        92/X/XuuhwGAcZIj6diMFbUu+Quo+b2cupmk/w63ur6HNTm/MNUOH0vetcWpMK2rK01rkFtWUWVaxF3J
+        6N6xAN3wt3Cyf3eyvvczlPYtyMxeKDq9IB2bqLWuoqjRjcSSvv1jARqHT9g8sAPz+C6Mw9toev0B9d3r
+        EBsWIGlbwG2xE7H5XXFHAkjnxmlpz8RPAz1I9W1B2r6M8tZ5PKJm8VTvQZZ8BFdzzZqAuxBAIDbVv2tV
+        dQ/8qJwoRoXNAZVtDUTXKvgN08ghxiBsnEKKwI4r6XpOCEA79DWsoc/n1Tl3EDiStpYD8agQ6YTtgP/i
+        Lcq0s0iTDOKhagxx99sQlUqxQgCqXh+TsH/8vfPINpSdaxCo2/e5NebipBLjQUaVE3mEC/dqBhF9pwmR
+        iXXMEEB153uWzLwB/dAnPO9YgbpnHaU6DzJlGr9okIfr/HrcemwDO8uI8wmE9yxbHhYCEOlXOE8MS8Fn
+        Cggrotx4ZpyDkJpCtqIcpf35iE5V+CPYSuuZ+OrwP+U7lMgjPXZp+yKUlhUIyGnk1o4js2YED4g3yKat
+        38gV+y9xpOf+bW0QkKd2FwqbPVBYlmnLsxC1uIO2+ZqJ4N5JPAuibpLCoyrPoPssELx0o8IwH4xcpp1B
+        Bm07WWBFfLYJMVwtLqY0TEYmEIex/wYx0qrHUK6fowvyDjkKF5ILbYjJeKW5zNVxolJJ1oVkNTMigQgK
+        OzJBStkAbdqFLBm9J88aKAj7JL+TwS6wn7qWZwYr07QXzdXFnWQ4cPcXyBm6QmRn5bAAAAAASUVORK5C
+        YII=
+</value>
   </data>
   <data name="msg9" xml:space="preserve">
     <value>The update check procedure has failed</value>
