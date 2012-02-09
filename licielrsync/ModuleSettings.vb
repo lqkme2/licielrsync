@@ -100,16 +100,19 @@ Friend Module ModuleSettings
     Friend Sub ChangeLanguage(ByVal lang As String)
         Dim cultureInfo = If(lang = "", Nothing, New CultureInfo(lang, False))
         CurrentCultureInfo = cultureInfo
-        Dim resources As ComponentResourceManager = New ComponentResourceManager(Fm.GetType)
-        resources.ApplyResources(Fm, "$this", cultureInfo)
-        For Each c In Fm.Controls
-            resources.ApplyResources(c, c.Name, cultureInfo)
-            If resources.GetString(String.Format("{0}.ToolTip", c.Name)) <> "" Then Fm.ToolTip1.SetToolTip(c, resources.GetString(String.Format("{0}.ToolTip", c.Name), cultureInfo))
-            LocalizeControlsText(c.Controls, resources, cultureInfo)
-            If TypeOf c Is MenuStrip Then
-                LocalizeToolStripsText(c.Items, resources, cultureInfo)
-            End If
-        Next c
+        Dim s() As Control = New Control() {Fm, Fp}
+        For Each _c In s
+            Dim resources As ComponentResourceManager = New ComponentResourceManager(_c.GetType)
+            resources.ApplyResources(_c, "$this", cultureInfo)
+            For Each c In _c.Controls
+                resources.ApplyResources(c, c.Name, cultureInfo)
+                If resources.GetString(String.Format("{0}.ToolTip", c.Name)) <> "" Then Fm.ToolTip1.SetToolTip(c, resources.GetString(String.Format("{0}.ToolTip", c.Name), cultureInfo))
+                LocalizeControlsText(c.Controls, resources, cultureInfo)
+                If TypeOf c Is MenuStrip Then
+                    LocalizeToolStripsText(c.Items, resources, cultureInfo)
+                End If
+            Next c
+        Next _c
     End Sub
 
     ''--------------------------------------------------------------------

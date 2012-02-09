@@ -26,6 +26,7 @@ Module ModuleMain
     ''--------------------------------------------------------------------
 
     Friend Fm As FrameMain = Nothing
+    Friend Fp As FramePasswordPrompt = Nothing
     Friend CurrentCultureInfo As CultureInfo
     Friend FirstLoad As Boolean = True, Progress As Boolean = False
     Friend RsyncPaths As New Hashtable, FileSizes As New Hashtable
@@ -68,6 +69,7 @@ Module ModuleMain
 
     Friend Sub Main(ByVal frame As Form)
         Fm = frame
+        Fp = FramePasswordPrompt
         ''
         '' Old configs import
         ''
@@ -321,6 +323,8 @@ Module ModuleMain
                         If Not Regex.Match(line, NotEmptyPattern).Success Then Continue Do
                         Fm.BeginInvoke(New CustomMethodInvoker(AddressOf InvokeChangeControl), New Object() {New Object() {Fm.TextBoxErrors, String.Format("{0}{1}", line, ControlChars.CrLf)}})
                     Loop
+                Case Else
+                    HandleError("", "ppp")
             End Select
         Catch ex As Exception
             HandleError("", ex.ToString)
@@ -372,6 +376,7 @@ Module ModuleMain
     Friend Sub ThreadProcessStart(ByVal obj As Object)
         Dim srStd As StreamReader = Nothing
         Dim srErr As StreamReader = Nothing
+        Dim srInp As StreamWriter = Nothing
         Dim thdStd As Threading.Thread = Nothing
         Dim thdErr As Threading.Thread = Nothing
         Try
@@ -384,6 +389,7 @@ Module ModuleMain
             Processus.EnableRaisingEvents = False
             Processus.StartInfo.UseShellExecute = False
             Processus.StartInfo.CreateNoWindow = settingsHideWnd
+            Processus.StartInfo.RedirectStandardInput = settingsRedir
             Processus.StartInfo.RedirectStandardOutput = settingsRedir
             Processus.StartInfo.RedirectStandardError = settingsRedir
             If settingsRedir Then
@@ -396,6 +402,16 @@ Module ModuleMain
             Fm.BeginInvoke(New CustomMethodInvoker(AddressOf InvokeChangeControl), New Object() {New Object() {Fm.ButtonExec, False}})
             Processus.Start()
             If settingsRedir Then
+                If Regex.Match(String.Format("{0} {1}", Fm.TextBoxSrc.Text, Fm.TextBoxDst.Text), "\d\:\:?").Success Then
+                    If Fp Is Nothing Then Fp = New FramePasswordPrompt()
+                    Fm.Invoke(New MethodInvoker(Sub() Fp.ShowDialog(Fm)))
+                    srInp = Processus.StandardInput
+                    srInp.WriteLine(Fp.Passwd)
+                    srInp.Flush()
+                    srInp.Close()
+                    srInp = Nothing
+                    Fp.Passwd = Nothing
+                End If
                 srStd = Processus.StandardOutput
                 srErr = Processus.StandardError
                 thdStd = New Threading.Thread(AddressOf ThreadReadStreams)
@@ -414,10 +430,12 @@ Module ModuleMain
         Catch ex As Exception
             HandleError("", ex.ToString)
         Finally
+            If Not Fp Is Nothing AndAlso Not Fp.Passwd Is Nothing Then Fp.Passwd = Nothing
             If Not thdErr Is Nothing Then thdErr.Abort()
             If Not thdStd Is Nothing Then thdStd.Abort()
             If Not srErr Is Nothing Then srErr.Close()
             If Not srStd Is Nothing Then srStd.Close()
+            If Not srInp Is Nothing Then srInp.Close()
             If Not Processus Is Nothing Then Processus.Close()
             Fm.BeginInvoke(New CustomMethodInvoker(AddressOf InvokeChangeControl), New Object() {New Object() {Fm.ButtonExec, True}})
         End Try
