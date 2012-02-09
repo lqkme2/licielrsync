@@ -10,5 +10,6 @@
     Private Sub OnLoadFramePasswordPrompt(sender As System.Object, e As EventArgs) Handles MyBase.Load
         Icon = AppIcon
         TextBox1.Text = ""
+        TextBox1.Select()
     End Sub
 End Class

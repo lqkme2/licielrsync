@@ -320,7 +320,7 @@ Module ModuleMain
                 Case False
                     Do While Not arg(0).EndOfStream
                         line = arg(0).ReadLine()
-                        If Not Regex.Match(line, NotEmptyPattern).Success Then Continue Do
+                        If Not Regex.Match(line, NotEmptyPattern).Success Or Regex.Match(line, "^Password:\s$").Success Then Continue Do
                         Fm.BeginInvoke(New CustomMethodInvoker(AddressOf InvokeChangeControl), New Object() {New Object() {Fm.TextBoxErrors, String.Format("{0}{1}", line, ControlChars.CrLf)}})
                     Loop
                 Case Else
@@ -379,13 +379,16 @@ Module ModuleMain
         Dim srInp As StreamWriter = Nothing
         Dim thdStd As Threading.Thread = Nothing
         Dim thdErr As Threading.Thread = Nothing
+        Dim settingsHideWnd As Boolean
+        Dim settingsRedir As Boolean
         Try
             Dim arg As String = BuildArgument(obj(1))
-            Dim settingsHideWnd As Boolean = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("hidewnd")
-            Dim settingsRedir As Boolean = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("redir")
+            settingsHideWnd = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("hidewnd")
+            settingsRedir = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsVar")("redir")
             Progress = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress")
             Processus = New Process()
-            Processus.StartInfo.FileName = obj(0)
+            Processus.StartInfo.FileName = If(settingsHideWnd, obj(0), "cmd.exe")
+            If Not settingsHideWnd Then arg = String.Format("/C ""{0} {1}"" & PAUSE", obj(0), arg)
             Processus.EnableRaisingEvents = False
             Processus.StartInfo.UseShellExecute = False
             Processus.StartInfo.CreateNoWindow = settingsHideWnd
@@ -436,7 +439,7 @@ Module ModuleMain
             If Not srErr Is Nothing Then srErr.Close()
             If Not srStd Is Nothing Then srStd.Close()
             If Not srInp Is Nothing Then srInp.Close()
-            If Not Processus Is Nothing Then Processus.Close()
+            If Not Processus Is Nothing AndAlso settingsHideWnd Then Processus.Close()
             Fm.BeginInvoke(New CustomMethodInvoker(AddressOf InvokeChangeControl), New Object() {New Object() {Fm.ButtonExec, True}})
         End Try
     End Sub
