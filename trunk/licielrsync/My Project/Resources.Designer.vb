@@ -129,6 +129,13 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property key() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("key", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property licielrsync_32px() As System.Drawing.Icon
             Get
                 Dim obj As Object = ResourceManager.GetObject("licielrsync_32px", resourceCulture)

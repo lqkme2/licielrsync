@@ -121,6 +121,12 @@
       <DependentUpon>FrameMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FramePasswordPrompt.Designer.vb">
+      <DependentUpon>FramePasswordPrompt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FramePasswordPrompt.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ModuleMain.vb" />
     <Compile Include="ModuleProcess.vb" />
     <Compile Include="ModuleTaskbarWin7.vb" />
@@ -155,6 +161,12 @@
       <DependentUpon>FrameMain.vb</DependentUpon>
       <SubType>Designer</SubType>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FramePasswordPrompt.fr.resx">
+      <DependentUpon>FramePasswordPrompt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FramePasswordPrompt.resx">
+      <DependentUpon>FramePasswordPrompt.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.fr.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
@@ -206,7 +218,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_UpdateAssemblyVersion="True" BuildVersion_ConfigurationName="Release" BuildVersion_BuildVersioningStyle="None.None.None.Increment" BuildVersion_StartDate="2012/2/6" />
+      <UserProperties BuildVersion_StartDate="2012/2/6" BuildVersion_BuildVersioningStyle="None.None.None.Increment" BuildVersion_ConfigurationName="Release" BuildVersion_UpdateAssemblyVersion="True" />
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
@@ -228,7 +240,18 @@
     </Exec>
     <Error Text="Robocopy not found. On Windows XP/2003 install this package http://www.microsoft.com/download/en/details.aspx?id=17657" Condition="'$(ExitCode)' == '9009'" />
     <Error Text="Error while copying cygwin from the original folder to the distribution folder (robocopy)." Condition="'$(ExitCode)' != '2' And '$(ExitCode)' != '3'" />
+    <CallTarget Targets="PackageDebug" Condition="'$(Configuration)' == 'Debug'" />
     <CallTarget Targets="PackageRelease" Condition="'$(Configuration)' == 'Release'" />
+  </Target>
+  <Target Name="PackageDebug" Condition="'$(Configuration)' == 'Debug'">
+    <Message Text="===============================================================================[POSTBUILD - RSYNC]==" />
+    <Message Text="                 Copying rsync test files from the original folder to the debug folder" />
+    <Message Text="====================================================================================================" />
+    <Exec Command="robocopy %22$(ProjectDir)redist\tests%22 %22$(TargetDir)\%22 /E /XD .svn" ContinueOnError="True" IgnoreExitCode="True">
+      <Output TaskParameter="ExitCode" PropertyName="ExitCode" />
+    </Exec>
+    <Error Text="Robocopy not found. On Windows XP/2003 install this package http://www.microsoft.com/download/en/details.aspx?id=17657" Condition="'$(ExitCode)' == '9009'" />
+    <Error Text="Error while copying rsync test files from the original folder to the debug folder (robocopy)." Condition="'$(ExitCode)' != '2' And '$(ExitCode)' != '3'" />
   </Target>
   <Target Name="PackageRelease" Condition="'$(Configuration)' == 'Release'">
     <GetAssemblyIdentity AssemblyFiles="$(TargetPath)">
