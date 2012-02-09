@@ -94,7 +94,7 @@ Friend NotInheritable Class LicielMessage
     End Function
 
     Public Shared Sub SendTray(ByVal fm As FrameMain, ByVal message As String, ByVal title As String, ByVal t As ToolTipIcon, ByVal time As Long)
-        fm.NotifyIcon1.Icon = AppIcon
+        'fm.NotifyIcon1.Icon = AppIcon
         fm.NotifyIcon1.ShowBalloonTip(time, title, message, t)
     End Sub
 
