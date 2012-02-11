@@ -263,16 +263,16 @@ Module ModuleMain
                         Fm.ButtonTest.BackColor = SystemColors.Control
                     End If
                 Case Fm.ProgressBar.Name
-                    Fm.ProgressBarText.Text = String.Format("{0}%", Math.Round(obj(1)))
-                    control.Value = obj(1)
+                    Dim percent As Long = obj(1)
+                    If percent <> 0 Then Fm.ProgressBarText.Text = String.Format("{0}%", Math.Round(percent))
+                    control.Value = percent
                     If IsWin7 Then
+                        Dim position As Long = obj(2)
+                        Dim total As Long = obj(3)
                         If TaskBar Is Nothing Then TaskBar = CType(New CTaskbarList, ITaskbarList4)
-                        TaskBar.SetProgressValue(CType(Fm.Handle, Integer), CType(obj(2), Long), CType(obj(3), Long))
-                        If obj(2) >= obj(3) Then TaskBar.SetProgressState(CType(Fm.Handle, Integer), Tbpflag.TbpfNoprogress)
+                        TaskBar.SetProgressValue(CType(Fm.Handle, Integer), position, total)
+                        If position >= total Then TaskBar.SetProgressState(CType(Fm.Handle, Integer), Tbpflag.TbpfNoprogress)
                     End If
-                Case "topmostForm"
-                    Fm.Controls.Add(obj(0))
-                    'obj(0).Parent = _fm
             End Select
         Catch ex As Exception
             HandleError("", ex.ToString)
@@ -285,15 +285,15 @@ Module ModuleMain
     '' Stub function used to read the standard and error streams
     ''--------------------------------------------------------------------
 
-    Private Sub ThreadReadStreams(ByVal arg As Object)
-        Dim stdLog = arg(1)
-        Dim line As String
+    Private Sub ThreadReadStreams(ByVal arg As Object) 
+        Dim line As String = ""
+        Dim stream As StreamReader = arg(0)
         Try
-            Select Case stdLog
+            Select Case arg(1)
                 Case True
                     Dim textBoxLogsLines As New List(Of String), carriageReturn As Boolean = False, progressMatch As Object
-                    Do While Not arg(0).EndOfStream
-                        line = arg(0).ReadLine()
+                    Do While Not stream.EndOfStream
+                        line = stream.ReadLine()
                         If Not Regex.Match(line, NotEmptyPattern).Success Then Continue Do
                         If Progress AndAlso CurrentFile = "" Then
                             Try
@@ -318,13 +318,29 @@ Module ModuleMain
                         End If
                     Loop
                 Case False
-                    Do While Not arg(0).EndOfStream
-                        line = arg(0).ReadLine()
-                        If Not Regex.Match(line, NotEmptyPattern).Success Or Regex.Match(line, "^Password:\s$").Success Then Continue Do
-                        Fm.BeginInvoke(New CustomMethodInvoker(AddressOf InvokeChangeControl), New Object() {New Object() {Fm.TextBoxErrors, String.Format("{0}{1}", line, ControlChars.CrLf)}})
+                    Dim pwdSent As Boolean = False
+                    Do While Not stream.EndOfStream
+                        Do While stream.Peek >= 0
+                            Dim c(0) As Char
+                            stream.Read(c, 0, c.Length)
+                            line = String.Concat(line, CType(c, String))
+                        Loop
+                        If Not pwdSent AndAlso Regex.Match(line, "^Password\: $").Success Then
+                            Dim srInp As StreamWriter = arg(2)
+                            If Fp Is Nothing Then Fp = New FramePasswordPrompt()
+                            Fm.Invoke(New MethodInvoker(Sub() Fp.ShowDialog(Fm)))
+                            srInp.WriteLine(Fp.Passwd)
+                            srInp.Flush()
+                            srInp.Close()
+                            pwdSent = True
+                            Fp.Passwd = Nothing
+                            Continue Do
+                        End If
+                        If Not Regex.Match(line, NotEmptyPattern).Success Or (Regex.Match(line, "^Password\: $").Success AndAlso stream.EndOfStream) Then Continue Do
+                        line = line.Replace(ControlChars.Lf, ControlChars.CrLf)
+                        Fm.BeginInvoke(New CustomMethodInvoker(AddressOf InvokeChangeControl), New Object() {New Object() {Fm.TextBoxErrors, String.Format("{0}", line)}})
+                        line = ""
                     Loop
-                Case Else
-                    HandleError("", "ppp")
             End Select
         Catch ex As Exception
             HandleError("", ex.ToString)
@@ -405,24 +421,15 @@ Module ModuleMain
             Fm.BeginInvoke(New CustomMethodInvoker(AddressOf InvokeChangeControl), New Object() {New Object() {Fm.ButtonExec, False}})
             Processus.Start()
             If settingsRedir Then
-                If Regex.Match(String.Format("{0} {1}", Fm.TextBoxSrc.Text, Fm.TextBoxDst.Text), "\d\:\:?").Success Then
-                    If Fp Is Nothing Then Fp = New FramePasswordPrompt()
-                    Fm.Invoke(New MethodInvoker(Sub() Fp.ShowDialog(Fm)))
-                    srInp = Processus.StandardInput
-                    srInp.WriteLine(Fp.Passwd)
-                    srInp.Flush()
-                    srInp.Close()
-                    srInp = Nothing
-                    Fp.Passwd = Nothing
-                End If
                 srStd = Processus.StandardOutput
                 srErr = Processus.StandardError
+                srInp = Processus.StandardInput
                 thdStd = New Threading.Thread(AddressOf ThreadReadStreams)
                 thdStd.IsBackground = True
                 thdStd.Start({srStd, True})
                 thdErr = New Threading.Thread(AddressOf ThreadReadStreams)
                 thdErr.IsBackground = True
-                thdErr.Start({srErr, False})
+                thdErr.Start({srErr, False, srInp})
             End If
             Processus.WaitForExit()
             If Not thdStd Is Nothing Then
@@ -560,11 +567,13 @@ Module ModuleMain
     ''--------------------------------------------------------------------
 
     Friend Sub ResetProgress()
-        Fm.ProgressBar.Visible = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress")
-        Fm.ProgressBarText.Visible = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress")
-        If Not My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress") Then Exit Sub
+        'Fm.ProgressBar.Visible = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress")
+        'Fm.ProgressBarText.Visible = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress")
+        Fm.ProgressBar.Visible = False
+        Fm.ProgressBarText.Visible = False
+        'If Not My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress") Then Exit Sub
         Fm.ProgressBar.Value = 0
-        Fm.ProgressBarText.Text = "0%"
+        Fm.ProgressBarText.Text = ""
         GlobalSize = -1
         GlobalSizeSent = 0
         CurrentSize = -1
