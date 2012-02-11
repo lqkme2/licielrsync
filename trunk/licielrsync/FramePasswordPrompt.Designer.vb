@@ -45,10 +45,10 @@ Partial Friend Class FramePasswordPrompt
         '
         'Panel1
         '
+        resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(188, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(216, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
-        resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.Name = "Panel1"
         '
         'Label2
@@ -59,8 +59,8 @@ Partial Friend Class FramePasswordPrompt
         '
         'Button1
         '
-        Me.Button1.DialogResult = System.Windows.Forms.DialogResult.Cancel
         resources.ApplyResources(Me.Button1, "Button1")
+        Me.Button1.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Button1.Name = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
