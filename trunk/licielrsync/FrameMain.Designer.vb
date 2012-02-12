@@ -689,12 +689,12 @@ Partial Class FrameMain
         '
         'GroupBox5
         '
+        resources.ApplyResources(Me.GroupBox5, "GroupBox5")
         Me.GroupBox5.Controls.Add(Me.ComboVerbose)
         Me.GroupBox5.Controls.Add(Me.CbProgress)
         Me.GroupBox5.Controls.Add(Me.CbShowCmd)
         Me.GroupBox5.Controls.Add(Me.CbReadable)
         Me.GroupBox5.Controls.Add(Me.CbVerbose)
-        resources.ApplyResources(Me.GroupBox5, "GroupBox5")
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.TabStop = False
         '
@@ -709,6 +709,7 @@ Partial Class FrameMain
         '
         'GroupBox9
         '
+        resources.ApplyResources(Me.GroupBox9, "GroupBox9")
         Me.GroupBox9.Controls.Add(Me.CbChecksum)
         Me.GroupBox9.Controls.Add(Me.CbDelta)
         Me.GroupBox9.Controls.Add(Me.CbExistingOnly)
@@ -718,7 +719,6 @@ Partial Class FrameMain
         Me.GroupBox9.Controls.Add(Me.CbExisting)
         Me.GroupBox9.Controls.Add(Me.CbDelete)
         Me.GroupBox9.Controls.Add(Me.CbRecurse)
-        resources.ApplyResources(Me.GroupBox9, "GroupBox9")
         Me.GroupBox9.Name = "GroupBox9"
         Me.GroupBox9.TabStop = False
         '
