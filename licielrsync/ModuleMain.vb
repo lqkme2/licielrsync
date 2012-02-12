@@ -239,13 +239,17 @@ Module ModuleMain
             Dim control As Object = obj(0)
             Select Case control.Name
                 Case Fm.TextBoxLogs.Name
-                    control.Lines = obj(1).ToArray()
-                    control.SelectionStart = control.TextLength
-                    control.ScrollToCaret()
+                    With control
+                        .Lines = obj(1).ToArray()
+                        .SelectionStart = .TextLength
+                        .ScrollToCaret()
+                    End With
                 Case Fm.TextBoxErrors.Name
-                    control.AppendText(obj(1))
-                    control.SelectionStart = control.TextLength
-                    control.ScrollToCaret()
+                    With control
+                        .AppendText(obj(1))
+                        .SelectionStart = .TextLength
+                        .ScrollToCaret()
+                    End With
                     If IsWin7 Then
                         If TaskBar Is Nothing Then TaskBar = CType(New CTaskbarList, ITaskbarList4)
                         TaskBar.SetProgressState(CType(Fm.Handle, Integer), Tbpflag.TbpfError)
@@ -256,7 +260,13 @@ Module ModuleMain
                     Fm.ButtonTest.Enabled = active
                     Fm.ButtonPause.Enabled = Not active
                     Fm.ButtonStop.Enabled = Not active
+                    Fm.TextBoxLogs.ScrollBars = ScrollBars.Vertical
+                    Fm.TextBoxErrors.ScrollBars = ScrollBars.Vertical
+                    Fm.TextBoxLogs.ScrollToCaret()
+                    Fm.TextBoxErrors.ScrollToCaret()
                     If Not active Then
+                        Fm.TextBoxLogs.ScrollBars = ScrollBars.None
+                        Fm.TextBoxErrors.ScrollBars = ScrollBars.None
                         Fm.ButtonPause.BackColor = SystemColors.Control
                         Fm.ButtonStop.BackColor = SystemColors.Control
                         control.BackColor = SystemColors.Control
@@ -264,7 +274,8 @@ Module ModuleMain
                     End If
                 Case Fm.ProgressBar.Name
                     Dim percent As Long = obj(1)
-                    If percent <> 0 Then Fm.ProgressBarText.Text = String.Format("{0}%", Math.Round(percent))
+                    If percent = 0 Then Exit Sub
+                    Fm.ProgressBarText.Text = String.Format("{0}%", Math.Round(percent))
                     control.Value = percent
                     If IsWin7 Then
                         Dim position As Long = obj(2)
@@ -331,7 +342,6 @@ Module ModuleMain
                             Fm.Invoke(New MethodInvoker(Sub() Fp.ShowDialog(Fm)))
                             srInp.WriteLine(Fp.Passwd)
                             srInp.Flush()
-                            srInp.Close()
                             pwdSent = True
                             Fp.Passwd = Nothing
                             Continue Do
@@ -567,11 +577,9 @@ Module ModuleMain
     ''--------------------------------------------------------------------
 
     Friend Sub ResetProgress()
-        'Fm.ProgressBar.Visible = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress")
-        'Fm.ProgressBarText.Visible = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress")
-        Fm.ProgressBar.Visible = False
-        Fm.ProgressBarText.Visible = False
-        'If Not My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress") Then Exit Sub
+        Fm.ProgressBar.Visible = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress")
+        Fm.ProgressBarText.Visible = My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress")
+        If Not My.Settings.Profiles(My.Settings.CurrentProfile)("OptionsSwitch")("--progress") Then Exit Sub
         Fm.ProgressBar.Value = 0
         Fm.ProgressBarText.Text = ""
         GlobalSize = -1
