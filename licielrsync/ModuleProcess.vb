@@ -34,7 +34,7 @@ Module ModuleProcess
                 threadId = t.Id
                 Verify(Function() UnsafeNativeMethods.OpenThread(ThreadAccess.SuspendResume, False, threadId))
                 handle = VerifyReturn
-                Verify(Function() UnsafeNativeMethods.SuspendThread(10110047))
+                Verify(Function() UnsafeNativeMethods.SuspendThread(handle))
                 Verify(Function() UnsafeNativeMethods.CloseHandle(handle))
             Next
         Catch ex As Exception
