@@ -691,6 +691,7 @@ Module ModuleMain
         If errorText.Length > 0 Then SendMessage(errorText, L("msg8"), Fm, ToolTipIcon.Error, MessageBoxButtons.OK, MessageBoxIcon.Error)
         errorFullLog = String.Format("[{0} --- {1}] {2}{3}Details : {4}", DateTime.Now, type, errorText, ControlChars.CrLf, ex)
         WriteFile(errorFullLog, String.Format("{0}{1}_errors.log", AppPath, AppAssembly))
-        If Debugger.IsAttached Then LicielMessage.Send(errorFullLog, String.Format("{0} error", AppExe), MessageBoxButtons.OK, MessageBoxIcon.Error, Fm)
+        'If Debugger.IsAttached Then LicielMessage.Send(errorFullLog, String.Format("{0} error", AppExe), MessageBoxButtons.OK, MessageBoxIcon.Error, Fm)
+        LicielMessage.Send(errorFullLog, String.Format("{0} error", AppExe), MessageBoxButtons.OK, MessageBoxIcon.Error, Fm)
     End Sub
 End Module
