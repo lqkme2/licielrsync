@@ -10,10 +10,10 @@
 ''
 '' functions built in windows dll libraries
 ''----------------------------------------------------------------------------------------------
+Imports System.Runtime.InteropServices
 
 
-
-Friend NotInheritable Class SafeNativeMethods
+Friend NotInheritable Class UnsafeNativeMethods
     Friend Declare Function OpenThread Lib "kernel32.dll" (ByVal dwDesiredAccess As Integer, ByVal bInheritHandle As Boolean, ByVal dwThreadId As Integer) As IntPtr
     Friend Declare Function SuspendThread Lib "kernel32.dll" (ByVal hThread As IntPtr) As Integer
     Friend Declare Function ResumeThread Lib "kernel32.dll" (ByVal hThread As IntPtr) As Integer
@@ -23,11 +23,18 @@ Friend NotInheritable Class SafeNativeMethods
     Friend Declare Function FindWindow Lib "user32.dll" Alias "FindWindowA" (ByVal zero As IntPtr, ByVal lpWindowName As String) As IntPtr
     Friend Declare Function GetWindowRect Lib "user32.dll" (ByVal hwnd As IntPtr, ByRef lpRect As Rect) As Int32
 
-    <Runtime.InteropServices.StructLayout(Runtime.InteropServices.LayoutKind.Sequential)>
+    <StructLayout(LayoutKind.Sequential)>
     Friend Structure Rect
-        Friend ReadOnly Left As IntPtr
-        Friend ReadOnly Top As IntPtr
-        Friend ReadOnly Right As IntPtr
-        Friend ReadOnly Bottom As IntPtr
+        Public Sub New(ByVal iLeft As Integer, ByVal iTop As Integer, ByVal iRight As Integer, ByVal iBottom As Integer)
+            Left = iLeft
+            Top = iTop
+            Right = iRight
+            Bottom = iBottom
+        End Sub
+        Friend Left As IntPtr
+        Friend Top As IntPtr
+        Friend Right As IntPtr
+        Friend Bottom As IntPtr
     End Structure
+
 End Class

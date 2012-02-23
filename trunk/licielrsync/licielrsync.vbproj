@@ -8,11 +8,11 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6066CDA1-BDDB-43B7-BE5B-9281DAFFC5B3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>licielrsync.My.MyApplication</StartupObject>
+    <StartupObject>Sub Main</StartupObject>
     <RootNamespace>licielrsync</RootNamespace>
     <AssemblyName>licielrsync</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile>
@@ -107,7 +107,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassMessages.vb" />
-    <Compile Include="ClassWindowsApi.vb" />
+    <Compile Include="ClassWin32Api.vb" />
+    <Compile Include="ModuleVbMsilReader.vb" />
     <Compile Include="FrameAboutBox.Designer.vb">
       <DependentUpon>FrameAboutBox.vb</DependentUpon>
     </Compile>
@@ -130,12 +131,7 @@
     <Compile Include="ModuleMain.vb" />
     <Compile Include="ModuleProcess.vb" />
     <Compile Include="ModuleTaskbarWin7.vb" />
-    <Compile Include="My Project\ApplicationEvents.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
-    <Compile Include="My Project\Application.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Application.myapp</DependentUpon>
-    </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -182,11 +178,6 @@
     <None Include="app.config">
       <LastGenOutput>app.Designer.vb</LastGenOutput>
     </None>
-    <None Include="My Project\Application.myapp">
-      <Generator>MyApplicationCodeGenerator</Generator>
-      <LastGenOutput>Application.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -195,6 +186,8 @@
     <None Include="pub.adovi.128-Bit-DER.cer" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\bargrad.png" />
+    <None Include="images\bargradb.png" />
     <Content Include="images\licielrsync.ico" />
   </ItemGroup>
   <ItemGroup>

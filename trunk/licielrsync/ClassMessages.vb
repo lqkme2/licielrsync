@@ -45,7 +45,7 @@ Friend NotInheritable Class LicielMessage
                                                      Dim timeout As New Stopwatch
                                                      Dim messageBoxWidth As Integer
                                                      Dim messageBoxHeight As Integer
-                                                     Dim messageBoxRect As SafeNativeMethods.Rect
+                                                     Dim messageBoxRect As UnsafeNativeMethods.Rect
                                                      Dim messageBoxHwnd As IntPtr
                                                      Try
                                                          parent.BeginInvoke(New MethodInvoker(Sub() topmostForm.ShowDialog(parent)))
@@ -54,13 +54,13 @@ Friend NotInheritable Class LicielMessage
                                                          newThread.Start()
                                                          Do
                                                              Threading.Thread.Sleep(1)
-                                                             messageBoxHwnd = SafeNativeMethods.FindWindow(IntPtr.Zero, title)
+                                                             messageBoxHwnd = UnsafeNativeMethods.FindWindow(IntPtr.Zero, title)
                                                              If Not Sleep(timeout) Then Throw New ApplicationException()
                                                          Loop While messageBoxHwnd = IntPtr.Zero
-                                                         SafeNativeMethods.GetWindowRect(messageBoxHwnd, messageBoxRect)
+                                                         UnsafeNativeMethods.GetWindowRect(messageBoxHwnd, messageBoxRect)
                                                          messageBoxWidth = CType(messageBoxRect.Right, Integer) - CType(messageBoxRect.Left, Integer)
                                                          messageBoxHeight = CType(messageBoxRect.Bottom, Integer) - CType(messageBoxRect.Top, Integer)
-                                                         SafeNativeMethods.SetWindowPos(messageBoxHwnd, 0, (topmostForm.Location.X - (messageBoxWidth / 2)) + (topmostForm.Width / 2), (topmostForm.Location.Y - (messageBoxHeight / 2)) + (topmostForm.Height / 2), 0, 0, &H20 Or &H4 Or &H1)
+                                                         UnsafeNativeMethods.SetWindowPos(messageBoxHwnd, 0, (topmostForm.Location.X - (messageBoxWidth / 2)) + (topmostForm.Width / 2), (topmostForm.Location.Y - (messageBoxHeight / 2)) + (topmostForm.Height / 2), 0, 0, &H20 Or &H4 Or &H1)
                                                          While result = DialogResult.None
                                                              Threading.Thread.Sleep(1)
                                                          End While

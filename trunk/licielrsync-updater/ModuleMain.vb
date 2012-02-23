@@ -39,11 +39,11 @@ Friend Module ModuleMain
             If Not My.Application.CommandLineArgs.Contains("--update") Then End
             Dim p() As Diagnostics.Process = Diagnostics.Process.GetProcessesByName(Diagnostics.Process.GetCurrentProcess().ProcessName)
             If p.Length > 1 Then
-                SafeNativeMethods.MessageBox(IntPtr.Zero, "Another instance of licielrsync-updater.exe is running. Please close it", "licielrsync-updater error", &H10)
+                UnsafeNativeMethods.MessageBox(IntPtr.Zero, "Another instance of licielrsync-updater.exe is running. Please close it", "licielrsync-updater error", &H10)
                 Environment.Exit(0)
             End If
         Catch ex As Exception
-            SafeNativeMethods.MessageBox(IntPtr.Zero, ex.ToString, "licielrsync-updater error", &H10)
+            UnsafeNativeMethods.MessageBox(IntPtr.Zero, ex.ToString, "licielrsync-updater error", &H10)
         End Try
         ''
         '' Copy with timeout
@@ -93,7 +93,7 @@ Friend Module ModuleMain
         If Not _retryTimer.IsRunning Then _retryTimer.Start()
         Threading.Thread.Sleep(500)
         If _retryTimer.ElapsedMilliseconds > 15000 Then
-            SafeNativeMethods.MessageBox(IntPtr.Zero, If(copy, "The updater has failed after attempting 15 sec. to replace files. One of them is probably in use", "The updater completed successfully but has failed to restart licielrsync after attempting for 15 sec."), "licielrsync-updater error", &H10)
+            UnsafeNativeMethods.MessageBox(IntPtr.Zero, If(copy, "The updater has failed after attempting 15 sec. to replace files. One of them is probably in use", "The updater completed successfully but has failed to restart licielrsync after attempting for 15 sec."), "licielrsync-updater error", &H10)
             Return False
         End If
         Return True
@@ -101,6 +101,6 @@ Friend Module ModuleMain
 
 End Module
 
-Friend NotInheritable Class SafeNativeMethods
+Friend NotInheritable Class UnsafeNativeMethods
     Friend Declare Function MessageBox Lib "user32.dll" Alias "MessageBoxA" (ByVal hWnd As IntPtr, ByVal msg As String, ByVal title As String, ByVal lParam As Integer) As Integer
 End Class
