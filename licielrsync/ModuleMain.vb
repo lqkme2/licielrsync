@@ -67,9 +67,15 @@ Module ModuleMain
     '' Program entry point
     ''--------------------------------------------------------------------
 
-    Friend Sub Main(ByVal frame As Form)
-        Fm = frame
-        Fp = FramePasswordPrompt
+    Friend Sub Main()
+        Application.EnableVisualStyles()
+        Application.SetCompatibleTextRenderingDefault(False)
+        Application.Run(New FrameMain)
+    End Sub
+
+    Friend Sub Start(ByVal frm As FrameMain)
+        Fm = frm
+        Fp = New FramePasswordPrompt
         ''
         '' Old configs import
         ''
@@ -296,7 +302,7 @@ Module ModuleMain
     '' Stub function used to read the standard and error streams
     ''--------------------------------------------------------------------
 
-    Private Sub ThreadReadStreams(ByVal arg As Object) 
+    Private Sub ThreadReadStreams(ByVal arg As Object)
         Dim line As String = ""
         Dim stream As StreamReader = arg(0)
         Try
@@ -653,7 +659,7 @@ Module ModuleMain
     '' Write a text log file to disk
     ''--------------------------------------------------------------------
 
-    Private Sub WriteFile(ByRef t As String, ByVal fichier As String)
+    Friend Sub WriteFile(ByRef t As String, ByVal fichier As String)
         Try
             Using sw As StreamWriter = File.AppendText(fichier)
                 sw.Write(String.Format("{0}{1}", ControlChars.CrLf, t))

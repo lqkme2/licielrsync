@@ -13,9 +13,6 @@
 
 
 
-Imports System.ComponentModel
-Imports System.Runtime.InteropServices
-
 Module ModuleProcess
 
     Private Enum ThreadAccess As Integer
@@ -31,57 +28,33 @@ Module ModuleProcess
     End Enum
 
     Friend Sub SuspendProcess(ByVal process As Process)
-        Dim th As IntPtr, ret As Integer, errcode As Integer
-        For Each t As ProcessThread In process.Threads
-            SafeNativeMethods.SetLastError(0)
-            th = SafeNativeMethods.OpenThread(ThreadAccess.SuspendResume, False, t.Id)
-            ret = Marshal.GetLastWin32Error()
-            If th = IntPtr.Zero AndAlso ret <> 0 Then
-                HandleError("::process", String.Format("Error with Kernel32!OpenThread() : {0}", New Win32Exception(errcode).ToString()))
-                Exit Sub
-            End If
-            SafeNativeMethods.SetLastError(0)
-            ret = SafeNativeMethods.SuspendThread(th)
-            errcode = Marshal.GetLastWin32Error()
-            If ret <= 0 AndAlso errcode <> 0 Then
-                HandleError("::process", String.Format("Error with Kernel32!SuspendThread() : {0}", New Win32Exception(errcode).ToString()))
-                Exit Sub
-            End If
-            SafeNativeMethods.SetLastError(0)
-            ret = SafeNativeMethods.CloseHandle(th)
-            errcode = Marshal.GetLastWin32Error()
-            If ret <= 0 AndAlso errcode <> 0 Then
-                HandleError("::process", String.Format("Error with Kernel32!CloseHandle() : {0}", New Win32Exception(errcode).ToString()))
-                Exit Sub
-            End If
-        Next
+        Try
+            Dim threadId As Integer, handle As Object
+            For Each t As ProcessThread In process.Threads
+                threadId = t.Id
+                Verify(Function() UnsafeNativeMethods.OpenThread(ThreadAccess.SuspendResume, False, threadId))
+                handle = VerifyReturn
+                Verify(Function() UnsafeNativeMethods.SuspendThread(10110047))
+                Verify(Function() UnsafeNativeMethods.CloseHandle(handle))
+            Next
+        Catch ex As Exception
+            HandleError("", ex.ToString)
+        End Try
     End Sub
 
     Friend Sub ResumeProcess(ByVal process As Process)
-        Dim th As IntPtr, ret As Integer, errcode As Integer
-        For Each t As ProcessThread In process.Threads
-            SafeNativeMethods.SetLastError(0)
-            th = SafeNativeMethods.OpenThread(ThreadAccess.SuspendResume, False, t.Id)
-            errcode = Marshal.GetLastWin32Error()
-            If th = IntPtr.Zero AndAlso errcode <> 0 Then
-                HandleError("::process", String.Format("Error with Kernel32!OpenThread() : {0}", New Win32Exception(errcode).ToString()))
-                Exit Sub
-            End If
-            SafeNativeMethods.SetLastError(0)
-            ret = SafeNativeMethods.ResumeThread(th)
-            errcode = Marshal.GetLastWin32Error()
-            If ret <= 0 AndAlso errcode <> 0 Then
-                HandleError("::process", String.Format("Error with Kernel32!ResumeThread() : {0}", New Win32Exception(errcode).ToString()))
-                Exit Sub
-            End If
-            SafeNativeMethods.SetLastError(0)
-            ret = SafeNativeMethods.CloseHandle(th)
-            errcode = Marshal.GetLastWin32Error()
-            If ret <= 0 AndAlso errcode <> 0 Then
-                HandleError("::process", String.Format("Error with Kernel32!CloseHandle() : {0}", New Win32Exception(errcode).ToString()))
-                Exit Sub
-            End If
-        Next
+        Try
+            Dim threadId As Integer, handle As Object
+            For Each t As ProcessThread In process.Threads
+                threadId = t.Id
+                Verify(Function() UnsafeNativeMethods.OpenThread(ThreadAccess.SuspendResume, False, threadId))
+                handle = VerifyReturn
+                Verify(Function() UnsafeNativeMethods.ResumeThread(handle))
+                Verify(Function() UnsafeNativeMethods.CloseHandle(handle))
+            Next
+        Catch ex As Exception
+            HandleError("", ex.ToString)
+        End Try
     End Sub
 
 End Module

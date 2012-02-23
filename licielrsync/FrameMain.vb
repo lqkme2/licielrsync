@@ -23,6 +23,7 @@ Public Class FrameMain
     Private _fab As FrameAboutBox
     Private _isReset As Boolean = False
     Private _isFrameLoaded As Boolean = False
+    Friend HWnd As IntPtr = IntPtr.Zero
 
     ''--------------------------------------------------------------------
     '' Init Form
@@ -31,10 +32,11 @@ Public Class FrameMain
     Private Sub OnLoadFrameMain(sender As System.Object, e As EventArgs) Handles MyBase.Load
         If Not FirstLoad Then Exit Sub
         FirstLoad = False
+        HWnd = Handle
         Icon = AppIcon
         ToggleToolStripMenuItem.Image = AppIcon.ToBitmap()
         ExitToolStripMenuItem1.Image = My.Resources.ResourceManager.GetObject("door_in")
-        Main(Me)
+        Start(Me)
         StatusBarText.Text = String.Empty
         Size = My.Settings.Size_Frame
         Location = My.Settings.Location_Frame

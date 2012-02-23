@@ -112,6 +112,7 @@ Partial Class FrameMain
         Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.FolderBrowserDialog = New System.Windows.Forms.FolderBrowserDialog()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.PanelTabFix = New System.Windows.Forms.Panel()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
@@ -142,13 +143,13 @@ Partial Class FrameMain
         '
         'SplitContainer1.Panel1
         '
-        Me.SplitContainer1.Panel1.BackColor = System.Drawing.SystemColors.Control
+        Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.LightGray
         Me.SplitContainer1.Panel1.Controls.Add(Me.GroupBox3)
         resources.ApplyResources(Me.SplitContainer1.Panel1, "SplitContainer1.Panel1")
         '
         'SplitContainer1.Panel2
         '
-        Me.SplitContainer1.Panel2.BackColor = System.Drawing.SystemColors.Control
+        Me.SplitContainer1.Panel2.BackColor = System.Drawing.Color.LightGray
         Me.SplitContainer1.Panel2.Controls.Add(Me.GroupBox6)
         resources.ApplyResources(Me.SplitContainer1.Panel2, "SplitContainer1.Panel2")
         '
@@ -184,6 +185,7 @@ Partial Class FrameMain
         '
         resources.ApplyResources(Me.StatusBar, "StatusBar")
         Me.StatusBar.BackColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusBar.BackgroundImage = Global.licielrsync.My.Resources.Resources.bargradb
         Me.StatusBar.GripMargin = New System.Windows.Forms.Padding(0)
         Me.StatusBar.ImageScalingSize = New System.Drawing.Size(0, 0)
         Me.StatusBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StatusBarText, Me.ProgressBarText, Me.ProgressBar})
@@ -192,12 +194,14 @@ Partial Class FrameMain
         '
         'StatusBarText
         '
+        Me.StatusBarText.BackColor = System.Drawing.Color.Transparent
         Me.StatusBarText.Name = "StatusBarText"
         resources.ApplyResources(Me.StatusBarText, "StatusBarText")
         Me.StatusBarText.Spring = True
         '
         'ProgressBarText
         '
+        Me.ProgressBarText.BackColor = System.Drawing.Color.Transparent
         Me.ProgressBarText.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.ProgressBarText.Name = "ProgressBarText"
         resources.ApplyResources(Me.ProgressBarText, "ProgressBarText")
@@ -215,25 +219,25 @@ Partial Class FrameMain
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(156, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(193, Byte), Integer))
+        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(0)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu1, Me.Menu2, Me.Menu3})
         Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
-        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
         '
         'Menu1
         '
         Me.Menu1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem2})
+        Me.Menu1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Menu1.Name = "Menu1"
         resources.ApplyResources(Me.Menu1, "Menu1")
         '
         'ExitToolStripMenuItem2
         '
-        Me.ExitToolStripMenuItem2.Image = Global.licielrsync.My.Resources.Resources.door_in
-        Me.ExitToolStripMenuItem2.Name = "ExitToolStripMenuItem2"
         resources.ApplyResources(Me.ExitToolStripMenuItem2, "ExitToolStripMenuItem2")
+        Me.ExitToolStripMenuItem2.Name = "ExitToolStripMenuItem2"
         '
         'Menu2
         '
@@ -244,7 +248,6 @@ Partial Class FrameMain
         'LanguageToolStripMenuItem
         '
         Me.LanguageToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CbEnglish, Me.CbFrench})
-        Me.LanguageToolStripMenuItem.Image = Global.licielrsync.My.Resources.Resources.application_form
         resources.ApplyResources(Me.LanguageToolStripMenuItem, "LanguageToolStripMenuItem")
         Me.LanguageToolStripMenuItem.Name = "LanguageToolStripMenuItem"
         '
@@ -252,7 +255,6 @@ Partial Class FrameMain
         '
         resources.ApplyResources(Me.CbEnglish, "CbEnglish")
         Me.CbEnglish.CheckOnClick = True
-        Me.CbEnglish.Image = Global.licielrsync.My.Resources.Resources.us
         Me.CbEnglish.Name = "CbEnglish"
         Me.CbEnglish.Tag = "en"
         '
@@ -260,14 +262,12 @@ Partial Class FrameMain
         '
         resources.ApplyResources(Me.CbFrench, "CbFrench")
         Me.CbFrench.CheckOnClick = True
-        Me.CbFrench.Image = Global.licielrsync.My.Resources.Resources.fr
         Me.CbFrench.Name = "CbFrench"
         Me.CbFrench.Tag = "fr"
         '
         'TrayIconToolStripMenuItem
         '
         Me.TrayIconToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TrayIconEnabledToolStripMenuItem, Me.ToolStripSeparator2, Me.TrayIconCloseToolStripMenuItem, Me.TrayIconMinimizeToolStripMenuItem, Me.ToolStripSeparator3, Me.TrayIconNoticeToolStripMenuItem})
-        Me.TrayIconToolStripMenuItem.Image = Global.licielrsync.My.Resources.Resources.application_put
         resources.ApplyResources(Me.TrayIconToolStripMenuItem, "TrayIconToolStripMenuItem")
         Me.TrayIconToolStripMenuItem.Name = "TrayIconToolStripMenuItem"
         '
@@ -318,13 +318,11 @@ Partial Class FrameMain
         '
         'OpenSettingsFolderToolStripMenuItem
         '
-        Me.OpenSettingsFolderToolStripMenuItem.Image = Global.licielrsync.My.Resources.Resources.folder_go
-        Me.OpenSettingsFolderToolStripMenuItem.Name = "OpenSettingsFolderToolStripMenuItem"
         resources.ApplyResources(Me.OpenSettingsFolderToolStripMenuItem, "OpenSettingsFolderToolStripMenuItem")
+        Me.OpenSettingsFolderToolStripMenuItem.Name = "OpenSettingsFolderToolStripMenuItem"
         '
         'ResetToolStripMenuItem
         '
-        Me.ResetToolStripMenuItem.Image = Global.licielrsync.My.Resources.Resources.delete
         resources.ApplyResources(Me.ResetToolStripMenuItem, "ResetToolStripMenuItem")
         Me.ResetToolStripMenuItem.Name = "ResetToolStripMenuItem"
         '
@@ -336,9 +334,8 @@ Partial Class FrameMain
         '
         'UpdateCheckToolStripMenuItem
         '
-        Me.UpdateCheckToolStripMenuItem.Image = Global.licielrsync.My.Resources.Resources.connect
-        Me.UpdateCheckToolStripMenuItem.Name = "UpdateCheckToolStripMenuItem"
         resources.ApplyResources(Me.UpdateCheckToolStripMenuItem, "UpdateCheckToolStripMenuItem")
+        Me.UpdateCheckToolStripMenuItem.Name = "UpdateCheckToolStripMenuItem"
         '
         'AboutToolStripMenuItem
         '
@@ -786,11 +783,18 @@ Partial Class FrameMain
         Me.NotifyIcon1.Tag = "NotifyIcon1"
         resources.ApplyResources(Me.NotifyIcon1, "NotifyIcon1")
         '
+        'PanelTabFix
+        '
+        resources.ApplyResources(Me.PanelTabFix, "PanelTabFix")
+        Me.PanelTabFix.BackColor = System.Drawing.Color.FromArgb(CType(CType(188, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(216, Byte), Integer))
+        Me.PanelTabFix.Name = "PanelTabFix"
+        '
         'FrameMain
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.SplitContainer1)
+        Me.Controls.Add(Me.PanelTabFix)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusBar)
         Me.Controls.Add(Me.MenuStrip1)
@@ -844,8 +848,6 @@ Partial Class FrameMain
     Friend WithEvents FolderBrowserDialog As System.Windows.Forms.FolderBrowserDialog
     Friend WithEvents StatusBarText As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents GroupBox7 As System.Windows.Forms.GroupBox
-    Friend WithEvents ComboRsync As System.Windows.Forms.ComboBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents ButtonStop As System.Windows.Forms.Button
     Friend WithEvents CbRedir As System.Windows.Forms.CheckBox
@@ -913,5 +915,8 @@ Partial Class FrameMain
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents UpdateCheckToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Public WithEvents NotifyIcon1 As System.Windows.Forms.NotifyIcon
+    Friend WithEvents PanelTabFix As System.Windows.Forms.Panel
+    Friend WithEvents GroupBox7 As System.Windows.Forms.GroupBox
+    Friend WithEvents ComboRsync As System.Windows.Forms.ComboBox
 
 End Class

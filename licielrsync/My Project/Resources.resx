@@ -491,4 +491,22 @@ cygwin - a linux api layer providing substantial linux api functionality to wind
         idvNwuy7X92o/0QWIAcRAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="bargrad" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAEAAAAYCAYAAAA7zJfaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRy
+        oQAAAGlJREFUGFcVxFkSwUAARdG3/8VQhkJIIoOkaWQ0K1KxkatzPo5s+0OHpkem6lA+lJVftCs+KDm9
+        UTwUHV8u+0Th/oECc0d+7tpkN+SlV7RKL2iZtGgRu+bbGs1C1zSo0MQv0XhdoJF35g8SQVBTZKFuVQAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="bargradb" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRy
+        oQAAAGRJREFUGFcNxGkKglAARtG7/8VEhUWW4oiW85CIlhZu5POdH4es38Sz/Yu0+YmkXkVcLSIqvyIs
+        PiLIZ+Fnk/BeJjcdhZOY7vEg7Mh0C9/iGvTi4nfC8lpxdhtxcmpxfJgOdqkdBDBJng5rhKcAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
 </root>
