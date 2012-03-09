@@ -45,7 +45,8 @@ Friend Module ModuleVbMsilReader
             VerifyReturn = w32Func()
             Dim errVal As Integer = Marshal.GetLastWin32Error()
             If TypeOf VerifyReturn Is IntPtr AndAlso VerifyReturn = IntPtr.Zero AndAlso errVal <> 0 Or _
-            TypeOf VerifyReturn Is Integer AndAlso VerifyReturn <= 0 AndAlso errVal <> 0 Then
+            TypeOf VerifyReturn Is Integer AndAlso VerifyReturn <= 0 AndAlso errVal <> 0 Or _
+            TypeOf VerifyReturn Is Boolean AndAlso VerifyReturn = False AndAlso errVal <> 0 Then
                 Dim methodBase As MethodInfo = w32Func.Method
                 Dim methodByteArray As Byte() = methodBase.GetMethodBody().GetILAsByteArray()
                 ''

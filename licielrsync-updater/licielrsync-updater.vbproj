@@ -142,7 +142,7 @@
     <Message Text="====================================================================================================" />
   </Target>
   <Target Name="AfterClean">
-    <RemoveDir Directories="$(TargetDir);$(ProjectDir)obj;" />
+    <RemoveDir Directories="$(TargetDir);" />
   </Target>
   <ProjectExtensions>
     <VisualStudio>

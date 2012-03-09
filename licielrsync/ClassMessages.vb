@@ -48,8 +48,8 @@ Friend NotInheritable Class LicielMessage
                                                      Dim messageBoxRect As UnsafeNativeMethods.Rect
                                                      Dim messageBoxHwnd As IntPtr
                                                      Try
-                                                         parent.BeginInvoke(New MethodInvoker(Sub() topmostForm.ShowDialog(parent)))
-                                                         newThread = New Threading.Thread(Sub(j As Object) parent.Invoke(New MethodInvoker(Sub() result = MessageBox.Show(topmostForm, message, title, buttons, icons))))
+                                                         parent.BeginInvoke(Sub() topmostForm.ShowDialog(parent))
+                                                         newThread = New Threading.Thread(Sub(j As Object) parent.Invoke(Sub() result = MessageBox.Show(topmostForm, message, title, buttons, icons)))
                                                          newThread.IsBackground = True
                                                          newThread.Start()
                                                          Do
@@ -66,7 +66,7 @@ Friend NotInheritable Class LicielMessage
                                                          End While
                                                      Catch
                                                      Finally
-                                                         If Not topmostForm Is Nothing AndAlso Not topmostForm.IsDisposed Then parent.Invoke(New MethodInvoker(Sub() topmostForm.Close()))
+                                                         If Not topmostForm Is Nothing AndAlso Not topmostForm.IsDisposed Then parent.Invoke(Sub() topmostForm.Close())
                                                          If Not newThread Is Nothing AndAlso newThread.IsAlive Then newThread.Abort()
                                                      End Try
                                                  End Sub)
@@ -81,10 +81,10 @@ Friend NotInheritable Class LicielMessage
         Catch ex As ApplicationException
             result = MessageBox.Show(topmostForm, message, title, buttons, icons)
         Catch ex As Exception
-            HandleError("", ex.ToString)
+            Throw
         Finally
             If isParentValid AndAlso Not topmostForm Is Nothing AndAlso Not topmostForm.IsDisposed Then
-                parent.Invoke(New MethodInvoker(Sub() topmostForm.Close()))
+                parent.Invoke(Sub() topmostForm.Close())
             ElseIf Not topmostForm Is Nothing AndAlso Not topmostForm.IsDisposed Then
                 topmostForm.Close()
             End If
@@ -95,15 +95,23 @@ Friend NotInheritable Class LicielMessage
 
     Public Shared Sub SendTray(ByVal fm As FrameMain, ByVal message As String, ByVal title As String, ByVal t As ToolTipIcon, ByVal time As Long)
         'fm.NotifyIcon1.Icon = AppIcon
-        fm.NotifyIcon1.ShowBalloonTip(time, title, message, t)
+        Try
+            fm.NotifyIcon1.ShowBalloonTip(time, title, message, t)
+        Catch
+            Throw
+        End Try
     End Sub
 
     Private Shared Function Sleep(ByVal timeout As Stopwatch) As Boolean
-        ''
-        '' Timeout 3 seconds
-        ''
-        If Not timeout.IsRunning Then timeout.Start()
-        If timeout.ElapsedMilliseconds > 3000 Then Return False
-        Return True
+        Try
+            ''
+            '' Timeout 3 seconds
+            ''
+            If Not timeout.IsRunning Then timeout.Start()
+            If timeout.ElapsedMilliseconds > 3000 Then Return False
+            Return True
+        Catch
+            Throw
+        End Try
     End Function
 End Class
