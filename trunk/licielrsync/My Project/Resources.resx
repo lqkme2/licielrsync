@@ -509,4 +509,23 @@ cygwin - a linux api layer providing substantial linux api functionality to wind
         RK5CYII=
 </value>
   </data>
+  <data name="clock" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAMISURBVDhPXZNrSFNhHMYPQQQRfYv6EgR9kCgKohtK
+        QRAVQkHQB7sYBF2wlLC0q9UGWWpWZiZqpnlp4rRVurKrm8d5bHmZc2keZy6clmubuxyP6fHy9H+HjurA
+        75znvP/neV7OC4cDwI2+4uYRKsJKfCYWsPW/obWls3MzPSPmZpxPx80nMkZbDg0qHgMCLYdd5po9pqQP
+        ipHwzmL8VLOPD1riPGPdKV7ym4nlrIRzVXBXAubYoYnhV3A3H/W1aiOlNJMHOS0uPO74GYLpu3w/OrTr
+        Zb9NLUsd535Rro2YzzmfcFeD1hTvcONRn1AeOZndPIBK6w9o+O/I1XUhu6oLTz72Q2MZRFGDAV9rdk2P
+        Oaumhl+sEikbwX3L57b2FCwUmwrXyhmGflSYB6AzONDnDMATkOAOjEIcCKDsXR+KGh2ofJkJq2bLeHfB
+        4nbKRoQOKulx7e0Lz2woMDmgpd3YNeL3o3foJ36TZkgzQJ6+D7lGO65peZwqFlJDZ8Buh/LbjMnVNuTV
+        ieimneXJGUiyjIdFxXBRUXB8HM/e1oPv9eOWthPMyzLhgv1ZvDdR0470p1a4xhSMjE9jgqaXVGqU617i
+        wnU13glm2PwKzuaawbwsEy7Ye6vOe6LQDFWxBQOSQiXTcPqDuJF5JxTmLZ1wTwKtHgUJWc1gXpYJF+y+
+        Vm2MuWeAuqwNDXY/ftBHO4MKXhub0O8NYHgKcMjA8y8+nM3/BOZlmXDB9uQSVbTqBc48EpCmFeGmAxtR
+        gOA0QdpHBW7Sl8tExOfzYF6WCRdEJeRuILp2Xq1FIhnStT2wOHyQ6DwkWYGVdGrFV8Tn1IN5mJdlwgVM
+        bDqeeTIurUzecfE5jmS+R+IDHkn3TUi814j4LANiM97gwE09jqWWyMwb/hfmhCAI2202Gz4a+Kmo04XY
+        GK/B5jO6EExHny9Bo6lppkkQZsi77Z8CvV6/hJDsdjtqamu96w6mqNfEXDES3lmYVtEsKIoiyDtJrAx/
+        Qmlp6SKih5ggVv//K8+902wF4SeGiGVs/Q/n0+XbMA5aBgAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

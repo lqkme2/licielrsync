@@ -50,6 +50,8 @@ Partial Class FrameMain
         Me.TrayIconNoticeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TrayIconNoticeStartToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.TaskToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.OpenSettingsFolderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ResetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu3 = New System.Windows.Forms.ToolStripMenuItem()
@@ -109,10 +111,12 @@ Partial Class FrameMain
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToggleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TaskToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PanelTabFix = New System.Windows.Forms.Panel()
         Me.FolderBrowserDialog = New System.Windows.Forms.FolderBrowserDialog()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
-        Me.PanelTabFix = New System.Windows.Forms.Panel()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
@@ -241,7 +245,7 @@ Partial Class FrameMain
         '
         'Menu2
         '
-        Me.Menu2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LanguageToolStripMenuItem, Me.TrayIconToolStripMenuItem, Me.ToolStripSeparator1, Me.OpenSettingsFolderToolStripMenuItem, Me.ResetToolStripMenuItem})
+        Me.Menu2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LanguageToolStripMenuItem, Me.TrayIconToolStripMenuItem, Me.ToolStripSeparator1, Me.TaskToolStripMenuItem1, Me.ToolStripSeparator4, Me.OpenSettingsFolderToolStripMenuItem, Me.ResetToolStripMenuItem})
         Me.Menu2.Name = "Menu2"
         resources.ApplyResources(Me.Menu2, "Menu2")
         '
@@ -315,6 +319,17 @@ Partial Class FrameMain
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         resources.ApplyResources(Me.ToolStripSeparator1, "ToolStripSeparator1")
+        '
+        'TaskToolStripMenuItem1
+        '
+        Me.TaskToolStripMenuItem1.Image = Global.licielrsync.My.Resources.Resources.clock
+        Me.TaskToolStripMenuItem1.Name = "TaskToolStripMenuItem1"
+        resources.ApplyResources(Me.TaskToolStripMenuItem1, "TaskToolStripMenuItem1")
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        resources.ApplyResources(Me.ToolStripSeparator4, "ToolStripSeparator4")
         '
         'OpenSettingsFolderToolStripMenuItem
         '
@@ -619,7 +634,6 @@ Partial Class FrameMain
         resources.ApplyResources(Me.ComboRsync, "ComboRsync")
         Me.ComboRsync.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboRsync.FormattingEnabled = True
-        Me.ComboRsync.MinimumSize = New System.Drawing.Size(70, 0)
         Me.ComboRsync.Name = "ComboRsync"
         '
         'GroupBox2
@@ -647,7 +661,6 @@ Partial Class FrameMain
         '
         resources.ApplyResources(Me.ComboProfiles, "ComboProfiles")
         Me.ComboProfiles.FormattingEnabled = True
-        Me.ComboProfiles.MinimumSize = New System.Drawing.Size(50, 0)
         Me.ComboProfiles.Name = "ComboProfiles"
         '
         'PictureBox1
@@ -759,7 +772,7 @@ Partial Class FrameMain
         '
         'ContextMenuStrip1
         '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToggleToolStripMenuItem, Me.ExitToolStripMenuItem1})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToggleToolStripMenuItem, Me.TaskToolStripMenuItem2, Me.ToolStripSeparator5, Me.ExitToolStripMenuItem1})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         resources.ApplyResources(Me.ContextMenuStrip1, "ContextMenuStrip1")
         '
@@ -768,10 +781,28 @@ Partial Class FrameMain
         Me.ToggleToolStripMenuItem.Name = "ToggleToolStripMenuItem"
         resources.ApplyResources(Me.ToggleToolStripMenuItem, "ToggleToolStripMenuItem")
         '
+        'TaskToolStripMenuItem2
+        '
+        Me.TaskToolStripMenuItem2.Image = Global.licielrsync.My.Resources.Resources.clock
+        Me.TaskToolStripMenuItem2.Name = "TaskToolStripMenuItem2"
+        resources.ApplyResources(Me.TaskToolStripMenuItem2, "TaskToolStripMenuItem2")
+        '
+        'ToolStripSeparator5
+        '
+        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
+        resources.ApplyResources(Me.ToolStripSeparator5, "ToolStripSeparator5")
+        '
         'ExitToolStripMenuItem1
         '
+        Me.ExitToolStripMenuItem1.Image = Global.licielrsync.My.Resources.Resources.door_in
         Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
         resources.ApplyResources(Me.ExitToolStripMenuItem1, "ExitToolStripMenuItem1")
+        '
+        'PanelTabFix
+        '
+        resources.ApplyResources(Me.PanelTabFix, "PanelTabFix")
+        Me.PanelTabFix.BackColor = System.Drawing.Color.FromArgb(CType(CType(188, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(216, Byte), Integer))
+        Me.PanelTabFix.Name = "PanelTabFix"
         '
         'FolderBrowserDialog
         '
@@ -782,12 +813,6 @@ Partial Class FrameMain
         Me.NotifyIcon1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.NotifyIcon1.Tag = "NotifyIcon1"
         resources.ApplyResources(Me.NotifyIcon1, "NotifyIcon1")
-        '
-        'PanelTabFix
-        '
-        resources.ApplyResources(Me.PanelTabFix, "PanelTabFix")
-        Me.PanelTabFix.BackColor = System.Drawing.Color.FromArgb(CType(CType(188, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(216, Byte), Integer))
-        Me.PanelTabFix.Name = "PanelTabFix"
         '
         'FrameMain
         '
@@ -918,5 +943,9 @@ Partial Class FrameMain
     Friend WithEvents PanelTabFix As System.Windows.Forms.Panel
     Friend WithEvents GroupBox7 As System.Windows.Forms.GroupBox
     Friend WithEvents ComboRsync As System.Windows.Forms.ComboBox
+    Friend WithEvents TaskToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents TaskToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator5 As System.Windows.Forms.ToolStripSeparator
 
 End Class

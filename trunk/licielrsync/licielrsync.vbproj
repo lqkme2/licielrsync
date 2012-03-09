@@ -188,6 +188,7 @@
   <ItemGroup>
     <None Include="images\bargrad.png" />
     <None Include="images\bargradb.png" />
+    <None Include="images\famfamfam_silk_icons_v013\clock.png" />
     <Content Include="images\licielrsync.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -211,7 +212,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_StartDate="2012/2/6" BuildVersion_BuildVersioningStyle="None.None.None.Increment" BuildVersion_ConfigurationName="Release" BuildVersion_UpdateAssemblyVersion="True" />
+      <UserProperties BuildVersion_UpdateAssemblyVersion="True" BuildVersion_ConfigurationName="Release" BuildVersion_BuildVersioningStyle="None.None.None.Increment" BuildVersion_StartDate="2012/2/6" />
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
@@ -275,7 +276,7 @@
     <Message Text="====================================================================================================" />
   </Target>
   <Target Name="AfterClean">
-    <RemoveDir Directories="$(TargetDir);$(ProjectDir)obj;" />
+    <RemoveDir Directories="$(TargetDir);" />
   </Target>
 </Project>
 <!-- <PostBuildEvent>

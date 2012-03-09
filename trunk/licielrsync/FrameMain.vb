@@ -35,7 +35,7 @@ Public Class FrameMain
         HWnd = Handle
         Icon = AppIcon
         ToggleToolStripMenuItem.Image = AppIcon.ToBitmap()
-        ExitToolStripMenuItem1.Image = My.Resources.ResourceManager.GetObject("door_in")
+        'ExitToolStripMenuItem1.Image = My.Resources.ResourceManager.GetObject("door_in")
         Start(Me)
         StatusBarText.Text = String.Empty
         Size = My.Settings.Size_Frame

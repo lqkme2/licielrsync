@@ -28,7 +28,7 @@ Friend NotInheritable Class FrameAboutBox
         Close()
     End Sub
 
-    Private Sub OnClickWebButton(sender As System.Object, e As EventArgs) Handles WebButton.Click
+    Private Shared Sub OnClickWebButton(sender As System.Object, e As EventArgs) Handles WebButton.Click
         Process.Start("explorer.exe", """http://licielrsync.googlecode.com""")
     End Sub
 
