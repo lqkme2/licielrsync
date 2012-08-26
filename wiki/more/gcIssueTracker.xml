@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<Module>
+    <ModulePrefs author="Project Hosting Team" author_email="gadgets.feedback@gmail.com" author_location="San Francisco, CA" description="Track issues for Google Code Project Hosting projects." directory_title="Issue tracker by Google Code"
+                 screenshot="https://google-code-project-hosting-gadgets.googlecode.com/svn/build/prod/issuetracker/issueTracker_screenshot.8b3fb.png"
+                 thumbnail="https://google-code-project-hosting-gadgets.googlecode.com/svn/build/prod/issuetracker/issueTracker_thumbnail.73626.png" title="__UP_projectName__ issues"
+                 title_url="https://code.google.com/p/__UP_projectName__/issues">
+        <Require feature="setprefs"/>
+        <Require feature="dynamic-height"/>
+        <Require feature="settitle"/>
+        <Require feature="minimessage"/>
+    </ModulePrefs>
+    <UserPref datatype="hidden" name="projectName"/>
+    <UserPref datatype="string" display_name="User Name" name="userName"/>
+    <UserPref datatype="hidden" default_value="all" name="issueType"/>
+    <UserPref datatype="enum" default_value="-Opened" display_name="Sort By" name="sortBy">
+        <EnumValue display_value="Type" value="Type"/>
+        <EnumValue display_value="Status" value="Status"/>
+        <EnumValue display_value="Priority" value="Priority"/>
+        <EnumValue display_value="Milestone" value="Milestone"/>
+        <EnumValue display_value="Owner" value="Owner"/>
+        <EnumValue display_value="Opened" value="-Opened"/>
+        <EnumValue display_value="Closed" value="-Closed"/>
+        <EnumValue display_value="Modified" value="-Modified"/>
+    </UserPref>
+    <UserPref datatype="list" default_value="" display_name="Other Projects" name="otherProjects"/>
+    <!--To be added to projectName pref after debug: datatype="hidden"-->
+    <Content type="html"><![CDATA[<link href="https://licielrsync.googlecode.com/svn/wiki/more/gcIssueTracker.min.4d9fe.css" rel="stylesheet" type="text/css"/><script type="text/javascript">
+  // This needs to be in the XML to be replaced properly
+  var moduleID_num = __MODULE_ID__;
+</script><script src="https://jqueryjs.googlecode.com/files/jquery-1.2.6.pack.js" type="text/javascript"></script><script src="https://licielrsync.googlecode.com/svn/wiki/more/gcIssueTracker.min.f9409.js"></script><div id="content_div">
+</div>
+
+        
+  ]]></Content>
+</Module>

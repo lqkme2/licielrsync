@@ -1,0 +1,57 @@
+img.spinner {
+    position    : absolute;
+    left        : 50%;
+    margin-left : -8px;
+    top         : 50%;
+    margin-top  : -8px;
+}
+
+.poweredby {
+    font-size : 10px;
+}
+
+a:hover {
+    color : red;
+}
+
+#content_div {
+    text-align : center;
+}
+
+#content_div table, tr, td, div {
+    font-size : 13px;
+}
+
+#content_div .breakword {
+    white-space : pre-wrap;
+    white-space : -moz-pre-wrap;
+    white-space : -pre-wrap;
+    white-space : -o-pre-wrap;
+    word-wrap   : break-word;
+}
+
+#content_div td {
+    padding : 2px;
+}
+
+body {
+    line-height : normal;
+}
+
+.expansionIcon {
+    display             : block;
+    float               : left;
+    height              : 12px;
+    margin-right        : 4px;
+    margin-top          : 2px;
+    overflow            : hidden;
+    background          : url(https://licielrsync.googlecode.com/svn/wiki/more/sprite_arrow_enlarge_max_min_shrink_x_blue.gif) 0 -24;
+    height              : 12px;
+    width               : 12px;
+}
+
+.expansionContent {
+    display  : none;
+    overflow : auto;
+    width    : 100%;
+}

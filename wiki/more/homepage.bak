@@ -1,0 +1,38 @@
+<table cellspacing="20"><tr><td valign="top">
+=Current version=
+0.2.0.3
+</td><td valign="top">
+=Sources=
+<wiki:gadget url="https://licielrsync.googlecode.com/svn/wiki/more/gcChanges.xml" up_projectName="licielrsync" border="0"/>
+</td><td valign="top">
+=Issues=
+<wiki:gadget url="https://licielrsync.googlecode.com/svn/wiki/more/gcIssueTracker.xml" up_projectName="licielrsync" border="0"/>
+==Issues notes==
+-</td></tr></table>
+
+=licielrsync the coolest interface to rsync=
+
+licielrsync is a multithread GUI (Graphical User Interface) for rsync on Windows.
+
+rsync is used to synchronize folders, files and make backups with fast incremental file transfers between Windows, MAC and Linux.
+
+licielrsync makes rsync more friendly to new users and decrease the number of things to remember for the geeks.
+
+==Some Features==
+
+Enhanced log outputs, multithreaded integration, process and profiles management, global transfer progress, taskbar icon progress (win7 or later), one compiled stable version of rsync (untouched), one compiled developer version of rsync (untouched, from git repo), one compiled third party patched version to transfer ACL permissions correctly on Windows, the latest cygwin files and more to discover and add, you are welcome to participate.
+
+==ToDo==
+
+Screenshot, Website wiki, Task schedule, Context menu integration
+
+==Supported Operating Systems==
+
+Windows XP/2003 with Framework 2.0, Windows Vista, Windows 7, Windows 2008 or Windows 8
+
+==Download==
+
+[http://code.google.com/p/licielrsync/downloads/list Here] (unpacks with 7-zip, automatic updates available)
+
+==Discuss==
+[http://groups.google.com/group/licielrsync https://groups.google.com/intl/en/images/logos/groups_logo_sm.gif][mailto:licielrsync@googlegroups.com https://licielrsync.googlecode.com/svn/trunk/licielrsync/images/src/licielrsync_googlegroups_b.png]

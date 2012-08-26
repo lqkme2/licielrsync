@@ -1,0 +1,155 @@
+New                  = Issue has not had initial review yet
+Accepted             = Problem reproduced / Need acknowledged
+Started              = Work on this issue has begun
+WaitingReply         = Problem not reproduced / Waiting author reply
+Replied              = A question that has received a reply
+
+**************************************************************************************************
+
+TempInvalid          = Problem not reproduced / Waiting author reply / Temporarily invalid may re-open
+Fixed                = Developer made source code changes, QA should verify
+Verified             = QA has verified that the fix worked
+Invalid              = This was not a valid issue report
+Duplicate            = This report duplicates an existing issue
+WontFix              = We decided to not take action on this issue
+Done                 = The requested non-coding task was completed
+
+**************************************************************************************************
+
+Type-Question        = User question about the extension
+Type-Defect          = Report of a software defect
+Type-Enhancement     = Request for enhancement
+Type-Task            = Work item that doesn't change the code or docs
+Type-Review          = Request for a source code review
+Type-Other           = Some other kind of issue
+Type-Security        = Security risk to users
+Type-Performance     = Performance issue
+Type-Usability       = Affects program usability
+Type-Maintainability = Hinders future changes
+Priority-Critical    = Must resolve in the specified milestone
+Priority-High        = Strongly want to resolve in the specified milestone
+Priority-Medium      = Normal priority
+Priority-Low         = Might slip to later milestone
+Os-All               = Affects all operating systems
+Os-Windows           = Affects Windows users
+Os-Linux             = Affects Linux users
+Os-Macintosh         = Affects Mac OS X users
+Component-UI         = Issue relates to program UI
+Component-Logic      = Issue relates to application logic
+Component-Persistence = Issue relates to data storage components
+Component-Scripts    = Utility and installation scripts
+Component-Docs       = Issue relates to end-user documentation
+SentVia-AutoReport   = Issue has been automatically sent by the extension
+SentVia-Googlecode   = Issue has been sent manually by a google user
+Version-Release      = The extension version the issue appears
+FixedIn-Release      = The extension version the issue will be fixed
+
+**************************************************************************************************
+
+type, priority, version
+
+**************************************************************************************************
+
+Ask a question
+New
+Enter one-line summary
+Enter below any questions you have about licielrsync and I will do my best to
+help you.
+
+Type-Question Priority-Low SentVia-Googlecode
+
+**************************************************************************************************
+
+User defect report
+New
+Enter one-line summary
+What steps will reproduce the problem?
+Step 1:
+Step 2:
+Step 3:
+
+What is the expected output? What do you see instead?
+
+
+
+What version of the product are you using? On what operating system?
+
+
+
+Please provide any additional information below.
+Type-Defect Priority-Medium SentVia-Googlecode
+
+**************************************************************************************************
+
+Enhancement request
+New
+Enter one-line summary
+What new or enhanced feature are you proposing?
+
+
+What goal would this enhancement help you achieve?
+Type-Enhancement Priority-Low SentVia-Googlecode
+
+**************************************************************************************************
+
+Private problem
+New
+Enter one-line summary
+Please only use this template for private issues.
+Only the reporter and licielrsync staff members will be able to view it.
+
+
+What steps reproduce the security problem?
+1:
+2:
+3:
+
+What information is inappropriately exposed or modified?
+
+
+What projects and/or users are affected?
+
+
+Any other information?
+Type-Security Priority-High Restrict-View-Commit SentVia-Googlecode
+
+**************************************************************************************************
+
+Defect report from developer
+Accepted
+Enter one-line summary
+What steps will reproduce the problem?
+1:
+2:
+3:
+
+What is the expected output? What do you see instead?
+
+
+Please use labels and text to provide additional information.
+Type-Defect Priority-Medium SentVia-Googlecode
+
+**************************************************************************************************
+
+Review request
+New
+Code review request
+Branch name:
+
+Purpose of code changes on this branch:
+
+
+When reviewing my code changes, please focus on:
+
+
+After the review, I'll merge this branch into:
+/trunk
+Type-Review Priority-Medium SentVia-Googlecode
+
+**************************************************************************************************
+
+ID Type SentVia Status Priority Os Version FixedIn Stars Summary Identity Modified Owner
+
+**************************************************************************************************
+
+-Modified
